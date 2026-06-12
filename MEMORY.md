@@ -31,6 +31,15 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — WhatsApp-Farben, Motion-Layer und Hero-Poster umgesetzt
+- **Recherche/Entscheidung:** Kurzcheck Wettbewerber + UX: Justlife/Apps gewinnen ueber schnelle Buchung, ServiceMarket ueber Preis-/Quote-Orientierung, Saniservice/Premium ueber Zertifizierung/Indoor-Air-Authority. Fuer Pro Aqua bleibt der beste Hebel: persoenliche Accountable-Team-Positionierung, klare WhatsApp-Kontaktfuehrung, sichtbare Beweise und subtile Bewegung statt dekorativem Overload.
+- **Erledigt:** Zentrale WhatsApp-Brand-Tokens (`#25D366`, `#128C7E`, `#075E54`, `#DCF8C6`) eingebaut und alle WhatsApp-CTA-Buttons/Badges konsistent auf echtes WhatsApp-Gruen gebracht: Topbar, Nav, Hero, Vergleich, Quiz Result, Solution CTA, Franco CTA, Booking Box, CTA-Banner, B2B, Arabic, Seasonal und Floating Button.
+- **Erledigt:** Hero um WhatsApp-Live-Badge erweitert; Trust-Belt- und Review-WhatsApp-Badges auf WhatsApp-Farben umgestellt.
+- **Erledigt:** Subtilen Scroll-Reveal-Layer fuer Karten/Sektionen ergaenzt, inklusive `prefers-reduced-motion`-Fallback. Der Layer ist progressive enhancement: Inhalte bleiben ohne JS sichtbar.
+- **Erledigt:** `assets/hero-video-poster.jpg` aus dem vorhandenen Hero-MP4 extrahiert und als Video-Poster/CSS-Fallback eingebunden, damit der mobile Hero nicht dunkel wirkt, falls Video-Autoplay/Preload verzögert.
+- **Verifikation:** In-App-Browser `http://localhost:8742/`: Desktop 1280px ohne Overflow, 13 WhatsApp-CTA-relevante `wa.me`-Links computed auf `rgb(37, 211, 102)`, Floating Button ebenfalls, 76 Reveal-Targets, Poster aktiv, Console 0 Errors / 0 Warnings. Mobile 390px: kein Overflow, Hero/Nav/Floating-WhatsApp gruen, Live-Badge sichtbar, Video-Poster sichtbar.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID eintragen, sobald Giampiero sie liefert; danach Lead-Klicks als Conversions in GA4/Meta konfigurieren.
+
 ### 2026-06-13 — Codex — Vergleichssektion conversion-staerker gestaltet
 - **Erledigt:** `#compare` gezielt aufgewertet, ohne `index.html` neu zu generieren: Pro Aqua wird in Headline, Farbe, Breite und Kartenhierarchie klar staerker als die Alternativen sichtbar.
 - **Erledigt:** Pro-Aqua-Karte mit Brand-Marker, Badge "THE ACCOUNTABLE CHOICE", Owner-led-Positionierung, Proof-Chips (`4.7 Google`, `1,277+`, `Since 2016`, `Photo proof`) und staerkerem Free-Inspection-CTA erweitert.

@@ -40,6 +40,10 @@
   --green-d:  #4DA882;
   --green-l:  #EDF7F3;
   --green-ll: #F4FAF7;
+  --wa:       #25D366;
+  --wa-dark:  #128C7E;
+  --wa-deep:  #075E54;
+  --wa-soft:  #DCF8C6;
   --navy:     #1C3244;
   --navy-l:   #2A4A63;
   --white:    #FFFFFF;
@@ -83,6 +87,8 @@ button{font-family:'Inter',sans-serif;cursor:pointer}
 @keyframes scrollL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 @keyframes floatWA{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.36)}50%{box-shadow:0 0 0 8px rgba(37,211,102,0)}}
+@keyframes waRing{0%{transform:scale(.92);opacity:.55}100%{transform:scale(1.5);opacity:0}}
 @keyframes popIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
 @keyframes quizIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
@@ -136,6 +142,80 @@ nav{background:#fff;border-bottom:1px solid var(--g300);position:sticky;top:0;z-
 .btn-xl{padding:16px 32px!important;font-size:16px!important;border-radius:var(--rl)!important}
 .btn-white{background:#fff;color:var(--navy)}
 .btn-white:hover{background:var(--bg)}
+
+/* WhatsApp brand consistency: primary WhatsApp green for every WhatsApp CTA. */
+a[href^="https://wa.me/"].btn,
+a[href^="https://wa.me/"].hbtn,
+a[href^="https://wa.me/"].tb-btn,
+a[href^="https://wa.me/"].bb-cta,
+a[href^="https://wa.me/"].cmp-cta,
+a[href^="https://wa.me/"].business-cta,
+a[href^="https://wa.me/"].arabic-cta,
+a[href^="https://wa.me/"].cta-btn-wa{
+  background:var(--wa)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 4px 16px rgba(37,211,102,.38)!important;
+  position:relative;
+  overflow:hidden;
+}
+a[href^="https://wa.me/"].btn:hover,
+a[href^="https://wa.me/"].hbtn:hover,
+a[href^="https://wa.me/"].tb-btn:hover,
+a[href^="https://wa.me/"].bb-cta:hover,
+a[href^="https://wa.me/"].cmp-cta:hover,
+a[href^="https://wa.me/"].business-cta:hover,
+a[href^="https://wa.me/"].arabic-cta:hover,
+a[href^="https://wa.me/"].cta-btn-wa:hover{
+  background:var(--wa-dark)!important;
+  color:#fff!important;
+  transform:translateY(-1px);
+}
+a[href^="https://wa.me/"].btn svg,
+a[href^="https://wa.me/"].hbtn svg,
+a[href^="https://wa.me/"].tb-btn svg,
+a[href^="https://wa.me/"].bb-cta svg,
+a[href^="https://wa.me/"].cmp-cta svg,
+a[href^="https://wa.me/"].business-cta svg,
+a[href^="https://wa.me/"].arabic-cta svg,
+a[href^="https://wa.me/"].cta-btn-wa svg{
+  color:#fff!important;
+  fill:currentColor;
+  position:relative;
+  z-index:1;
+}
+a[href^="https://wa.me/"].btn::after,
+a[href^="https://wa.me/"].hbtn::after,
+a[href^="https://wa.me/"].tb-btn::after,
+a[href^="https://wa.me/"].bb-cta::after,
+a[href^="https://wa.me/"].cmp-cta::after,
+a[href^="https://wa.me/"].business-cta::after,
+a[href^="https://wa.me/"].arabic-cta::after,
+a[href^="https://wa.me/"].cta-btn-wa::after{
+  content:"";
+  position:absolute;
+  top:-45%;
+  bottom:-45%;
+  left:-55%;
+  width:38%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);
+  transform:skewX(-18deg);
+  transition:transform .65s ease;
+  pointer-events:none;
+}
+a[href^="https://wa.me/"].btn:hover::after,
+a[href^="https://wa.me/"].hbtn:hover::after,
+a[href^="https://wa.me/"].tb-btn:hover::after,
+a[href^="https://wa.me/"].bb-cta:hover::after,
+a[href^="https://wa.me/"].cmp-cta:hover::after,
+a[href^="https://wa.me/"].business-cta:hover::after,
+a[href^="https://wa.me/"].arabic-cta:hover::after,
+a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) skewX(-18deg)}
+.chip-wa{background:rgba(37,211,102,.12)!important;color:var(--wa-deep)!important;border-color:rgba(37,211,102,.30)!important;font-weight:700}
+.chip-wa.cw,.cw.chip-wa{background:rgba(37,211,102,.16)!important;color:#fff!important;border-color:rgba(37,211,102,.46)!important}
+.chip-wa::before,.whatsapp-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--wa);display:inline-block;box-shadow:0 0 0 4px rgba(37,211,102,.12);animation:waPulse 2.2s ease-in-out infinite}
+.whatsapp-live{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(37,211,102,.28);color:var(--wa-deep);border-radius:100px;padding:6px 12px;font-size:12px;font-weight:700;box-shadow:0 6px 18px rgba(37,211,102,.12)}
+.wa-live-row{display:flex;margin:-8px 0 18px}
 
 /* ======================================================
    HERO — exact like screenshot
@@ -198,7 +278,7 @@ nav{background:#fff;border-bottom:1px solid var(--g300);position:sticky;top:0;z-
 .hero-vid-mobile{display:none;margin-top:20px}
 
 /* Video card — dark navy card like screenshot */
-.hero-vid{border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(28,50,68,.18);position:relative;aspect-ratio:16/11;background:var(--navy);cursor:pointer}
+.hero-vid{border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(28,50,68,.18);position:relative;aspect-ratio:16/11;background:linear-gradient(rgba(28,50,68,.18),rgba(28,50,68,.18)),url("assets/hero-video-poster.jpg") center/cover no-repeat,var(--navy);cursor:pointer}
 .hvid-bg{width:100%;height:100%;background:linear-gradient(135deg,#0d2235,#1a3d5c);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;position:relative}
 /* ADD REAL THUMBNAIL: <img src="franco-thumbnail.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"> */
 .hvid-av{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;position:relative;z-index:1;box-shadow:0 6px 24px rgba(0,0,0,.25);font-family:'Inter',sans-serif}
@@ -468,7 +548,7 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .rev-nm{font-size:13px;font-weight:500;color:var(--navy)}
 .rev-si{font-size:11px;color:var(--g400);font-weight:300}
 .stars{color:var(--amber);font-size:12px;letter-spacing:1px;margin-bottom:8px}
-.verified{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--green-d);background:var(--green-l);border:1px solid rgba(113,196,159,.2);padding:2px 8px;border-radius:100px;margin-bottom:9px;font-weight:400}
+.verified{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--wa-deep);background:rgba(37,211,102,.11);border:1px solid rgba(37,211,102,.26);padding:2px 8px;border-radius:100px;margin-bottom:9px;font-weight:600}
 .rev-text{font-size:13px;color:var(--g600);line-height:1.7;margin-bottom:11px;font-weight:300}
 .wa-ss{border-radius:var(--r);overflow:hidden;position:relative}
 .wa-top{background:#075E54;padding:8px 11px;display:flex;align-items:center;gap:7px}
@@ -572,19 +652,19 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px}
 .bk-card{background:#fff;border-radius:var(--rxl);padding:32px 28px;border:1.5px solid var(--g300);box-shadow:var(--sh);display:flex;flex-direction:column;gap:0;text-decoration:none;color:inherit;transition:all .25s;position:relative;overflow:hidden}
 .bk-card:hover{transform:translateY(-4px);box-shadow:var(--shl);border-color:rgba(88,153,227,.35)}
-.bk-card-primary{border-color:rgba(113,196,159,.4);background:linear-gradient(160deg,#fff 70%,var(--green-ll))}
-.bk-card-primary:hover{border-color:var(--green-d)}
-.bk-card-badge{position:absolute;top:16px;right:16px;background:var(--green);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px}
+.bk-card-primary{border-color:rgba(37,211,102,.38);background:linear-gradient(160deg,#fff 70%,rgba(220,248,198,.34))}
+.bk-card-primary:hover{border-color:var(--wa)}
+.bk-card-badge{position:absolute;top:16px;right:16px;background:var(--wa);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;box-shadow:0 4px 12px rgba(37,211,102,.24)}
 .bk-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0}
-.bk-icon-green{background:linear-gradient(135deg,#25D366,var(--green-d));color:#fff}
+.bk-icon-green{background:linear-gradient(135deg,var(--wa),var(--wa-dark));color:#fff}
 .bk-icon-blue{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff}
 .bk-icon-navy{background:linear-gradient(135deg,var(--navy),var(--navy-l));color:#fff}
 .bk-card-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px;letter-spacing:-.2px}
 .bk-card-text{font-size:14px;color:var(--g500);line-height:1.7;margin-bottom:16px;flex:1;font-weight:400}
 .bk-card-detail{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:20px;letter-spacing:.01em}
 .bk-card-cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:12px 20px;border-radius:var(--rl);transition:all .2s;width:100%;justify-content:center}
-.bk-cta-green{background:var(--green);color:#fff;box-shadow:0 3px 14px rgba(113,196,159,.35)}
-.bk-cta-green:hover{background:var(--green-d)}
+.bk-cta-green{background:var(--wa);color:#fff;box-shadow:0 3px 14px rgba(37,211,102,.35)}
+.bk-cta-green:hover{background:var(--wa-dark)}
 .bk-cta-blue{background:var(--blue);color:#fff;box-shadow:0 3px 14px rgba(88,153,227,.3)}
 .bk-cta-blue:hover{background:var(--blue-d)}
 .bk-cta-navy{background:var(--navy);color:#fff;box-shadow:0 3px 14px rgba(28,50,68,.2)}
@@ -613,8 +693,10 @@ footer{background:var(--navy);padding:48px 32px 22px}
 .ft-seo{font-size:11px;color:rgba(255,255,255,.1)}
 
 /* WA FLOAT */
-.wa-fl{position:fixed;bottom:24px;right:20px;z-index:300;background:#25D366;color:#fff;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.55);transition:all .2s;animation:floatWA 3s ease-in-out infinite}
-.wa-fl:hover{transform:scale(1.08);box-shadow:0 8px 24px rgba(37,211,102,.5)}
+.wa-fl{position:fixed;bottom:24px;right:20px;z-index:300;background:var(--wa);color:#fff;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.55);transition:all .2s;animation:floatWA 3s ease-in-out infinite;isolation:isolate}
+.wa-fl::after{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.34);z-index:-1;animation:waRing 1.9s ease-out infinite}
+.wa-fl svg{position:relative;z-index:1}
+.wa-fl:hover{background:var(--wa-dark);transform:scale(1.08);box-shadow:0 8px 24px rgba(37,211,102,.5)}
 @media(max-width:480px){.wa-fl{width:60px;height:60px;bottom:20px;right:16px}}
 
 
@@ -910,6 +992,18 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
   border-radius:6px;
 }
 
+/* Motion layer: progressive enhancement, added by JS only. */
+.pa-reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .58s ease, transform .58s cubic-bezier(.22,.61,.36,1);
+  will-change:opacity,transform;
+}
+.pa-reveal.is-visible{
+  opacity:1;
+  transform:none;
+}
+
 /* WhatsApp-Floating-Button: auf Mobile nicht verdecken */
 @media(max-width:480px){
   .wa-fl{bottom:max(16px,env(safe-area-inset-bottom)) !important}
@@ -1035,6 +1129,18 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
     font-size:14px;
     bottom:8px;
     right:8px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+  }
+  .pa-reveal{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
   }
 }
 </style>
@@ -1246,6 +1352,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
           WhatsApp Us
         </a>
       </div>
+      <div class="wa-live-row"><span class="whatsapp-live">WhatsApp active 7 days · replies in minutes</span></div>
       <div class="hero-trust">
         <div class="ht-item"><div class="ht-dot"></div>Free inspection included</div>
         <div class="ht-item"><div class="ht-dot"></div>Medical-grade equipment</div>
@@ -1258,7 +1365,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
     <div class="hero-right">
       <!-- VIDEO -->
       <div class="hero-vid" onclick="playVideo()">
-        <video class="hero-vid-player" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <video class="hero-vid-player" autoplay muted loop playsinline preload="metadata" poster="assets/hero-video-poster.jpg" aria-hidden="true">
           <source src="/assets/ac-duct-cleaning-dubai-pro-aqua.mp4" type="video/mp4">
         </video>
         <button class="hero-vid-mute-btn" type="button" aria-label="Toggle sound" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
@@ -1322,8 +1429,8 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 <!-- TRUST BELT -->
 <div class="belt">
   <div class="belt-t">
-    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw">WhatsApp · 7 Days</span><span class="chip cw">1277+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
-    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw">WhatsApp · 7 Days</span><span class="chip cw">1277+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
+    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw chip-wa">WhatsApp · 7 Days</span><span class="chip cw">1277+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
+    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw chip-wa">WhatsApp · 7 Days</span><span class="chip cw">1277+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
   </div>
 </div>
 
@@ -1836,7 +1943,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 <!-- ===================== REVIEWS ===================== -->
 <section id="reviews" class="rev-bg">
   <div class="sec">
-    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip cg">Real WhatsApp Messages</span></div>
+    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span></div>
     <h2 class="sec-t">What Our Clients <em class="blue-em">Say</em></h2>
     <div class="g-strip">
       <div style="display:flex;align-items:center;gap:8px">
@@ -2246,6 +2353,56 @@ function playVideo(){
   }
 })();
 </script>
+<script>
+/* SUBTLE MOTION LAYER
+   Adds life without making content depend on JavaScript. */
+(function(){
+  function initReveal(){
+    if(!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var nodes=[].slice.call(document.querySelectorAll([
+      '.hero-left',
+      '.hero-right',
+      '.hero-reviews-inner',
+      '#compare .cmp-card',
+      '#quiz .quiz-card',
+      '.dcard',
+      '.sol-tile',
+      '.franco-in',
+      '.srv-card',
+      '.ba-card',
+      '.bk-card',
+      '.bk-trust',
+      '.rev-card',
+      '.proc-step',
+      '.business-card',
+      '.business-panel',
+      '.arabic-card',
+      '.arabic-proof',
+      '.season-card',
+      '.area',
+      '.fq'
+    ].join(',')));
+    if(!nodes.length)return;
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting)return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+    nodes.forEach(function(node,index){
+      if(node.closest('.mobile-nav'))return;
+      node.classList.add('pa-reveal');
+      node.style.transitionDelay=Math.min((index%4)*55,165)+'ms';
+      if(node.getBoundingClientRect().top<window.innerHeight*.94)node.classList.add('is-visible');
+      else observer.observe(node);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initReveal);
+  else initReveal();
+})();
+</script>
 <!-- MOBILE NAV OVERLAY -->
 <div class="mobile-nav" id="mobileNav">
   <button class="m-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>
@@ -2295,10 +2452,26 @@ function playVideo(){
       initMuteButtons();
       return;
     }
-    var clone = src.cloneNode(true);
+    var clone = document.createElement('video');
+    clone.className = src.className;
+    clone.src = src.currentSrc || (src.querySelector('source') && src.querySelector('source').src) || '';
+    clone.autoplay = true;
+    clone.muted = true;
+    clone.loop = true;
+    clone.poster = src.getAttribute('poster') || 'assets/hero-video-poster.jpg';
+    clone.playsInline = true;
+    clone.setAttribute('muted','');
+    clone.setAttribute('playsinline','');
+    clone.setAttribute('preload','metadata');
+    clone.setAttribute('aria-hidden','true');
     target.insertBefore(clone, target.firstChild);
     bindPlayingState(clone);
-    try { clone.play().catch(function(){}); } catch(e){}
+    try {
+      clone.load();
+      var start = function(){try{clone.play().catch(function(){})}catch(e){}};
+      if (clone.readyState > 1) start();
+      else clone.addEventListener('loadeddata', start, {once:true});
+    } catch(e){}
     initMuteButtons();
   }
   function initMuteButtons(){
