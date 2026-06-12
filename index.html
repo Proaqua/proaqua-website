@@ -538,9 +538,13 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .seasonal-bg{background:var(--bg2)}
 .seasonal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
 .season-card{background:#fff;border:1.5px solid var(--g300);border-radius:var(--rl);padding:22px 18px;box-shadow:var(--sh0)}
+.season-card.is-active{border-color:var(--blue);box-shadow:0 12px 34px rgba(88,153,227,.16);transform:translateY(-2px)}
+.season-card.is-active::after{content:"Suggested";display:inline-flex;margin-top:14px;border-radius:100px;background:var(--blue-l);color:var(--blue-d);border:1px solid rgba(88,153,227,.18);padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .season-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .season-card h3{font-size:16px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:8px}
 .season-card p{font-size:13px;color:var(--g500);line-height:1.6}
+.season-active-note{display:none;margin:18px auto 0;max-width:680px;border:1px solid rgba(88,153,227,.2);background:var(--blue-ll);border-radius:var(--rl);padding:12px 16px;color:var(--navy);font-size:13px;line-height:1.55}
+.season-active-note.on{display:block}
 .season-cta-row{display:flex;justify-content:center;margin-top:30px}
 @media(max-width:900px){.arabic-in{grid-template-columns:1fr}.seasonal-grid{grid-template-columns:1fr 1fr}.arabic-card{padding:26px}.arabic-card h2{font-size:28px}}
 @media(max-width:600px){.seasonal-grid{grid-template-columns:1fr}.arabic-card h2{font-size:24px}}
@@ -1927,37 +1931,38 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 </section>
 
 <!-- SEASONAL TRIGGERS -->
-<section class="seasonal-bg" id="seasonal">
+<section class="seasonal-bg" id="seasonal" data-seasonal-campaign>
   <div class="sec">
     <div style="text-align:center">
       <div class="chip-row" style="justify-content:center"><span class="chip cb">Dubai Seasonal Triggers</span></div>
-      <h2 class="sec-t" style="text-align:center">Book Cleaning When Dubai <em class="blue-em">Actually</em> Needs It</h2>
-      <p class="sec-sub" style="margin:0 auto;text-align:center">AC systems, fabrics and mattresses need different attention across the year. Use the trigger that matches your home now.</p>
+      <h2 class="sec-t" style="text-align:center" data-season-title>Book Cleaning When Dubai <em class="blue-em">Actually</em> Needs It</h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center" data-season-copy>AC systems, fabrics and mattresses need different attention across the year. Use the trigger that matches your home now.</p>
+      <p class="season-active-note" data-season-note></p>
     </div>
     <div class="seasonal-grid">
-      <div class="season-card">
+      <div class="season-card" data-season-card="summer-ac">
         <div class="season-tag">Summer AC Check</div>
         <h3>When the AC runs all day</h3>
         <p>Book duct inspection and cleaning before heavy daily AC use turns dust and moisture into recurring air-quality problems.</p>
       </div>
-      <div class="season-card">
+      <div class="season-card" data-season-card="sandstorm">
         <div class="season-tag">Sandstorm Reset</div>
         <h3>After dusty weeks</h3>
         <p>Refresh ducts, filters, sofas and carpets after sand and fine dust settle inside the home.</p>
       </div>
-      <div class="season-card">
+      <div class="season-card" data-season-card="ramadan-eid">
         <div class="season-tag">Ramadan &amp; Eid</div>
         <h3>Before family visits</h3>
         <p>Deep clean villas, mattresses and fabric surfaces before guests, gatherings and holiday routines.</p>
       </div>
-      <div class="season-card">
+      <div class="season-card" data-season-card="back-to-school">
         <div class="season-tag">Back-to-School</div>
         <h3>Allergy reset for kids</h3>
         <p>Sanitize mattresses, sofas and AC air paths before bedrooms and study spaces return to daily use.</p>
       </div>
     </div>
     <div class="season-cta-row">
-      <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+seasonal+cleaning+inspection+for+my+home+in+Dubai." class="btn btn-blue btn-xl" target="_blank" rel="noopener">Book Seasonal Inspection</a>
+      <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+seasonal+cleaning+inspection+for+my+home+in+Dubai." class="btn btn-blue btn-xl" target="_blank" rel="noopener" data-season-cta>Book Seasonal Inspection</a>
     </div>
   </div>
 </section>
@@ -2043,6 +2048,153 @@ function playVideo(){
   }
   var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:pointer';d.innerHTML='<div style="width:90%;max-width:860px;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" style="width:100%;height:100%;border:none;border-radius:14px" allow="autoplay"></iframe></div>';d.onclick=function(){document.body.removeChild(d)};document.body.appendChild(d);
 }</script>
+<script>
+/* SEASONAL CAMPAIGN LAYER + LEAD TRACKING
+   Add GA4/Meta Pixel snippets later; this hook already dispatches to gtag/fbq when present. */
+(function(){
+  var currentSeason='';
+  var manualSeason='';
+  var campaigns={
+    'summer-ac':{
+      title:'Summer AC Check for Dubai Homes',
+      copy:'When the AC runs all day, ducts, filters and fabrics collect dust and moisture faster. Book a focused inspection before air-quality problems become visible.',
+      note:'Best for May to July campaigns and any home where the AC runs almost nonstop.',
+      cta:'Book Summer AC Check',
+      message:'Hello, I would like to book a Summer AC Check for my home in Dubai. Please arrange a free inspection.',
+      event:'summer_ac_check'
+    },
+    sandstorm:{
+      title:'Sandstorm Reset Cleaning in Dubai',
+      copy:'After dusty weeks, fine sand settles in ducts, filters, sofas, curtains and carpets. Reset the home before dust becomes part of the daily air.',
+      note:'Best for post-sandstorm ads, dusty villa communities and families noticing more dust indoors.',
+      cta:'Book Sandstorm Reset',
+      message:'Hello, I would like to book a Sandstorm Reset cleaning inspection for my home in Dubai.',
+      event:'sandstorm_reset'
+    },
+    'ramadan-eid':{
+      title:'Ramadan & Eid Deep Cleaning',
+      copy:'Prepare villas, apartments, mattresses and fabric surfaces before family visits, guests and holiday routines.',
+      note:'Best for Ramadan and Eid ads. Use this via campaign URL because the dates change every year.',
+      cta:'Book Ramadan & Eid Cleaning',
+      message:'Hello, I would like to book Ramadan or Eid deep cleaning for my home in Dubai.',
+      event:'ramadan_eid_cleaning'
+    },
+    'back-to-school':{
+      title:'Back-to-School Allergy Reset',
+      copy:'Before bedrooms and study spaces return to daily use, sanitize mattresses, sofas and AC air paths for a cleaner school routine.',
+      note:'Best for August and September campaigns aimed at families with kids.',
+      cta:'Book Allergy Reset',
+      message:'Hello, I would like to book a Back-to-School allergy reset cleaning inspection for my home in Dubai.',
+      event:'back_to_school_allergy_reset'
+    }
+  };
+  function params(){
+    try{return new URLSearchParams(window.location.search)}catch(e){return{get:function(){return''}}}
+  }
+  function keyFromText(value){
+    if(!value)return'';
+    var s=String(value).toLowerCase().replace(/[_\s]+/g,'-');
+    if(campaigns[s])return s;
+    if(s.indexOf('ramadan')>-1||s.indexOf('eid')>-1)return'ramadan-eid';
+    if(s.indexOf('back-to-school')>-1||s.indexOf('school')>-1||s.indexOf('allergy')>-1)return'back-to-school';
+    if(s.indexOf('sand')>-1||s.indexOf('dust')>-1)return'sandstorm';
+    if(s.indexOf('summer')>-1||s.indexOf('heat')>-1||s.indexOf('ac-check')>-1)return'summer-ac';
+    return'';
+  }
+  function autoSeason(){
+    var month=(new Date()).getMonth()+1;
+    if(month===8||month===9)return'back-to-school';
+    if(month>=5&&month<=7)return'summer-ac';
+    if(month>=2&&month<=4)return'sandstorm';
+    return'';
+  }
+  function pickSeason(){
+    if(manualSeason)return manualSeason;
+    var p=params();
+    var fields=['season','campaign','utm_campaign','utm_content','utm_term'];
+    for(var i=0;i<fields.length;i++){
+      var k=keyFromText(p.get(fields[i]));
+      if(k)return k;
+    }
+    return keyFromText(window.location.hash.replace('#',''))||autoSeason();
+  }
+  function waUrl(message){
+    return'https://wa.me/971567943412?text='+encodeURIComponent(message);
+  }
+  function applySeason(){
+    var key=pickSeason();
+    if(!key||!campaigns[key])return;
+    currentSeason=key;
+    var c=campaigns[key];
+    var section=document.querySelector('[data-seasonal-campaign]');
+    if(!section)return;
+    section.setAttribute('data-active-season',key);
+    var title=section.querySelector('[data-season-title]');
+    var copy=section.querySelector('[data-season-copy]');
+    var note=section.querySelector('[data-season-note]');
+    var cta=section.querySelector('[data-season-cta]');
+    if(title)title.textContent=c.title;
+    if(copy)copy.textContent=c.copy;
+    if(note){note.textContent=c.note;note.classList.add('on')}
+    if(cta){cta.textContent=c.cta;cta.href=waUrl(c.message+' Campaign: '+c.event+'.')}
+    section.querySelectorAll('[data-season-card]').forEach(function(card){
+      var on=card.getAttribute('data-season-card')===key;
+      card.classList.toggle('is-active',on);
+      if(on)card.setAttribute('aria-current','true');
+      else card.removeAttribute('aria-current');
+    });
+  }
+  function sectionName(el){
+    var node=el.closest('section,header,footer,.mobile-nav');
+    if(!node)return'global';
+    if(node.id)return node.id;
+    if(node.classList&&node.classList.contains('mobile-nav'))return'mobile_nav';
+    if(node.tagName)return node.tagName.toLowerCase();
+    return'global';
+  }
+  function track(eventName,data){
+    data=data||{};
+    data.season=currentSeason||'default';
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push(Object.assign({event:eventName},data));
+    if(typeof window.gtag==='function')window.gtag('event',eventName,data);
+    if(typeof window.fbq==='function'){
+      window.fbq('trackCustom',eventName,data);
+      if(eventName==='lead_click')window.fbq('track','Contact',{content_name:data.link_text||data.channel,content_category:data.channel});
+    }
+  }
+  function bindLeadTracking(){
+    document.addEventListener('click',function(e){
+      var target=e.target&&e.target.nodeType===1?e.target:e.target.parentElement;
+      var link=target&&target.closest&&target.closest('a[href]');
+      if(!link)return;
+      var href=link.getAttribute('href')||'';
+      var channel='';
+      if(href.indexOf('https://wa.me/')===0)channel='whatsapp';
+      else if(href.indexOf('tel:')===0)channel='phone';
+      else if(href.indexOf('mailto:')===0)channel='email';
+      if(!channel)return;
+      var p=params();
+      track('lead_click',{
+        channel:channel,
+        location:sectionName(link),
+        link_text:(link.textContent||'').replace(/\s+/g,' ').trim().slice(0,80),
+        utm_source:p.get('utm_source')||'',
+        utm_medium:p.get('utm_medium')||'',
+        utm_campaign:p.get('utm_campaign')||'',
+        page_path:window.location.pathname
+      });
+    });
+  }
+  window.proaquaTrack=track;
+  window.proaquaCampaign={getSeason:function(){return currentSeason||'default'},setSeason:function(key){if(campaigns[key]){manualSeason=key;applySeason()}}};
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){applySeason();bindLeadTracking()});
+  }else{
+    applySeason();bindLeadTracking();
+  }
+})();
+</script>
 <!-- MOBILE NAV OVERLAY -->
 <div class="mobile-nav" id="mobileNav">
   <button class="m-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>

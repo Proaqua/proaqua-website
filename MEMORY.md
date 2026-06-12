@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Seasonal Campaign Layer + Lead-Tracking-Hooks umgesetzt
+- **Erledigt:** `#seasonal` ist jetzt dynamisch kampagnenfaehig. Die Seite reagiert auf `?season=summer-ac`, `?season=sandstorm`, `?season=ramadan-eid`, `?season=back-to-school` sowie passende Werte in `utm_campaign`, `utm_content` oder `utm_term`.
+- **Erledigt:** Seasonal-Headline, Copy, aktive Karte, CTA-Text und WhatsApp-Prefill werden je nach Kampagne automatisch angepasst. Ohne URL-Parameter wird ein saisonaler Fokus nach Monat gesetzt: Feb-Apr Sandstorm, Mai-Jul Summer AC, Aug-Sep Back-to-School. Ramadan/Eid bleibt bewusst URL-gesteuert, weil die Daten jedes Jahr wechseln.
+- **Erledigt:** Globaler Lead-Tracking-Hook eingebaut. Klicks auf `wa.me`, `tel:` und `mailto:` senden `lead_click` in `dataLayer` und spaeter automatisch an `gtag`/`fbq`, sobald GA4 bzw. Meta Pixel vorhanden sind. Erfasste Felder: Channel, Website-Abschnitt, Linktext, Season, UTM-Quelle/-Medium/-Kampagne und Page Path.
+- **Erledigt:** Neues Arbeitsdokument `seasonal-campaign-plan.md` erstellt mit Kampagnen-URLs, saisonalen Fenstern, Meta-/Instagram-Creative-Angles und Messpunkten.
+- **Verifikation:** Playwright pruefte `?season=sandstorm...#seasonal` und `?utm_campaign=back_to_school_allergy_reset...#seasonal`. Headline, CTA, aktive Karte und `lead_click`-Payload korrekt. Mobile 390px: aktive Karte und CTA passen in den Viewport. Bestehende 2px Mobile-Überbreite und zwei SVG-Console-Errors unveraendert.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID von Giampiero eintragen, dann WhatsApp-Leads als Conversion in GA4/Meta konfigurieren.
+
 ### 2026-06-13 — Codex — IST-Analyse-Schwächen Arabic + Seasonality beseitigt
 - **Erledigt:** Neue Sektion `#arabic` direkt vor den Areas ergänzt: arabische RTL-Kurzfassung für Villen-/Apartment-Reinigung, AC-Duct-Cleaning, Mattress/Fabric-Sanitizing, Free Inspection, Festpreis vor Start und Vorher/Nachher-Fotos.
 - **Erledigt:** Arabischer WhatsApp-CTA mit arabischem Prefill eingebaut, damit Emiratis und arabische Expats ohne englische Hürde anfragen können.
