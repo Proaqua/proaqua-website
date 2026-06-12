@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — S3 B2B-Sektion umgesetzt
+- **Erledigt:** Neue Sektion `#business` direkt vor `#areas` eingefügt: "For Property Managers, Holiday Homes & Offices".
+- **Inhalt:** B2B/Property bleibt als eigene Sektion getrennt von der Hauptbotschaft. Zielgruppen-Karten für Property Managers, Holiday Homes und Offices plus dunkles Kontaktpanel für mehrere Einheiten/reguläre Planung.
+- **CTA:** Eigener WhatsApp-Link "WhatsApp for Business Quote" mit Business-Prefill: Property/Holiday Home/Office, AC duct cleaning, deep cleaning, multiple units.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/#business` mit Playwright geprüft. Desktop 1280px: kein Overflow, drei Karten in Reihe, nächster Abschnitt ist `#areas`. Mobile 390px: Karten und Panel stapeln sauber, CTA passt in den Viewport. Bestehende zwei SVG-Console-Errors bleiben unverändert und liegen nicht im neuen S3-Block.
+- **Nächster Schritt:** T1 Bilder auslagern: 16 Base64-Bilder gezielt nach `assets/` als WebP auslagern, `loading="lazy"`, initiale HTML-Größe deutlich reduzieren. Vorsicht: `index.html` nie komplett neu generieren.
+
 ### 2026-06-13 — Codex — S1 Vergleichsblock + Hero-Claim umgesetzt
 - **Erledigt:** Hero-Subline ergänzt: "Hospital-grade cleaning at family-fair fixed prices. One team, one face you know — proof on every job."
 - **Erledigt:** Neuer Vergleichsblock `#compare` direkt nach Hero/Trust-Belt und vor dem Quiz eingebaut: 3 Spalten "Booking Apps / Pro Aqua Dubai / Premium Services" ohne Konkurrenznamen.
