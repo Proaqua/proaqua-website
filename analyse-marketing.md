@@ -8,18 +8,18 @@
 ### Positionierung & Messaging — **7/10**
 Die Seite hat eine klare, emotionale Story: Franco als Gesicht, Gesundheits-Argument (Allergien, Schimmel, Luftqualität), "medical-grade", Festpreis, kostenlose Inspektion. Das ist deutlich besser als 90 % der Dubai-Konkurrenz.
 
-**Schwächen:**
-- **"Dubai's #1 Choice"** ist eine unbelegbare Floskel — jeder Billiganbieter schreibt das. Sie macht die echten Beweise (4,7★, 1.277 Kunden) unglaubwürdiger statt stärker.
-- Der wichtigste Unterschied wird **nirgends explizit gesagt**: Bei Pro Aqua kommt ein spezialisiertes Team mit persönlich haftbarem Inhaber — bei Justlife/ServiceMarket bucht man anonyme, wechselnde Subunternehmer über eine App. Dieser Kontrast muss auf die Seite.
-- Die Statistik **"87 % of Dubai AC Systems contain mold"** ist ohne Quelle. In einem Markt, wo Saniservice mit NADCA-Zertifizierung und Mikrobiologie-Expertise wirbt, fällt so etwas bei kritischen Kunden (und bei Google) negativ auf. Quelle nennen oder umformulieren.
+**Schwächen — Status 13.06.2026: behoben/entschärft**
+- **"Dubai's #1 Choice"** wurde durch belegbare Social-Proof-Signale ersetzt: "Trusted by 1,277+ Families", 4,7★ Google, Kundenanzahl, Trust-Chips.
+- **Owner-led Specialist vs. App-Anbieter** wird jetzt explizit im Vergleichsblock `#compare` erklärt: Booking Apps / Pro Aqua Dubai / Premium Services.
+- **"87 % of Dubai AC Systems contain mold"** wurde entfernt und in eine vorsichtigere, unbelegte Statistik vermeidende 12-Monats-Aussage umformuliert.
 
 ### Zielgruppen-Fit Dubai — **6/10**
 Englischsprachige Expat-Familien werden gut angesprochen (Kids & Pets safe, Villen & Apartments, bekannte Stadtteile von Palm bis JVC). Es gibt arabische Akzente (نظافة متكاملة) — sympathisch, aber nur Deko.
 
-**Lücken:**
-- **Keine arabische Version** — Emiratis und arabische Expats sind das kaufkräftigste Segment für Villen-Deep-Cleaning.
-- **Kein B2B-Angebot sichtbar:** Property Manager, Airbnb/Holiday-Home-Betreiber (riesiger Markt in Dubai Marina/JBR), Büros und Kitas haben wiederkehrenden Bedarf — auf der Seite existieren sie nicht.
-- **Keine Saisonalität:** Dubai hat klare Trigger (Sommer = AC-Dauerbetrieb, Sandstürme, Ramadan-/Eid-Reinigung, Back-to-School-Allergien). Die Seite ist statisch das ganze Jahr gleich.
+**Lücken — Status 13.06.2026: behoben/teilweise behoben**
+- **Arabische Kurzversion ergänzt:** Neuer Abschnitt `#arabic` mit RTL-Layout, arabischer Service-Zusammenfassung und arabischem WhatsApp-Prefill. Eine vollständige separate arabische Seite mit `hreflang` bleibt später sinnvoll.
+- **B2B-Angebot sichtbar:** Neuer Abschnitt `#business` für Property Managers, Holiday Homes und Offices mit eigenem Business-WhatsApp-CTA.
+- **Saisonalität ergänzt:** Neuer Abschnitt `#seasonal` mit konkreten Dubai-Triggern: Summer AC Check, Sandstorm Reset, Ramadan & Eid, Back-to-School Allergy Reset.
 
 ### Verkaufspsychologie & Conversion — **7,5/10**
 Stark: Preis-Quiz (30 Sekunden, ohne E-Mail — sehr gut gegen Anfrage-Hürde), WhatsApp-first (richtig für Dubai), mehrfache CTAs, Risk-Reversal (kostenlose Inspektion, Nachreinigung gratis), Urgency ("limited slots").

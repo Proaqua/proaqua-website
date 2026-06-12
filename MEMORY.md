@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — IST-Analyse-Schwächen Arabic + Seasonality beseitigt
+- **Erledigt:** Neue Sektion `#arabic` direkt vor den Areas ergänzt: arabische RTL-Kurzfassung für Villen-/Apartment-Reinigung, AC-Duct-Cleaning, Mattress/Fabric-Sanitizing, Free Inspection, Festpreis vor Start und Vorher/Nachher-Fotos.
+- **Erledigt:** Arabischer WhatsApp-CTA mit arabischem Prefill eingebaut, damit Emiratis und arabische Expats ohne englische Hürde anfragen können.
+- **Erledigt:** Neue Sektion `#seasonal` ergänzt: Summer AC Check, Sandstorm Reset, Ramadan & Eid sowie Back-to-School Allergy Reset als konkrete Dubai-Trigger.
+- **Analyse aktualisiert:** `analyse-marketing.md` markiert die IST-Schwächen/Lücken jetzt als behoben bzw. teilweise behoben und verweist auf `#compare`, `#business`, `#arabic` und `#seasonal`.
+- **Verifikation:** Lokale Vorschau `#arabic` und `#seasonal` mit Playwright geprüft. Desktop 1280px ohne Overflow; mobile Elemente passen innerhalb 390px. Bestehende 2px Mobile-Überbreite und zwei SVG-Console-Errors sind unverändert und gehören nicht zu diesem Schritt.
+- **Nächster Schritt:** T2 Tracking: GA4 einbauen und Klick-Events auf alle `wa.me`-/`tel:`-Links ergänzen.
+
 ### 2026-06-13 — Codex — T1 Base64-Bilder ausgelagert
 - **Erledigt:** Alle tatsächlich vorhandenen Base64-`<img>`-Bilder aus `index.html` ausgelagert. Analyse ergab 13 Base64-Bilder (nicht 16): Franco-Foto, Service-/Before-After-Bilder und 3 WhatsApp-Review-Screenshots.
 - **Assets:** 13 WebP-Dateien in `assets/` erzeugt und `src`-Attribute gezielt ersetzt. Bestehende `loading="lazy"`-Attribute blieben erhalten; alle 13 WebP-Referenzen haben weiterhin Lazy Loading.

@@ -521,6 +521,30 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .business-note{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
 @media(max-width:900px){.business-in{grid-template-columns:1fr}.business-grid{grid-template-columns:1fr}.business-panel{padding:24px}}
 
+/* ARABIC & SEASONAL */
+.arabic-bg{background:linear-gradient(180deg,#fff 0%,var(--bg2) 100%)}
+.arabic-in{display:grid;grid-template-columns:.92fr 1.08fr;gap:32px;align-items:center}
+.arabic-card{background:#fff;border:1.5px solid var(--g300);border-radius:var(--rxl);padding:32px;box-shadow:var(--sh);direction:rtl;text-align:right}
+.arabic-card h2{font-size:34px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:14px}
+.arabic-card p{font-size:16px;color:var(--g600);line-height:1.9;margin-bottom:18px}
+.arabic-list{list-style:none;display:grid;gap:10px;margin-bottom:24px}
+.arabic-list li{font-size:14px;color:var(--g700);line-height:1.6;display:flex;gap:10px;align-items:flex-start;justify-content:flex-start}
+.arabic-list li::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--green-l);border:1px solid rgba(113,196,159,.45);flex-shrink:0;margin-top:4px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%234DA882' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:12px;background-position:center;background-repeat:no-repeat}
+.arabic-cta{display:inline-flex;align-items:center;justify-content:center;background:#25D366;color:#fff;border-radius:var(--rl);padding:14px 22px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.32)}
+.arabic-side{display:grid;gap:14px}
+.arabic-proof{background:#fff;border:1px solid var(--g300);border-radius:var(--rl);padding:18px 20px;box-shadow:var(--sh0)}
+.arabic-proof strong{display:block;font-size:15px;color:var(--navy);margin-bottom:5px}
+.arabic-proof span{font-size:13px;color:var(--g500);line-height:1.55}
+.seasonal-bg{background:var(--bg2)}
+.seasonal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.season-card{background:#fff;border:1.5px solid var(--g300);border-radius:var(--rl);padding:22px 18px;box-shadow:var(--sh0)}
+.season-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.season-card h3{font-size:16px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:8px}
+.season-card p{font-size:13px;color:var(--g500);line-height:1.6}
+.season-cta-row{display:flex;justify-content:center;margin-top:30px}
+@media(max-width:900px){.arabic-in{grid-template-columns:1fr}.seasonal-grid{grid-template-columns:1fr 1fr}.arabic-card{padding:26px}.arabic-card h2{font-size:28px}}
+@media(max-width:600px){.seasonal-grid{grid-template-columns:1fr}.arabic-card h2{font-size:24px}}
+
 /* AREAS */
 .areas-bg{background:var(--bg2)}
 .areas-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
@@ -1874,6 +1898,66 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
           <div class="business-note">For apartments, villas, offices and managed short-stay units across Dubai.</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARABIC SERVICE SUMMARY -->
+<section class="arabic-bg" id="arabic">
+  <div class="sec">
+    <div class="arabic-in">
+      <div class="arabic-card" lang="ar" dir="rtl">
+        <div class="chip-row" style="justify-content:flex-end"><span class="chip cb">العربية</span></div>
+        <h2>تنظيف وتعقيم احترافي للفلل والشقق في دبي</h2>
+        <p>فريق متخصص بقيادة فرانكو لتنظيف مجاري التكييف، التعقيم العميق للمراتب والأقمشة، وتنظيف المنازل. فحص مجاني، سعر ثابت قبل البدء، وصور قبل وبعد لكل عمل.</p>
+        <ul class="arabic-list">
+          <li>آمن للأطفال والحيوانات الأليفة</li>
+          <li>مناسب للفلل، الشقق، المكاتب وبيوت العطلات</li>
+          <li>رد سريع عبر واتساب طوال الأسبوع</li>
+        </ul>
+        <a class="arabic-cta" href="https://wa.me/971567943412?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C+%D8%A3%D8%B1%D9%8A%D8%AF+%D8%AD%D8%AC%D8%B2+%D9%81%D8%AD%D8%B5+%D9%85%D8%AC%D8%A7%D9%86%D9%8A+%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81+%D9%85%D8%AC%D8%A7%D8%B1%D9%8A+%D8%A7%D9%84%D8%AA%D9%83%D9%8A%D9%8A%D9%81+%D8%A3%D9%88+%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81+%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D9%82+%D9%81%D9%8A+%D8%AF%D8%A8%D9%8A." target="_blank" rel="noopener">احجز فحصاً مجانياً عبر واتساب</a>
+      </div>
+      <div class="arabic-side">
+        <div class="arabic-proof"><strong>Arabic-speaking clients</strong><span>A clear Arabic summary makes villa and family buyers feel seen before they message.</span></div>
+        <div class="arabic-proof"><strong>Owner-led specialist team</strong><span>The same Pro Aqua positioning, now visible for Arabic-speaking Dubai households.</span></div>
+        <div class="arabic-proof"><strong>Free inspection first</strong><span>No pressure, no hidden fees: scope and price are confirmed before cleaning starts.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONAL TRIGGERS -->
+<section class="seasonal-bg" id="seasonal">
+  <div class="sec">
+    <div style="text-align:center">
+      <div class="chip-row" style="justify-content:center"><span class="chip cb">Dubai Seasonal Triggers</span></div>
+      <h2 class="sec-t" style="text-align:center">Book Cleaning When Dubai <em class="blue-em">Actually</em> Needs It</h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">AC systems, fabrics and mattresses need different attention across the year. Use the trigger that matches your home now.</p>
+    </div>
+    <div class="seasonal-grid">
+      <div class="season-card">
+        <div class="season-tag">Summer AC Check</div>
+        <h3>When the AC runs all day</h3>
+        <p>Book duct inspection and cleaning before heavy daily AC use turns dust and moisture into recurring air-quality problems.</p>
+      </div>
+      <div class="season-card">
+        <div class="season-tag">Sandstorm Reset</div>
+        <h3>After dusty weeks</h3>
+        <p>Refresh ducts, filters, sofas and carpets after sand and fine dust settle inside the home.</p>
+      </div>
+      <div class="season-card">
+        <div class="season-tag">Ramadan &amp; Eid</div>
+        <h3>Before family visits</h3>
+        <p>Deep clean villas, mattresses and fabric surfaces before guests, gatherings and holiday routines.</p>
+      </div>
+      <div class="season-card">
+        <div class="season-tag">Back-to-School</div>
+        <h3>Allergy reset for kids</h3>
+        <p>Sanitize mattresses, sofas and AC air paths before bedrooms and study spaces return to daily use.</p>
+      </div>
+    </div>
+    <div class="season-cta-row">
+      <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+seasonal+cleaning+inspection+for+my+home+in+Dubai." class="btn btn-blue btn-xl" target="_blank" rel="noopener">Book Seasonal Inspection</a>
     </div>
   </div>
 </section>
