@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — S1 Vergleichsblock + Hero-Claim umgesetzt
+- **Erledigt:** Hero-Subline ergänzt: "Hospital-grade cleaning at family-fair fixed prices. One team, one face you know — proof on every job."
+- **Erledigt:** Neuer Vergleichsblock `#compare` direkt nach Hero/Trust-Belt und vor dem Quiz eingebaut: 3 Spalten "Booking Apps / Pro Aqua Dubai / Premium Services" ohne Konkurrenznamen.
+- **Positionierung:** Pro-Aqua-Spalte betont Franco/gleiches Team, AC-Duct-/Mattress-/Fabric-Spezialisierung, fairen Festpreis vor Start, Vorher/Nachher-Fotos und Free-Re-clean-Garantie. Keine neue konkrete Ab-Preis-Zahl eingebaut, weil Preise noch von Giampiero zu prüfen sind.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/#compare` mit Playwright geprüft. Desktop 1280px: 3 gleich breite Spalten, kein Overflow. Mobile 390px: Karten stapeln, Pro Aqua erscheint zuerst, Kartenbreite 358px mit Seitenabstand. In-App-Browser war nicht verfügbar, deshalb Playwright-Fallback genutzt. Bestehende Console-Errors in SVG-Paths (nicht S1) bleiben unverändert.
+- **Hinweis:** Globale 2px Mobile-Überbreite kommt laut Prüfung aus bestehenden Trust-Belt/Franco-Elementen, nicht aus dem neuen Vergleichsblock; nicht im S1-Schritt geändert.
+**Nächster Schritt:** S3 B2B-Sektion "For Property Managers, Holiday Homes & Offices" mit eigenem WhatsApp-CTA (Business-Prefill) vor dem Areas-Abschnitt.
+
 ### 2026-06-13 (später) — Claude (Cowork) — Quick Wins umgesetzt
 Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 - **Q1:** Typo "AC Duct Conduct Cleaning" → "AC Duct Deep Cleaning" (+ alt-Text)
