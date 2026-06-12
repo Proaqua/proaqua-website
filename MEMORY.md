@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Vergleichssektion conversion-staerker gestaltet
+- **Erledigt:** `#compare` gezielt aufgewertet, ohne `index.html` neu zu generieren: Pro Aqua wird in Headline, Farbe, Breite und Kartenhierarchie klar staerker als die Alternativen sichtbar.
+- **Erledigt:** Pro-Aqua-Karte mit Brand-Marker, Badge "THE ACCOUNTABLE CHOICE", Owner-led-Positionierung, Proof-Chips (`4.7 Google`, `1,277+`, `Since 2016`, `Photo proof`) und staerkerem Free-Inspection-CTA erweitert.
+- **Erledigt:** Booking Apps und Premium Services fair eingeordnet ueber "Best for" / "Trade-off"-Badges, damit der Vergleich verkaufspsychologisch klarer, aber nicht plump wirkt.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/#compare` mit Playwright geprüft. Desktop 1280px: Pro-Aqua-Karte 408px statt 318px Seitenkarten, 4 Proof-Chips, CTA korrekt, kein Overflow. Mobile 390px: Pro Aqua erscheint zuerst, Kartenbreite 358px, Badge/CTA/Proof-Chips innerhalb des Viewports, Console 0 Errors / 0 Warnings.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID eintragen, sobald Giampiero sie liefert; alternativ die Before/After-Galerie mit echten Stadtteil-/Monat-Daten weiter schaerfen.
+
 ### 2026-06-13 — Codex — Kampagnenbilder V2 mit Vivenso-Equipment und weissen Polos erstellt
 - **Erledigt:** `vivenso-pro-aqua-flyer.pdf` visuell gerendert und Equipment-Merkmale uebernommen: weisses Vivenso/Pro-Aqua Wasserfiltersystem, transparente Wasserwanne, schwarze Schlaeuche/Griffe, schwarzes bzw. blau-tuerkises Bedienfeld, Spruehextraktionsduese fuer Polster/Matratzen.
 - **Erledigt:** Pro-Aqua-Video-Frames geprueft; Techniker-Outfit fuer neue Prompts auf weisse Polos mit dunklem Kragen/Trim und blauen Handschuhen korrigiert.

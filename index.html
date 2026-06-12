@@ -1330,28 +1330,55 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 <!-- ===================== COMPARISON (S1) ===================== -->
 <section class="cmp-bg" id="compare" style="background:var(--bg2)">
   <style>
-    .cmp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1060px;margin:36px auto 0}
-    .cmp-card{background:var(--white);border:1px solid var(--g300);border-radius:16px;padding:26px 22px}
+    .cmp-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.18fr) minmax(0,.92fr);align-items:stretch;gap:18px;max-width:1080px;margin:36px auto 0}
+    .cmp-highlight{color:var(--green-d)}
+    .cmp-targets{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:18px auto 0}
+    .cmp-targets span{display:inline-flex;align-items:center;min-height:30px;padding:6px 11px;border-radius:99px;background:var(--white);border:1px solid rgba(77,168,130,.26);color:var(--navy);font-size:12px;font-weight:700;box-shadow:0 4px 14px rgba(28,50,68,.06)}
+    .cmp-card{background:var(--white);border:1px solid var(--g300);border-radius:16px;padding:24px 22px;position:relative;min-width:0}
     .cmp-card h3{font-size:17px;margin:0 0 4px;color:var(--navy)}
     .cmp-card .cmp-sub{font-size:12.5px;color:var(--g500);margin-bottom:16px}
+    .cmp-side-meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+    .cmp-pill{display:inline-flex;align-items:center;min-height:26px;padding:5px 9px;border-radius:99px;background:var(--bg);border:1px solid var(--bg3);color:var(--g600);font-size:11px;font-weight:700}
+    .cmp-pill.cmp-fit{background:var(--blue-l);border-color:rgba(88,153,227,.24);color:var(--blue-d)}
+    .cmp-pill.cmp-trade{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
     .cmp-card ul{list-style:none;margin:0;padding:0}
     .cmp-card li{font-size:13.5px;line-height:1.5;padding:7px 0 7px 24px;position:relative;color:var(--g500);border-top:1px solid var(--bg3)}
     .cmp-card li:before{content:"–";position:absolute;left:4px;color:var(--g400);font-weight:700}
-    .cmp-hero{border:2px solid var(--green-d);box-shadow:0 10px 30px rgba(77,168,130,.16);position:relative}
-    .cmp-hero .cmp-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green-d);color:#fff;font-size:11px;font-weight:700;letter-spacing:.6px;padding:5px 14px;border-radius:99px;white-space:nowrap}
+    .cmp-hero{border:2px solid var(--green-d);box-shadow:0 18px 44px rgba(77,168,130,.22);background:linear-gradient(180deg,#fff 0%,var(--green-ll) 100%);padding:30px 24px;transform:translateY(-8px);z-index:1}
+    .cmp-hero .cmp-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:6px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 20px rgba(28,50,68,.18)}
+    .cmp-brand{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+    .cmp-mark{width:46px;height:46px;min-width:46px;border-radius:12px;background:linear-gradient(135deg,var(--green-d),var(--blue));color:#fff;display:grid;place-items:center;font-size:16px;font-weight:800;box-shadow:0 8px 22px rgba(77,168,130,.28)}
+    .cmp-brand h3{font-size:23px;margin:0;color:var(--navy)}
+    .cmp-owner{font-size:12px;font-weight:700;color:var(--green-d);line-height:1.35}
+    .cmp-hero-line{font-size:13.5px;color:var(--navy);font-weight:700;line-height:1.55;margin:0 0 14px}
+    .cmp-proof-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 18px}
+    .cmp-proof{background:#fff;border:1px solid rgba(77,168,130,.24);border-radius:12px;padding:9px 10px;min-height:64px;box-shadow:0 6px 16px rgba(28,50,68,.05)}
+    .cmp-proof strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
+    .cmp-proof span{display:block;color:var(--g500);font-size:11.5px;line-height:1.35;margin-top:3px}
     .cmp-hero li{color:var(--navy)}
     .cmp-hero li:before{content:"✓";color:var(--green-d)}
-    .cmp-cta{display:block;text-align:center;background:var(--green-d);color:#fff;font-weight:700;font-size:14px;border-radius:10px;padding:13px;margin-top:18px;text-decoration:none}
-    @media(max-width:860px){.cmp-grid{grid-template-columns:1fr;max-width:480px}.cmp-hero{order:-1}}
+    .cmp-cta{display:block;text-align:center;background:var(--green-d);color:#fff;font-weight:800;font-size:13.5px;line-height:1.35;border-radius:10px;padding:14px 12px;margin-top:18px;text-decoration:none;box-shadow:0 10px 24px rgba(77,168,130,.24)}
+    @media(max-width:860px){.cmp-grid{grid-template-columns:1fr;max-width:500px}.cmp-hero{order:-1;transform:none}.cmp-targets{max-width:500px}}
+    @media(max-width:420px){.cmp-proof-row{grid-template-columns:1fr 1fr}.cmp-brand h3{font-size:21px}.cmp-hero{padding:30px 20px 24px}.cmp-card{padding:24px 20px}}
   </style>
   <div class="sec">
     <div class="chip-row" style="justify-content:center"><span class="chip" style="background:var(--green-l);color:var(--green-d);border:1px solid rgba(77,168,130,.25);font-size:11px">An Honest Comparison</span></div>
-    <h2 class="sec-t" style="text-align:center">Booking Apps, Premium Services —<br>or Pro Aqua?</h2>
-    <p style="text-align:center;max-width:560px;margin:10px auto 0;color:var(--g500);font-size:14.5px">Dubai has hundreds of cleaning options. Here is the honest difference — so you can decide what your home deserves.</p>
+    <h2 class="sec-t" style="text-align:center">Booking Apps, Premium Services —<br>or <span class="cmp-highlight">Pro Aqua?</span></h2>
+    <p style="text-align:center;max-width:640px;margin:10px auto 0;color:var(--g500);font-size:14.5px">Dubai has hundreds of cleaning options. The real difference is accountability: an app booking, a corporate provider, or one specialist team led by Franco.</p>
+    <div class="cmp-targets" aria-label="Pro Aqua proof points">
+      <span>Owner-led team</span>
+      <span>Fixed quote before start</span>
+      <span>Photo proof every job</span>
+      <span>Free re-clean guarantee</span>
+    </div>
     <div class="cmp-grid">
       <div class="cmp-card">
+        <div class="cmp-side-meta">
+          <span class="cmp-pill cmp-fit">Best for speed</span>
+          <span class="cmp-pill cmp-trade">Trade-off: rotating crews</span>
+        </div>
         <h3>Booking Apps</h3>
-        <div class="cmp-sub">Convenient — but anonymous</div>
+        <div class="cmp-sub">Fast booking — limited accountability</div>
         <ul>
           <li>A different crew every visit</li>
           <li>General cleaners, not AC-duct specialists</li>
@@ -1361,19 +1388,35 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
         </ul>
       </div>
       <div class="cmp-card cmp-hero">
-        <div class="cmp-badge">THE PRO AQUA WAY</div>
-        <h3>Pro Aqua Dubai</h3>
-        <div class="cmp-sub">Hospital-grade cleaning · family-fair fixed prices</div>
+        <div class="cmp-badge">THE ACCOUNTABLE CHOICE</div>
+        <div class="cmp-brand">
+          <div class="cmp-mark" aria-hidden="true">PA</div>
+          <div>
+            <h3>Pro Aqua Dubai</h3>
+            <div class="cmp-owner">Franco's owner-led specialist team</div>
+          </div>
+        </div>
+        <div class="cmp-hero-line">Hospital-grade cleaning at family-fair fixed prices.</div>
+        <div class="cmp-proof-row" aria-label="Pro Aqua proof">
+          <div class="cmp-proof"><strong>4.7 Google</strong><span>trusted public rating</span></div>
+          <div class="cmp-proof"><strong>1,277+</strong><span>Dubai clients</span></div>
+          <div class="cmp-proof"><strong>Since 2016</strong><span>local experience</span></div>
+          <div class="cmp-proof"><strong>Photo proof</strong><span>sent after every job</span></div>
+        </div>
         <ul>
-          <li>Franco's own trained team — same faces, every time</li>
-          <li>AC ducts, mattresses &amp; fabrics — that's all we do</li>
-          <li>Fair fixed price confirmed before we start</li>
-          <li>Before &amp; after photos on every single job</li>
+          <li>Franco's own trained team — same faces, real accountability</li>
+          <li>Specialists for AC ducts, mattresses &amp; fabrics</li>
+          <li>Fixed quote before work starts — no surprise extras</li>
+          <li>Before &amp; after photos sent for every job</li>
           <li>Not satisfied? Free re-clean, guaranteed</li>
         </ul>
-        <a class="cmp-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+my+free+inspection" target="_blank" rel="noopener">WhatsApp Franco's Team</a>
+        <a class="cmp-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+my+free+inspection" target="_blank" rel="noopener">WhatsApp Franco's Team for a Free Inspection</a>
       </div>
       <div class="cmp-card">
+        <div class="cmp-side-meta">
+          <span class="cmp-pill cmp-fit">Best for corporate scope</span>
+          <span class="cmp-pill cmp-trade">Trade-off: premium budgets</span>
+        </div>
         <h3>Premium Services</h3>
         <div class="cmp-sub">Excellent — at a price</div>
         <ul>
