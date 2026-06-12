@@ -59,6 +59,17 @@ Back-to-School:
 - Visual: Kids room, mattress sanitizing, AC vent inspection.
 - CTA: Book Allergy Reset.
 
+## Generierte V1-Assets
+
+Diese Bilder sind KI-generierte Kampagnenvisuals und duerfen nicht als echte Vorher/Nachher-Beweise verwendet werden:
+
+- `assets/campaign-summer-ac-check-dubai.webp`
+- `assets/campaign-sandstorm-reset-dubai.webp`
+- `assets/campaign-ramadan-eid-cleaning-dubai.webp`
+- `assets/campaign-back-to-school-allergy-reset-dubai.webp`
+
+Die echten Beweisbilder bleiben ausschliesslich im Abschnitt `#before-after`.
+
 ## Messpunkte
 
 Der vorhandene Tracking-Hook sendet bei jedem Lead-Klick das Event `lead_click` mit:

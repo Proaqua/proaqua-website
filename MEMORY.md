@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Kampagnenbilder generiert und Before/After-Galerie gestaerkt
+- **Erledigt:** `image-generation-brief.md` erstellt: Master Mega Prompt, Negativliste und vier konkrete Prompts fuer saisonale Meta-/Instagram-Visuals. Grundsatz dokumentiert: KI-Bilder nur fuer Kampagnen-/Hero-/Social-Visuals, nicht als echte Vorher/Nachher-Beweise.
+- **Erledigt:** Vier saisonale Kampagnenbilder mit dem eingebauten Imagegen-Tool erzeugt, als WebP komprimiert und nach `assets/` kopiert: `campaign-summer-ac-check-dubai.webp`, `campaign-sandstorm-reset-dubai.webp`, `campaign-ramadan-eid-cleaning-dubai.webp`, `campaign-back-to-school-allergy-reset-dubai.webp`.
+- **Erledigt:** Die vier Bilder in `#seasonal` eingebunden (`loading="lazy"`, sinnvolle Alt-Texte, keine Base64-Einbettung). `seasonal-campaign-plan.md` dokumentiert die generierten V1-Assets und warnt, sie nicht als echte Beweisbilder zu verwenden.
+- **Erledigt:** Echte `#before-after`-Galerie verkaufsstaerker gemacht: Intro-Copy auf dokumentierte Dubai-Jobs geschaerft und sechs Proof-Badges "Real job · photo documented" ergaenzt.
+- **Verifikation:** Alle vier neuen WebP-Dateien liefern lokal `200 image/webp`. Playwright: Seasonal-Bilder laden mit gueltiger `naturalWidth`, 6 Proof-Badges vorhanden, Console 0 Errors / 0 Warnings, Desktop 1280px und Mobile 390px ohne Overflow.
+- **Nächster Schritt:** Bei echten Kundendaten die Before/After-Captions um Stadtteil + Monat/Jahr ergaenzen; sobald GA4/Meta-IDs da sind, Tracking finalisieren.
+
 ### 2026-06-13 — Codex — SVG-Console-Fehler und Mobile-Overflow beseitigt
 - **Erledigt:** Ungültigen Logo-/Favicon-SVG-Pfad korrigiert (`...C33 17 22 5Z` → gültiger Abschluss mit explizitem Zielpunkt). Betroffen waren Favicon, Header-Logo und Footer-Logo.
 - **Erledigt:** Die bisher bekannte 2px-Mobile-Überbreite in der Franco-Sektion behoben. Ursache war `.franco-photo-wrap` als Grid-Kind mit effektivem Überlauf; gelöst über `min-width:0`, `max-width:100%` und leicht kompaktere mobile Stat-Chips.
