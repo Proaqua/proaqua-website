@@ -21,12 +21,29 @@
 - **Analyse-Prompt:** `prompt-marketing-analyse.md` (für manuelle Nutzung in Codex).
 - **Sprache mit Giampiero:** Deutsch.
 
-## Offene Entscheidungen (von Giampiero zu treffen)
+## Offene Entscheidungen / TODOs (Giampiero)
 
-- [ ] Positionierungs-These freigeben (siehe Analyse-Bericht)
-- [ ] Welche Maßnahmen aus dem Bericht zuerst umsetzen
+- [ ] **Echte DED Trade License No.** liefern → ersetzt Platzhalter "0000000" in den Trust-Chips (2 Stellen in index.html)
+- [ ] **DM-Approval bestätigen** — Chip "Dubai Municipality Approved" ist auf Zuruf eingebaut, Nachweis fehlt noch
+- [ ] **Echtes Foto Franco** → ersetzt `assets/franco.jpg` (aktuell Dummy-Silhouette; einfach Datei austauschen, Code bleibt)
+- [ ] **Ab-Preise prüfen:** AC Duct ab AED 400? Villa Deep Clean? Mattress AED 89? (TODO-Kommentare oben in index.html)
+- [ ] **Positionierungs-These:** Giampiero will sie ANPASSEN (noch nicht final; Vorschlag in analyse-marketing.md §2)
 
 ## Arbeitslog
+
+### 2026-06-13 (später) — Claude (Cowork) — Quick Wins umgesetzt
+Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
+- **Q1:** Typo "AC Duct Conduct Cleaning" → "AC Duct Deep Cleaning" (+ alt-Text)
+- **Q2:** Beide `fc-av`-Initialen-Avatare → `<img src="assets/franco.jpg">` mit onerror-Fallback auf "Fr". Dummy-Bild liegt in assets/ — echtes Foto einfach Datei ersetzen.
+- **Q3:** Hero "Dubai's #1 Choice." → "Trusted by 1,277+ Families."; Trust-Chip "#1 Choice" (2×) → "Dubai Municipality Approved"
+- **Q4:** Chip "Licensed & Insured Dubai" (2×) → "Licensed & Insured · DED Trade License No. 0000000" (PLATZHALTER!)
+- **Q6:** Review "20+ years" gekürzt (Widerspruch zu since 2016)
+- **Q7:** 87%-Karte → "12mo / Is All It Takes" (unbelegte Statistik entschärft)
+- **Q8:** Zahlung (FAQ sichtbar + JSON-LD): "card payment, cash and bank transfer"
+- **T3:** `og-image.jpg` (1200×630) generiert, liegt im Root — Meta-Tag zeigte schon dorthin
+- 3 TODO-HTML-Kommentare oben in index.html (Preise, License, Foto)
+- Browser-Check auf localhost:8742: Hero + Foto-Platzhalter rendern korrekt.
+**Nächste Schritte (Reihenfolge laut Plan):** T1 Bilder auslagern (3,2 MB → <500 KB, größter Brocken), T2 GA4+CTA-Tracking, S1 Vergleichs-Block (App vs. Premium vs. Pro Aqua), S6 Vorher/Nachher-Kontexte. Positionierungs-These mit Giampiero finalisieren.
 
 ### 2026-06-13 — Claude (Cowork)
 - Repo von GitHub geklont → lokal auf Desktop/Proaqua-website. Branch `main`, sauber.
