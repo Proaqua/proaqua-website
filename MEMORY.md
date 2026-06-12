@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — T1 Base64-Bilder ausgelagert
+- **Erledigt:** Alle tatsächlich vorhandenen Base64-`<img>`-Bilder aus `index.html` ausgelagert. Analyse ergab 13 Base64-Bilder (nicht 16): Franco-Foto, Service-/Before-After-Bilder und 3 WhatsApp-Review-Screenshots.
+- **Assets:** 13 WebP-Dateien in `assets/` erzeugt und `src`-Attribute gezielt ersetzt. Bestehende `loading="lazy"`-Attribute blieben erhalten; alle 13 WebP-Referenzen haben weiterhin Lazy Loading.
+- **Ergebnis:** `index.html` von ca. 3,25 MB auf 154.167 Bytes reduziert und damit deutlich unter dem Ziel <500 KB initial.
+- **Verifikation:** Keine Base64-`<img>`-Quellen mehr (`0`), 13 WebP-Referenzen, 13/13 Dateien lokal vorhanden. Lokaler Server liefert alle WebP-Dateien mit `200 image/webp`; Playwright prüfte sichtbare WebP-Bilder mit gültiger `naturalWidth`. Bestehende zwei SVG-Console-Errors bleiben unverändert und gehören nicht zu T1.
+- **Nächster Schritt:** T2 Tracking: GA4 einbauen und Klick-Events auf alle `wa.me`-/`tel:`-Links ergänzen.
+
 ### 2026-06-13 — Codex — S3 B2B-Sektion umgesetzt
 - **Erledigt:** Neue Sektion `#business` direkt vor `#areas` eingefügt: "For Property Managers, Holiday Homes & Offices".
 - **Inhalt:** B2B/Property bleibt als eigene Sektion getrennt von der Hauptbotschaft. Zielgruppen-Karten für Property Managers, Holiday Homes und Offices plus dunkles Kontaktpanel für mehrere Einheiten/reguläre Planung.
