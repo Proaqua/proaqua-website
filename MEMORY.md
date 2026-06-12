@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — SVG-Console-Fehler und Mobile-Overflow beseitigt
+- **Erledigt:** Ungültigen Logo-/Favicon-SVG-Pfad korrigiert (`...C33 17 22 5Z` → gültiger Abschluss mit explizitem Zielpunkt). Betroffen waren Favicon, Header-Logo und Footer-Logo.
+- **Erledigt:** Die bisher bekannte 2px-Mobile-Überbreite in der Franco-Sektion behoben. Ursache war `.franco-photo-wrap` als Grid-Kind mit effektivem Überlauf; gelöst über `min-width:0`, `max-width:100%` und leicht kompaktere mobile Stat-Chips.
+- **Verifikation:** Playwright auf `http://localhost:8742/`: Console 0 Errors / 0 Warnings. Mobile 390px: `scrollWidth=390`, kein Overflow. Desktop 1280px: `scrollWidth=1280`, kein Overflow.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID eintragen, sobald Giampiero sie liefert; alternativ S6 Vorher/Nachher-Captions mit Stadtteil+Monat, sobald echte Infos vorliegen.
+
 ### 2026-06-13 — Codex — Seasonal Campaign Layer + Lead-Tracking-Hooks umgesetzt
 - **Erledigt:** `#seasonal` ist jetzt dynamisch kampagnenfaehig. Die Seite reagiert auf `?season=summer-ac`, `?season=sandstorm`, `?season=ramadan-eid`, `?season=back-to-school` sowie passende Werte in `utm_campaign`, `utm_content` oder `utm_term`.
 - **Erledigt:** Seasonal-Headline, Copy, aktive Karte, CTA-Text und WhatsApp-Prefill werden je nach Kampagne automatisch angepasst. Ohne URL-Parameter wird ein saisonaler Fokus nach Monat gesetzt: Feb-Apr Sandstorm, Mai-Jul Summer AC, Aug-Sep Back-to-School. Ramadan/Eid bleibt bewusst URL-gesteuert, weil die Daten jedes Jahr wechseln.

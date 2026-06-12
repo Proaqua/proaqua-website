@@ -15,7 +15,7 @@
 <meta name="geo.region" content="AE-DU">
 <meta name="geo.placename" content="Dubai">
 <link rel="canonical" href="https://www.proaquadxb.com">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38C28.075 38 33 32.627 33 26C33 17 22 5Z' fill='%235899E3'/%3E%3Cellipse cx='19' cy='33' rx='5.5' ry='3.5' fill='%2371C49F' transform='rotate(-16 19 33)'/%3E%3Cellipse cx='26.5' cy='35' rx='5.5' ry='3.5' fill='%234DA882' transform='rotate(16 26.5 35)'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38C28.075 38 33 32.627 33 26C33 17 22 5 22 5Z' fill='%235899E3'/%3E%3Cellipse cx='19' cy='33' rx='5.5' ry='3.5' fill='%2371C49F' transform='rotate(-16 19 33)'/%3E%3Cellipse cx='26.5' cy='35' rx='5.5' ry='3.5' fill='%234DA882' transform='rotate(16 26.5 35)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -821,13 +821,15 @@ html{scroll-padding-top:72px}
 :target{scroll-margin-top:72px}
 
 /* === FRANCO STAT CHIPS === */
-.franco-photo-wrap{position:relative;display:block;width:100%;padding:20px}
+.franco-in>*{min-width:0}
+.franco-photo-wrap{position:relative;display:block;width:100%;max-width:100%;min-width:0;padding:20px}
 .franco-photo-wrap .franco-photo{border-radius:var(--rxl);overflow:hidden;box-shadow:0 18px 56px rgba(28,50,68,.22);aspect-ratio:4/5;min-height:420px;background:linear-gradient(135deg,var(--blue-l),var(--green-l));width:100%}
 .franco-stat-chip{position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 8px 28px rgba(28,50,68,.15);border:1px solid rgba(88,153,227,.15);z-index:20;text-align:center;min-width:96px}
 .franco-stat-tr{top:0;right:0;animation:floatSmooth 3.2s ease-in-out infinite}
 .franco-stat-bl{bottom:0;left:0;animation:floatSmooth 3.8s ease-in-out infinite 0.7s}
 .fsc-num{font-size:24px;font-weight:800;color:var(--blue);letter-spacing:-0.5px;line-height:1;margin-bottom:3px}
 .fsc-lbl{font-size:11px;color:var(--g500);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+@media(max-width:480px){.franco-photo-wrap{padding:14px}.franco-stat-chip{padding:10px 12px;min-width:88px}}
 
 /* ======================================================
    RESPONSIVE ENHANCEMENTS  (Aufgabe 4 + Aufgabe 5 + Aufgabe 6)
@@ -1162,7 +1164,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
   <div class="nav-in">
     <a href="#" class="logo">
       <svg width="40" height="40" viewBox="0 0 44 44" fill="none">
-        <path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38C28.075 38 33 32.627 33 26C33 17 22 5Z" fill="#5899E3"/>
+        <path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38C28.075 38 33 32.627 33 26C33 17 22 5 22 5Z" fill="#5899E3"/>
         <path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38" fill="#3A7ACC" opacity=".35"/>
         <ellipse cx="19" cy="33" rx="5.5" ry="3.5" fill="#71C49F" transform="rotate(-16 19 33)"/>
         <ellipse cx="26.5" cy="35" rx="5.5" ry="3.5" fill="#4DA882" transform="rotate(16 26.5 35)"/>
@@ -1999,7 +2001,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
   <div class="ft">
     <div class="ft-top">
       <div>
-        <svg width="40" height="40" viewBox="0 0 44 44" fill="none" style="margin-bottom:10px"><path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38C28.075 38 33 32.627 33 26C33 17 22 5Z" fill="#5899E3"/><path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38" fill="#3A7ACC" opacity=".35"/><ellipse cx="19" cy="33" rx="5.5" ry="3.5" fill="#71C49F" transform="rotate(-16 19 33)"/><ellipse cx="26.5" cy="35" rx="5.5" ry="3.5" fill="#4DA882" transform="rotate(16 26.5 35)"/></svg>
+        <svg width="40" height="40" viewBox="0 0 44 44" fill="none" style="margin-bottom:10px"><path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38C28.075 38 33 32.627 33 26C33 17 22 5 22 5Z" fill="#5899E3"/><path d="M22 5C22 5 11 17 11 26C11 32.627 15.925 38 22 38" fill="#3A7ACC" opacity=".35"/><ellipse cx="19" cy="33" rx="5.5" ry="3.5" fill="#71C49F" transform="rotate(-16 19 33)"/><ellipse cx="26.5" cy="35" rx="5.5" ry="3.5" fill="#4DA882" transform="rotate(16 26.5 35)"/></svg>
         <div class="ft-nm">PRO-<em>AQUA</em> DUBAI</div>
         <p class="ft-desc">Dubai's trusted deep cleaning specialists since 2016. Healthier homes, cleaner air, happier families.</p>
         <p class="ft-ar">نظافة متكاملة لبيتك في دبي</p>
