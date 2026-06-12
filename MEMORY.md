@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Kampagnenbilder V2 mit Vivenso-Equipment und weissen Polos erstellt
+- **Erledigt:** `vivenso-pro-aqua-flyer.pdf` visuell gerendert und Equipment-Merkmale uebernommen: weisses Vivenso/Pro-Aqua Wasserfiltersystem, transparente Wasserwanne, schwarze Schlaeuche/Griffe, schwarzes bzw. blau-tuerkises Bedienfeld, Spruehextraktionsduese fuer Polster/Matratzen.
+- **Erledigt:** Pro-Aqua-Video-Frames geprueft; Techniker-Outfit fuer neue Prompts auf weisse Polos mit dunklem Kragen/Trim und blauen Handschuhen korrigiert.
+- **Erledigt:** Vier neue V2-Kampagnenbilder mit Imagegen erzeugt und als WebP gespeichert: `campaign-summer-ac-check-dubai-v2.webp`, `campaign-sandstorm-reset-dubai-v2.webp`, `campaign-ramadan-eid-cleaning-dubai-v2.webp`, `campaign-back-to-school-allergy-reset-dubai-v2.webp`.
+- **Erledigt:** `#seasonal` referenziert jetzt die V2-Bilder. `image-generation-brief.md` und `seasonal-campaign-plan.md` wurden um harte Equipment-/Uniform-Regeln und V2-Assetliste aktualisiert.
+- **Verifikation:** Alle V2-WebP-Dateien liefern lokal `200 image/webp`; Playwright `#seasonal`: alle 4 Bilder laden mit `naturalWidth=900`, Console 0 Errors / 0 Warnings, Desktop 1280px und Mobile 390px ohne Overflow.
+- **Nächster Schritt:** Falls noch naehere Produkttreue gewuenscht ist, echte Vivenso/Pro-Aqua Produktfotos als Referenzbilder fuer Imagegen bereitstellen; sonst GA4/Meta-IDs oder echte Stadtteil/Monat-Daten fuer Before/After-Captions nachziehen.
+
 ### 2026-06-13 — Codex — Kampagnenbilder generiert und Before/After-Galerie gestaerkt
 - **Erledigt:** `image-generation-brief.md` erstellt: Master Mega Prompt, Negativliste und vier konkrete Prompts fuer saisonale Meta-/Instagram-Visuals. Grundsatz dokumentiert: KI-Bilder nur fuer Kampagnen-/Hero-/Social-Visuals, nicht als echte Vorher/Nachher-Beweise.
 - **Erledigt:** Vier saisonale Kampagnenbilder mit dem eingebauten Imagegen-Tool erzeugt, als WebP komprimiert und nach `assets/` kopiert: `campaign-summer-ac-check-dubai.webp`, `campaign-sandstorm-reset-dubai.webp`, `campaign-ramadan-eid-cleaning-dubai.webp`, `campaign-back-to-school-allergy-reset-dubai.webp`.

@@ -59,14 +59,14 @@ Back-to-School:
 - Visual: Kids room, mattress sanitizing, AC vent inspection.
 - CTA: Book Allergy Reset.
 
-## Generierte V1-Assets
+## Generierte V2-Assets
 
-Diese Bilder sind KI-generierte Kampagnenvisuals und duerfen nicht als echte Vorher/Nachher-Beweise verwendet werden:
+Diese Bilder sind KI-generierte Kampagnenvisuals und duerfen nicht als echte Vorher/Nachher-Beweise verwendet werden. V2 nutzt Vivenso-/Pro-Aqua-artiges Wasserfilter-Equipment aus dem Flyer und weisse Pro-Aqua-Polos mit dunklem Trim wie im Video:
 
-- `assets/campaign-summer-ac-check-dubai.webp`
-- `assets/campaign-sandstorm-reset-dubai.webp`
-- `assets/campaign-ramadan-eid-cleaning-dubai.webp`
-- `assets/campaign-back-to-school-allergy-reset-dubai.webp`
+- `assets/campaign-summer-ac-check-dubai-v2.webp`
+- `assets/campaign-sandstorm-reset-dubai-v2.webp`
+- `assets/campaign-ramadan-eid-cleaning-dubai-v2.webp`
+- `assets/campaign-back-to-school-allergy-reset-dubai-v2.webp`
 
 Die echten Beweisbilder bleiben ausschliesslich im Abschnitt `#before-after`.
 
