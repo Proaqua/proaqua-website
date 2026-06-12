@@ -27,7 +27,7 @@
 - [ ] **DM-Approval bestätigen** — Chip "Dubai Municipality Approved" ist auf Zuruf eingebaut, Nachweis fehlt noch
 - [ ] **Echtes Foto Franco** → ersetzt `assets/franco.jpg` (aktuell Dummy-Silhouette; einfach Datei austauschen, Code bleibt)
 - [ ] **Ab-Preise prüfen:** AC Duct ab AED 400? Villa Deep Clean? Mattress AED 89? (TODO-Kommentare oben in index.html)
-- [ ] **Positionierungs-These:** Giampiero will sie ANPASSEN (noch nicht final; Vorschlag in analyse-marketing.md §2)
+- [x] **Positionierungs-These FINAL (13.06.2026, mit Giampiero abgestimmt):** Persönlicher Spezialist (Franco als Gesicht) + Krankenhaus-Standard zum fairen Festpreis. B2B/Property als eigene Sektion, NICHT in der Hauptbotschaft. EN-Kurzform: "Hospital-grade cleaning at family-fair fixed prices. One team, one face you know — proof on every job."
 
 ## Arbeitslog
 
@@ -43,7 +43,12 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 - **T3:** `og-image.jpg` (1200×630) generiert, liegt im Root — Meta-Tag zeigte schon dorthin
 - 3 TODO-HTML-Kommentare oben in index.html (Preise, License, Foto)
 - Browser-Check auf localhost:8742: Hero + Foto-Platzhalter rendern korrekt.
-**Nächste Schritte (Reihenfolge laut Plan):** T1 Bilder auslagern (3,2 MB → <500 KB, größter Brocken), T2 GA4+CTA-Tracking, S1 Vergleichs-Block (App vs. Premium vs. Pro Aqua), S6 Vorher/Nachher-Kontexte. Positionierungs-These mit Giampiero finalisieren.
+**Nächste Schritte (Reihenfolge laut Plan, für Claude ODER Codex):**
+1. **S1 Vergleichs-Block** above-the-fold-nah: 3 Spalten "Booking Apps / Premium Services / Pro Aqua" (ohne Konkurrenznamen), Pro-Aqua-Spalte = finale Positionierung (siehe oben). Kurzform-Claim "Hospital-grade cleaning at family-fair fixed prices..." als Subline im Hero einbauen.
+2. **S3 B2B-Sektion** "For Property Managers, Holiday Homes & Offices" mit eigenem WhatsApp-CTA (Prefill-Text business), vor dem Areas-Abschnitt.
+3. **T1 Bilder auslagern:** 16 Base64-Bilder → WebP in assets/, loading="lazy", Ziel <500 KB initial (3,2 MB aktuell). Vorsicht: gezielt arbeiten, Datei nie komplett neu generieren.
+4. **T2 Tracking:** GA4 + Klick-Events auf alle wa.me/tel-Links.
+5. **S6:** Vorher/Nachher-Captions um Stadtteil+Monat ergänzen (Infos von Giampiero nötig).
 
 ### 2026-06-13 — Claude (Cowork)
 - Repo von GitHub geklont → lokal auf Desktop/Proaqua-website. Branch `main`, sauber.
