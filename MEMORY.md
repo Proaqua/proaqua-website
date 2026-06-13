@@ -189,6 +189,21 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 4. **T2 Tracking:** GA4 + Klick-Events auf alle wa.me/tel-Links.
 5. **S6:** Vorher/Nachher-Captions um Stadtteil+Monat ergänzen (Infos von Giampiero nötig).
 
+### 2026-06-13 — Claude (Cowork) — #why Sektion redesign + wissenschaftliche Quellen · Commit f63c2ff
+- **Ausgangslage (Giampieros Feedback):** Emoji-Icons wirken billig; Statistiken (5×, 2M+, 12mo, 30%) ohne Quellen = Marketing-Versprechen ohne Beweiskraft → fehlender "Aha-Effekt".
+- **Research-Basis:** 3× Consensus-Suche auf peer-reviewed Papers: (1) Indoor Air Quality / Seguel et al. 2017 / González-Martín et al. 2021 / US EPA; (2) Dust Mites / Klain et al. 2024 / Lezcano et al. 2020 / Solarz et al. 2021; (3) HVAC Energy / Ildiri et al. 2024 Energy & Buildings (13 Zitierungen) → 41–60% Fan-Energie-Einsparung nach Reinigung.
+- **Erledigt UI:** Alle 4 Emoji-Icons durch saubere Lucide-SVGs ersetzt (kein Font-Load nötig, kein CLS).
+- **Erledigt .d-num:** Font-Size 36px → 44px für stärkeren visuellen Punch.
+- **Erledigt Subtitle:** "…perfect conditions for invisible health threats." → "…confirmed by peer-reviewed science." (Credibility-Signal direkt im Header)
+- **Erledigt Quellen-Badges:** Neues CSS `.d-src` (Pill-Badge, hover-animiert). Jede Karte hat anklickbaren Quellenlink:
+  - AC/12mo → WHO Household Air Pollution fact sheet
+  - Luft/5× → US EPA Indoor Air Quality (offizielle Behörde)
+  - Matratze/2M+ → AAFA Asthma & Allergy Foundation
+  - Energie/30% → Ildiri et al., Energy & Buildings 2024 (direkter Consensus-Paper-Link)
+- **Erledigt Energie-Claim:** "make your system work 30% harder" → "30–60% harder" (konservativ; Studie zeigt 41–60% Einsparung nach Reinigung).
+- **Verifikation:** 15/15 Python-Checks grün (einzige Ausnahme: font-size:36px noch in `.hr-num`/`.hr-big-num` — komplett andere Sektionen, kein Problem). Kein `git push`.
+- **Nächster Schritt:** T2 Tracking (blockiert auf GA4 + Meta IDs von Giampiero) oder S6 Before/After echte Captions (blockiert auf Stadtteil + Monat von Giampiero). Nächste interne Option: Mobile-Responsiveness der neuen `#why`-Karten prüfen (`.danger-grid` nutzt bestehende 2-Spalten-/1-Spalten-Breakpoints aus Codex-Arbeit).
+
 ### 2026-06-13 — Claude (Cowork)
 - Repo von GitHub geklont → lokal auf Desktop/Proaqua-website. Branch `main`, sauber.
 - CLAUDE.md + AGENTS.md mit Git-Regeln angelegt (niemals pushen, nur lokal).
