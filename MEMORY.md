@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Franco-Meta-Ordner geprüft und bewertet
+- **Erledigt:** Relevante Franco-Unterlagen geprüft: `Desktop/Desktop/021_FRanco_Meta/Improve _Respond .docx` sowie die Pages-Vorschauen aus `22pharma-site/Datein Franco/PlanCHATGPT.pages` und `pianoclaude.pages`.
+- **Ergebnis:** Die Richtung ist gut: WhatsApp-/Messenger-Antworten sollen kürzer, wärmer, weniger technisch und stärker dialogorientiert werden. Außerdem ist die Idee einer lokalen `Proaqua Local Client Engine` bzw. `AI Content Engine` für Google/Maps/Social/WhatsApp mit kleinem Budget grundsätzlich sinnvoll.
+- **Risiken:** Vorschläge sind teils noch zu generisch, Rabatt/Incentive sollte nicht Haupthebel sein, 500 AED/Monat ist als Ads-Lernbudget knapp, Tracking/Leadqualität und konkrete Messenger-Qualifizierung fehlen.
+- **Dokumentiert:** Bewertung und konkrete Empfehlungen in `conversion-research/franco-meta-folder-review.md` abgelegt.
+- **Nächster Schritt:** P1.3 WhatsApp-Prefills und Meta-/WhatsApp-Auto-Responses als einheitliches Franco-Team-Messenger-System ausarbeiten; GA4/Meta IDs bleiben separat blockiert.
+
 ### 2026-06-13 — Claude (Cowork) — Hero/Services/Schema · Commit 064491d
 - **Basis:** `state-of-art-conversion-psychology.md` gelesen und ausgewertet. Wichtigste sofort umsetzbare Empfehlungen (kein externes Material nötig) implementiert.
 - **Erledigt Hero-CTAs:** "Get Free Consultation" → "Get Free Inspection" (stärker, spezifischer). "WhatsApp Us" → "WhatsApp Franco's Team" (persönlicher Trust-Anker). Hero-WhatsApp-Button hat jetzt AC-spezifischen Prefill: "Hi Pro Aqua, I'd like a free AC duct inspection for my home in Dubai."
