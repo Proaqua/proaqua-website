@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Scrollspy-Navigation fuer Desktop und Mobile umgesetzt
+- **Erledigt:** Desktop- und Mobile-Menue bekommen jetzt einen dynamischen Active-State beim Scrollen. Der aktive Punkt wird ueber die sichtbarste Zielsektion bestimmt und per `aria-current` gespiegelt.
+- **Erledigt:** Menue-Reihenfolge an die echte Seitenreihenfolge angepasst: Good to Know → Franco → Services → Book → Reviews → FAQ. Dadurch wandert die Markierung logisch mit dem Lesefluss.
+- **Erledigt:** Aktiver Desktop-Link visuell verstaerkt (dezente Flaeche + bewegter Unterstrich); Mobile-Menue zeigt den aktiven Punkt als klare Pill-Markierung.
+- **Verifikation:** In-App-Browser `http://localhost:8742/`: Desktop 1280px scrollt durch Good to Know → Franco → Services → Book → Reviews → FAQ, Mobile 390px zeigt denselben Active-State auch im geoeffneten Hamburger-Menue, kein horizontaler Overflow, Console 0 Errors / 0 Warnings.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID eintragen, sobald Giampiero sie liefert; danach Lead-Klicks als Conversions in GA4/Meta konfigurieren.
+
 ### 2026-06-13 — Codex — 6.000+ Count-up und Hero-Load-Sequenz umgesetzt
 - **Erledigt:** Social Proof im aktuellen Seiteninhalt von `1,277+`/`1277+` auf `6,000+` aktualisiert: Hero-H1, Happy-Clients-Stat, Trust-Belt, Vergleichsblock und Franco-Sektion. Alte Zahlen bleiben nur in historischen Arbeitslog-Eintraegen erhalten.
 - **Erledigt:** Hero-H1 als 22pharma-inspirierte Kinetic-Load-Sequenz umgesetzt: Woerter erscheinen gestaffelt beim Seitenaufruf, ohne Layout-Abhaengigkeit von JavaScript.
