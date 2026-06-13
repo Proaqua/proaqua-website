@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Research-Prompt mit Sub-Agenten ausgeführt und Claude-Coworker-Paket erstellt
+- **Erledigt:** Den zuvor erstellten State-of-the-Art-Research-Prompt als vollstaendigen Arbeitsauftrag ausgefuehrt und dafuer drei Sub-Agenten genutzt: Behavioral-Science/Papers, 2026 UX-/WhatsApp-/AI-Search-Trends und Dubai-Wettbewerbsableitung.
+- **Erledigt:** Neues Claude-Uebergabedokument `conversion-research/claude-coworker-growth-brief.md` erstellt. Inhalt: ausgefuehrter Prompt, harte Strategie, Quellen-/Evidenzlogik, Dubai-Markt-Synthese, State-of-the-Art-Trends, Copy-Bausteine, Claude-Arbeitsanweisung und Quellenlinks.
+- **Erledigt:** Separates Umsetzungsbacklog `conversion-research/implementation-backlog.md` erstellt mit P0/P1/P2/P3-Tickets und Akzeptanzkriterien fuer Tracking, Trust-Badges, Preislogik, Before/After-Proof, echte Franco-/Team-/Equipment-Fotos, WhatsApp-Prefills, Arabic/Villa und Service-Unterseiten.
+- **Ergebnis:** Die Research-Ergebnisse sind jetzt Claude-Coworker-tauglich operationalisiert: nicht nur Analyse, sondern konkrete naechste Tickets mit Voraussetzungen und Blockern.
+- **Verifikation:** Nur Markdown-Dateien und `MEMORY.md` geaendert; `index.html` wurde nicht angefasst.
+- **Nächster Schritt:** Als erstes umsetzbares Website-Ticket ohne externe Daten bietet sich P0.3 Preis-/Festpreis-Block oder P1.3 WhatsApp-Prefills an. Blockiert bleiben echte GA4/Meta IDs, echte Trust-Nachweise und echte Fotos/Before-After-Daten.
+
 ### 2026-06-13 — Codex — State-of-the-Art Conversion- und Käuferpsychologie-Research erstellt
 - **Erledigt:** Wiederverwendbaren Research-Prompt unter `conversion-research/state-of-art-conversion-psychology-prompt.md` gespeichert und damit die gewünschte tiefgründige Analyse ausgeführt.
 - **Erledigt:** Neuen Bericht `conversion-research/state-of-art-conversion-psychology.md` erstellt: Executive Summary, Evidenzgrade, Quellenmatrix, Käuferpsychologie-/UX-Prinzipien, 2026-Patterns, Pro-Aqua-Backlog, GA4/Meta/WhatsApp-Messplan und No-Go-Liste.
