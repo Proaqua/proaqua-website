@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — State-of-the-Art Conversion- und Käuferpsychologie-Research erstellt
+- **Erledigt:** Wiederverwendbaren Research-Prompt unter `conversion-research/state-of-art-conversion-psychology-prompt.md` gespeichert und damit die gewünschte tiefgründige Analyse ausgeführt.
+- **Erledigt:** Neuen Bericht `conversion-research/state-of-art-conversion-psychology.md` erstellt: Executive Summary, Evidenzgrade, Quellenmatrix, Käuferpsychologie-/UX-Prinzipien, 2026-Patterns, Pro-Aqua-Backlog, GA4/Meta/WhatsApp-Messplan und No-Go-Liste.
+- **Quellenbasis:** Peer-reviewed Behavioral-Science-Papers (Prospect Theory, Framing, Choice Overload, Social Norms), UX-/Trust-Research, Google/Web-Performance-/Local-SEO-Dokumentation, WhatsApp-/Meta-Funnel-Quellen sowie Dark-Pattern-/Accessibility-Standards.
+- **Projektbezug:** Ableitungen wurden auf die vorhandenen Pro-Aqua-Artefakte gemappt: Owner-led-Positionierung, 6.000+ Social Proof, WhatsApp-first, Seasonal-Layer, B2B/Arabic und Wettbewerbsrecherche.
+- **Verifikation:** `index.html` wurde nicht angefasst. Research-Dateien sind Markdown-only und dienen als Grundlage fuer die naechsten Website-/Kampagnen-Tickets.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID bleiben der blockierte P0-Schritt; parallel koennen echte Franco-/Team-/Vivenso-Equipment-Fotos und echte Before/After-Daten (Stadtteil + Monat) beschafft werden.
+
 ### 2026-06-13 — Codex — Dubai-Wettbewerbsrecherche mit 30 AC-Duct-Anbietern erstellt
 - **Erledigt:** Eigenes Research-Paket `competitive-research/` angelegt mit 30 kuratierten Dubai/UAE-Wettbewerbern fuer AC duct cleaning, AC cleaning, IAQ, Deep Cleaning und Maintenance-nahe Anbieter.
 - **Erledigt:** Pro Anbieter wurde ein First-viewport-Screenshot gespeichert; zusaetzlich wurde ein Kontakt-Sheet `competitive-research/screenshots/contact-sheet.png` mit allen 30 kuratierten Screenshots erstellt.
