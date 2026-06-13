@@ -31,6 +31,22 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Claude (Cowork) — Hero/Services/Schema · Commit 064491d
+- **Basis:** `state-of-art-conversion-psychology.md` gelesen und ausgewertet. Wichtigste sofort umsetzbare Empfehlungen (kein externes Material nötig) implementiert.
+- **Erledigt Hero-CTAs:** "Get Free Consultation" → "Get Free Inspection" (stärker, spezifischer). "WhatsApp Us" → "WhatsApp Franco's Team" (persönlicher Trust-Anker). Hero-WhatsApp-Button hat jetzt AC-spezifischen Prefill: "Hi Pro Aqua, I'd like a free AC duct inspection for my home in Dubai."
+- **Erledigt Hero Trust-Items:** "Free inspection included / Medical-grade equipment / Fixed price always" → Micro-Proof aus Research-Dok: "Fixed price before we start / Same Pro Aqua team every time / Before & after proof on every job". Direkt aus Section 11 (Copy-Bausteine) des Research-Dokuments übernommen.
+- **Erledigt Service-Cards:** Alle 3 Karten haben jetzt eigene WhatsApp-CTAs mit service-spezifischen Prefills: Sofas/Carpets → "Book Sofa & Carpet Clean", AC Duct → "Book Free AC Inspection", Mattress → "Book Mattress Sanitizing". Senkt Reibung zwischen Servicewunsch und WhatsApp-Kontakt.
+- **Erledigt LocalBusiness-Schema:** `description`, `foundingDate: "2016"` und `aggregateRating` (4.7, 60 Reviews) hinzugefügt. Wichtig für AI Search / Google SGE / lokale Sichtbarkeit.
+- **Erledigt FAQ-Schema:** 2 neue Fragen ergänzt: "How much does AC duct cleaning cost in Dubai?" (mit Preislogik-Erklärung, kein fixer Preis erfunden) und "Do you provide before and after photos?" (AI-Search-Signal).
+- **Verifikation:** 14/14 Python-Checks grün. Kein `git push`.
+- **Nächster Schritt:** T2 Tracking (GA4 + Meta Pixel IDs von Giampiero) oder S6 Before/After echte Daten (Stadtteil + Monat). Beide blockiert auf externe Infos. Als nächste interne Aufgabe: Prüfen ob Service-Seiten für SEO/AI Search sinnvoll wären (P2 aus Research-Dok).
+
+### 2026-06-13 — Claude (Cowork) — S6 Before/After Kontext-Struktur · Commit be720bd
+- **Erledigt:** Neues CSS `.ba-meta` + `.ba-meta svg` für Standort-/Datum-Zeile.
+- **Erledigt:** Alle 6 Before/After-Karten um `.ba-meta`-Element ergänzt (Standortpin-Icon + Platzhalter "Dubai, UAE · Jahr"). Kein Erfinden echter Daten.
+- **TODO GIAMPIERO (S6 vervollständigen):** Für jede der 6 Karten Stadtteil + Monat/Jahr liefern. Im HTML sind TODO-Kommentare mit Beispielformat gesetzt, z.B. `<!-- TODO: z.B. "JVC · Villa · April 2025" -->`. Dann einfach den Platzhalter-Text "Dubai, UAE · 2025" durch die echten Angaben ersetzen.
+- **Nächster Schritt:** S6-Daten von Giampiero → Eintragen (5 Minuten). Dann T2 + Q2 (von Giampiero priorisiert für später).
+
 ### 2026-06-13 — Claude (Cowork) — P0.2 + P0.3 + P1.2 umgesetzt · Commit b82dc75
 - **Erledigt P0.2:** Trust-Chip "Licensed & Insured · DED Trade License No. 0000000" → "Licensed & Insured Dubai Business" (2× in Chip-Marquee). TODO-Kommentar oben aktualisiert: Giampiero trägt echte Nr. ein, dann Chip-Text auf "Licensed & Insured · DED Trade License No. XXXXXX" ändern.
 - **Erledigt P0.3:** `#process`-Überschrift auf "Simple, Transparent Process" geändert. 4 Schritte inhaltlich geschärft: "Share Your Needs / Free Inspection / Fixed Quote / Clean & Proof". Subline "No surprises. Fixed price confirmed before we start." ergänzt.
