@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Codex — Dubai-Wettbewerbsrecherche mit 30 AC-Duct-Anbietern erstellt
+- **Erledigt:** Eigenes Research-Paket `competitive-research/` angelegt mit 30 kuratierten Dubai/UAE-Wettbewerbern fuer AC duct cleaning, AC cleaning, IAQ, Deep Cleaning und Maintenance-nahe Anbieter.
+- **Erledigt:** Pro Anbieter wurde ein First-viewport-Screenshot gespeichert; zusaetzlich wurde ein Kontakt-Sheet `competitive-research/screenshots/contact-sheet.png` mit allen 30 kuratierten Screenshots erstellt.
+- **Erledigt:** Datenbasis `competitive-research/data/competitors-curated-30.json` erstellt mit Kategorie, URL, Screenshot-Pfad, Positionierung, Staerken, Schwächen und Pro-Aqua-Chance je Wettbewerber.
+- **Erledigt:** Claude-Folgeprompt `competitive-research/claude-competitive-analysis-prompt.md` erstellt und daraus den vorbereitenden Bericht `competitive-research/competitors-dubai-ac-duct-cleaning.md` ausgefuehrt: Marktcluster, Muster, Anti-Patterns, strategische Ableitungen und Backlog-Ideen fuer Pro Aqua.
+- **Verifikation:** Kuratierte Liste hat 30 eindeutige Anbieter, alle 30 referenzierten Screenshot-Dateien existieren, Kontakt-Sheet vorhanden. Nicht verwertbare Ladebildschirm-/404-Treffer wurden aus der finalen 30er-Liste entfernt.
+- **Nächster Schritt:** Mit dem neuen Claude-Prompt eine tiefere Scoring-/Ranking-Analyse fahren und daraus konkrete P0/P1 Website-Tickets ableiten.
+
 ### 2026-06-13 — Codex — Scrollspy-Navigation fuer Desktop und Mobile umgesetzt
 - **Erledigt:** Desktop- und Mobile-Menue bekommen jetzt einen dynamischen Active-State beim Scrollen. Der aktive Punkt wird ueber die sichtbarste Zielsektion bestimmt und per `aria-current` gespiegelt.
 - **Erledigt:** Menue-Reihenfolge an die echte Seitenreihenfolge angepasst: Good to Know → Franco → Services → Book → Reviews → FAQ. Dadurch wandert die Markierung logisch mit dem Lesefluss.
