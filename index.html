@@ -91,6 +91,7 @@ button{font-family:'Inter',sans-serif;cursor:pointer}
 @keyframes waRing{0%{transform:scale(.92);opacity:.55}100%{transform:scale(1.5);opacity:0}}
 @keyframes popIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
 @keyframes quizIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroWordIn{from{opacity:0;transform:translateY(20px) rotateX(18deg);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
 
 /* CHIPS */
 .chip{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:.02em;white-space:nowrap}
@@ -245,6 +246,11 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 .hero-h1 .hl-b{color:var(--blue)}
 .hero-h1 .hl-b-it{color:var(--blue);font-style:italic;font-weight:700}
 .hero-h1 .hl-g{color:var(--green-d)}
+.hero-kinetic .kin{display:inline-block;opacity:0;animation:heroWordIn .72s cubic-bezier(.2,.72,.22,1) forwards;animation-delay:var(--kin-delay,0s);transform-origin:50% 80%;will-change:transform,opacity,filter}
+.count-up{display:inline-block;font-variant-numeric:tabular-nums}
+.count-up.is-counting{letter-spacing:-.03em}
+.hero-h1 .count-up{min-width:3.55em;text-align:left}
+.hstat-n .count-up{min-width:4.25ch;text-align:left}
 
 /* Sub — light weight, readable */
 .hero-sub{font-size:16px;font-weight:400;color:var(--g600);line-height:1.7;max-width:450px;margin-bottom:28px;animation:fadeUp .4s .15s ease both;letter-spacing:0}
@@ -1314,7 +1320,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
         <span class="hero-chip">⭐ 4.7 on Google</span>
       </div>
       <div class="hero-eyebrow">Professional Cleaning Dubai · نظافة متكاملة</div>
-      <h1 class="hero-h1"><span class="hl-g">AC Duct Cleaning</span><br>&amp; Deep Cleaning<br><span class="hl-b-it">Trusted by 1,277+ Families.</span></h1>
+      <h1 class="hero-h1 hero-kinetic"><span class="hl-g kin" style="--kin-delay:.08s">AC</span> <span class="hl-g kin" style="--kin-delay:.14s">Duct</span> <span class="hl-g kin" style="--kin-delay:.20s">Cleaning</span><br><span class="kin" style="--kin-delay:.28s">&amp; Deep Cleaning</span><br><span class="hl-b-it"><span class="kin" style="--kin-delay:.38s">Trusted by</span> <span class="kin count-up" style="--kin-delay:.48s" data-countup data-count-to="6000" data-count-suffix="+">6,000+</span> <span class="kin" style="--kin-delay:.58s">Families.</span></span></h1>
       <p class="hero-sub">Hi, I'm Franco. Our <strong>AC duct cleaning, mattress sanitizing &amp; fabric deep cleaning</strong> services eliminate visible dirt and invisible airborne pollutants — creating a healthier home or business in Dubai.</p>
       <p class="hero-claim" style="font-size:15px;font-weight:700;color:var(--navy);max-width:460px;margin:-14px 0 28px;line-height:1.55">Hospital-grade cleaning at family-fair fixed prices. <span style="color:var(--blue-d)">One team, one face you know</span> — proof on every job.</p>
 
@@ -1336,7 +1342,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
       </div>
 
       <div class="hero-stats">
-        <div class="hstat"><div class="hstat-n">1,277+</div><div class="hstat-l">Happy Clients</div></div>
+        <div class="hstat"><div class="hstat-n"><span class="count-up" data-countup data-count-to="6000" data-count-suffix="+">6,000+</span></div><div class="hstat-l">Happy Clients</div></div>
         <div class="hstat-div"></div>
         <div class="hstat"><div class="hstat-n">4.7 <span class="hs-star">★</span></div><div class="hstat-l">Google Rating</div></div>
         <div class="hstat-div"></div>
@@ -1429,8 +1435,8 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 <!-- TRUST BELT -->
 <div class="belt">
   <div class="belt-t">
-    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw chip-wa">WhatsApp · 7 Days</span><span class="chip cw">1277+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
-    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw chip-wa">WhatsApp · 7 Days</span><span class="chip cw">1277+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
+    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw chip-wa">WhatsApp · 7 Days</span><span class="chip cw">6,000+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
+    <span class="chip cw">Trusted since 2016</span><span class="chip cw">Licensed &amp; Insured · DED Trade License No. 0000000</span><span class="chip cw">Medical-Grade Equipment</span><span class="chip cw">⭐ 4.7 Google · 60 Reviews</span><span class="chip cw chip-wa">WhatsApp · 7 Days</span><span class="chip cw">6,000+ Verified Clients</span><span class="chip cw">Fixed Price · No Hidden Fees</span><span class="chip cw">🏠 Villas &amp; Apartments</span><span class="chip cw">Eco-Safe Products</span><span class="chip cw">👶 Safe for Kids &amp; Pets</span><span class="chip cw">Dubai Municipality Approved</span>
   </div>
 </div>
 
@@ -1506,7 +1512,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
         <div class="cmp-hero-line">Hospital-grade cleaning at family-fair fixed prices.</div>
         <div class="cmp-proof-row" aria-label="Pro Aqua proof">
           <div class="cmp-proof"><strong>4.7 Google</strong><span>trusted public rating</span></div>
-          <div class="cmp-proof"><strong>1,277+</strong><span>Dubai clients</span></div>
+          <div class="cmp-proof"><strong>6,000+</strong><span>Dubai clients</span></div>
           <div class="cmp-proof"><strong>Since 2016</strong><span>local experience</span></div>
           <div class="cmp-proof"><strong>Photo proof</strong><span>sent after every job</span></div>
         </div>
@@ -1748,7 +1754,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
           <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           Meet the Founder
         </div>
-        <h2>Why 1277+ Dubai Families Trust <em class="blue-em">Franco</em></h2>
+        <h2>Why 6,000+ Dubai Families Trust <em class="blue-em">Franco</em></h2>
         <p class="franco-p">I started Pro Aqua Dubai after seeing too many families suffering from allergies and respiratory issues caused by dirty AC systems and contaminated fabrics. Dubai's unique climate makes this a real health issue — not just a comfort issue.</p>
         <p class="franco-p">We use the same medical-grade equipment used in hospitals — because your family deserves nothing less.</p>
         <ul class="franco-pts">
@@ -2351,6 +2357,70 @@ function playVideo(){
   }else{
     applySeason();bindLeadTracking();
   }
+})();
+</script>
+<script>
+/* HERO COUNT-UP + LOAD SEQUENCE
+   Inspired by 22pharma's kinetic hero entry, adapted for Pro Aqua proof numbers. */
+(function(){
+  function formatNumber(value){
+    return Math.round(value).toLocaleString('en-US');
+  }
+  function finalText(el){
+    return (el.dataset.countPrefix||'')+formatNumber(Number(el.dataset.countTo||0))+(el.dataset.countSuffix||'');
+  }
+  function runCounter(el){
+    if(el.dataset.countDone)return;
+    el.dataset.countDone='1';
+    var target=Number(el.dataset.countTo||0);
+    var start=Number(el.dataset.countStart||0);
+    var duration=Number(el.dataset.countDuration||1450);
+    var prefix=el.dataset.countPrefix||'';
+    var suffix=el.dataset.countSuffix||'';
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!target||reduce){
+      el.textContent=finalText(el);
+      return;
+    }
+    el.classList.add('is-counting');
+    el.textContent=prefix+formatNumber(start)+suffix;
+    var t0=0;
+    function ease(t){return 1-Math.pow(1-t,3)}
+    function tick(now){
+      if(!t0)t0=now;
+      var p=Math.min((now-t0)/duration,1);
+      var value=start+(target-start)*ease(p);
+      el.textContent=prefix+formatNumber(value)+suffix;
+      if(p<1)requestAnimationFrame(tick);
+      else{
+        el.textContent=finalText(el);
+        el.classList.remove('is-counting');
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  function initCountups(){
+    var counters=[].slice.call(document.querySelectorAll('[data-countup]'));
+    if(!counters.length)return;
+    if(!('IntersectionObserver' in window)){
+      counters.forEach(runCounter);
+      return;
+    }
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting)return;
+        runCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },{threshold:.55});
+    counters.forEach(function(el){
+      if(el.closest('.hero'))runCounter(el);
+      else if(el.getBoundingClientRect().top<window.innerHeight)runCounter(el);
+      else observer.observe(el);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initCountups);
+  else initCountups();
 })();
 </script>
 <script>

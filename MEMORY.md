@@ -11,7 +11,7 @@
 - **Firma:** Pro Aqua Disinfection & Sterilization LLC, Dubai, seit 2016. Inhaber: Franco (als Person auf der Website sichtbar).
 - **Leistungen:** AC Duct Cleaning, Deep Cleaning, Mattress/Fabric Sanitizing.
 - **Website:** Statische One-Page-Site, `index.html` (~3,2 MB, alles inline). Netlify-Deployment via `netlify.toml`. Repo: github.com/Proaqua/proaqua-website (nur lokal arbeiten!).
-- **Social Proof:** 4,7★ Google, 1.277+ Kunden, 10+ Jahre Dubai.
+- **Social Proof:** 4,7★ Google, 6.000+ Kunden/Familien, 10+ Jahre Dubai.
 - **Ziel:** Klare Marktpositionierung, mehr Anfragen/Conversions.
 
 ## Werkzeuge & Konventionen
@@ -30,6 +30,14 @@
 - [x] **Positionierungs-These FINAL (13.06.2026, mit Giampiero abgestimmt):** Persönlicher Spezialist (Franco als Gesicht) + Krankenhaus-Standard zum fairen Festpreis. B2B/Property als eigene Sektion, NICHT in der Hauptbotschaft. EN-Kurzform: "Hospital-grade cleaning at family-fair fixed prices. One team, one face you know — proof on every job."
 
 ## Arbeitslog
+
+### 2026-06-13 — Codex — 6.000+ Count-up und Hero-Load-Sequenz umgesetzt
+- **Erledigt:** Social Proof im aktuellen Seiteninhalt von `1,277+`/`1277+` auf `6,000+` aktualisiert: Hero-H1, Happy-Clients-Stat, Trust-Belt, Vergleichsblock und Franco-Sektion. Alte Zahlen bleiben nur in historischen Arbeitslog-Eintraegen erhalten.
+- **Erledigt:** Hero-H1 als 22pharma-inspirierte Kinetic-Load-Sequenz umgesetzt: Woerter erscheinen gestaffelt beim Seitenaufruf, ohne Layout-Abhaengigkeit von JavaScript.
+- **Erledigt:** Count-up fuer die Hero-H1-Zahl und die `Happy Clients`-Statistik eingebaut. Beide starten beim Laden der Hero-Sektion, laufen parallel hoch und enden auf `6,000+`; ohne JavaScript bleibt `6,000+` direkt sichtbar.
+- **Erledigt:** Count-up-Zahlen mit tabellarischer Mindestbreite abgesichert, damit beim Hochzaehlen kein sichtbarer Layout-Sprung entsteht.
+- **Verifikation:** In-App-Browser `http://localhost:8742/`: Desktop 1280px und Mobile 390px ohne Overflow, beide Counter starten und enden auf `6,000+`, Hero-Wortanimation sichtbar, Console 0 Errors / 0 Warnings.
+- **Nächster Schritt:** Echte GA4 Measurement ID und Meta Pixel ID eintragen, sobald Giampiero sie liefert; danach Lead-Klicks als Conversions in GA4/Meta konfigurieren.
 
 ### 2026-06-13 — Codex — WhatsApp-Farben, Motion-Layer und Hero-Poster umgesetzt
 - **Recherche/Entscheidung:** Kurzcheck Wettbewerber + UX: Justlife/Apps gewinnen ueber schnelle Buchung, ServiceMarket ueber Preis-/Quote-Orientierung, Saniservice/Premium ueber Zertifizierung/Indoor-Air-Authority. Fuer Pro Aqua bleibt der beste Hebel: persoenliche Accountable-Team-Positionierung, klare WhatsApp-Kontaktfuehrung, sichtbare Beweise und subtile Bewegung statt dekorativem Overload.
