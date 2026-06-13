@@ -189,6 +189,25 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 4. **T2 Tracking:** GA4 + Klick-Events auf alle wa.me/tel-Links.
 5. **S6:** Vorher/Nachher-Captions um Stadtteil+Monat ergänzen (Infos von Giampiero nötig).
 
+### 2026-06-13 — Claude (Cowork) — Hero V1 Pattern Interrupt + Codex A/B-Test Handover · Commit d22485b
+
+- **Konzept-Basis:** Seena Rez Contradiction-Hook-Framework (Scroll-Stop, Pattern Interruption) + Hormozi Value Equation (Outcome × Likelihood / Time × Effort).
+- **Erledigt Hero H1:** Kinetic-Animation beibehalten, Copy auf V1 umgestellt:
+  - Zeile 1: "Your Dubai apartment" (navy)
+  - Zeile 2: "looks clean." (`.hl-b` blau — falsche Sicherheit)
+  - Zeile 3: "Your AC ducts don't." (`.hl-r` rot — Weckruf)
+- **Erledigt CSS:** `.hero-h1 .hl-r{color:var(--red);font-style:italic;font-weight:700}` hinzugefügt.
+- **Erledigt hero-sub:** "Mold, bacteria & 2M+ dust mites hiding in your ducts & mattress — **removed in 2–3 hours**. Fixed price, same-day available." (Hormozi: Time Delay + Effort Reduction explizit).
+- **Erledigt hero-trust:** "Done in 2–3 hours · same-day available" als erste Trust-Zeile (Time-to-Value direkt sichtbar above the fold).
+- **Erledigt Codex-Handover:** `conversion-research/hero-headline-ab-test-prompt.md` erstellt:
+  - 10 Varianten mit vollständigem Copy (H1 + Sub + Claim)
+  - 4-Dimensionen-Rubrik H/V/E/D (1–5 Punkte)
+  - Claude Pre-Scores für alle 10 Varianten
+  - Claude-Empfehlung: V6 (Time-Bomb, 18/20) als A/B-Challenger gegen V1 (Contradiction, 17/20) als Control
+  - Codex-Prompt mit Scoring-Tabelle, Segment-Analyse und Implementierungshinweisen
+- **Verifikation:** 8/8 Python-Checks grün (CSS, H1-Zeilen, hero-sub, trust-item, alte Strings entfernt). Kein `git push`.
+- **Nächster Schritt:** Codex mit `conversion-research/hero-headline-ab-test-prompt.md` laufen lassen → unabhängige Scores + Top-3-Auswahl. Dann A/B-Test zwischen V1 (live) und Codex-Empfehlung konfigurieren. T2 Tracking weiterhin blockiert auf GA4 + Meta IDs von Giampiero.
+
 ### 2026-06-13 — Claude (Cowork) — #why Sektion redesign + wissenschaftliche Quellen · Commit f63c2ff
 - **Ausgangslage (Giampieros Feedback):** Emoji-Icons wirken billig; Statistiken (5×, 2M+, 12mo, 30%) ohne Quellen = Marketing-Versprechen ohne Beweiskraft → fehlender "Aha-Effekt".
 - **Research-Basis:** 3× Consensus-Suche auf peer-reviewed Papers: (1) Indoor Air Quality / Seguel et al. 2017 / González-Martín et al. 2021 / US EPA; (2) Dust Mites / Klain et al. 2024 / Lezcano et al. 2020 / Solarz et al. 2021; (3) HVAC Energy / Ildiri et al. 2024 Energy & Buildings (13 Zitierungen) → 41–60% Fan-Energie-Einsparung nach Reinigung.
