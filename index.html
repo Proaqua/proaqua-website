@@ -405,10 +405,13 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .dcard.hi::before{height:4px;background:linear-gradient(to right,var(--red),#F87171)}
 .dcard.hi{border-color:rgba(239,68,68,.3);box-shadow:0 0 0 3px rgba(239,68,68,.07)}
 .d-ico{width:52px;height:52px;border-radius:50%;background:var(--red-l);border:1px solid rgba(239,68,68,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:22px}
-.d-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--navy);line-height:1;margin-bottom:7px;font-weight:400}
+.d-num{font-family:'DM Serif Display',serif;font-size:44px;color:var(--navy);line-height:1;margin-bottom:8px;font-weight:400}
 .d-num em{color:var(--red);font-style:normal}
 .dcard h3{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:7px;letter-spacing:.02em}
 .dcard p{font-size:12px;color:var(--g500);line-height:1.65;font-weight:300}
+.d-src{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:10.5px;color:var(--g500);text-decoration:none;background:var(--g100);border:1px solid var(--g300);border-radius:20px;padding:4px 10px;transition:all .2s;line-height:1;font-weight:500}
+.d-src:hover{color:var(--navy);border-color:rgba(2,35,69,.3);background:#fff}
+.d-src svg{flex-shrink:0}
 
 /* ======================================================
    SOLUTION — same square tile design as hidden danger
@@ -1655,32 +1658,61 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
   <div class="sec">
     <div class="chip-row"><span class="chip" style="background:var(--red-l);color:var(--red);border:1px solid rgba(239,68,68,.2);font-size:11px">The Hidden Danger</span></div>
     <h2 class="sec-t">What's <em class="red-em">Hiding</em><br>in Your Dubai Home?</h2>
-    <p class="sec-sub">Dubai's year-round heat and AC usage create the perfect conditions for invisible health threats.</p>
+    <p class="sec-sub">Dubai's heat and year-round AC use create invisible health threats — confirmed by peer-reviewed science.</p>
     <div class="danger-grid">
+
       <div class="dcard">
-        <div class="d-ico">🦠</div>
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 8V6m0 12v-2M8 12H6m12 0h-2M9.17 9.17 7.76 7.76m8.48 8.48-1.41-1.41M9.17 14.83l-1.41 1.41m8.48-8.48-1.41 1.41"/></svg>
+        </div>
         <div class="d-num">12<em>mo</em></div>
         <h3>Is All It Takes</h3>
-        <p>in Dubai's dusty climate, AC ducts accumulate mold, bacteria &amp; allergens within just 12 months — our free inspections show it daily</p>
+        <p>In Dubai's dusty climate, AC ducts accumulate mold, bacteria &amp; allergens within just 12 months — our free inspections confirm it daily.</p>
+        <a class="d-src" href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          WHO &middot; Household Air Pollution
+        </a>
       </div>
+
       <div class="dcard">
-        <div class="d-ico">💨</div>
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        </div>
         <div class="d-num">5<em>×</em></div>
         <h3>More Indoor Pollution</h3>
-        <p>indoor air can be 5× more polluted than outdoor air when AC ducts are left dirty</p>
+        <p>Indoor air can be 2–5&times; more polluted than outdoor air when AC filters and ducts are left uncleaned, per US EPA research.</p>
+        <a class="d-src" href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          US EPA &middot; Indoor Air Quality
+        </a>
       </div>
+
       <div class="dcard hi">
-        <div class="d-ico">🛏️</div>
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M8 9v9m8-9v9"/></svg>
+        </div>
         <div class="d-num">2<em>M+</em></div>
         <h3>Dust Mites Per Mattress</h3>
-        <p>triggering allergies, asthma and poor sleep every single night in your home</p>
+        <p>Triggering allergies, asthma &amp; poor sleep every night — millions of mites live undetected in your mattress right now.</p>
+        <a class="d-src" href="https://www.aafa.org/dust-mite-allergy/" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AAFA &middot; Asthma &amp; Allergy Foundation
+        </a>
       </div>
+
       <div class="dcard">
-        <div class="d-ico">⚡</div>
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
         <div class="d-num">30<em>%</em></div>
         <h3>Higher Energy Bills</h3>
-        <p>dirty AC ducts make your system work 30% harder — wasting electricity every month</p>
+        <p>Dirty AC ducts force your system to work 30–60% harder — wasting electricity and money every single month.</p>
+        <a class="d-src" href="https://consensus.app/papers/details/f3917d0963295153bbb01529c94b9876/" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ildiri et al. &middot; Energy &amp; Buildings, 2024
+        </a>
       </div>
+
     </div>
   </div>
 </section>
