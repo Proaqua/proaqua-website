@@ -518,6 +518,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .ba-cap-t{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px;letter-spacing:.01em}
 .ba-cap-s{font-size:11px;color:rgba(255,255,255,.4);font-weight:300}
 .ba-proof{display:inline-flex;margin-top:8px;border:1px solid rgba(113,196,159,.26);background:rgba(113,196,159,.12);border-radius:100px;padding:3px 9px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:rgba(113,196,159,.95)}
+.ba-meta{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:11px;color:rgba(255,255,255,.5);font-weight:400;letter-spacing:.01em}
+.ba-meta svg{flex-shrink:0;opacity:.6}
 
 /* Booking box right side */
 .ba-book{background:#fff;border-radius:var(--rxl);padding:28px;position:sticky;top:90px;box-shadow:0 16px 48px rgba(0,0,0,.25)}
@@ -1833,29 +1835,60 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
     <div class="ba-inner">
       <!-- LEFT: before/after cards stacked -->
       <div class="ba-cards">
+        <!-- S6: ba-meta = Area · Month/Year — TODO GIAMPIERO: echte Stadtteile + Monat/Jahr eintragen -->
         <div class="ba-card ba-card-full">
           <img src="assets/before-after-ac-duct-deep-cleaning-dubai.webp" alt="Before and after AC duct deep cleaning in Dubai" loading="lazy">
-          <div class="ba-cap"><div class="ba-cap-t">AC Duct Deep Cleaning</div><div class="ba-cap-s">Complete removal of dust, mold &amp; buildup</div><div class="ba-proof">Real job · photo documented</div></div>
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Duct Deep Cleaning</div>
+            <div class="ba-cap-s">Complete removal of dust, mold &amp; buildup</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><!-- TODO: z.B. "JVC · Villa · April 2025" -->Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
         </div>
         <div class="ba-card ba-card-full">
           <img src="assets/before-after-mattress-deep-cleaning-dubai.webp" alt="Mattress Deep Cleaning Dubai – Before and After" loading="lazy">
-          <div class="ba-cap"><div class="ba-cap-t">Mattress Deep Cleaning</div><div class="ba-cap-s">Dust mite &amp; allergen elimination</div><div class="ba-proof">Real job · photo documented</div></div>
+          <div class="ba-cap">
+            <div class="ba-cap-t">Mattress Deep Cleaning</div>
+            <div class="ba-cap-s">Dust mite &amp; allergen elimination</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><!-- TODO: z.B. "Dubai Marina · Apartment · March 2025" -->Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
         </div>
         <div class="ba-card ba-card-full">
           <img src="assets/before-after-ac-coil-cleaning.webp" alt="Before and after AC coil cleaning" loading="lazy">
-          <div class="ba-cap"><div class="ba-cap-t">AC Coil Cleaning</div><div class="ba-cap-s">Full coil decontamination &amp; efficiency restore</div><div class="ba-proof">Real job · photo documented</div></div>
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Coil Cleaning</div>
+            <div class="ba-cap-s">Full coil decontamination &amp; efficiency restore</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><!-- TODO: z.B. "Downtown Dubai · Apartment · Feb 2025" -->Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
         </div>
         <div class="ba-card ba-card-full">
           <img src="assets/before-after-sofa-deep-cleaning-service-dubai.webp" alt="Before and after sofa deep cleaning service Dubai" loading="lazy">
-          <div class="ba-cap"><div class="ba-cap-t">Sofa Deep Cleaning Service</div><div class="ba-cap-s">Stain removal &amp; fabric sanitizing</div><div class="ba-proof">Real job · photo documented</div></div>
+          <div class="ba-cap">
+            <div class="ba-cap-t">Sofa Deep Cleaning Service</div>
+            <div class="ba-cap-s">Stain removal &amp; fabric sanitizing</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><!-- TODO: z.B. "The Springs · Villa · Jan 2025" -->Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
         </div>
         <div class="ba-card ba-card-full">
           <img src="assets/before-after-ac-filter-sanitizing.webp" alt="Before and after AC filter sanitizing" loading="lazy">
-          <div class="ba-cap"><div class="ba-cap-t">AC Filter Cleaning</div><div class="ba-cap-s">Deep sanitizing of all AC filters</div><div class="ba-proof">Real job · photo documented</div></div>
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Filter Cleaning</div>
+            <div class="ba-cap-s">Deep sanitizing of all AC filters</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><!-- TODO: z.B. "Jumeirah · Villa · Dec 2024" -->Dubai, UAE &middot; 2024</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
         </div>
         <div class="ba-card ba-card-full">
           <img src="assets/before-after-ac-grills-cleaning.webp" alt="Before and after AC grills cleaning" loading="lazy">
-          <div class="ba-cap"><div class="ba-cap-t">AC Grills Cleaning</div><div class="ba-cap-s">Complete grill restoration &amp; sanitizing</div><div class="ba-proof">Real job · photo documented</div></div>
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Grills Cleaning</div>
+            <div class="ba-cap-s">Complete grill restoration &amp; sanitizing</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><!-- TODO: z.B. "Arabian Ranches · Villa · Nov 2024" -->Dubai, UAE &middot; 2024</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
         </div>
       </div>
 

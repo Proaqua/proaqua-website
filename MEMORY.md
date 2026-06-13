@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-13 — Claude (Cowork) — P0.2 + P0.3 + P1.2 umgesetzt · Commit b82dc75
+- **Erledigt P0.2:** Trust-Chip "Licensed & Insured · DED Trade License No. 0000000" → "Licensed & Insured Dubai Business" (2× in Chip-Marquee). TODO-Kommentar oben aktualisiert: Giampiero trägt echte Nr. ein, dann Chip-Text auf "Licensed & Insured · DED Trade License No. XXXXXX" ändern.
+- **Erledigt P0.3:** `#process`-Überschrift auf "Simple, Transparent Process" geändert. 4 Schritte inhaltlich geschärft: "Share Your Needs / Free Inspection / Fixed Quote / Clean & Proof". Subline "No surprises. Fixed price confirmed before we start." ergänzt.
+- **Erledigt P0.3 + P1.2:** Neue Sektion `#pricing` nach `#process` eingebaut (2-Spalten-Grid, ab 860px einspaltig): Links "How Pricing Works" mit 4 Punkten (Free Inspection → Scope-based fixed price → Confirmed before start → Zero hidden extras) + WhatsApp-CTA "Send Photos for a Fixed Quote". Rechts "The Pro Aqua Clean-Air Guarantee" als dunkle Karte (navy bg): alle 4 Versprechen (Free inspection / Fixed quote before start / Before & after photo proof / Free re-clean).
+- **Quellen:** Copy direkt aus `conversion-research/claude-coworker-growth-brief.md` Abschnitt 7 übernommen.
+- **Verifikation:** Python-Checks grün: 2× Chip-Ersatz, #pricing vorhanden, Guarantee, CTA, Re-clean-Versprechen, altes "4 Simple" entfernt. HTML: 193 KB (T1 erledigt). Kein `git push`.
+- **Nächster Schritt:** GA4 + Meta Pixel IDs von Giampiero, dann T2 Tracking finalisieren. Alternativ: S6 Before/After-Captions (Stadtteil + Monat) sobald Giampiero Infos liefert. Dann echtes Franco-Foto (ersetzt assets/franco.jpg).
+
 ### 2026-06-13 — Codex — Research-Prompt mit Sub-Agenten ausgeführt und Claude-Coworker-Paket erstellt
 - **Erledigt:** Den zuvor erstellten State-of-the-Art-Research-Prompt als vollstaendigen Arbeitsauftrag ausgefuehrt und dafuer drei Sub-Agenten genutzt: Behavioral-Science/Papers, 2026 UX-/WhatsApp-/AI-Search-Trends und Dubai-Wettbewerbsableitung.
 - **Erledigt:** Neues Claude-Uebergabedokument `conversion-research/claude-coworker-growth-brief.md` erstellt. Inhalt: ausgefuehrter Prompt, harte Strategie, Quellen-/Evidenzlogik, Dubai-Markt-Synthese, State-of-the-Art-Trends, Copy-Bausteine, Claude-Arbeitsanweisung und Quellenlinks.
