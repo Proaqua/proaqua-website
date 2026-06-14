@@ -31,6 +31,22 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Native-Ad-Mechaniken auf aktuelle Website gemappt
+- **Erledigt:** Aktuelle `index.html` gezielt gegen die neue Native-Ad-/Direct-Response-Logik geprüft: Hero, `#compare`, `#why`, `#franco`, Services, Before/After, Booking, Pricing und Seasonal.
+- **Dokumentiert:** Neues Arbeitsdokument `conversion-research/native-ad-application-recommendations.md` erstellt mit konkreten Homepage-, Meta-/Instagram- und SEO-/AI-Search-Anwendungen.
+- **Ergebnis:** Die Seite nutzt bereits Hidden-Problem-Hero, Vergleich, Proof, Risk Reversal, WhatsApp-first und Seasonal Trigger. Der stärkste zusätzliche Hebel ist eine neue Mini-Section `Franco's 60-Second AC Vent Check`, danach `#why` als Field-Report/Inspection-Notes entschärfen und eine "Before You Book Any Cleaning Team in Dubai"-Checkliste ergänzen.
+- **Guardrails:** Keine Fake-News-/Tarnredaktion, keine Fake-Knappheit, keine zusätzlichen medizinischen oder Zertifizierungsclaims ohne Nachweis, keine KI-Before/After-Beweise.
+- **Verifikation:** Nur Markdown-Dateien geändert; `index.html` wurde nicht angefasst. Bestehende lokale `.DS_Store`-Änderungen bleiben unberührt. Kein `git push`.
+- **Nächster Schritt:** P0 zuerst umsetzen: `Franco's 60-Second AC Vent Check` nach Hero/Compare einbauen, mit WhatsApp-Prefill "I checked my AC vent..." und später echten AC-Vent-/Filterfotos.
+
+### 2026-06-15 — Codex — Native-Ad-/Advertorial-Ideenprompt erstellt
+- **Erledigt:** Neue Prompt-Datei `conversion-research/native-ad-idea-generation-prompt.md` erstellt, um Website-, Landingpage- und Kampagnenideen aus alten Advertorial-, Direct-Response-, Mailorder- und Teleshopping-Mechaniken abzuleiten.
+- **Recherche:** Referenzfelder zusammengeführt: Swiped.co/SWIPE-Files, Duke Ad*Access, The Advertising Archives, Vintage Ad Browser/AdClassix, SOFII/WSJ-"Two Young Men", FTC Native Advertising Guide und DRTV-/Infomercial-Strukturen.
+- **Inhalt:** Prompt fordert 12 historische Mechaniken, 30 konkrete Pro-Aqua-Ideen, 7 stärkste Website-Skizzen, spezielle Winkel für Hidden Air Problem, Clean-Looking Mattress Test, Sandstorm Reset, Booking App vs Specialist, Franco's Inspection Notes und Fixed-Quote-Vertrauen.
+- **Guardrails:** Keine kopierten Altanzeigen, keine Täuschung als Redaktion, keine Fake-Knappheit, keine unbelegten medizinischen/Trust-/Preisclaims, keine KI-Bilder als echter Proof.
+- **Verifikation:** Nur Markdown-Dateien geändert; `index.html` wurde nicht angefasst. Bestehende lokale `.DS_Store`-Änderungen bleiben unberührt. Kein `git push`.
+- **Nächster Schritt:** Prompt ausführen lassen und die besten 3 Konzepte als konkrete Homepage-/Meta-/SEO-Tickets priorisieren.
+
 ### 2026-06-14 — Codex — Claude-Fable5 UI/UX-Optimierungsprompt erstellt
 - **Erledigt:** Neuen ausführbaren Prompt `conversion-research/claude-fable5-ui-ux-optimization-prompt.md` erstellt, damit Claude Fable 5 die Pro-Aqua-Seite optisch, UX-seitig und conversion-orientiert optimieren kann.
 - **Inhalt:** Prompt integriert Seena-Rez-Pattern-Interrupt, Problem→Proof→Solution→CTA-Flow, Hormozi Value Equation, WhatsApp-First-Friction-Reduction, Premium-/Trust-UI, Mobile-Polish, Motion-Regeln und harte Claim-Hygiene.
@@ -313,3 +329,30 @@ Vollständige Wissensdatenbank aller psychologischen Frameworks angewendet auf P
 - Sektionsweise Analyse & Status (was gemacht, was TODO, was BLOCKED)
 - Regeln & Tone-of-Voice Referenz
 - Für Codex als Kontext-Einlesedatei vorbereitet (Markdown, sauber strukturiert)
+
+## 2026-06-15 — P0 Upgrades implementiert (Commit 138265c)
+
+Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
+
+**1. #why reframe (Field Report statt Fear Stats)**
+- Chip: „The Hidden Danger" → „From Franco's Inspections"
+- H2: „What We Often Find During Dubai AC Inspections"
+- Sub: „Not a lab study. What Franco's team actually documents — every week."
+- Neu: Franco's Inspection Note Box (Authority + Specificity Layer)
+- Wissenschaftliche Datenkarten bleiben — nur Framing entschärft
+
+**2. 7-Fragen-Checkliste in #compare (nach Comparison-Karten)**
+- Setzt Kaufkriterien die Proaqua gewinnt: gleiche Team, fixed price, Foto-Proof, re-clean
+- Abschluss: „Pro Aqua answers yes to all seven"
+- WA-CTA: „Ask Franco's team" (Low-Friction Erstkontakt)
+
+**3. Franco's 60-Second AC Vent Check (neue Sektion zwischen #compare und #quiz)**
+- 3 Selbstdiagnose-Karten: Staubling am Vent / Modergeruch beim AC-Start / Staub kommt schnell zurück
+- Mechanik: Besucher macht Mini-Test → „ich sollte das prüfen lassen" → WA-Foto-CTA
+- Seitenreihenfolge jetzt: Hero → Compare → [Checklist in Compare] → [Vent Check] → Quiz → ...
+- Kann später als Meta-Ad-Landing-State genutzt werden
+
+**Nächste ausstehende Sektionen:**
+- Booking Section (Fear→Relief Abschluss)
+- Franco-Sektion (mehr Specificity in der Story)
+- Reviews (Single Metric Hammer)
