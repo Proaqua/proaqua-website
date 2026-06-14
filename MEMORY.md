@@ -304,3 +304,12 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 
 **Nächste Sektionen (ausstehend):**
 Weiter mit section-by-section review nach Quiz
+
+## 2026-06-15 — conversion-strategy.md erstellt (Commit f4baefe)
+
+Neue Datei im Repo: `conversion-strategy.md`
+Vollständige Wissensdatenbank aller psychologischen Frameworks angewendet auf Proaqua:
+- Angle Matrix, Trust Stack, Fear→Relief, Identity vs Utility, Empty Copy Paradox
+- Sektionsweise Analyse & Status (was gemacht, was TODO, was BLOCKED)
+- Regeln & Tone-of-Voice Referenz
+- Für Codex als Kontext-Einlesedatei vorbereitet (Markdown, sauber strukturiert)
