@@ -1159,6 +1159,8 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
     transition:none!important;
   }
 }
+/* ── Section visual separation ─────────────────────────────────── */
+section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 </style>
 <script type="application/ld+json">
 {
@@ -1388,6 +1390,10 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
           WhatsApp Franco's Team
         </a>
       </div>
+      <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(77,168,130,.1);border:1px solid rgba(77,168,130,.25);border-radius:8px;padding:8px 14px;font-size:12.5px;font-weight:600;color:var(--green-d);margin-top:8px">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Not happy? We re-clean for free — no questions asked.
+      </div>
       <div class="wa-live-row"><span class="whatsapp-live">WhatsApp active 7 days · replies in minutes</span></div>
       <div class="hero-trust">
         <div class="ht-item"><div class="ht-dot"></div>Typically done in 2–3 hours · same-day slots when available</div>
@@ -1603,7 +1609,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 </section>
 
 <!-- ===================== 60-SECOND VENT CHECK ===================== -->
-<section style="background:var(--bg2);padding:52px 0 48px;border-top:1px solid var(--bg3)">
+<section style="background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)">
   <div class="sec">
     <div class="chip-row"><span class="chip" style="background:rgba(88,153,227,.1);color:var(--blue);border:1px solid rgba(88,153,227,.2);font-size:11px">Quick Self-Check</span></div>
     <h2 class="sec-t" style="text-align:center">Franco's 60-Second<br><em class="blue-em">AC Vent Check</em></h2>
