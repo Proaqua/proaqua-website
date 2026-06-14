@@ -369,6 +369,16 @@ Vollständige Wissensdatenbank aller psychologischen Frameworks angewendet auf P
 - Regeln & Tone-of-Voice Referenz
 - Für Codex als Kontext-Einlesedatei vorbereitet (Markdown, sauber strukturiert)
 
+### 2026-06-15 — Claude (Cowork) — Hero Chips + Sticky Trust Bar · Commits 0ca46cb, 55da097
+
+- **Hero Guarantee Badge (0ca46cb):** Grüner Shield-Badge zwischen WA-Button und wa-live-row: "Not happy? We re-clean for free — no questions asked." Fixes: `width:fit-content;margin:8px auto 0` (Badge nicht mehr verzogen), `style="margin-top:10px"` auf `.wa-live-row` (Überlappung behoben), Gold-Stars `★★★★★` mit `color:#FBBC04` inline in Hero-Stat-Chips.
+- **Sticky Trust Bar (0ca46cb):** Neuer `#sticky-trust` Bar (position:fixed;top:0;height:44px). Zeigt: 4.7★ Google · 6,000+ Families · 10+ Yrs Dubai · Shield-Icon "Re-clean guarantee" + grünen "Book Free" WA-Button. Erscheint dynamisch nach dem Hero (threshold = hero.offsetTop + hero.offsetHeight), verschwindet bei scrollY < 50.
+- **Sticky Bar Layout-Fix (55da097):** `body.stb-pushed{padding-top:44px;overflow-anchor:none}` — verhindert dass Fixed Bar über Inhalte ragt.
+- **Dritter Hero-Chip (55da097):** `💰 Fixed Price · No Surprises` als dritter Chip in `.hero-chips` (Trust Triangle: Authority "seit 2016" + Quality "4.7 Google" + Price Safety "Fixed Price").
+- **Commit:** 55da097 (lokal, nicht gepusht)
+- **Sektionsreihenfolge jetzt:** Sticky Trust Bar → Hero (3 Chips: since 2016 / 4.7 Google / Fixed Price) → Trust Belt → Compare → Vent Check (bg #fff) → Quiz → Why → Solution → Franco → Services → Before/After → Booking → Reviews → Process → Pricing → Business → Areas → FAQ
+- **BLOCKED:** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions.
+
 ## 2026-06-15 — P0 Upgrades implementiert (Commit 138265c)
 
 Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
