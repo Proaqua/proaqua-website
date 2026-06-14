@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-14 — Codex — Claude-Fable5 UI/UX-Optimierungsprompt erstellt
+- **Erledigt:** Neuen ausführbaren Prompt `conversion-research/claude-fable5-ui-ux-optimization-prompt.md` erstellt, damit Claude Fable 5 die Pro-Aqua-Seite optisch, UX-seitig und conversion-orientiert optimieren kann.
+- **Inhalt:** Prompt integriert Seena-Rez-Pattern-Interrupt, Problem→Proof→Solution→CTA-Flow, Hormozi Value Equation, WhatsApp-First-Friction-Reduction, Premium-/Trust-UI, Mobile-Polish, Motion-Regeln und harte Claim-Hygiene.
+- **Guardrails:** Keine erfundenen Trust-Nachweise, keine absoluten Same-Day-/2-3h-Garantien, keine vermischten Dust-Mite-/AC-Duct-Claims, keine medizinischen Heilversprechen, kein `git push`, keine komplette `index.html`-Neugenerierung.
+- **Verifikation:** Nur Markdown-Dateien geändert; `index.html` wurde nicht angefasst. Bestehende lokale `.DS_Store`-Änderung bleibt unberührt.
+- **Nächster Schritt:** Prompt in Claude Fable 5 ausführen lassen; danach konkrete UI/UX-Änderungen mit Desktop-/Mobile-Verifikation prüfen und erneut im Arbeitslog dokumentieren.
+
 ### 2026-06-13 — Codex — Franco-Meta-Ordner geprüft und bewertet
 - **Erledigt:** Relevante Franco-Unterlagen geprüft: `Desktop/Desktop/021_FRanco_Meta/Improve _Respond .docx` sowie die Pages-Vorschauen aus `22pharma-site/Datein Franco/PlanCHATGPT.pages` und `pianoclaude.pages`.
 - **Ergebnis:** Die Richtung ist gut: WhatsApp-/Messenger-Antworten sollen kürzer, wärmer, weniger technisch und stärker dialogorientiert werden. Außerdem ist die Idee einer lokalen `Proaqua Local Client Engine` bzw. `AI Content Engine` für Google/Maps/Social/WhatsApp mit kleinem Budget grundsätzlich sinnvoll.
