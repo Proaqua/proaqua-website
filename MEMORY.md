@@ -203,6 +203,18 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 4. **T2 Tracking:** GA4 + Klick-Events auf alle wa.me/tel-Links.
 5. **S6:** Vorher/Nachher-Captions um Stadtteil+Monat ergänzen (Infos von Giampiero nötig).
 
+### 2026-06-14 — Claude Fable 5 (Cowork) — Claim Hygiene Pass · Commit 3ce207d
+
+- **Anlass:** `claude-fable5-ui-ux-optimization-prompt.md` von Giampiero hochgeladen, Claim-Hygiene-Audit ausgeführt.
+- **Erledigt H1:** "Your Dubai apartment" → "Your Dubai home" (deckt Villen + Apartments ab)
+- **Erledigt hero-sub:** Dust-Mite-Claim aus AC-Duct-Context entfernt (fachlich: Dust mites → Matratze, nicht Duct). Neu: "Mold, allergens & hidden contaminants building up in your AC ducts — typically cleaned in 2–3 hours. Fixed price, same-day slots when available."
+- **Erledigt hero-trust:** "Done in 2–3 hours · same-day available" → "Typically done in 2–3 hours · same-day slots when available"
+- **Erledigt Chips:** "Dubai Municipality Approved" (2×) → "DED Licensed Business" (kein DM-Nachweis im Projekt; DED-Lizenz vorhanden, Nummer noch Platzhalter)
+- **Erledigt Solution-Tile:** "99.9% of dust, mold & bacteria" → "effectively remove" (unbelegter Präzisionsclaim entfernt)
+- **Erledigt Franco-Copy:** "same medical-grade equipment used in hospitals" → "professional-grade equipment" (Klinik-Gleichsetzung riskant ohne Nachweis)
+- **Verifikation:** 15/15 Python-Checks grün. Kein `git push`.
+- **Nächster Schritt (laut UI/UX Prompt):** Codex: hero-headline-ab-test-prompt.md auswerten. Giampiero: GA4/Meta IDs, echtes Franco-Foto, DED-Lizenznummer, S6 Before/After-Daten.
+
 ### 2026-06-13 — Claude (Cowork) — Hero V1 Pattern Interrupt + Codex A/B-Test Handover · Commit d22485b
 
 - **Konzept-Basis:** Seena Rez Contradiction-Hook-Framework (Scroll-Stop, Pattern Interruption) + Hormozi Value Equation (Outcome × Likelihood / Time × Effort).
