@@ -203,6 +203,27 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 4. **T2 Tracking:** GA4 + Klick-Events auf alle wa.me/tel-Links.
 5. **S6:** Vorher/Nachher-Captions um Stadtteil+Monat ergänzen (Infos von Giampiero nötig).
 
+### 2026-06-14 — Claude Fable 5 (Cowork) — #compare Psychologisches Redesign · Commit 7e61573
+
+- **Framework-Basis:** Angle Matrix, Trust Stack Formula, Fear→Relief, Identity vs. Utility, Empty Copy Paradox (aus Giampieros Artikel).
+- **Fear Trigger:** H2 auf "Who's Responsible for What You Can't See?" geändert. Sub-Text: "Most companies make your home look clean. A specialist removes mold, allergens and bacteria..." + Honest Framing: "including when Pro Aqua is NOT the right choice" (stärkstes Trust-Signal).
+- **Trust Stack (5 Layer komprimiert in Pro Aqua Card):** Numbers (4.7★, 6,000+) + Authority (Franco's personally trained team) + Specificity ("You see the proof") + Risk Reversal (Free re-clean, no questions) + Cultural (Since 2016 — still here — still Franco).
+- **Pre-emptive Objection Kill:** Neue `.cmp-okill` Box vor CTA: "Worried it won't make a difference? ...Zero risk to you."
+- **Identity Signal:** Badge "THE SPECIALIST CHOICE" (statt "THE ACCOUNTABLE CHOICE"). "Right choice if: You care about what your family breathes."
+- **Ehrliche Seiten-Karten:** Beide Links/Rechts-Karten bekommen ein ".cmp-honest" Verdict: "Right choice if: [ehrlicher Use-Case]". Rechts: Preis "AED 2,500–3,500+" explizit genannt. Wirkt nicht mehr "rigged" — baut massives Trust auf.
+- **Neue CSS:** `.cmp-honest` (grüne Verdict-Chips) + `.cmp-okill` (Objection-Kill-Box).
+- **Verifikation:** 17/17 Checks grün. Kein `git push`.
+- **Nächster Schritt:** Section-by-section weiter — nächste Sektion nach #compare prüfen.
+
+### 2026-06-14 — Claude Fable 5 (Cowork) — SVG Icons Trust Belt · Commit e2a2570
+
+- **Erledigt:** Alle 11 einzigartigen Trust-Belt-Chips (×2 = 22 insgesamt) mit passenden Lucide-Style Inline-SVG-Icons (14×14px) ausgestattet.
+- **Icon-Mapping:** Clock→Trusted since 2016, Shield-Check→Licensed & Insured, Activity/Pulse→Medical-Grade Equipment, Star(filled)→4.7 Google Reviews, Chat-Bubble→WhatsApp 7 Days, Users→6,000+ Clients, Tag→Fixed Price, Home→Villas & Apartments, Leaf→Eco-Safe Products, Heart(filled)→Safe for Kids & Pets, Award→DED Licensed Business.
+- **Emojis ersetzt:** ⭐, 🏠, 👶 durch saubere SVGs ersetzt (konsistenter, skalierbar, farb-steuerbar via CSS).
+- **CSS:** `.chip{display:inline-flex;align-items:center;gap:5px}` war bereits vorhanden — kein CSS-Eingriff nötig.
+- **Verifikation:** 22 Chips + 22 SVGs im Belt-Block bestätigt (Python-Check). Kein `git push`.
+- **Nächster Schritt:** Section-by-section Conversion Review (Giampiero: "mehr impact, klar was als nächstes passiert").
+
 ### 2026-06-14 — Claude Fable 5 (Cowork) — Claim Hygiene Pass · Commit 3ce207d
 
 - **Anlass:** `claude-fable5-ui-ux-optimization-prompt.md` von Giampiero hochgeladen, Claim-Hygiene-Audit ausgeführt.
@@ -259,3 +280,27 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 - Verifiziert gegen index.html: Tippfehler "Conduct Cleaning" (1×, in Before/After-Galerie), KEIN Analytics/Tracking vorhanden, `og-image.jpg` fehlt (assets/ enthält nur mp4 + placeholder), WhatsApp-Prefill-Links existieren bereits.
 - Marktdaten: ServiceMarket AC ab AED 180/Unit & Duct ab ~550; Saniservice Premium AED 2.500–3.200+ (NADCA); Markt-Mitte AED 750–1.200. Lücke für Pro Aqua: persönlicher Spezialist, Festpreis AED 400–1.500.
 - **Nächster Schritt:** Giampiero gibt Positionierungs-These + Prioritäten frei (offene Fragen am Ende von analyse-marketing.md: Lizenz-Nr., Fotos von Franco, Ab-Preise, Kartenzahlung). Danach Quick Wins Q1–Q5 + T3 in index.html umsetzen (gezielt per Suchen/Ersetzen, lokal committen, NICHT pushen).
+
+## 2026-06-14 — Quiz-Sektion überarbeitet (Commit 3feda32)
+
+**Was geändert:**
+- H2: „Know What You're Getting Before You Spend a Dirham" — Identity-Winkel (clever/empowered buyer)
+- Sub: 4 Taps → personalised estimate → free inspection → no email, no pressure
+- Float chip: „Free Quote" → „No Commitment"
+- Result-Icon: 🎉 → grüner SVG-Haken (professioneller)
+- Result-Titel: „Your Specialist Quote Is Ready"
+- Result-Sub: Spezialist bestätigt den Preis beim kostenlosen Vor-Ort-Termin
+- Preis-Label: „Not Binding" → „Estimated Starting From"
+- **Kompletten Disclaimer entfernt** → ersetzt durch 3 grüne Trust-Chips:
+  ✓ Free on-site inspection | ✓ Fixed price before we start | ✓ Free re-clean if not satisfied
+- CTA: „Book Now via WhatsApp" → „Claim My Free Inspection"
+- Urgency: „limited slots" (fake) → „quote held for 24 hours" (plausibel/real)
+
+**Framework-Entscheidungen:**
+- Trust Gap: Hoch (Onlinepreise sind verdächtig) → Disclaimer raus, Trust-Chips rein
+- Identity vs. Utility: H2 spricht den smarten Dubai-Käufer an, nicht Features
+- Fear→Relief: Schon durch #compare aktiviert; Quiz = leichter Einstieg ohne Risiko
+- Empty Copy Paradox: Weniger Text im Result = mehr Vertrauen
+
+**Nächste Sektionen (ausstehend):**
+Weiter mit section-by-section review nach Quiz
