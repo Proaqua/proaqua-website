@@ -1369,13 +1369,23 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   var shown=false;
   var threshold=0;
   function getThreshold(){
+    if(shown)return;
     var hero=document.getElementById('hero');
-    threshold=hero?hero.offsetHeight+hero.offsetTop:700;
+    threshold=hero?(hero.offsetTop+hero.offsetHeight):700;
   }
   function onScroll(){
     var y=window.scrollY||window.pageYOffset;
-    if(y>threshold&&!shown){bar.classList.add('stb-visible');bar.removeAttribute('aria-hidden');shown=true;}
-    else if(y<=threshold&&shown){bar.classList.remove('stb-visible');bar.setAttribute('aria-hidden','true');shown=false;}
+    if(!shown&&y>threshold){
+      bar.classList.add('stb-visible');
+      bar.removeAttribute('aria-hidden');
+      document.body.classList.add('stb-pushed');
+      shown=true;
+    }else if(shown&&y<50){
+      bar.classList.remove('stb-visible');
+      bar.setAttribute('aria-hidden','true');
+      document.body.classList.remove('stb-pushed');
+      shown=false;
+    }
   }
   window.addEventListener('load',function(){getThreshold();onScroll();});
   window.addEventListener('resize',getThreshold,{passive:true});
