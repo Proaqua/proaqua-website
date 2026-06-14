@@ -31,6 +31,16 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Claude — Hero Guarantee Badge + Section Visual Separation
+- **Erledigt:**
+  1. **Hero Risk-Reversal-Badge:** Grüner Shield-Badge zwischen WA-Button und "WhatsApp active 7 days"-Zeile eingefügt: *"Not happy? We re-clean for free — no questions asked."* (grüner Hintergrund rgba(77,168,130,.1), `--green-d` Text, Shield-SVG).
+  2. **CSS Section Separator:** Globale Regel `section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}` hinzugefügt — alle benannten Sektionen (außer Hero und navy Before/After) bekommen jetzt eine klare 2px-Trennlinie beim Scrollen.
+  3. **Vent Check Hintergrund:** Von `var(--bg2)` auf `#fff` geändert — schafft richtige bg-Alternation mit den angrenzenden `bg2`-Sektionen (#compare oben, #quiz unten).
+- **Commit:** `18a6385`
+- **Verifikation:** grep-Checks auf alle 3 Änderungen erfolgreich.
+- **Offene TODOs (Giampiero):** GA4-ID, Meta-Pixel-ID, echte DED-Lizenznummer, echte Before/After-Bildunterschriften.
+- **Nächster Schritt:** Auf Wunsch von Giampiero weitere Optimierungen; sonst Website lokal testen.
+
 ### 2026-06-15 — Codex — Native-Ad-Mechaniken auf aktuelle Website gemappt
 - **Erledigt:** Aktuelle `index.html` gezielt gegen die neue Native-Ad-/Direct-Response-Logik geprüft: Hero, `#compare`, `#why`, `#franco`, Services, Before/After, Booking, Pricing und Seasonal.
 - **Dokumentiert:** Neues Arbeitsdokument `conversion-research/native-ad-application-recommendations.md` erstellt mit konkreten Homepage-, Meta-/Instagram- und SEO-/AI-Search-Anwendungen.
