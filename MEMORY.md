@@ -286,6 +286,35 @@ Commit `82991d9` (lokal, NICHT gepusht). Änderungen in index.html:
 - **Verifikation:** 15/15 Python-Checks grün (einzige Ausnahme: font-size:36px noch in `.hr-num`/`.hr-big-num` — komplett andere Sektionen, kein Problem). Kein `git push`.
 - **Nächster Schritt:** T2 Tracking (blockiert auf GA4 + Meta IDs von Giampiero) oder S6 Before/After echte Captions (blockiert auf Stadtteil + Monat von Giampiero). Nächste interne Option: Mobile-Responsiveness der neuen `#why`-Karten prüfen (`.danger-grid` nutzt bestehende 2-Spalten-/1-Spalten-Breakpoints aus Codex-Arbeit).
 
+### 2026-06-15 — Claude (Cowork) — Franco + Booking + Button-Fix · Commits b50b982, 8588049
+
+- **Franco — Authority Layer (Commit b50b982):**
+  - Stat-Chip 1: "10 Y. Experience" → "2016 Founded" (konkrete Jahreszahl)
+  - Stat-Chip 2: "100% Satisfaction" → "4.7★ Google Rating" (verifizierbar)
+  - Story P1: "I started Pro Aqua Dubai after seeing too many families…" → konkrete Origin-Story mit Jahreszahl 2016 und Dubai-AC-Klimakontext
+  - Story P2: "We use professional-grade equipment…" → persönliche Begleitung Franco + Foto-Proof-Versprechen
+  - Bullets spezifischer: "hospital HVAC maintenance" / "photos sent directly to you" / "fixed before work begins" / "Franco's team responds…"
+  - CTA: "Get Free Consultation" → "Book My Free Inspection"
+- **Booking — Fear→Relief Abschluss (Commit b50b982):**
+  - H2: "Ready for a Healthier Home?" → "Your Home Deserves Better Air."
+  - Sub: "Choose how you'd like to connect…" → "Most families wait until symptoms appear. You don't have to — the first step is free and takes 30 seconds. Franco's team responds within minutes, 7 days a week."
+- **Button-Fix (Commit 8588049):**
+  - "Ask Franco's Team" in der Checklist-Sektion (#compare) war navy → auf #25D366 (WhatsApp-Grün) mit box-shadow geändert. Konsistent mit allen WA-Buttons.
+- **Verifikation:** 9/9 Python-Checks grün. Kein `git push`.
+- **Nächster Schritt (Reihenfolge):**
+  1. Reviews-Sektion: Single Metric Hammer (eine Zahl, überall wiederholt) — z.B. 4.7★ oder 6,000+ konsequent in H2/Sub verankern
+  2. BLOCKED — GA4 Measurement ID + Meta Pixel ID (von Giampiero)
+  3. BLOCKED — Echte DED Trade License No.
+  4. BLOCKED — Echte Before/After-Captions (Stadtteil + Monat/Jahr)
+
+### 2026-06-15 — Claude (Cowork) — conversion-strategy.md + 3 P0-Upgrades + Vent Check Bilder · Commits f4baefe, 138265c, 1f25f38
+
+- **conversion-strategy.md (Commit f4baefe):** Psychologisches Framework dokumentiert für Claude+Codex: Angle Matrix, Trust Stack Formula, Fear→Relief, Identity vs. Utility, Empty Copy Paradox.
+- **P0: #why Reframe (Commit 138265c):** H2 → "What We Often Find During Dubai AC Inspections" (Field-Report statt Panic). Chip "From Franco's Inspections". Franco Inspection Note Box (blaue Quote-Box).
+- **P0: 7-Fragen-Checklist in #compare (Commit 138265c):** "Before You Book Any Cleaning Team in Dubai" + 7 grüne Checkmark-Fragen + "Ask Franco's Team" CTA.
+- **P0: Vent Check Bilder (Commit 1f25f38):** Alle 3 Karten haben echte before-after-*.webp Assets mit object-position:left center (zeigt "dirty" Seite). SIGN 1/2/3 rote Badges. CTA-Button → "Send Franco a Photo" (grün).
+- **Verifikation:** Alle Commits grün. Kein `git push`.
+
 ### 2026-06-13 — Claude (Cowork)
 - Repo von GitHub geklont → lokal auf Desktop/Proaqua-website. Branch `main`, sauber.
 - CLAUDE.md + AGENTS.md mit Git-Regeln angelegt (niemals pushen, nur lokal).
