@@ -1361,32 +1361,50 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .stb-guarantee{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:var(--green-d);white-space:nowrap}
 .stb-btn{display:inline-flex;align-items:center;gap:5px;background:#25D366;color:#fff;border-radius:7px;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 2px 8px rgba(37,211,102,.3);flex-shrink:0}
 @media(max-width:480px){.stb-dot-hide,.stb-guarantee{display:none}}
-body.stb-pushed{padding-top:44px;overflow-anchor:none}
+body.stb-pushed{padding-top:44px}
 </style>
 <script>
 (function(){
   var bar=document.getElementById('sticky-trust');
   if(!bar)return;
-  var shown=false;
-  var threshold=0;
+  var shown=false,locked=false,threshold=0;
   function getThreshold(){
     if(shown)return;
     var hero=document.getElementById('hero');
     threshold=hero?(hero.offsetTop+hero.offsetHeight):700;
   }
+  function showBar(){
+    shown=true;
+    locked=true;
+    /* Temporarily disable scroll-anchoring so the browser doesn't double-compensate */
+    var s=document.createElement('style');
+    s.id='stb-no-anchor';
+    s.textContent='html{overflow-anchor:none}';
+    document.head.appendChild(s);
+    document.body.classList.add('stb-pushed'); /* shifts content down 44px */
+    window.scrollBy(0,44);                     /* scroll down 44px to compensate */
+    bar.classList.add('stb-visible');
+    bar.removeAttribute('aria-hidden');
+    /* Re-enable anchoring after layout+paint settle */
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        var el=document.getElementById('stb-no-anchor');
+        if(el)el.parentNode.removeChild(el);
+        locked=false;
+      });
+    });
+  }
+  function hideBar(){
+    shown=false;
+    bar.classList.remove('stb-visible');
+    bar.setAttribute('aria-hidden','true');
+    document.body.classList.remove('stb-pushed');
+  }
   function onScroll(){
+    if(locked)return;
     var y=window.scrollY||window.pageYOffset;
-    if(!shown&&y>threshold){
-      bar.classList.add('stb-visible');
-      bar.removeAttribute('aria-hidden');
-      document.body.classList.add('stb-pushed');
-      shown=true;
-    }else if(shown&&y<50){
-      bar.classList.remove('stb-visible');
-      bar.setAttribute('aria-hidden','true');
-      document.body.classList.remove('stb-pushed');
-      shown=false;
-    }
+    if(!shown&&y>threshold){showBar();}
+    else if(shown&&y<50){hideBar();}
   }
   window.addEventListener('load',function(){getThreshold();onScroll();});
   window.addEventListener('resize',getThreshold,{passive:true});
