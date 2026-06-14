@@ -1367,11 +1367,18 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   var bar=document.getElementById('sticky-trust');
   if(!bar)return;
   var shown=false;
+  var threshold=0;
+  function getThreshold(){
+    var hero=document.getElementById('hero');
+    threshold=hero?hero.offsetHeight+hero.offsetTop:700;
+  }
   function onScroll(){
     var y=window.scrollY||window.pageYOffset;
-    if(y>480&&!shown){bar.classList.add('stb-visible');bar.removeAttribute('aria-hidden');shown=true;}
-    else if(y<=480&&shown){bar.classList.remove('stb-visible');bar.setAttribute('aria-hidden','true');shown=false;}
+    if(y>threshold&&!shown){bar.classList.add('stb-visible');bar.removeAttribute('aria-hidden');shown=true;}
+    else if(y<=threshold&&shown){bar.classList.remove('stb-visible');bar.setAttribute('aria-hidden','true');shown=false;}
   }
+  window.addEventListener('load',function(){getThreshold();onScroll();});
+  window.addEventListener('resize',getThreshold,{passive:true});
   window.addEventListener('scroll',onScroll,{passive:true});
 })();
 </script>
