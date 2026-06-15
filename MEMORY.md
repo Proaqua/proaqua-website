@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Franco-Badge vom Pro-Aqua-Logo wegpositioniert
+- **Befund:** Im Franco-Foto ist oben rechts ein Pro-Aqua-Logo eingebrannt; der schwebende `2016 Founded`-Badge lag zu nah an diesem Logo und wirkte wie eine Überlagerung.
+- **Erledigt:** Den oberen Franco-Stat-Chip von rechts oben nach links oben verschoben (`.franco-stat-tr`), damit das Logo im Bild frei sichtbar bleibt. Das echte Franco-Foto und der Google-Badge unten links blieben unverändert.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/#franco` per Playwright geprüft; Pro-Aqua-Logo im Foto ist frei sichtbar, `2016 Founded` sitzt links oben außerhalb des Logo-Bereichs.
+- **Nächster Schritt:** Bei Freigabe zusammen mit den lokalen Commits nach `proaqua2/main` pushen.
+
 ### 2026-06-16 — Codex — Hidden-Danger-Icons an Aussagen angepasst
 - **Befund:** Die vier Icons in `#why` waren zu generisch und passten nicht sauber zu den Aussagen: Zahnrad, Wind, Matratzen-/Fensterform und einzelner Blitz wirkten nicht selbsterklärend.
 - **Erledigt:** Icons gezielt ersetzt: staubiger AC-Vent fuer `Dust Can Build Up Fast`, Haus/Indoor-Air fuer `Indoor Air Can Be Worse`, Matratze mit Mite/Allergen fuer `Dust Mites & Allergens`, Rechnung mit Blitz fuer `AC Works Harder`/High Bills.
