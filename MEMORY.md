@@ -538,3 +538,13 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
   6. Haben Familienmitglieder Symptome zu Hause?
 - **Commit:** 111ee90 (lokal, nicht gepusht)
 - **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte Before/After-Captions, Franco-Foto (assets/franco.jpg), Commercial License Wasserzeichen-Dokument.
+
+### 2026-06-15 — Claude (Cowork) — Quiz Result: Vent Scope Photo Box + Popup-Fix · Commits 7274b0d, 24703e7
+
+- **Popup-Fix (7274b0d):** `.risk-overlay` hatte nur `pointer-events:none` aber kein `visibility:hidden` → Browser renderte es nicht korrekt. Fix: `visibility:hidden` auf closed state, `visibility:visible` auf `.open`. Außerdem `z-index:1` auf `.risk-box`, `z-index:2` auf `.risk-close` für korrekte Stacking-Order.
+- **Vent Scope Photo Box (24703e7):** Im Quiz-Result-Screen (zwischen `rs-msg` und WA-Button) neue `.rs-scope-box` eingefügt:
+  - Inhalt: "📷 Included when you book from this result — Franco uses a scope camera and sends WhatsApp photos before and after."
+  - Bewusst KEIN Rabatt / kein Countdown — Service-Bonus der ohnehin zur Arbeit gehört (Glaubwürdigkeit).
+  - CSS: hellblauer Box-Hintergrund (`#f0f6ff`) mit dezenter Border — unauffällig aber auffällig genug.
+  - WhatsApp-Prefill-Texte aller 3 Risk-Level aktualisiert → erwähnen jetzt "vent scope photo report" damit Franco intern informiert ist.
+- **Design-Entscheidung:** Giampiero wollte keinen Rabatt der unglaubwürdig wirkt. Einigkeit auf: konkreter Service-Zusatz (Scope-Kamera-Report), kein Preisdruck. Richtiger Ansatz für Dubai-Markt (Vertrauen > Preisnachlass).
