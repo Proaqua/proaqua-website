@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Neues GitHub-Repo ProAqua-2 vorbereitet
+- **Erledigt:** Neues leeres GitHub-Repo `agentdimarco-cloud/ProAqua-2` angelegt: https://github.com/agentdimarco-cloud/ProAqua-2
+- **Erledigt:** Zwei zuvor ungetrackte Research-Dokumente committed: `conversion-research/native-ad-application-recommendations.md` und `conversion-research/native-ad-idea-generation-prompt.md`.
+- **Wichtig:** Original-Remote `origin` zeigt weiterhin auf `https://github.com/Proaqua/proaqua-website.git` und wurde nicht gepusht oder überschrieben.
+- **Nächster Schritt:** Lokale Branch `Franco2` als `main` in das neue Repo pushen und danach nur den separaten Remote `proaqua2` für dieses Ziel verwenden.
+
 ### 2026-06-15 — Codex — Sichere Weitergabe-Branch Franco2 angelegt
 - **Erledigt:** Neue lokale Git-Branch `Franco2` von aktuellem lokalen Arbeitsstand angelegt.
 - **Zweck:** `Franco2` dient als sichere Weitergabe-/Review-Schiene, damit der aktuelle Arbeitsstand später separat als Branch oder in ein neues Repository veröffentlicht werden kann.
