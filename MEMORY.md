@@ -435,3 +435,30 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Psychologisches Framework:** Fear→Relief: 5 Symptom-Karten (Angst/Erkennung) → 30-Sek-Quiz → personalisierter Risk-Level → WA-CTA (Erleichterung/Handlung). Entspricht der Conversion-Strategy: Identity (schlauer Haushalter der sein Risiko kennt) + Trust Stack (kein Email-Feld, Free Inspection, No Commitment).
 - **Commit:** ab013cf (lokal, nicht gepusht)
 - **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions.
+
+### 2026-06-15 — Claude (Cowork) — Risk Check Popup: Checkbox → 6-Fragen Step-by-Step Wizard · Commit 111ee90
+
+- **Anlass:** Giampiero hat Screenshot von `proaqua-dubai.netlify.app` gezeigt — dort ist das Popup als Step-by-Step-Wizard umgesetzt (eine Frage pro Screen, Auto-Advance, Progress Bar). Unser Popup war noch das alte Checkbox-Format.
+- **CSS (bereits vorher ersetzt):** Alle neuen Klassen `.rs-header-badge`, `.rs-title`, `.rs-progress-wrap/meta/track/fill`, `.rs-question`, `.rs-q-hint`, `.rs-options`, `.rs-option`, `.rs-opt-icon/title/sub`, `.rs-result-hd`, `.rs-risk-pill` (low/med/high), `.rs-result-msg`, `.rs-wa-btn`, `.rs-back-btn` sind seit vorheriger Session in `<style>` vorhanden.
+- **HTML ersetzt:** Altes Checkbox-Modal komplett durch 6-Fragen-Wizard ersetzt:
+  - Header: Amber-Badge `⚠️ FREE · NO OBLIGATION · 90 SECONDS`
+  - Titel: `AC Mould Risk Check` ("Risk Check" in `var(--blue)`)
+  - Progress Bar: "Question X of 6" / Prozent-Anzeige / blauer Fortschrittsbalken
+  - 6 Fragen je mit 4 Antwort-Karten (Emoji-Icon + Titel + Subtitle)
+  - Ergebnis-Screen mit Risk-Pill (Low/Moderate/High) + WA-CTA
+- **JS ersetzt:** Alte `showRiskResult()/restartRisk()` durch neues System:
+  - `rsScores[]` — Punktearray pro Frage (0–3)
+  - `rsCurrentQ` — aktueller Frageindex
+  - `rsShowQuestion(idx)` — zeigt Frage idx, blendet Rest aus, aktualisiert Progress
+  - `rsAnswer(qIdx, score)` — setzt Score, hebt Antwort hervor, Auto-Advance nach 280ms
+  - `rsShowResult()` — berechnet Summe (0–3=Low, 4–9=Moderate, 10–18=High), zeigt Ergebnis
+  - `restartRisk()` — setzt alles zurück auf Frage 1
+- **6 Fragen:**
+  1. Wann war die letzte vollständige AC-Tiefenreinigung?
+  2. Setzt sich Staub nach dem Reinigen schnell wieder ab?
+  3. Modergeruch wenn die AC angeht?
+  4. Sichtbarer Staub/Flecken an AC-Vents?
+  5. Wie ist die Kühlung & Luftstrom?
+  6. Haben Familienmitglieder Symptome zu Hause?
+- **Commit:** 111ee90 (lokal, nicht gepusht)
+- **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte Before/After-Captions, Franco-Foto (assets/franco.jpg), Commercial License Wasserzeichen-Dokument.
