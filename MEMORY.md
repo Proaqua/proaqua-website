@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Origin/main per Franco2 wiederhergestellt
+- **Erledigt:** Nach ausdrücklicher Freigabe wurde lokale Branch `Franco2` per `git push origin Franco2:main --force-with-lease` nach `origin/main` gepusht.
+- **Grund:** `origin/main` enthielt kaputte GitHub-Web-Commits (`Delete index.html` / `Add files via upload`), wodurch Netlify die Seite fehlerhaft deployen konnte.
+- **Ergebnis:** `origin/main` wurde von `8b1cfd6` auf den sauberen `Franco2`-Stand `a01df3a` gesetzt.
+- **Wichtig:** Force wurde als `--force-with-lease` ausgeführt, damit nur überschrieben wird, wenn `origin/main` seit dem Fetch nicht nochmals geändert wurde.
+- **Nicht committed:** Lokale Finder-Dateien `.DS_Store` und `assets/.DS_Store` bleiben absichtlich uncommitted.
+- **Nächster Schritt:** Netlify-Deploy von `origin/main` abwarten und `proaqua-dubai.netlify.app` prüfen.
+
 ### 2026-06-15 — Codex — ProAqua-2 Push erfolgreich abgeschlossen
 - **Erledigt:** Lokale Branch `Franco2` erfolgreich nach `proaqua2/main` gepusht.
 - **Remote:** `https://github.com/agentdimarco-cloud/ProAqua-2.git`
