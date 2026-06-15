@@ -644,3 +644,9 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Korrektur:** `assets/franco-founder-pro-aqua-dubai.webp` wurde aus dem echten Foto `PHOTO-2021-08-29-17-30-10.jpg` per Crop/Resize/leichter Foto-Optimierung erstellt. Kein neues Gesicht generiert, keine KI-Gesichtsveränderung.
 - **Ergebnis:** Franco im echten Anzug, echtes Gesicht, 800x1000 WebP unter bestehendem Dateinamen. `index.html` musste nicht angepasst werden.
 - **Tradeoff:** Hintergrund wirkt noch wie ein echtes Event-Foto. Das ist weniger "Studio", aber glaubwürdiger als ein KI-Gesicht. Idealer Langfrist-Schritt bleibt ein kurzes echtes CEO-Foto-Shooting oder ein hochwertiger Video-Still.
+
+### 2026-06-15 — Codex — Google Rating Badge konsistent vereinheitlicht
+
+- **Problem:** Das 4.7-Google-Rating wurde über die Seite unterschiedlich dargestellt (`⭐ 4.7 on Google`, `4.7★ Google`, große Stat-Zahl, Trust-Belt-Text, Review-Strip).
+- **Korrektur:** Einheitliches `.google-rating-badge`-Pattern in `index.html` ergänzt und alle sichtbaren Google-Rating-Badge-Stellen darauf umgestellt: Sticky Trust Bar, Hero Chips, Hero Stats, Hero Review Bar, Trust Belt, Comparison Proof, Franco Floating Chip, Review Chip Row und Review Google Strip.
+- **QA:** Lokale Vorschau `http://localhost:8742` im Browser geprüft. Desktop Hero/Reviews und Mobile 390px geprüft; keine Console Errors, keine Badge-Überläufe. Risk-Quiz Popup öffnete beim Scroll-Test automatisch und wurde für Review-Screenshot geschlossen.
