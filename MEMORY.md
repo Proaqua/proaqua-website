@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Kritischer UI/UX-, Conversion- und Proof-Audit erstellt
+- **Erledigt:** Aktuelle Seite lokal auf `http://localhost:8742/` gegen `MEMORY.md`, Conversion-Research, Growth-Brief, Native-Ad-Empfehlungen und Wettbewerbsanalyse geprüft.
+- **Prüfung:** Desktop 1280px und Mobile 390px per Browser: Seite lädt, keine Console-Errors/Warnungen, kein horizontaler Overflow; Google-Rating-Badge ist als wiederverwendbare Komponente konsistent; WhatsApp-CTAs nutzen echtes WhatsApp-Grün.
+- **Bewertung:** Gesamt-Score **7.6/10** bzw. ca. **76 % fertig**. Strategisch stark, aber noch nicht perfekt und noch nicht sauber genug für grosses Paid-Traffic-Scaling.
+- **Kritische Risiken:** Claim-Hygiene (`certified`, `medical-grade`, `100%`, `verified`, 30–60 %, 2M+), direkte Hash-/Landing-State-Ziele landen teils unsauber, Mobile-FAB/WhatsApp-Konkurrenz, fehlende echte Before/After-Area/Month-Daten, Tracking fehlt weiterhin.
+- **Dokumentiert:** Ausführlicher Bericht unter `conversion-research/site-ui-ux-critical-audit-2026-06-15.md`.
+- **Nächster Schritt:** P0 zuerst Claim-Hygiene und Hash-/Landing-State-Stabilität bereinigen; danach FAB-Strategie und Proof-Kontexte.
+
 ### 2026-06-15 — Codex — Vent-Check SIGN 1 Bildpfad final nachgezogen
 - **Erledigt:** Nach dem Origin-Push wurde eine letzte lokale Änderung in `index.html` gefunden: Vent-Check SIGN 1 nutzt jetzt `assets/real-ac-grid-clean.webp` statt `assets/real-ac-duct-clean.webp`.
 - **Prüfung:** Beide Dateien existieren und sind getrackt; `real-ac-grid-clean.webp` passt besser zum Alt-Text "Dirty AC grill with dust buildup — real Dubai job".
