@@ -2011,7 +2011,13 @@ function rsShowResult(){
   p.textContent=pill;
   p.className='rs-risk-pill '+pillCls;
   document.getElementById('rs-msg').textContent=msg;
-  document.getElementById('rs-wa').href='https://wa.me/971567943412?text='+waText;
+  var rsWa=document.getElementById('rs-wa');
+  if(rsWa){
+    rsWa.href='https://wa.me/971567943412?text='+waText;
+    rsWa.setAttribute('data-lead-source','risk_quiz_'+pill.toLowerCase().replace(/\s+/g,'_'));
+    rsWa.setAttribute('data-wa-topic','risk_quiz');
+    rsWa.setAttribute('aria-label','Send your AC Risk Check result to Pro Aqua on WhatsApp');
+  }
 }
 function restartRisk(){
   rsScores=[];
@@ -2028,7 +2034,7 @@ document.addEventListener('keydown',function(e){
 </script>
 
 <!-- ===================== 60-SECOND VENT CHECK ===================== -->
-<section style="background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)">
+<section id="vent-check" style="background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)">
   <div class="sec">
     <div class="chip-row"><span class="chip" style="background:rgba(88,153,227,.1);color:var(--blue);border:1px solid rgba(88,153,227,.2);font-size:11px">Quick Self-Check</span></div>
     <h2 class="sec-t" style="text-align:center">Franco's 60-Second<br><em class="blue-em">AC Vent Check</em></h2>
@@ -3034,7 +3040,12 @@ function playVideo(){
     if(title)title.textContent=c.title;
     if(copy)copy.textContent=c.copy;
     if(note){note.textContent=c.note;note.classList.add('on')}
-    if(cta){cta.textContent=c.cta;cta.href=waUrl(c.message+' Campaign: '+c.event+'.')}
+    if(cta){
+      cta.textContent=c.cta;
+      cta.href=waUrl(c.message+' Campaign: '+c.event+'.');
+      cta.setAttribute('data-lead-source','seasonal_'+c.event);
+      cta.setAttribute('data-wa-topic',key);
+    }
     section.querySelectorAll('[data-season-card]').forEach(function(card){
       var on=card.getAttribute('data-season-card')===key;
       card.classList.toggle('is-active',on);
@@ -3043,12 +3054,91 @@ function playVideo(){
     });
   }
   function sectionName(el){
-    var node=el.closest('section,header,footer,.mobile-nav');
+    var node=el.closest('section,header,footer,.mobile-nav,nav,.topbar');
     if(!node)return'global';
-    if(node.id)return node.id;
+    if(node.id)return node.id.replace(/-/g,'_');
+    if(node.classList&&node.classList.contains('topbar'))return'topbar';
     if(node.classList&&node.classList.contains('mobile-nav'))return'mobile_nav';
+    if(node.tagName&&node.tagName.toLowerCase()==='nav')return'main_nav';
+    if(node.classList&&node.classList.length)return Array.prototype.slice.call(node.classList).join('_').replace(/-/g,'_');
     if(node.tagName)return node.tagName.toLowerCase();
     return'global';
+  }
+  function decodeWaText(href){
+    try{
+      var url=new URL(href,window.location.href);
+      return (url.searchParams.get('text')||'').replace(/\+/g,' ');
+    }catch(e){return''}
+  }
+  function isGenericWaPrefill(href){
+    var text=decodeWaText(href).toLowerCase();
+    if(!text)return true;
+    return text.indexOf('hello, i would like to book my free inspection')===0||
+      text.indexOf('hello, i would like to book a free inspection')===0||
+      text.indexOf('hello, i got a quote and would like to book a free inspection')===0||
+      text.indexOf('hello, i would like to learn more about pro aqua dubai')===0;
+  }
+  function waMessageFor(link){
+    var location=sectionName(link);
+    var text=(link.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
+    if(link.hasAttribute('data-season-cta')){
+      return'Hello, I would like to book a seasonal cleaning inspection for my home in Dubai. Area: __. Property type: apartment/villa. Preferred time: __.';
+    }
+    if(text.indexOf('sofa')>-1||text.indexOf('carpet')>-1){
+      return'Hi Pro Aqua, I would like a sofa or carpet deep-cleaning quote for my home in Dubai. Area: __. Property type: apartment/villa. I can send photos.';
+    }
+    if(text.indexOf('mattress')>-1){
+      return'Hi Pro Aqua, I would like a mattress sanitizing quote for my home in Dubai. Area: __. Number of mattresses: __. Preferred time: __.';
+    }
+    if(text.indexOf('ac')>-1||text.indexOf('duct')>-1||text.indexOf('vent')>-1){
+      return'Hi Pro Aqua, I would like a free AC duct inspection for my home in Dubai. Area: __. Property type: apartment/villa. I can send vent photos.';
+    }
+    var messages={
+      main_nav:'Hi Pro Aqua, I would like to book a free inspection for my Dubai home. Area: __. Property type: apartment/villa. Preferred time: __.',
+      mobile_nav:'Hi Pro Aqua, I am on mobile and would like to book a free inspection. Area: __. Property type: apartment/villa. Preferred time: __.',
+      hero:"Hi Franco's team, I am on the Pro Aqua website and would like a free AC duct inspection for my Dubai home. Area: __. Property type: apartment/villa. Preferred time: __.",
+      compare:"Hi Franco's team, I am comparing cleaning options in Dubai and would like Pro Aqua's owner-led inspection. Area: __. Property type: apartment/villa.",
+      'warning-signs':'Hi Pro Aqua, I noticed one of the warning signs on your website. Can Franco’s team check my AC ducts? Area: __. Property type: apartment/villa. I can send photos.',
+      quiz:'Hi Pro Aqua, I would like to book after checking the quote/risk quiz. Area: __. Property type: apartment/villa. I can send photos.',
+      why:"Hi Franco's team, I saw the inspection notes on your website and would like a free AC hygiene inspection. Area: __. Property type: apartment/villa.",
+      solution:'Hi Pro Aqua, I would like the Pro Aqua cleaning solution for my home. Area: __. Service needed: AC ducts / mattress / sofa / deep clean. Preferred time: __.',
+      franco:"Hi Franco's team, I would like to book with Franco's trained team. Area: __. Property type: apartment/villa. Service needed: __.",
+      services:'Hi Pro Aqua, I am interested in your cleaning services. Service needed: AC ducts / mattress / sofa / deep clean. Area: __. I can send photos.',
+      'before-after':'Hi Pro Aqua, I saw your before-and-after proof and would like a free inspection for my home. Area: __. Property type: apartment/villa.',
+      booking:'Hi Pro Aqua, I would like to book a free home inspection. Area: __. Property type: apartment/villa. Preferred time: __.',
+      process:'Hi Pro Aqua, I would like a fixed quote. I can send photos of my space. Area: __. Service needed: __.',
+      pricing:'Hi Pro Aqua, I would like a fixed quote before booking. Area: __. Property type: apartment/villa. Service needed: __.',
+      business:'Hello, I manage a property/holiday home/office in Dubai and would like to discuss recurring AC duct cleaning and deep cleaning. Area/portfolio: __.',
+      arabic:'مرحباً، أريد حجز فحص مجاني لتنظيف مجاري التكييف أو التنظيف العميق في دبي. المنطقة: __. نوع العقار: شقة/فيلا.',
+      seasonal:'Hello, I would like to book a seasonal cleaning inspection for my home in Dubai. Area: __. Property type: apartment/villa. Preferred time: __.',
+      reviews:'Hi Pro Aqua, I saw your reviews and would like to book a free inspection. Area: __. Property type: apartment/villa.',
+      faq:'Hi Pro Aqua, I have a question before booking a free inspection. Area: __. Service needed: __.',
+      footer:'Hi Pro Aqua, I would like to contact Franco’s team about cleaning in Dubai. Area: __. Service needed: __.',
+      global:'Hi Pro Aqua, I would like to book a free inspection for my Dubai home. Area: __. Property type: apartment/villa. Preferred time: __.'
+    };
+    return messages[location]||messages.global;
+  }
+  function leadSourceFor(link){
+    var location=sectionName(link);
+    var text=(link.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
+    if(link.id==='rs-wa')return'risk_quiz_result';
+    if(link.hasAttribute('data-season-cta'))return'seasonal_'+(currentSeason||'default');
+    if(text.indexOf('business')>-1||text.indexOf('property')>-1||text.indexOf('office')>-1)return location+'_business';
+    if(text.indexOf('mattress')>-1)return location+'_mattress';
+    if(text.indexOf('sofa')>-1||text.indexOf('carpet')>-1)return location+'_fabric';
+    if(text.indexOf('ac')>-1||text.indexOf('duct')>-1||text.indexOf('vent')>-1)return location+'_ac';
+    return location+'_general';
+  }
+  function normalizeLeadLinks(){
+    document.querySelectorAll('a[href^="https://wa.me/971567943412"]').forEach(function(link){
+      var href=link.getAttribute('href')||'';
+      if(!link.getAttribute('data-lead-source'))link.setAttribute('data-lead-source',leadSourceFor(link));
+      if(!link.getAttribute('aria-label'))link.setAttribute('aria-label','Open WhatsApp with Pro Aqua Dubai');
+      if(isGenericWaPrefill(href))link.href=waUrl(waMessageFor(link));
+    });
+    document.querySelectorAll('a[href^="tel:"],a[href^="mailto:"]').forEach(function(link){
+      if(!link.getAttribute('data-lead-source'))link.setAttribute('data-lead-source',sectionName(link)+'_contact');
+    });
   }
   function track(eventName,data){
     data=data||{};
@@ -3077,6 +3167,8 @@ function playVideo(){
         channel:channel,
         location:sectionName(link),
         link_text:(link.textContent||'').replace(/\s+/g,' ').trim().slice(0,80),
+        lead_source:link.getAttribute('data-lead-source')||sectionName(link),
+        wa_topic:link.getAttribute('data-wa-topic')||'',
         utm_source:p.get('utm_source')||'',
         utm_medium:p.get('utm_medium')||'',
         utm_campaign:p.get('utm_campaign')||'',
@@ -3085,11 +3177,11 @@ function playVideo(){
     });
   }
   window.proaquaTrack=track;
-  window.proaquaCampaign={getSeason:function(){return currentSeason||'default'},setSeason:function(key){if(campaigns[key]){manualSeason=key;applySeason()}}};
+  window.proaquaCampaign={getSeason:function(){return currentSeason||'default'},setSeason:function(key){if(campaigns[key]){manualSeason=key;applySeason();normalizeLeadLinks()}}};
   if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',function(){applySeason();bindLeadTracking()});
+    document.addEventListener('DOMContentLoaded',function(){applySeason();normalizeLeadLinks();bindLeadTracking()});
   }else{
-    applySeason();bindLeadTracking();
+    applySeason();normalizeLeadLinks();bindLeadTracking();
   }
 })();
 </script>
@@ -3212,7 +3304,7 @@ function playVideo(){
    Maps every content section to the buyer-journey station shown in the header. */
 (function(){
   var navJourney=[
-    {key:'why',anchor:'why',sections:['hero','compare','warning-signs','quiz','why','solution']},
+    {key:'why',anchor:'why',sections:['hero','compare','warning-signs','vent-check','quiz','why','solution']},
     {key:'franco',anchor:'franco',sections:['franco']},
     {key:'services',anchor:'services',sections:['services','before-after']},
     {key:'booking',anchor:'booking',sections:['booking','process','pricing','business','arabic','seasonal','areas']},

@@ -23,11 +23,11 @@
 
 ## Offene Entscheidungen / TODOs (Giampiero)
 
-- [ ] **Echte DED Trade License No.** liefern → ersetzt Platzhalter "0000000" in den Trust-Chips (2 Stellen in index.html)
+- [x] **DED Trade License No. 748159** ist in den Trust-Chips sichtbar eingetragen (15.06.2026). Optional: Nachweis/Scan separat ablegen, falls fuer Ads/Compliance gebraucht.
 - [ ] **DM-Approval bestätigen** — Chip "Dubai Municipality Approved" ist auf Zuruf eingebaut, Nachweis fehlt noch
-- [ ] **Echtes Foto Franco** → ersetzt `assets/franco.jpg` (aktuell Dummy-Silhouette; einfach Datei austauschen, Code bleibt)
+- [x] **Echtes Foto Franco** → `assets/franco.webp` ist eingebaut. KI-Portraits wurden wegen Gesichtstreue verworfen; aktuell echtes Anzug-Foto.
 - [ ] **Ab-Preise prüfen:** AC Duct ab AED 400? Villa Deep Clean? Mattress AED 89? (TODO-Kommentare oben in index.html)
-- [x] **Positionierungs-These FINAL (13.06.2026, mit Giampiero abgestimmt):** Persönlicher Spezialist (Franco als Gesicht) + Krankenhaus-Standard zum fairen Festpreis. B2B/Property als eigene Sektion, NICHT in der Hauptbotschaft. EN-Kurzform: "Hospital-grade cleaning at family-fair fixed prices. One team, one face you know — proof on every job."
+- [x] **Positionierungs-These FINAL (13.06.2026, mit Giampiero abgestimmt; Copy am 15.06.2026 claim-sicher entschärft):** Persönlicher Spezialist (Franco als Gesicht) + professionelle Ausrüstung + fairer Festpreis + Proof auf jedem Job. B2B/Property als eigene Sektion, NICHT in der Hauptbotschaft. Frühere Kurzform mit "Hospital-grade" ist wegen Claim-Hygiene überholt.
 
 ## Arbeitslog
 
@@ -687,3 +687,14 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Hash-/Landing-State:** `scroll-padding-top`/`:target` auf 128px erhöht und Scrollspy um `correctHashPosition()` erweitert. Direkte Links wie `#services`, `#faq`, `#reviews`, `#booking` werden nach Load/Hashchange mit dynamischem Header-Offset korrigiert.
 - **Accessibility-Korrektur:** Saisonale Karten verwenden kein falsches `aria-current` mehr; interner Zustand läuft über `data-current`.
 - **QA:** Lokale Vorschau `http://localhost:8742` im Browser geprüft. Desktop-Landung, Mobile-FAB, direkte Hash-Sprünge und aktive Header-Stationen geprüft; keine Console Errors.
+
+### 2026-06-16 — Codex — WhatsApp-Funnel systematisiert und Lead-Source-Daten ergänzt
+
+- **Ziel:** Landingpage + WhatsApp als durchgehenden Funnel verbessern, ohne personenbezogene Tracking-Parameter und ohne GA4/Meta-ID zu benötigen.
+- **Umsetzung in `index.html`:** Bestehenden Seasonal-/Lead-Tracking-Block erweitert: `normalizeLeadLinks()` ergänzt generische oder leere WhatsApp-Links zur Laufzeit mit kontextbezogenen Prefills und setzt `data-lead-source` auf WhatsApp-, Telefon- und Mailto-Links.
+- **Kontext-Prefills:** Berücksichtigt u.a. Topbar, Main Nav, Mobile Nav, Hero, Compare, Vent Check, Quiz, Why, Solution, Franco, Services, Before/After, Booking, Process, Pricing, Business, Arabic, Seasonal, Reviews, FAQ und Footer. Service-Texte unterscheiden AC, Sofa/Carpet und Mattress.
+- **Quiz-Funnel:** Dynamischer Risk-Quiz-WhatsApp-Link setzt jetzt `data-lead-source` (`risk_quiz_low_risk`, `risk_quiz_moderate_risk`, `risk_quiz_high_risk`) und `data-wa-topic="risk_quiz"`.
+- **Vent Check:** `Franco's 60-Second AC Vent Check` bekam die Section-ID `vent-check`; Scroll-Journey-Mapping umfasst diese Section jetzt unter `Good to Know`.
+- **Tracking-Hook:** `lead_click`-Events enthalten zusätzlich `lead_source` und `wa_topic`, sobald GA4/Meta später aktiviert werden.
+- **MEMORY-Sync:** Obere TODOs bereinigt: DED No. 748159 und echtes Franco-Foto sind erledigt; alte "hospital-grade"-Kurzpositionierung als claim-hygienisch überholt markiert.
+- **QA:** Lokale Vorschau mit Cache-Buster geprüft: 25/25 WhatsApp-Links haben Prefill und `data-lead-source`; Seasonal `?season=summer-ac` setzt `seasonal_summer_ac_check`; Vent Check Quelle ist `vent_check_general`; keine Console Errors.
