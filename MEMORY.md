@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Sichere Weitergabe-Branch Franco2 angelegt
+- **Erledigt:** Neue lokale Git-Branch `Franco2` von aktuellem lokalen Arbeitsstand angelegt.
+- **Zweck:** `Franco2` dient als sichere Weitergabe-/Review-Schiene, damit der aktuelle Arbeitsstand später separat als Branch oder in ein neues Repository veröffentlicht werden kann.
+- **Wichtig:** Kein `git push` ausgeführt. `origin/main` wurde nicht überschrieben und bleibt unverändert.
+- **Git-Zustand beim Anlegen:** Lokaler Stand war `main...origin/main [ahead 56]`; uncommitted/untracked Dateien wurden nicht verändert und bleiben im Working Tree sichtbar.
+- **Nächster Schritt:** Wenn Giampiero ausdrücklich freigibt, kann `Franco2` entweder als separater Remote-Branch gepusht oder in ein neues GitHub-Repo wie `Franco2` übertragen werden. Bis dahin nur lokal weiterarbeiten.
+
 ### 2026-06-15 — Claude — Hero Guarantee Badge + Section Visual Separation
 - **Erledigt:**
   1. **Hero Risk-Reversal-Badge:** Grüner Shield-Badge zwischen WA-Button und "WhatsApp active 7 days"-Zeile eingefügt: *"Not happy? We re-clean for free — no questions asked."* (grüner Hintergrund rgba(77,168,130,.1), `--green-d` Text, Shield-SVG).
