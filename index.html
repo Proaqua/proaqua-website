@@ -931,8 +931,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
   .qopt{min-height:64px}
   .fq-q{min-height:56px}
 }
-html{scroll-padding-top:92px}
-:target{scroll-margin-top:92px}
+html{scroll-padding-top:128px}
+:target{scroll-margin-top:128px}
 
 /* === FRANCO STAT CHIPS === */
 .franco-in>*{min-width:0}
@@ -1036,7 +1036,7 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 
 /* WhatsApp-Floating-Button: auf Mobile nicht verdecken */
 @media(max-width:480px){
-  .wa-fl{bottom:max(16px,env(safe-area-inset-bottom)) !important}
+  .wa-fl{right:18px !important;bottom:max(16px,env(safe-area-inset-bottom)) !important;width:56px;height:56px}
 }
 
 /* Tablet: Pictures-Section Bilder etwas kompakter */
@@ -1233,7 +1233,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .quiz-fab-dismiss{position:absolute;top:-6px;right:-6px;background:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;color:#9ca3af;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);padding:0;display:none}
 .quiz-fab.qf-visible .quiz-fab-dismiss{display:block}
 @keyframes qfPulse{0%,100%{box-shadow:0 4px 20px rgba(28,50,68,.4)}50%{box-shadow:0 4px 28px rgba(28,50,68,.65),0 0 0 6px rgba(28,50,68,.12)}}
-@media(max-width:480px){.quiz-fab{bottom:90px;right:16px;padding:9px 14px 9px 11px}}
+@media(max-width:480px){.quiz-fab{bottom:calc(118px + env(safe-area-inset-bottom));right:14px;padding:9px 13px 9px 11px;transform:translateX(90px) scale(.94);transform-origin:bottom right}.quiz-fab.qf-visible{transform:translateX(0) scale(.94)}.quiz-fab-label{font-size:11.5px}.quiz-fab-sub{font-size:9.5px}}
 .rs-header-badge{display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:20px;padding:5px 14px;font-size:11px;font-weight:800;color:#92400E;letter-spacing:.6px}
 .rs-title{font-size:22px;font-weight:800;color:var(--navy);margin:10px 0 5px;line-height:1.25}
 .rs-title span{color:var(--blue)}
@@ -1272,7 +1272,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   "@type": "LocalBusiness",
   "name": "Pro Aqua Dubai",
   "alternateName": "ProAqua Disinfection & Sterilization LLC",
-  "description": "Pro Aqua is Dubai's owner-led specialist for AC duct cleaning, deep cleaning and mattress sanitizing. Franco's trained team delivers hospital-grade results at fixed prices — with before and after photo proof on every job. Serving 6,000+ Dubai families since 2016.",
+  "description": "Pro Aqua is Dubai's owner-led specialist for AC duct cleaning, deep cleaning and mattress sanitizing. Franco's trained team delivers documented results at fixed prices — with before and after photo proof on every job. Serving 6,000+ Dubai families since 2016.",
   "foundingDate": "2016",
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -1351,7 +1351,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       "name": "Is the cleaning safe for children and pets?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, completely. We use certified, non-toxic products and medical-grade equipment approved for residential use — safe for children, babies and pets."
+        "text": "Yes. We use professional equipment and residential-use cleaning products, and we confirm suitability for homes with children and pets before we start."
       }
     },
     {
@@ -1453,7 +1453,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <span class="rs-header-badge">⚠️ FREE · NO OBLIGATION · 90 SECONDS</span>
     </div>
     <div class="rs-title" style="text-align:center">AC Mould <span>Risk Check</span></div>
-    <div class="rs-subtitle" style="text-align:center">Find out if your AC system may be harbouring hidden mould, dust or contamination.</div>
+    <div class="rs-subtitle" style="text-align:center">Find out if your AC system may be harbouring hidden dust, odours or moisture-related buildup.</div>
     <!-- Progress bar -->
     <div class="rs-progress-wrap" id="rs-progress">
       <div class="rs-progress-meta">
@@ -1489,7 +1489,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <!-- Q3 -->
       <div class="rs-q-step" id="rsq-2" style="display:none">
         <div class="rs-question">Any musty or stale smell when your AC turns on?</div>
-        <div class="rs-q-hint">Musty odours indicate mould or bacteria growth inside the ductwork</div>
+        <div class="rs-q-hint">Musty odours can be a sign of moisture or buildup inside the ductwork</div>
         <div class="rs-options">
           <div class="rs-option" onclick="rsAnswer(2,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">No smell at all</div><div class="rs-opt-sub">Good sign</div></div></div>
           <div class="rs-option" onclick="rsAnswer(2,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Rarely — very mild</div><div class="rs-opt-sub">Early warning</div></div></div>
@@ -1627,8 +1627,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
               <span class="kin hl-b" style="--kin-delay:.20s">looks clean.</span><br>
               <span class="kin" style="--kin-delay:.34s">Your AC ducts</span> <span class="kin hl-r" style="--kin-delay:.46s">don't.</span>
             </h1>
-      <p class="hero-sub">Mold, allergens &amp; hidden contaminants building up in your AC ducts — <strong>typically cleaned in 2–3 hours</strong>. Fixed price, same-day slots when available.</p>
-      <p class="hero-claim" style="font-size:15px;font-weight:700;color:var(--navy);max-width:460px;margin:-14px 0 28px;line-height:1.55">Hospital-grade cleaning at family-fair fixed prices. <span style="color:var(--blue-d)">One team, one face you know</span> — proof on every job.</p>
+      <p class="hero-sub">Dust, allergens &amp; moisture-related buildup inside your AC ducts — <strong>typical apartment jobs take around 2–3 hours</strong>. Fixed price, fast booking when slots are available.</p>
+      <p class="hero-claim" style="font-size:15px;font-weight:700;color:var(--navy);max-width:460px;margin:-14px 0 28px;line-height:1.55">Specialist AC and deep cleaning at family-fair fixed prices. <span style="color:var(--blue-d)">One team, one face you know</span> — proof on every job.</p>
 
       <!-- Video — mobile only, appears right after subtext -->
       <div class="hero-vid-mobile">
@@ -1670,7 +1670,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       </div>
       <div class="wa-live-row" style="margin-top:10px"><span class="whatsapp-live">WhatsApp active 7 days · replies in minutes</span></div>
       <div class="hero-trust">
-        <div class="ht-item"><div class="ht-dot"></div>Typically done in 2–3 hours · same-day slots when available</div>
+        <div class="ht-item"><div class="ht-dot"></div>Typical apartment jobs take around 2–3 hours · fast booking when slots are available</div>
         <div class="ht-item"><div class="ht-dot"></div>Fixed price before we start</div>
         <div class="ht-item"><div class="ht-dot"></div>Before &amp; after proof on every job</div>
       </div>
@@ -1744,8 +1744,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 <!-- TRUST BELT -->
 <div class="belt">
   <div class="belt-t">
-    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Medical-Grade Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Verified Clients</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
-    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Medical-Grade Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Verified Clients</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
+    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Professional Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Clients Served</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
+    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Professional Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Clients Served</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
   </div>
 </div>
 
@@ -1788,7 +1788,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   <div class="sec">
     <div class="chip-row" style="justify-content:center"><span class="chip" style="background:var(--green-l);color:var(--green-d);border:1px solid rgba(77,168,130,.25);font-size:11px">An Honest Comparison</span></div>
     <h2 class="sec-t" style="text-align:center">Three Options. One Question:<br><span class="cmp-highlight">Who's Responsible for What You Can't See?</span></h2>
-    <p style="text-align:center;max-width:640px;margin:10px auto 0;color:var(--g500);font-size:14.5px">Most companies make your home <em>look</em> clean. A specialist removes what you can't see — mold, allergens and bacteria in your AC ducts and mattresses. Here's the honest difference, including when Pro Aqua is <strong>not</strong> the right choice.</p>
+    <p style="text-align:center;max-width:640px;margin:10px auto 0;color:var(--g500);font-size:14.5px">Most companies make your home <em>look</em> clean. A specialist removes what you can't see — dust, allergens and moisture-related buildup in your AC ducts and mattresses. Here's the honest difference, including when Pro Aqua is <strong>not</strong> the right choice.</p>
     <div class="cmp-targets" aria-label="Pro Aqua proof points">
       <span>Same trained team, every visit</span>
       <span>Fixed price before we start</span>
@@ -1833,7 +1833,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
           <li>AC duct &amp; mattress specialists — not general cleaners</li>
           <li>Your fixed price is confirmed before we start. Zero added later.</li>
           <li>Before &amp; after photos sent to you. You see the proof.</li>
-          <li>Not 100% satisfied? We re-clean. Free. No questions asked.</li>
+          <li>Not satisfied with an agreed area? We re-clean. Free. No questions asked.</li>
         </ul>
         <p class="cmp-okill">Worried it won't make a difference? Most clients notice the change immediately — and every job is backed by our photo proof and free re-clean promise. <strong>Zero risk to you.</strong></p>
         <p class="cmp-honest" style="text-align:center">✓ <strong>Right choice if:</strong> You care about what your family breathes and want proof it's done right.</p>
@@ -1847,7 +1847,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
         <h3>Premium Services</h3>
         <div class="cmp-sub">Excellent results — for properties with larger budgets.</div>
         <ul>
-          <li>Certified, lab-grade standards and documentation</li>
+          <li>Corporate standards and documentation</li>
           <li>Professional account management and scheduling</li>
           <li>Detailed compliance and service records</li>
           <li>Excellent for corporate contracts and large properties</li>
@@ -1996,11 +1996,11 @@ function rsShowResult(){
     waText='Hi%20Pro%20Aqua%2C%20I%20did%20the%20AC%20Risk%20Check%20(Low%20Risk).%20I%27d%20like%20to%20book%20a%20routine%20inspection%20and%20get%20the%20vent%20scope%20photos%20included.';
   } else if(total<=9){
     icon='⚠️';pill='Moderate Risk';pillCls='rs-med';
-    msg='Your answers indicate several warning signs. Your ducts are likely accumulating dust and may have early mould growth. A professional inspection now prevents bigger issues — and higher electricity bills — later.';
+    msg='Your answers indicate several warning signs. Your ducts may be accumulating dust, debris or moisture-related buildup. A professional inspection helps you decide the next step before small issues become expensive.';
     waText='Hi%20Pro%20Aqua%2C%20I%20did%20the%20AC%20Risk%20Check%20(Moderate%20Risk).%20Please%20book%20a%20free%20inspection%20including%20the%20vent%20scope%20photo%20report.';
   } else {
     icon='🔴';pill='High Risk';pillCls='rs-high';
-    msg='Your results indicate a high likelihood of contamination in your AC system. Contaminated ducts reduce air quality, overwork the unit, and push up DEWA bills. We strongly recommend booking a free inspection as soon as possible.';
+    msg='Your results indicate a high likelihood of AC hygiene issues. Blocked or dirty ducts can reduce air quality, overwork the unit and push up DEWA bills. We strongly recommend booking a free inspection as soon as possible.';
     waText='Hi%20Pro%20Aqua%2C%20I%20did%20the%20AC%20Risk%20Check%20(HIGH%20Risk).%20Please%20contact%20me%20as%20soon%20as%20possible%20for%20a%20free%20inspection%20with%20full%20vent%20scope%20report.';
   }
   document.getElementById('rs-questions').style.display='none';
@@ -2053,7 +2053,7 @@ document.addEventListener('keydown',function(e){
         </div>
         <div style="padding:16px 14px 18px">
           <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Musty smell when AC starts</div>
-          <div style="font-size:12px;color:var(--g500);line-height:1.5">An earthy or stale odour in the first few minutes — mold in the ducts blows directly into the room.</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.5">An earthy or stale odour in the first few minutes — buildup inside the ducts can blow directly into the room.</div>
         </div>
       </div>
 
@@ -2126,7 +2126,7 @@ document.addEventListener('keydown',function(e){
         <div class="quiz-step" id="q1s4">
           <div class="qQ">When do you need it?</div><div class="qHint">We'll confirm your slot right away</div>
           <div class="qopts w1">
-            <button class="qopt" onclick="pick1(this,'timing','today',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><span class="qopt-l">Today or tomorrow</span><span class="qopt-s">Same-day slots available</span></div></button>
+            <button class="qopt" onclick="pick1(this,'timing','today',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><span class="qopt-l">Today or tomorrow</span><span class="qopt-s">Ask for the fastest available slot</span></div></button>
             <button class="qopt" onclick="pick1(this,'timing','week',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><span class="qopt-l">This week</span><span class="qopt-s">Flexible timing</span></div></button>
             <button class="qopt" onclick="pick1(this,'timing','later',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="qopt-l">Just getting a quote</span><span class="qopt-s">Planning ahead</span></div></button>
           </div>
@@ -2173,7 +2173,7 @@ document.addEventListener('keydown',function(e){
         </div>
         <div class="d-num">12<em>mo</em></div>
         <h3>Is All It Takes</h3>
-        <p>In Dubai's dusty climate, AC ducts accumulate mold, bacteria &amp; allergens within just 12 months — our free inspections confirm it daily.</p>
+        <p>In Dubai's dusty climate, AC ducts can accumulate dust, debris and moisture-related buildup within months — our free inspections document it every week.</p>
         <a class="d-src" href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener noreferrer">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           WHO &middot; Household Air Pollution
@@ -2197,9 +2197,9 @@ document.addEventListener('keydown',function(e){
         <div class="d-ico">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M8 9v9m8-9v9"/></svg>
         </div>
-        <div class="d-num">2<em>M+</em></div>
-        <h3>Dust Mites Per Mattress</h3>
-        <p>Triggering allergies, asthma &amp; poor sleep every night — millions of mites live undetected in your mattress right now.</p>
+        <div class="d-num">Hidden</div>
+        <h3>Dust Mites &amp; Allergens</h3>
+        <p>Mattresses can hold dust mites and allergens that trigger sneezing, poor sleep and irritation — even when the surface looks clean.</p>
         <a class="d-src" href="https://www.aafa.org/dust-mite-allergy/" target="_blank" rel="noopener noreferrer">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           AAFA &middot; Asthma &amp; Allergy Foundation
@@ -2210,9 +2210,9 @@ document.addEventListener('keydown',function(e){
         <div class="d-ico">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <div class="d-num">30<em>%</em></div>
+        <div class="d-num">DEWA</div>
         <h3>Higher Energy Bills</h3>
-        <p>Dirty AC ducts force your system to work 30–60% harder — wasting electricity and money every single month.</p>
+        <p>A clogged AC system can work harder than it should — wasting electricity and money every single month.</p>
         <a class="d-src" href="https://consensus.app/papers/details/f3917d0963295153bbb01529c94b9876/" target="_blank" rel="noopener noreferrer">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Ildiri et al. &middot; Energy &amp; Buildings, 2024
@@ -2245,7 +2245,7 @@ document.addEventListener('keydown',function(e){
       <span style="font-size:14px;font-weight:600;color:var(--g500);letter-spacing:.08em;text-transform:uppercase">The Pro Aqua Solution</span>
     </div>
     <h2 class="sec-t">How We <em class="blue-em">Fix</em> It — For Good</h2>
-    <p class="sec-sub">Medical-grade equipment. Certified technicians. 100% results guaranteed.</p>
+    <p class="sec-sub">Professional equipment. Trained technicians. Photo-documented results, with free re-clean if an agreed area is missed.</p>
     <div class="sol-tile-grid">
 
       <div class="sol-tile">
@@ -2255,9 +2255,9 @@ document.addEventListener('keydown',function(e){
           </div>
           <div class="sol-tile-label">AC Duct</div>
         </div>
-        <h3 class="sol-tile-title">Medical-Grade<br>AC Duct Cleaning</h3>
-        <p class="sol-tile-text">We effectively remove dust, mold &amp; bacteria using professional vacuum extraction — your air, truly clean.</p>
-        <div class="sol-tile-badge">Certified Equipment</div>
+        <h3 class="sol-tile-title">Professional<br>AC Duct Cleaning</h3>
+        <p class="sol-tile-text">We remove dust, debris and moisture-related buildup using high-power vacuum extraction — your air, visibly cleaner.</p>
+        <div class="sol-tile-badge">Professional Equipment</div>
       </div>
 
       <div class="sol-tile">
@@ -2267,8 +2267,8 @@ document.addEventListener('keydown',function(e){
           </div>
           <div class="sol-tile-label">Fabric &amp; Mattress</div>
         </div>
-        <h3 class="sol-tile-title">Certified Fabric &amp;<br>Mattress Sanitizing</h3>
-        <p class="sol-tile-text">Deep extraction eliminates dust mites, allergens &amp; bacteria — safe for babies, children and pets.</p>
+        <h3 class="sol-tile-title">Fabric &amp; Mattress<br>Deep Sanitizing</h3>
+        <p class="sol-tile-text">Deep extraction helps remove dust mites, allergens and residue — a careful process for family homes.</p>
         <div class="sol-tile-badge" style="background:var(--green-l);color:var(--green-d);border-color:rgba(113,196,159,.3)">Kid &amp; Pet Safe</div>
       </div>
 
@@ -2280,8 +2280,8 @@ document.addEventListener('keydown',function(e){
           <div class="sol-tile-label">Inspection</div>
         </div>
         <h3 class="sol-tile-title">Free Inspection —<br>Fast Results</h3>
-        <p class="sol-tile-text">Same-day availability. Full before &amp; after photo documentation — you see every result, guaranteed.</p>
-        <div class="sol-tile-badge" style="background:#EEF2FF;color:#4338CA;border-color:rgba(99,102,241,.25)">Same-Day Available</div>
+        <p class="sol-tile-text">Fast booking when slots are available. Full before &amp; after photo documentation — you see exactly what changed.</p>
+        <div class="sol-tile-badge" style="background:#EEF2FF;color:#4338CA;border-color:rgba(99,102,241,.25)">Fast Booking</div>
       </div>
 
       <div class="sol-tile">
@@ -2339,7 +2339,7 @@ document.addEventListener('keydown',function(e){
         <p class="franco-p">In 2016, I started Pro Aqua after seeing families in Dubai struggle with allergies and respiratory issues — not from outdoor pollution, but from the air conditioning running 24/7 inside their own homes. Dubai's climate forces it: a full year of AC use means whatever builds up inside the ducts goes straight to your family's lungs.</p>
         <p class="franco-p">Every job I personally oversee — same trained team, same standards, every time. You'll know exactly who's coming, and you'll receive before-and-after photo proof sent directly to you when we leave.</p>
         <ul class="franco-pts">
-          <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Medical-grade vacuum extraction — same equipment used in hospital HVAC maintenance</li>
+          <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>High-power vacuum extraction — professional equipment for technical HVAC cleaning</li>
           <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Before &amp; after photos sent directly to you — documented on every single job</li>
           <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Your price is fixed and confirmed before any work begins — zero hidden fees</li>
           <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Franco's team responds within minutes · 7 days a week</li>
@@ -2358,7 +2358,7 @@ document.addEventListener('keydown',function(e){
   <div class="sec">
     <div class="chip-row"><span class="chip cb">Our Services</span><span class="chip cg">Safe for Kids &amp; Pets</span></div>
     <h2 class="sec-t">Professional <em class="blue-em">Cleaning</em> Services in Dubai</h2>
-    <p class="sec-sub">Each service uses medical-grade equipment and certified products — safe for your entire family.</p>
+    <p class="sec-sub">Each service uses professional equipment and carefully selected products for family homes.</p>
     <div class="srv-grid">
       <div class="srv-card">
         <div class="srv-photo" style="background:linear-gradient(135deg,var(--green-ll),var(--bg))">
@@ -2367,8 +2367,8 @@ document.addEventListener('keydown',function(e){
         <div class="srv-body">
           <div class="srv-tag">Fabric Sanitizing &amp; Washing</div>
           <h3>Sofas &amp; Carpets Deep Clean</h3>
-          <p>Eliminating allergens, mites and bacteria from your soft furnishings with medical machines.</p>
-          <ul class="srv-feats"><li>Sofa &amp; upholstery treatment</li><li>Carpet deep extraction</li><li>Allergen elimination</li><li>Odor neutralization</li></ul>
+          <p>Helping remove allergens, mites and residue from your soft furnishings with professional extraction machines.</p>
+          <ul class="srv-feats"><li>Sofa &amp; upholstery treatment</li><li>Carpet deep extraction</li><li>Allergen reduction</li><li>Odor neutralization</li></ul>
           <div class="srv-price">From <em>AED 149</em></div>
           <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20sofa%20or%20carpet%20cleaning%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Sofa &amp; Carpet Clean</a>
         </div>
@@ -2381,8 +2381,8 @@ document.addEventListener('keydown',function(e){
         <div class="srv-body">
           <div class="srv-tag">AC Duct Cleaning</div>
           <h3>Clean Air Every Day</h3>
-          <p>Complete HVAC treatment — removing dust, mold &amp; bacteria for truly clean air.</p>
-          <ul class="srv-feats"><li>Full duct inspection &amp; cleaning</li><li>High-power vacuum extraction</li><li>Anti-bacterial treatment</li><li>Before &amp; after documentation</li></ul>
+          <p>Complete HVAC treatment — removing dust, debris and moisture-related buildup for cleaner daily airflow.</p>
+          <ul class="srv-feats"><li>Full duct inspection &amp; cleaning</li><li>High-power vacuum extraction</li><li>Targeted sanitizing treatment</li><li>Before &amp; after documentation</li></ul>
           <div class="srv-price">From <em>AED 399</em></div>
           <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20free%20AC%20duct%20inspection%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Free AC Inspection</a>
         </div>
@@ -2394,8 +2394,8 @@ document.addEventListener('keydown',function(e){
         <div class="srv-body">
           <div class="srv-tag">Mattress Sanitizing</div>
           <h3>Sleep on a Clean Mattress</h3>
-          <p>Eliminate dust mites, bacteria &amp; allergens hiding inside your mattress — safe for babies.</p>
-          <ul class="srv-feats"><li>Medical-grade treatment</li><li>Dust mite elimination</li><li>Bacteria &amp; germ removal</li><li>Safe for babies &amp; kids</li></ul>
+          <p>Help remove dust mites, allergens and residue hiding inside your mattress — a careful process for baby rooms.</p>
+          <ul class="srv-feats"><li>Deep extraction treatment</li><li>Dust mite reduction</li><li>Deep hygiene treatment</li><li>Family-home process</li></ul>
           <div class="srv-price">From <em>AED 89</em></div>
           <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20mattress%20sanitizing%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Mattress Sanitizing</a>
         </div>
@@ -2419,7 +2419,7 @@ document.addEventListener('keydown',function(e){
           <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job 2025" loading="lazy">
           <div class="ba-cap">
             <div class="ba-cap-t">AC Coil — Before Deep Cleaning</div>
-            <div class="ba-cap-s">Years of dust, mold &amp; grime — actual job photo</div>
+            <div class="ba-cap-s">Years of dust and grime — actual job photo</div>
             <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
             <div class="ba-proof">Real job · photo documented</div>
           </div>
@@ -2434,7 +2434,7 @@ document.addEventListener('keydown',function(e){
           </div>
         </div>
         <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-coil-after.webp" alt="AC coil being cleaned by Pro Aqua technician — Dubai 2025" loading="lazy" style="object-position:center top">
+          <img src="assets/real-ac-coil-after.webp" alt="AC coil being cleaned by Pro Aqua technician — Dubai 2025" loading="lazy" style="object-position:left top">
           <div class="ba-cap">
             <div class="ba-cap-t">AC Coil — During Professional Cleaning</div>
             <div class="ba-cap-s">Full decontamination &amp; efficiency restoration</div>
@@ -2446,7 +2446,7 @@ document.addEventListener('keydown',function(e){
           <img src="assets/real-mattress-result-1.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized and fresh Dubai 2025" loading="lazy">
           <div class="ba-cap">
             <div class="ba-cap-t">Mattress After Deep Cleaning — Clean Result</div>
-            <div class="ba-cap-s">Fully sanitized, hygienic &amp; fresh — same-day result</div>
+            <div class="ba-cap-s">Deep-cleaned, hygienic &amp; fresh — documented result</div>
             <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
             <div class="ba-proof">Real job · photo documented</div>
           </div>
@@ -2495,9 +2495,9 @@ document.addEventListener('keydown',function(e){
         <div class="bb-t">Book Your Free<br>Home Inspection</div>
         <div class="bb-s">We come to you — no cost, no pressure</div>
         <ul class="bb-list">
-          <li><span class="bb-ck">✓</span>Same-day or next-day available</li>
-          <li><span class="bb-ck">✓</span>Certified professional technicians</li>
-          <li><span class="bb-ck">✓</span>Medical-grade equipment</li>
+          <li><span class="bb-ck">✓</span>Fast booking when slots are available</li>
+          <li><span class="bb-ck">✓</span>Trained professional technicians</li>
+          <li><span class="bb-ck">✓</span>Professional equipment</li>
           <li><span class="bb-ck">✓</span>Before &amp; after documentation</li>
           <li><span class="bb-ck">✓</span>Fixed price — zero hidden fees</li>
         </ul>
@@ -2571,7 +2571,7 @@ document.addEventListener('keydown',function(e){
       <div class="bk-trust-div"></div>
       <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Fixed price, no surprises</div>
       <div class="bk-trust-div"></div>
-      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Same-day slots available</div>
+      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Fast slots when available</div>
       <div class="bk-trust-div"></div>
       <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Responds within minutes</div>
     </div>
@@ -2591,8 +2591,8 @@ document.addEventListener('keydown',function(e){
         <span style="font-size:13px;font-weight:500;color:var(--navy)">Google Reviews</span>
       </div>
       <div class="gs-div"></div>
-      <span class="google-rating-badge google-rating-badge--strip" aria-label="Google rating 4.7 out of 5 from 60 verified reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 verified reviews</span></span>
-      <div class="gs-badge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Google Verified</div>
+      <span class="google-rating-badge google-rating-badge--strip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span>
+      <div class="gs-badge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Google rating shown</div>
     </div>
     <div class="rev-grid">
       <div class="rev-card"><div class="rev-qt">"</div>
@@ -2735,7 +2735,7 @@ document.addEventListener('keydown',function(e){
 <!-- CTA -->
 <div class="cta-wrap">
   <div class="cta-in">
-    <div><h2>Ready for <em class="red-em-white">Cleaner</em> Air in Dubai?</h2><p>Free inspection · Fixed price · Medical-grade results · All Dubai areas</p></div>
+    <div><h2>Ready for <em class="red-em-white">Cleaner</em> Air in Dubai?</h2><p>Free inspection · Fixed price · Documented cleaning results · All Dubai areas</p></div>
     <div class="cta-btns">
       <a href="#quiz" class="btn btn-white btn-xl">Get Free Quote Now</a>
       <a href="https://wa.me/971567943412" class="btn btn-outline btn-xl cta-btn-wa" style="border-color:rgba(255,255,255,.3);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Us</a>
@@ -2875,7 +2875,7 @@ document.addEventListener('keydown',function(e){
     <div class="faq-list">
       <div class="fq" onclick="fq(this)"><div class="fq-q">How often should I clean my AC ducts in Dubai? <span class="fq-i">+</span></div><div class="fq-a">Due to Dubai's dusty climate and year-round AC usage, we recommend every 12 months. Homes with pets, young children or allergy sufferers benefit from every 6–9 months.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">What is included in the free inspection? <span class="fq-i">+</span></div><div class="fq-a">Our technician visits your home, inspects all AC units, vents and ducts, and provides a full photo report. No charge, no obligation — we show you exactly what's inside.</div></div>
-      <div class="fq" onclick="fq(this)"><div class="fq-q">Is the cleaning safe for children and pets? <span class="fq-i">+</span></div><div class="fq-a">Yes, completely. We use certified, non-toxic products and medical-grade equipment approved for residential use — safe for children, babies and pets.</div></div>
+      <div class="fq" onclick="fq(this)"><div class="fq-q">Is the cleaning safe for children and pets? <span class="fq-i">+</span></div><div class="fq-a">Yes. We use professional equipment and residential-use cleaning products, and we confirm suitability for homes with children and pets before we start.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">How long does AC duct cleaning take? <span class="fq-i">+</span></div><div class="fq-a">A 1–2 bedroom apartment takes 2–3 hours. Villas may take 4–6 hours. We always provide a time estimate upfront.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">Do you offer a satisfaction guarantee? <span class="fq-i">+</span></div><div class="fq-a">Yes. We document every job with before and after photos. If you're not satisfied, we return and re-clean at no additional charge.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">How do I book and what payment do you accept? <span class="fq-i">+</span></div><div class="fq-a">WhatsApp us at +971 56 794 3412 — we confirm within minutes. We accept card payment, cash and bank transfer. Payment details provided after inspection.</div></div>
@@ -3038,8 +3038,8 @@ function playVideo(){
     section.querySelectorAll('[data-season-card]').forEach(function(card){
       var on=card.getAttribute('data-season-card')===key;
       card.classList.toggle('is-active',on);
-      if(on)card.setAttribute('aria-current','true');
-      else card.removeAttribute('aria-current');
+      if(on)card.setAttribute('data-current','true');
+      else card.removeAttribute('data-current');
     });
   }
   function sectionName(el){
@@ -3289,6 +3289,20 @@ function playVideo(){
       });
     }
 
+    function scrollToTargetHash(hash,behavior){
+      if(!hash||hash.charAt(0)!=='#')return false;
+      var target=document.getElementById(hash.slice(1));
+      if(!target)return false;
+      var top=target.getBoundingClientRect().top+window.scrollY-navOffset();
+      window.scrollTo({top:Math.max(0,top),behavior:behavior||'smooth'});
+      return true;
+    }
+
+    function correctHashPosition(){
+      if(!window.location.hash)return;
+      if(scrollToTargetHash(window.location.hash,'auto'))scheduleUpdate();
+    }
+
     links.forEach(function(link){
       link.addEventListener('click',function(e){
         var href=link.getAttribute('href')||'';
@@ -3297,8 +3311,7 @@ function playVideo(){
         if(!target)return;
         e.preventDefault();
         setActive(link.getAttribute('data-nav-key'));
-        var top=target.getBoundingClientRect().top+window.scrollY-navOffset();
-        window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+        scrollToTargetHash(href,'smooth');
         if(window.history&&window.history.pushState)window.history.pushState(null,'',href);
         else window.location.hash=href;
       });
@@ -3306,8 +3319,16 @@ function playVideo(){
 
     window.addEventListener('scroll',scheduleUpdate,{passive:true});
     window.addEventListener('resize',scheduleUpdate);
-    window.addEventListener('hashchange',scheduleUpdate);
-    window.addEventListener('load',scheduleUpdate);
+    window.addEventListener('hashchange',function(){
+      scheduleUpdate();
+      setTimeout(correctHashPosition,0);
+      setTimeout(correctHashPosition,260);
+    });
+    window.addEventListener('load',function(){
+      scheduleUpdate();
+      setTimeout(correctHashPosition,80);
+      setTimeout(correctHashPosition,720);
+    });
     updateActive();
   }
 

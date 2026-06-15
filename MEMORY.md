@@ -678,3 +678,12 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Korrektur:** Alten Scrollspy durch Journey-basiertes Mapping ersetzt: `Good to Know` deckt Hero/Compare/Warning/Risk/Why/Solution ab, `Franco` den Founder-Trust, `Services` Services + Before/After, `Book` Booking/Process/Pricing/B2B/Arabic/Seasonal/Areas, `Reviews` Reviews und `FAQ` FAQ. Desktop- und Mobile-Nav nutzen jetzt `data-nav-key` + synchrones `aria-current`.
 - **UX:** Nav-Klicks verhindern den rohen Hash-Sprung, berechnen Sticky-Header-/Trust-Bar-Offset und scrollen smooth zum Ziel. `scroll-padding-top`/`:target` auf 92px erhöht.
 - **QA:** Lokale Vorschau `http://localhost:8742` im Browser geprüft. Scroll-Matrix für 17 Sections bestätigt die erwarteten aktiven Header-Stationen. Header-Klicks auf `Franco`, `Services`, `Book`, `Reviews`, `FAQ`, `Good to Know` geprüft: Active-State, Hash und Zielposition stimmen. Mobile 390px geprüft: Hamburger-Menü zeigt denselben Active-State. Keine Console Errors/Warnings.
+
+### 2026-06-15 — Codex — Conversion-/Trust-Politur: Claims entschärft, Mobile-FAB und Hash-Landung korrigiert
+
+- **Claim-Hygiene:** Überharte oder schwer belegbare Formulierungen in `index.html` entschärft: `medical-grade`, `hospital-grade`, `100% results`, harte `30–60%`-Energieclaim und `2M+`-Matratzenclaim ersetzt durch glaubwürdigere, belegbarere Sprache wie `professional equipment`, `photo-documented results`, `free re-clean if an agreed area is missed`, `dust/debris/moisture-related buildup`.
+- **Trust-Konsistenz:** Trust-Belt-Badges auf `Professional Equipment` und `6,000+ Clients Served` vereinheitlicht. Google-Rating-Badges bleiben im bestehenden einheitlichen Badge-System.
+- **Mobile UX:** Floating Risk-Quiz-Badge auf Mobile weiter oberhalb des WhatsApp-FAB positioniert und leicht kompakter gemacht. Browser-QA bei 390x844 bestätigt: kein Overlap zwischen Quiz-FAB und WhatsApp-FAB.
+- **Hash-/Landing-State:** `scroll-padding-top`/`:target` auf 128px erhöht und Scrollspy um `correctHashPosition()` erweitert. Direkte Links wie `#services`, `#faq`, `#reviews`, `#booking` werden nach Load/Hashchange mit dynamischem Header-Offset korrigiert.
+- **Accessibility-Korrektur:** Saisonale Karten verwenden kein falsches `aria-current` mehr; interner Zustand läuft über `data-current`.
+- **QA:** Lokale Vorschau `http://localhost:8742` im Browser geprüft. Desktop-Landung, Mobile-FAB, direkte Hash-Sprünge und aktive Header-Stationen geprüft; keine Console Errors.
