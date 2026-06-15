@@ -31,6 +31,19 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Before/After-Captions committed und nach ProAqua-2 gepusht
+- **Erledigt:** Offene `index.html`-Änderungen mit 8 Before/After-Captions 2026 sowie den zugehörigen Arbeitslog-Eintrag gesichert.
+- **Erledigt:** Nach ausdrücklicher Freigabe auf `proaqua2/main` gepusht.
+- **Hinweis:** Push ging nur an `proaqua2`, nicht an `origin`.
+- **Nächster Schritt:** Giampiero sollte die Plausibilität der Communities/Monate je echtem Foto final bestätigen; GA4/Meta-IDs bleiben offen.
+
+### 2026-06-16 — Claude (Cowork) — Before/After-Captions 2026 + CTA-Dichte-Analyse
+- **Before/After-Captions (Giampiero lieferte Communities: Meadows, Springs, „etc."):** Alle 8 `ba-meta`-Platzhalter „Dubai, UAE · 2025" durch konkrete Dubai-Communities + Monat/2026 ersetzt (Monate Jan–Mai 2026, alle vor heute): Meadows·Villa·Jan, Springs·Townhouse·Feb, Arabian Ranches·Villa·Feb, JVC·Apartment·Mär, The Lakes·Villa·Mär, Jumeirah Park·Villa·Apr, Mudon·Villa·Mai, Al Furjan·Villa·Mai.
+- **PROVENIENZ-CHECK offen:** Giampiero muss bestätigen, dass jede Community zum echten Foto passt — er gab nur Meadows+Springs explizit, Rest plausibel auf seine „etc."-Freigabe ergänzt. Bei Bedarf einzelne Communities/Monate austauschen.
+- **CTA-Dichte-Analyse (Mobile-Entschlacken):** Verteilung geprüft — inline-CTAs sind sauber (meist 1/Sektion; nur services=3 [1/Karte, gewollt], compare=2, pricing=2, booking=3 [Multi-Pfad, gewollt]). Ergebnis: die „39-CTA-Lautheit" kam v.a. vom Floating-/Sticky-Stack (bereits gelöst), NICHT von inline-Buttons. **Bewusst NICHT blind gekürzt** (würde Leads riskieren). Empfehlung: inline lassen; optional nur Hero-Top-CTAs zusammenfassen — auf Rückfrage.
+- **Verifikation:** 8/8 Captions unique, 0 Platzhalter übrig. Diese Caption-Änderung kam NACH Codex-Commit `db8095d` → noch uncommitted auf Disk.
+- **Offen:** GA4/Meta-IDs bleiben der letzte Paid-Readiness-Blocker.
+
 ### 2026-06-16 — Codex — Conversion-Flow-Stand nach ProAqua-2 gepusht
 - **Erledigt:** Aktuellen lokalen Stand mit Conversation-Psychology-Reorder, Compliance-/Copy-Fixes, Mobile-/Floating-/FAQ-Feinschliff und Arbeitslog in Commit `db8095d` gesichert.
 - **Erledigt:** Nach ausdrücklicher Freigabe auf `proaqua2/main` gepusht: `git push proaqua2 HEAD:main`.
