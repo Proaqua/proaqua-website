@@ -31,6 +31,15 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Image2 Warning-Signs-Pain-Bilder generiert und eingebaut
+- **Erledigt:** Fuenf verkaufspsychologische Image2-Bilder fuer `#warning-signs` generiert: Allergy triggers, Bad smell from vents, Black dust/mould around AC grills, Weak airflow/poor cooling und High DEWA bills.
+- **Erledigt:** Erste Generation visuell geprueft; zwei Motive wegen ungewuenschtem Kreis-im-Bild neu generiert, damit die Website den Kreis sauber per CSS croppt.
+- **Assets:** Neue wassergezeichnete WebP-Dateien in `assets/`: `warning-allergy-triggers-dubai.webp`, `warning-bad-smell-ac-vents-dubai.webp`, `warning-black-dust-mould-ac-grills-dubai.webp`, `warning-weak-airflow-poor-cooling-dubai.webp`, `warning-high-dewa-bills-ac-dubai.webp`.
+- **Dokumentiert:** Finale Image2-Prompts in `conversion-research/warning-signs-image2-prompts.md` abgelegt, inklusive Guardrails gegen Text, Logos, Fake-Beweise und medizinische Ueberclaims.
+- **Erledigt:** `index.html` gezielt in der Warning-Signs-Section auf die neuen Assets umgestellt; keine komplette HTML-Neugenerierung.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/` mit Chrome/Playwright: Desktop 1280px und Mobile 390px ohne Overflow, alle 5 Bilder laden mit 900×900, Lightbox funktioniert, Console 0 Errors / 0 Warnings.
+- **Nächster Schritt:** Bei Bedarf koennen die fuenf Motive spaeter als Meta-/Instagram-Creative-Varianten weiterverwendet werden; fuer echte Proof-Galerien weiterhin nur reale Job-Fotos verwenden.
+
 ### 2026-06-15 — Codex — Risk-Check-Section + geschützte Bild-Lightbox umgesetzt
 - **Erledigt:** `#warning-signs` als bildstarke Risk-Check-Section im Stil des gelieferten Screenshots überarbeitet: 5 runde Warning-Sign-Bilder, klare Headline, CTA "Start Risk Check Quiz — Free" und Hinweis "Popup quiz · 6 questions · WhatsApp result".
 - **Erledigt:** Bestehendes Risk-Check-Popup weiterverwendet; CTA öffnet das vorhandene 6-Fragen-Quiz. Zwei zu harte Popup-Claims entschärft (`bacteria / mould confirmed` → Inspection-Warnsignal, `#1 cause` → kann beitragen).
