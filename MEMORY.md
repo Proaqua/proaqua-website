@@ -637,3 +637,10 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Korrektur:** Neues Image-2.0-Prompt mit sechs Close-up-Screenshots als primäre Identitätsreferenz, Gesicht/Alter/Brille/Haarlinie/Mimik als "locked" priorisiert. Daumen-hoch entfernt, engerer CEO-Portrait-Crop gewählt.
 - **Asset erneut ersetzt:** `assets/franco-founder-pro-aqua-dubai.webp` jetzt 941x1672 WebP mit stärkerer Ähnlichkeit zum echten Franco und weiterhin weißem Pro-Aqua-Polo.
 - **Strategischer Hinweis:** Für maximale Glaubwürdigkeit bleibt ein echtes Foto-Shooting oder ein hochwertig upgescalter Original-Video-Still langfristig besser als jede KI-Generierung.
+
+### 2026-06-15 — Codex — Franco Asset auf echtes Anzug-Foto umgestellt
+
+- **Problem:** Giampiero verlangt 100% Gesichtstreue. KI-generierte Franco-Portraits sind dafür nicht geeignet, weil selbst gute Identity-Prompts Gesichtszüge leicht verändern.
+- **Korrektur:** `assets/franco-founder-pro-aqua-dubai.webp` wurde aus dem echten Foto `PHOTO-2021-08-29-17-30-10.jpg` per Crop/Resize/leichter Foto-Optimierung erstellt. Kein neues Gesicht generiert, keine KI-Gesichtsveränderung.
+- **Ergebnis:** Franco im echten Anzug, echtes Gesicht, 800x1000 WebP unter bestehendem Dateinamen. `index.html` musste nicht angepasst werden.
+- **Tradeoff:** Hintergrund wirkt noch wie ein echtes Event-Foto. Das ist weniger "Studio", aber glaubwürdiger als ein KI-Gesicht. Idealer Langfrist-Schritt bleibt ein kurzes echtes CEO-Foto-Shooting oder ein hochwertiger Video-Still.
