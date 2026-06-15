@@ -31,6 +31,15 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Claude (Cowork) — Conversation Psychology Audit (7 Frameworks) erstellt
+- **Erledigt:** Vollständigen Audit der aktuellen `index.html` gegen alle 7 Frameworks (Conversation Psychology, Fear→Relief, Trust Stack, Identity/Utility, Empty Copy, Honest Comparison, Objection Kill) durchgeführt. Inhalte gezielt per Python-Extraktion aus dem HTML gezogen (Sektionsreihenfolge, alle H1–H3, CTAs, Schlüssel-Copy, Claim-Counts).
+- **Dokumentiert:** `conversion-research/conversation-psychology-audit-2026-06-16.md` — Ausgabe A–E: Flow-Score 6/10 + optimale Reihenfolge, Sektions-Audit aller 19 Sektionen, 3 größte Hebel, 10 Before/After-Copy, Compliance-Check.
+- **Kern-Ergebnis:** Seite ist handwerklich stark und claim-sauber (kein `100%`/`medical-grade`/`hospital-grade`/`certified`/`2M+` im sichtbaren Text). Größter Hebel ist **Reihenfolge, nicht Copy**: #compare steht zu früh (Pos. 2, Differenzierung vor Problem-Erkennung); #booking steht VOR Reviews/Process/Pricing (Pos. 10–14 invertiert); Quiz feuert primären Action-CTA vor Trust/Social Proof.
+- **Empfohlene Zielreihenfolge:** Hero → Warning Signs → Vent Check → Why → Before/After → Solution → Services → Franco → Reviews → Compare → Pricing → Process → Quiz → Booking → Business → Arabic → Seasonal → Areas → FAQ.
+- **Compliance-Findings (klein, schnell fixbar):** `5× More Indoor Pollution` (Header) vs. `2–5×` (EPA-Body) → angleichen; `Eco-Safe Products`/`Safe for Kids & Pets` belegen oder entschärfen; `Verified WhatsApp Review` → `Real WhatsApp message`; Booking-Headline-Tippfehler („Air ." → „Air.").
+- **Verifikation:** `index.html` NICHT verändert (reine Analyse). Claims gegen sichtbaren Text gegengeprüft (style/script gestrippt). Kein `git push`.
+- **Nächster Schritt (Giampiero entscheidet):** (1) Compliance-Fixes sofort umsetzen, (2) Sektions-Reorder als Block-Verschiebung mit Desktop/Mobile-Verifikation + Scroll-Spy-Anpassung. BLOCKED bleibt: echte Before/After-Captions, DM-Approval-Nachweis, GA4/Meta-IDs.
+
 ### 2026-06-15 — Codex — Kritischer UI/UX-, Conversion- und Proof-Audit erstellt
 - **Erledigt:** Aktuelle Seite lokal auf `http://localhost:8742/` gegen `MEMORY.md`, Conversion-Research, Growth-Brief, Native-Ad-Empfehlungen und Wettbewerbsanalyse geprüft.
 - **Prüfung:** Desktop 1280px und Mobile 390px per Browser: Seite lädt, keine Console-Errors/Warnungen, kein horizontaler Overflow; Google-Rating-Badge ist als wiederverwendbare Komponente konsistent; WhatsApp-CTAs nutzen echtes WhatsApp-Grün.
@@ -698,3 +707,11 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Tracking-Hook:** `lead_click`-Events enthalten zusätzlich `lead_source` und `wa_topic`, sobald GA4/Meta später aktiviert werden.
 - **MEMORY-Sync:** Obere TODOs bereinigt: DED No. 748159 und echtes Franco-Foto sind erledigt; alte "hospital-grade"-Kurzpositionierung als claim-hygienisch überholt markiert.
 - **QA:** Lokale Vorschau mit Cache-Buster geprüft: 25/25 WhatsApp-Links haben Prefill und `data-lead-source`; Seasonal `?season=summer-ac` setzt `seasonal_summer_ac_check`; Vent Check Quelle ist `vent_check_general`; keine Console Errors.
+
+### 2026-06-16 — Codex — Section-Reihenfolge nach Conversation Psychology neu sortiert
+
+- **Anlass:** Giampiero hat die kritische Bewertung freigegeben: Die Seite hatte starke Bausteine, aber die emotionale Reihenfolge war falsch (`Compare` zu früh, `Hidden Danger` zu spät, `Reviews` nach Booking, Pricing nach Booking).
+- **Neue Reihenfolge in `index.html`:** Hero + Trust Belt → `#why` Hidden Danger → `#warning-signs` → `#vent-check` → `#solution` → `#franco` → `#reviews` → `#compare` → `#services` → `#before-after` → `#pricing` → `#quiz` → `#process` → `#booking` → B2B/Arabic/Seasonal/Areas/FAQ.
+- **Rationale:** Erst Problemspannung und echte Befunde, dann Selbst-Identifikation, dann Lösung, Person/Trust, Social Proof, rationaler Vergleich, Details, Preislogik, Quote/Quiz und erst danach finaler Booking-Block.
+- **Scroll-Journey angepasst:** `Good to Know` mappt jetzt Hero/Why/Warning/Vent/Solution; `Reviews` steht eigenständig früher; `Services` umfasst Compare/Services/Before-After; `Book` umfasst Pricing/Quiz/Process/Booking/B2B/Arabic/Seasonal/Areas.
+- **QA:** Lokale Vorschau `http://localhost:8742` mit Cache-Buster geprüft. Desktop-Reihenfolge maschinell verifiziert; Hash-Ziele `#why`, `#reviews`, `#compare`, `#pricing`, `#quiz`, `#booking`, `#faq` landen korrekt und setzen die passende aktive Nav. Mobile 390x844 geprüft: Reihenfolge korrekt, kein horizontaler Overflow, Quiz-FAB und WhatsApp-FAB überlappen nicht. Keine Console Errors.

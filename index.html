@@ -1749,134 +1749,80 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   </div>
 </div>
 
-<!-- ===================== COMPARISON (S1) ===================== -->
-<section class="cmp-bg" id="compare" style="background:var(--bg2)">
-  <style>
-    .cmp-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.18fr) minmax(0,.92fr);align-items:stretch;gap:18px;max-width:1080px;margin:36px auto 0}
-    .cmp-highlight{color:var(--green-d)}
-    .cmp-targets{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:18px auto 0}
-    .cmp-targets span{display:inline-flex;align-items:center;min-height:30px;padding:6px 11px;border-radius:99px;background:var(--white);border:1px solid rgba(77,168,130,.26);color:var(--navy);font-size:12px;font-weight:700;box-shadow:0 4px 14px rgba(28,50,68,.06)}
-    .cmp-card{background:var(--white);border:1px solid var(--g300);border-radius:16px;padding:24px 22px;position:relative;min-width:0}
-    .cmp-card h3{font-size:17px;margin:0 0 4px;color:var(--navy)}
-    .cmp-card .cmp-sub{font-size:12.5px;color:var(--g500);margin-bottom:16px}
-    .cmp-side-meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
-    .cmp-pill{display:inline-flex;align-items:center;min-height:26px;padding:5px 9px;border-radius:99px;background:var(--bg);border:1px solid var(--bg3);color:var(--g600);font-size:11px;font-weight:700}
-    .cmp-pill.cmp-fit{background:var(--blue-l);border-color:rgba(88,153,227,.24);color:var(--blue-d)}
-    .cmp-pill.cmp-trade{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
-    .cmp-card ul{list-style:none;margin:0;padding:0}
-    .cmp-card li{font-size:13.5px;line-height:1.5;padding:7px 0 7px 24px;position:relative;color:var(--g500);border-top:1px solid var(--bg3)}
-    .cmp-card li:before{content:"–";position:absolute;left:4px;color:var(--g400);font-weight:700}
-    .cmp-hero{border:2px solid var(--green-d);box-shadow:0 18px 44px rgba(77,168,130,.22);background:linear-gradient(180deg,#fff 0%,var(--green-ll) 100%);padding:30px 24px;transform:translateY(-8px);z-index:1}
-    .cmp-hero .cmp-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:6px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 20px rgba(28,50,68,.18)}
-    .cmp-brand{display:flex;align-items:center;gap:12px;margin:0 0 12px}
-    .cmp-mark{width:46px;height:46px;min-width:46px;border-radius:12px;background:linear-gradient(135deg,var(--green-d),var(--blue));color:#fff;display:grid;place-items:center;font-size:16px;font-weight:800;box-shadow:0 8px 22px rgba(77,168,130,.28)}
-    .cmp-brand h3{font-size:23px;margin:0;color:var(--navy)}
-    .cmp-owner{font-size:12px;font-weight:700;color:var(--green-d);line-height:1.35}
-    .cmp-hero-line{font-size:13.5px;color:var(--navy);font-weight:700;line-height:1.55;margin:0 0 14px}
-    .cmp-proof-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 18px}
-    .cmp-proof{background:#fff;border:1px solid rgba(77,168,130,.24);border-radius:12px;padding:9px 10px;min-height:64px;box-shadow:0 6px 16px rgba(28,50,68,.05)}
-    .cmp-proof strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
-    .cmp-proof span{display:block;color:var(--g500);font-size:11.5px;line-height:1.35;margin-top:3px}
-    .cmp-hero li{color:var(--navy)}
-    .cmp-hero li:before{content:"✓";color:var(--green-d)}
-    .cmp-cta{display:block;text-align:center;background:var(--green-d);color:#fff;font-weight:800;font-size:13.5px;line-height:1.35;border-radius:10px;padding:14px 12px;margin-top:18px;text-decoration:none;box-shadow:0 10px 24px rgba(77,168,130,.24)}
-    @media(max-width:860px){.cmp-grid{grid-template-columns:1fr;max-width:500px}.cmp-hero{order:-1;transform:none}.cmp-targets{max-width:500px}}
-    @media(max-width:420px){.cmp-proof-row{grid-template-columns:1fr 1fr}.cmp-brand h3{font-size:21px}.cmp-hero{padding:30px 20px 24px}.cmp-card{padding:24px 20px}}
-    .cmp-honest{margin:14px 0 0;font-size:12px;color:var(--green-d);border-top:1px solid var(--bg3);padding-top:11px;line-height:1.5}
-    .cmp-okill{margin:16px 0 10px;font-size:12.5px;color:var(--g600);line-height:1.6;background:rgba(77,168,130,.07);border:1px solid rgba(77,168,130,.18);border-radius:8px;padding:11px 13px}
-  </style>
+<!-- ===================== HIDDEN DANGER ===================== -->
+<section class="danger-bg" id="why">
   <div class="sec">
-    <div class="chip-row" style="justify-content:center"><span class="chip" style="background:var(--green-l);color:var(--green-d);border:1px solid rgba(77,168,130,.25);font-size:11px">An Honest Comparison</span></div>
-    <h2 class="sec-t" style="text-align:center">Three Options. One Question:<br><span class="cmp-highlight">Who's Responsible for What You Can't See?</span></h2>
-    <p style="text-align:center;max-width:640px;margin:10px auto 0;color:var(--g500);font-size:14.5px">Most companies make your home <em>look</em> clean. A specialist removes what you can't see — dust, allergens and moisture-related buildup in your AC ducts and mattresses. Here's the honest difference, including when Pro Aqua is <strong>not</strong> the right choice.</p>
-    <div class="cmp-targets" aria-label="Pro Aqua proof points">
-      <span>Same trained team, every visit</span>
-      <span>Fixed price before we start</span>
-      <span>Before &amp; after photos</span>
-      <span>Free re-clean — no questions</span>
-    </div>
-    <div class="cmp-grid">
-      <div class="cmp-card">
-        <div class="cmp-side-meta">
-          <span class="cmp-pill cmp-fit">Best for: Quick general tidying</span>
-          <span class="cmp-pill cmp-trade">Not built for: Hidden contaminants</span>
-        </div>
-        <h3>Booking Apps</h3>
-        <div class="cmp-sub">Fast for surfaces. Not built for what's hidden inside.</div>
-        <ul>
-          <li>A different crew every visit — no continuity, no accountability</li>
-          <li>General cleaners, not AC duct or sanitization specialists</li>
-          <li>Can clean surfaces — can&#39;t treat what&#39;s inside your system</li>
-          <li>No before &amp; after documentation or proof</li>
-          <li>Mold returns a week later? New request. Different crew.</li>
-        </ul>
-        <p class="cmp-honest">✓ <strong>Right choice if:</strong> You need affordable general home tidying.</p>
-      </div>
-      <div class="cmp-card cmp-hero">
-        <div class="cmp-badge">THE SPECIALIST CHOICE</div>
-        <div class="cmp-brand">
-          <div class="cmp-mark" aria-hidden="true">PA</div>
-          <div>
-            <h3>Pro Aqua Dubai</h3>
-            <div class="cmp-owner">Franco's personally trained specialist team</div>
-          </div>
-        </div>
-        <div class="cmp-hero-line">You always know who's coming, what they found — and you see the proof.</div>
-        <div class="cmp-proof-row" aria-label="Pro Aqua proof">
-          <div class="cmp-proof cmp-proof-rating"><span class="google-rating-badge google-rating-badge--proof" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span><span>verified public rating</span></div>
-          <div class="cmp-proof"><strong>6,000+</strong><span>Dubai families served</span></div>
-          <div class="cmp-proof"><strong>Since 2016</strong><span>still here — still Franco</span></div>
-          <div class="cmp-proof"><strong>Photo proof</strong><span>on every single job</span></div>
-        </div>
-        <ul>
-          <li>Franco's personally trained team — same faces, every single visit</li>
-          <li>AC duct &amp; mattress specialists — not general cleaners</li>
-          <li>Your fixed price is confirmed before we start. Zero added later.</li>
-          <li>Before &amp; after photos sent to you. You see the proof.</li>
-          <li>Not satisfied with an agreed area? We re-clean. Free. No questions asked.</li>
-        </ul>
-        <p class="cmp-okill">Worried it won't make a difference? Most clients notice the change immediately — and every job is backed by our photo proof and free re-clean promise. <strong>Zero risk to you.</strong></p>
-        <p class="cmp-honest" style="text-align:center">✓ <strong>Right choice if:</strong> You care about what your family breathes and want proof it's done right.</p>
-        <a class="cmp-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+my+free+inspection" target="_blank" rel="noopener">WhatsApp Franco's Team for a Free Inspection</a>
-      </div>
-      <div class="cmp-card">
-        <div class="cmp-side-meta">
-          <span class="cmp-pill cmp-fit">Best for: Large properties &amp; corporate</span>
-          <span class="cmp-pill cmp-trade">Investment: AED 2,500–3,500+ per service</span>
-        </div>
-        <h3>Premium Services</h3>
-        <div class="cmp-sub">Excellent results — for properties with larger budgets.</div>
-        <ul>
-          <li>Corporate standards and documentation</li>
-          <li>Professional account management and scheduling</li>
-          <li>Detailed compliance and service records</li>
-          <li>Excellent for corporate contracts and large properties</li>
-          <li>Typical investment: AED 2,500–3,500+ per full service</li>
-        </ul>
-        <p class="cmp-honest">✓ <strong>Right choice if:</strong> Budget isn&#39;t a concern and you need corporate-grade documentation.</p>
-      </div>
-    </div>
-  </div>
+    <div class="chip-row"><span class="chip" style="background:var(--red-l);color:var(--red);border:1px solid rgba(239,68,68,.2);font-size:11px">From Franco's Inspections</span></div>
+    <h2 class="sec-t">What We Often Find<br><em class="red-em">During Dubai AC Inspections</em></h2>
+    <p class="sec-sub">Not a lab study. What Franco's team actually documents — in Dubai homes, every single week.</p>
+    <div class="danger-grid">
 
-  <!-- 7-Questions Checklist -->
-  <div style="margin-top:36px;border-top:1px solid var(--bg3);padding-top:30px">
-    <h3 style="text-align:center;font-size:17px;font-weight:700;color:var(--navy);margin:0 0 6px">Before You Book Any Cleaning Team in Dubai</h3>
-    <p style="text-align:center;font-size:13.5px;color:var(--g500);margin:0 0 20px">Ask these 7 questions — the answers tell you everything.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;max-width:640px;margin:0 auto">
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Who <em>exactly</em> is coming to my home?</span></div>
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Is it the same trained team every time?</span></div>
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Do they inspect before quoting?</span></div>
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Is the price fixed before work starts?</span></div>
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Do you get before &amp; after photo proof?</span></div>
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>What happens if an area is missed?</span></div>
-      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5;grid-column:1/-1;justify-content:center"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Can you send photos first via WhatsApp?</span></div>
+      <div class="dcard">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 8V6m0 12v-2M8 12H6m12 0h-2M9.17 9.17 7.76 7.76m8.48 8.48-1.41-1.41M9.17 14.83l-1.41 1.41m8.48-8.48-1.41 1.41"/></svg>
+        </div>
+        <div class="d-num">12<em>mo</em></div>
+        <h3>Is All It Takes</h3>
+        <p>In Dubai's dusty climate, AC ducts can accumulate dust, debris and moisture-related buildup within months — our free inspections document it every week.</p>
+        <a class="d-src" href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          WHO &middot; Household Air Pollution
+        </a>
+      </div>
+
+      <div class="dcard">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        </div>
+        <div class="d-num">5<em>×</em></div>
+        <h3>More Indoor Pollution</h3>
+        <p>Indoor air can be 2–5&times; more polluted than outdoor air when AC filters and ducts are left uncleaned, per US EPA research.</p>
+        <a class="d-src" href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          US EPA &middot; Indoor Air Quality
+        </a>
+      </div>
+
+      <div class="dcard hi">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M8 9v9m8-9v9"/></svg>
+        </div>
+        <div class="d-num">Hidden</div>
+        <h3>Dust Mites &amp; Allergens</h3>
+        <p>Mattresses can hold dust mites and allergens that trigger sneezing, poor sleep and irritation — even when the surface looks clean.</p>
+        <a class="d-src" href="https://www.aafa.org/dust-mite-allergy/" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AAFA &middot; Asthma &amp; Allergy Foundation
+        </a>
+      </div>
+
+      <div class="dcard">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="d-num">DEWA</div>
+        <h3>Higher Energy Bills</h3>
+        <p>A clogged AC system can work harder than it should — wasting electricity and money every single month.</p>
+        <a class="d-src" href="https://consensus.app/papers/details/f3917d0963295153bbb01529c94b9876/" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ildiri et al. &middot; Energy &amp; Buildings, 2024
+        </a>
+      </div>
+
     </div>
-    <div style="text-align:center;margin-top:20px">
-      <p style="font-size:13px;color:var(--g500);margin:0 0 14px">Pro Aqua answers <strong style="color:var(--navy)">yes</strong> to all seven.</p>
-      <a href="https://wa.me/971567943412?text=Hi%2C+I+have+a+few+questions+before+booking." style="display:inline-flex;align-items:center;gap:7px;padding:12px 22px;font-size:14px;font-weight:600;background:#25D366;color:#fff;border-radius:9px;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Ask Franco&#39;s Team
-      </a>
+    <div style="margin-top:28px;background:rgba(88,153,227,.07);border:1px solid rgba(88,153,227,.18);border-radius:12px;padding:18px 22px;max-width:580px;margin-left:auto;margin-right:auto">
+      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px">Franco&#39;s Inspection Note</div>
+      <p style="font-size:14px;color:var(--g600);line-height:1.7;margin:0 0 14px">&ldquo;Most families call us when the smell starts. The better moment is earlier &mdash; when dust keeps coming back around vents, or the bedroom feels heavy after the AC runs. That&rsquo;s usually when we find the most.&rdquo;</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="border-radius:8px;overflow:hidden">
+          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from a mattress during deep cleaning — Pro Aqua Dubai" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center 40%;display:block">
+          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Mattress extraction · 2025</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden">
+          <img src="assets/real-ac-duct-clean.webp" alt="Pro Aqua technician vacuuming AC duct interior — Dubai job 2025" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block">
+          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Duct cleaning · 2025</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2085,164 +2031,6 @@ document.addEventListener('keydown',function(e){
   </div>
 </section>
 
-<!-- ===================== QUIZ (1st) ===================== -->
-<section class="quiz-bg" id="quiz" style="position:relative;overflow:visible">
-  <div class="sec">
-    <div style="text-align:center;padding-bottom:24px">
-      <h2 class="sec-t" style="text-align:center">Know What You're Getting<br><em class="blue-em">Before You Spend a Dirham</em></h2>
-      <p class="sec-sub" style="margin:0 auto;text-align:center">Four taps. Your personalised price estimate. Free inspection to confirm it. No email, no pressure.</p>
-    </div>
-    <div class="quiz-wrap">
-      <div class="quiz-float-chip quiz-chip-tl">In 30 Seconds</div>
-      <div class="quiz-float-chip quiz-chip-br">No Commitment</div>
-      <div class="quiz-card" id="qcard1">
-        <div class="qprog">
-          <div class="qprog-top"><span id="ql1">Step 1 of 4</span><span id="qp1">25%</span></div>
-          <div class="qprog-bar"><div class="qprog-fill" id="qf1" style="width:25%"></div></div>
-        </div>
-        <div class="quiz-step on" id="q1s1">
-          <div class="qQ">What do you need cleaned?</div><div class="qHint">Tap to select — moves automatically</div>
-          <div class="qopts">
-            <button class="qopt" onclick="pick1(this,'service','ac',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div><div><span class="qopt-l">AC Duct Cleaning</span><span class="qopt-s">Cleaner, healthier air</span></div></button>
-            <button class="qopt" onclick="pick1(this,'service','fabric',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"/></svg></div><div><span class="qopt-l">Fabric Sanitizing</span><span class="qopt-s">Sofas &amp; carpets</span></div></button>
-            <button class="qopt" onclick="pick1(this,'service','mattress',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M2 4v16M22 4v16M2 12h20M6 12V8a2 2 0 012-2h8a2 2 0 012 2v4"/></svg></div><div><span class="qopt-l">Mattress Sanitizing</span><span class="qopt-s">Sleep clean tonight</span></div></button>
-            <button class="qopt" onclick="pick1(this,'service','bundle',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><span class="qopt-l">Full Bundle</span><span class="qopt-s">All 3 services</span></div></button>
-          </div>
-        </div>
-        <div class="quiz-step" id="q1s2">
-          <div class="qQ">What type of property?</div><div class="qHint">This helps us send the right team</div>
-          <div class="qopts">
-            <button class="qopt" onclick="pick1(this,'type','apt',3)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div><span class="qopt-l">Apartment</span><span class="qopt-s">Studio to 4+ BR</span></div></button>
-            <button class="qopt" onclick="pick1(this,'type','villa',3)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><span class="qopt-l">Villa</span><span class="qopt-s">Townhouse or standalone</span></div></button>
-            <button class="qopt" onclick="pick1(this,'type','office',3)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div><span class="qopt-l">Office</span><span class="qopt-s">Workspace or retail</span></div></button>
-          </div>
-          <div class="quiz-nav"><button class="q-back" onclick="gos1(1)">← Back</button></div>
-        </div>
-        <div class="quiz-step" id="q1s3">
-          <div class="qQ">How big is your property?</div><div class="qHint">Approximate size is fine</div>
-          <div class="qopts">
-            <button class="qopt" onclick="pick1(this,'size','s',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><div><span class="qopt-l">Studio</span><span class="qopt-s">Up to 500 sqft</span></div></button>
-            <button class="qopt" onclick="pick1(this,'size','1',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg></div><div><span class="qopt-l">1 Bedroom</span><span class="qopt-s">500–850 sqft</span></div></button>
-            <button class="qopt" onclick="pick1(this,'size','2',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div><div><span class="qopt-l">2 Bedrooms</span><span class="qopt-s">850–1,400 sqft</span></div></button>
-            <button class="qopt" onclick="pick1(this,'size','3',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div><div><span class="qopt-l">3 Bedrooms</span><span class="qopt-s">1,400–2,200 sqft</span></div></button>
-            <button class="qopt" onclick="pick1(this,'size','4',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div><span class="qopt-l">4 Bedrooms+</span><span class="qopt-s">2,200 sqft &amp; above</span></div></button>
-          </div>
-          <div class="quiz-nav"><button class="q-back" onclick="gos1(2)">← Back</button></div>
-        </div>
-        <div class="quiz-step" id="q1s4">
-          <div class="qQ">When do you need it?</div><div class="qHint">We'll confirm your slot right away</div>
-          <div class="qopts w1">
-            <button class="qopt" onclick="pick1(this,'timing','today',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><span class="qopt-l">Today or tomorrow</span><span class="qopt-s">Ask for the fastest available slot</span></div></button>
-            <button class="qopt" onclick="pick1(this,'timing','week',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><span class="qopt-l">This week</span><span class="qopt-s">Flexible timing</span></div></button>
-            <button class="qopt" onclick="pick1(this,'timing','later',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="qopt-l">Just getting a quote</span><span class="qopt-s">Planning ahead</span></div></button>
-          </div>
-          <div class="quiz-nav"><button class="q-back" onclick="gos1(3)">← Back</button></div>
-        </div>
-        <div class="quiz-step" id="q1sr">
-          <div class="qr">
-            <div class="qr-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4DA882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
-            <div class="qr-t">Your Specialist Quote Is Ready</div>
-            <div class="qr-s">Your specialist confirms the exact price during your free inspection — before any work begins.</div>
-            <div class="qr-box"><div class="qr-lbl">Estimated Starting From</div><div class="qr-p" id="rp1">AED 550</div><div class="qr-n">Confirmed at your free inspection · Fixed price · Zero hidden fees</div></div>
-            <div class="qr-trust" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0 4px">
-              <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Free on-site inspection</span>
-              <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Fixed price before we start</span>
-              <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Free re-clean if not satisfied</span>
-            </div>
-            <div class="qr-sum" id="rs1"></div>
-            <div class="qr-btns">
-              <a href="https://wa.me/971567943412?text=Hello%2C+I+got+a+quote+and+would+like+to+book+a+free+inspection" class="btn btn-blue btn-lg" style="padding:16px 28px;font-size:16px;background:#25D366;box-shadow:0 4px 16px rgba(37,211,102,.45)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Claim My Free Inspection →</a>
-              <a href="tel:+971567943412" class="btn btn-outline btn-lg"> Call Us</a>
-            </div>
-            <div id="quiz-urgency" style="display:none;margin-top:12px;background:#FEF3C7;border:1.5px solid #F59E0B;border-radius:10px;padding:12px 16px;text-align:center;font-size:13px;font-weight:600;color:#92400E;">
-              ⚡ Your quote is held for 24 hours — secure your inspection slot now.
-            </div>
-            <div style="text-align:center;margin-top:10px"><button onclick="restart1()" class="q-restart">← Start over</button></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HIDDEN DANGER ===================== -->
-<section class="danger-bg" id="why">
-  <div class="sec">
-    <div class="chip-row"><span class="chip" style="background:var(--red-l);color:var(--red);border:1px solid rgba(239,68,68,.2);font-size:11px">From Franco's Inspections</span></div>
-    <h2 class="sec-t">What We Often Find<br><em class="red-em">During Dubai AC Inspections</em></h2>
-    <p class="sec-sub">Not a lab study. What Franco's team actually documents — in Dubai homes, every single week.</p>
-    <div class="danger-grid">
-
-      <div class="dcard">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 8V6m0 12v-2M8 12H6m12 0h-2M9.17 9.17 7.76 7.76m8.48 8.48-1.41-1.41M9.17 14.83l-1.41 1.41m8.48-8.48-1.41 1.41"/></svg>
-        </div>
-        <div class="d-num">12<em>mo</em></div>
-        <h3>Is All It Takes</h3>
-        <p>In Dubai's dusty climate, AC ducts can accumulate dust, debris and moisture-related buildup within months — our free inspections document it every week.</p>
-        <a class="d-src" href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          WHO &middot; Household Air Pollution
-        </a>
-      </div>
-
-      <div class="dcard">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
-        </div>
-        <div class="d-num">5<em>×</em></div>
-        <h3>More Indoor Pollution</h3>
-        <p>Indoor air can be 2–5&times; more polluted than outdoor air when AC filters and ducts are left uncleaned, per US EPA research.</p>
-        <a class="d-src" href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          US EPA &middot; Indoor Air Quality
-        </a>
-      </div>
-
-      <div class="dcard hi">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M8 9v9m8-9v9"/></svg>
-        </div>
-        <div class="d-num">Hidden</div>
-        <h3>Dust Mites &amp; Allergens</h3>
-        <p>Mattresses can hold dust mites and allergens that trigger sneezing, poor sleep and irritation — even when the surface looks clean.</p>
-        <a class="d-src" href="https://www.aafa.org/dust-mite-allergy/" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          AAFA &middot; Asthma &amp; Allergy Foundation
-        </a>
-      </div>
-
-      <div class="dcard">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <div class="d-num">DEWA</div>
-        <h3>Higher Energy Bills</h3>
-        <p>A clogged AC system can work harder than it should — wasting electricity and money every single month.</p>
-        <a class="d-src" href="https://consensus.app/papers/details/f3917d0963295153bbb01529c94b9876/" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Ildiri et al. &middot; Energy &amp; Buildings, 2024
-        </a>
-      </div>
-
-    </div>
-    <div style="margin-top:28px;background:rgba(88,153,227,.07);border:1px solid rgba(88,153,227,.18);border-radius:12px;padding:18px 22px;max-width:580px;margin-left:auto;margin-right:auto">
-      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px">Franco&#39;s Inspection Note</div>
-      <p style="font-size:14px;color:var(--g600);line-height:1.7;margin:0 0 14px">&ldquo;Most families call us when the smell starts. The better moment is earlier &mdash; when dust keeps coming back around vents, or the bedroom feels heavy after the AC runs. That&rsquo;s usually when we find the most.&rdquo;</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div style="border-radius:8px;overflow:hidden">
-          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from a mattress during deep cleaning — Pro Aqua Dubai" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center 40%;display:block">
-          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Mattress extraction · 2025</div>
-        </div>
-        <div style="border-radius:8px;overflow:hidden">
-          <img src="assets/real-ac-duct-clean.webp" alt="Pro Aqua technician vacuuming AC duct interior — Dubai job 2025" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block">
-          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Duct cleaning · 2025</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== SOLUTION — 4 square tiles ===================== -->
 <section class="sol-bg" id="solution" style="padding-top:48px">
   <div class="sec">
@@ -2355,6 +2143,197 @@ document.addEventListener('keydown',function(e){
           <a href="https://wa.me/971567943412" class="btn btn-outline btn-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Franco</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section id="reviews" class="rev-bg">
+  <div class="sec">
+    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
+    <h2 class="sec-t">Rated <em class="blue-em">4.7 Stars</em> by Dubai Families</h2>
+    <p class="sec-sub">Real WhatsApp messages from 6,000+ families across Dubai — not stock testimonials, not paid reviews.</p>
+    <div class="g-strip">
+      <div style="display:flex;align-items:center;gap:8px">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span style="font-size:13px;font-weight:500;color:var(--navy)">Google Reviews</span>
+      </div>
+      <div class="gs-div"></div>
+      <span class="google-rating-badge google-rating-badge--strip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span>
+      <div class="gs-badge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Google rating shown</div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card"><div class="rev-qt">"</div>
+        <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">AC Duct Cleaning</span></div>
+        <div class="rev-head"><div class="rev-av">KK</div><div><div class="rev-nm">Kavi Kapila</div><div class="rev-si">Client since 2025</div></div></div>
+        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
+        <p class="rev-text">Happy to confirm my previous experiences have been reinforced again. Prompt responses, punctual and most important, efficient motivated and professional team. No short cuts, final result is great.</p>
+                                <div class="wa-ss">
+          <img src="assets/whatsapp-review-ac-duct-cleaning.webp" alt="WhatsApp review screenshot — AC duct cleaning service feedback" loading="lazy">
+        </div>
+      </div>
+      <div class="rev-card"><div class="rev-qt">"</div>
+        <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Villa Deep Cleaning</span></div>
+        <div class="rev-head"><div class="rev-av">PV</div><div><div class="rev-nm">P.V.</div><div class="rev-si">Client since 2026</div></div></div>
+        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
+        <p class="rev-text">Excellent service..Franco is very particular and prompt. Takes a lot of interest. Have used them for our villa and office. For mattresses, sofas, carpets and all pur AC ducts. Very happy to give them excellent recommendations.</p>
+        <div class="wa-ss">
+          <img src="assets/whatsapp-review-villa-deep-cleaning.webp" alt="WhatsApp review screenshot — villa deep cleaning feedback" loading="lazy">
+        </div>
+      </div>
+      <div class="rev-card"><div class="rev-qt">"</div>
+        <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Sanitization</span></div>
+        <div class="rev-head"><div class="rev-av">CT</div><div><div class="rev-nm">Chantelle Thompson</div><div class="rev-si">Client since 2026</div></div></div>
+        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
+        <p class="rev-text">Pro Aqua recently came out to deep clean my cream sofa and did an amazing job. They were available within just a few hours of reaching out to them. Extremely happy with both customer service and quality of service. Will be using again.</p>
+        <div class="wa-ss">
+          <img src="assets/whatsapp-review-sofa-sanitizing.webp" alt="WhatsApp review screenshot — sofa sanitizing feedback" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews closing CTA -->
+    <div style="margin-top:36px;text-align:center;border-top:1px solid var(--bg3);padding-top:32px">
+      <p style="font-size:16px;font-weight:700;color:var(--navy);margin:0 0 6px">Join 6,000+ Dubai families.</p>
+      <p style="font-size:14px;color:var(--g500);margin:0 0 22px">Book your free inspection — it costs nothing and takes 30 seconds.</p>
+      <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20to%20book%20a%20free%20inspection%20for%20my%20home%20in%20Dubai." style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35)" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book My Free Inspection
+      </a>
+      <p style="margin-top:10px;font-size:12px;color:var(--g400);font-style:italic">Free · No obligation · Responds within minutes</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<!-- ===================== COMPARISON (S1) ===================== -->
+<section class="cmp-bg" id="compare" style="background:var(--bg2)">
+  <style>
+    .cmp-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.18fr) minmax(0,.92fr);align-items:stretch;gap:18px;max-width:1080px;margin:36px auto 0}
+    .cmp-highlight{color:var(--green-d)}
+    .cmp-targets{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:18px auto 0}
+    .cmp-targets span{display:inline-flex;align-items:center;min-height:30px;padding:6px 11px;border-radius:99px;background:var(--white);border:1px solid rgba(77,168,130,.26);color:var(--navy);font-size:12px;font-weight:700;box-shadow:0 4px 14px rgba(28,50,68,.06)}
+    .cmp-card{background:var(--white);border:1px solid var(--g300);border-radius:16px;padding:24px 22px;position:relative;min-width:0}
+    .cmp-card h3{font-size:17px;margin:0 0 4px;color:var(--navy)}
+    .cmp-card .cmp-sub{font-size:12.5px;color:var(--g500);margin-bottom:16px}
+    .cmp-side-meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+    .cmp-pill{display:inline-flex;align-items:center;min-height:26px;padding:5px 9px;border-radius:99px;background:var(--bg);border:1px solid var(--bg3);color:var(--g600);font-size:11px;font-weight:700}
+    .cmp-pill.cmp-fit{background:var(--blue-l);border-color:rgba(88,153,227,.24);color:var(--blue-d)}
+    .cmp-pill.cmp-trade{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+    .cmp-card ul{list-style:none;margin:0;padding:0}
+    .cmp-card li{font-size:13.5px;line-height:1.5;padding:7px 0 7px 24px;position:relative;color:var(--g500);border-top:1px solid var(--bg3)}
+    .cmp-card li:before{content:"–";position:absolute;left:4px;color:var(--g400);font-weight:700}
+    .cmp-hero{border:2px solid var(--green-d);box-shadow:0 18px 44px rgba(77,168,130,.22);background:linear-gradient(180deg,#fff 0%,var(--green-ll) 100%);padding:30px 24px;transform:translateY(-8px);z-index:1}
+    .cmp-hero .cmp-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:6px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 20px rgba(28,50,68,.18)}
+    .cmp-brand{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+    .cmp-mark{width:46px;height:46px;min-width:46px;border-radius:12px;background:linear-gradient(135deg,var(--green-d),var(--blue));color:#fff;display:grid;place-items:center;font-size:16px;font-weight:800;box-shadow:0 8px 22px rgba(77,168,130,.28)}
+    .cmp-brand h3{font-size:23px;margin:0;color:var(--navy)}
+    .cmp-owner{font-size:12px;font-weight:700;color:var(--green-d);line-height:1.35}
+    .cmp-hero-line{font-size:13.5px;color:var(--navy);font-weight:700;line-height:1.55;margin:0 0 14px}
+    .cmp-proof-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 18px}
+    .cmp-proof{background:#fff;border:1px solid rgba(77,168,130,.24);border-radius:12px;padding:9px 10px;min-height:64px;box-shadow:0 6px 16px rgba(28,50,68,.05)}
+    .cmp-proof strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
+    .cmp-proof span{display:block;color:var(--g500);font-size:11.5px;line-height:1.35;margin-top:3px}
+    .cmp-hero li{color:var(--navy)}
+    .cmp-hero li:before{content:"✓";color:var(--green-d)}
+    .cmp-cta{display:block;text-align:center;background:var(--green-d);color:#fff;font-weight:800;font-size:13.5px;line-height:1.35;border-radius:10px;padding:14px 12px;margin-top:18px;text-decoration:none;box-shadow:0 10px 24px rgba(77,168,130,.24)}
+    @media(max-width:860px){.cmp-grid{grid-template-columns:1fr;max-width:500px}.cmp-hero{order:-1;transform:none}.cmp-targets{max-width:500px}}
+    @media(max-width:420px){.cmp-proof-row{grid-template-columns:1fr 1fr}.cmp-brand h3{font-size:21px}.cmp-hero{padding:30px 20px 24px}.cmp-card{padding:24px 20px}}
+    .cmp-honest{margin:14px 0 0;font-size:12px;color:var(--green-d);border-top:1px solid var(--bg3);padding-top:11px;line-height:1.5}
+    .cmp-okill{margin:16px 0 10px;font-size:12.5px;color:var(--g600);line-height:1.6;background:rgba(77,168,130,.07);border:1px solid rgba(77,168,130,.18);border-radius:8px;padding:11px 13px}
+  </style>
+  <div class="sec">
+    <div class="chip-row" style="justify-content:center"><span class="chip" style="background:var(--green-l);color:var(--green-d);border:1px solid rgba(77,168,130,.25);font-size:11px">An Honest Comparison</span></div>
+    <h2 class="sec-t" style="text-align:center">Three Options. One Question:<br><span class="cmp-highlight">Who's Responsible for What You Can't See?</span></h2>
+    <p style="text-align:center;max-width:640px;margin:10px auto 0;color:var(--g500);font-size:14.5px">Most companies make your home <em>look</em> clean. A specialist removes what you can't see — dust, allergens and moisture-related buildup in your AC ducts and mattresses. Here's the honest difference, including when Pro Aqua is <strong>not</strong> the right choice.</p>
+    <div class="cmp-targets" aria-label="Pro Aqua proof points">
+      <span>Same trained team, every visit</span>
+      <span>Fixed price before we start</span>
+      <span>Before &amp; after photos</span>
+      <span>Free re-clean — no questions</span>
+    </div>
+    <div class="cmp-grid">
+      <div class="cmp-card">
+        <div class="cmp-side-meta">
+          <span class="cmp-pill cmp-fit">Best for: Quick general tidying</span>
+          <span class="cmp-pill cmp-trade">Not built for: Hidden contaminants</span>
+        </div>
+        <h3>Booking Apps</h3>
+        <div class="cmp-sub">Fast for surfaces. Not built for what's hidden inside.</div>
+        <ul>
+          <li>A different crew every visit — no continuity, no accountability</li>
+          <li>General cleaners, not AC duct or sanitization specialists</li>
+          <li>Can clean surfaces — can&#39;t treat what&#39;s inside your system</li>
+          <li>No before &amp; after documentation or proof</li>
+          <li>Mold returns a week later? New request. Different crew.</li>
+        </ul>
+        <p class="cmp-honest">✓ <strong>Right choice if:</strong> You need affordable general home tidying.</p>
+      </div>
+      <div class="cmp-card cmp-hero">
+        <div class="cmp-badge">THE SPECIALIST CHOICE</div>
+        <div class="cmp-brand">
+          <div class="cmp-mark" aria-hidden="true">PA</div>
+          <div>
+            <h3>Pro Aqua Dubai</h3>
+            <div class="cmp-owner">Franco's personally trained specialist team</div>
+          </div>
+        </div>
+        <div class="cmp-hero-line">You always know who's coming, what they found — and you see the proof.</div>
+        <div class="cmp-proof-row" aria-label="Pro Aqua proof">
+          <div class="cmp-proof cmp-proof-rating"><span class="google-rating-badge google-rating-badge--proof" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span><span>verified public rating</span></div>
+          <div class="cmp-proof"><strong>6,000+</strong><span>Dubai families served</span></div>
+          <div class="cmp-proof"><strong>Since 2016</strong><span>still here — still Franco</span></div>
+          <div class="cmp-proof"><strong>Photo proof</strong><span>on every single job</span></div>
+        </div>
+        <ul>
+          <li>Franco's personally trained team — same faces, every single visit</li>
+          <li>AC duct &amp; mattress specialists — not general cleaners</li>
+          <li>Your fixed price is confirmed before we start. Zero added later.</li>
+          <li>Before &amp; after photos sent to you. You see the proof.</li>
+          <li>Not satisfied with an agreed area? We re-clean. Free. No questions asked.</li>
+        </ul>
+        <p class="cmp-okill">Worried it won't make a difference? Most clients notice the change immediately — and every job is backed by our photo proof and free re-clean promise. <strong>Zero risk to you.</strong></p>
+        <p class="cmp-honest" style="text-align:center">✓ <strong>Right choice if:</strong> You care about what your family breathes and want proof it's done right.</p>
+        <a class="cmp-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+my+free+inspection" target="_blank" rel="noopener">WhatsApp Franco's Team for a Free Inspection</a>
+      </div>
+      <div class="cmp-card">
+        <div class="cmp-side-meta">
+          <span class="cmp-pill cmp-fit">Best for: Large properties &amp; corporate</span>
+          <span class="cmp-pill cmp-trade">Investment: AED 2,500–3,500+ per service</span>
+        </div>
+        <h3>Premium Services</h3>
+        <div class="cmp-sub">Excellent results — for properties with larger budgets.</div>
+        <ul>
+          <li>Corporate standards and documentation</li>
+          <li>Professional account management and scheduling</li>
+          <li>Detailed compliance and service records</li>
+          <li>Excellent for corporate contracts and large properties</li>
+          <li>Typical investment: AED 2,500–3,500+ per full service</li>
+        </ul>
+        <p class="cmp-honest">✓ <strong>Right choice if:</strong> Budget isn&#39;t a concern and you need corporate-grade documentation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7-Questions Checklist -->
+  <div style="margin-top:36px;border-top:1px solid var(--bg3);padding-top:30px">
+    <h3 style="text-align:center;font-size:17px;font-weight:700;color:var(--navy);margin:0 0 6px">Before You Book Any Cleaning Team in Dubai</h3>
+    <p style="text-align:center;font-size:13.5px;color:var(--g500);margin:0 0 20px">Ask these 7 questions — the answers tell you everything.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;max-width:640px;margin:0 auto">
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Who <em>exactly</em> is coming to my home?</span></div>
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Is it the same trained team every time?</span></div>
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Do they inspect before quoting?</span></div>
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Is the price fixed before work starts?</span></div>
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Do you get before &amp; after photo proof?</span></div>
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>What happens if an area is missed?</span></div>
+      <div style="display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.5;grid-column:1/-1;justify-content:center"><span style="color:var(--green-d);font-weight:700;flex-shrink:0;margin-top:1px">✓</span><span>Can you send photos first via WhatsApp?</span></div>
+    </div>
+    <div style="text-align:center;margin-top:20px">
+      <p style="font-size:13px;color:var(--g500);margin:0 0 14px">Pro Aqua answers <strong style="color:var(--navy)">yes</strong> to all seven.</p>
+      <a href="https://wa.me/971567943412?text=Hi%2C+I+have+a+few+questions+before+booking." style="display:inline-flex;align-items:center;gap:7px;padding:12px 22px;font-size:14px;font-weight:600;background:#25D366;color:#fff;border-radius:9px;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ask Franco&#39;s Team
+      </a>
     </div>
   </div>
 </section>
@@ -2515,150 +2494,6 @@ document.addEventListener('keydown',function(e){
   </div>
 </section>
 
-<!-- ===================== BOOKING SECTION ===================== -->
-<section class="booking-bg" id="booking" style="background:var(--bg2)">
-  <div class="sec">
-    <div style="text-align:center;margin-bottom:48px">
-      <div class="chip-row" style="justify-content:center"><span class="chip cb">Book in 30 Seconds</span><span class="chip cg">Free · No Obligation</span></div>
-      <h2 class="sec-t" style="text-align:center">Your Home Deserves <em class="blue-em">Better Air</em>.</h2>
-      <p class="sec-sub" style="margin:0 auto;text-align:center">Most families wait until symptoms appear. You don't have to — the first step is free and takes 30 seconds. Franco's team responds within minutes, 7 days a week.</p>
-    </div>
-
-    <div class="bk-grid">
-
-      <!-- Card 1: WhatsApp -->
-      <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+free+inspection+for+my+home+in+Dubai." class="bk-card bk-card-primary">
-        <div class="bk-card-badge">Fastest Response</div>
-        <div class="bk-icon bk-icon-green">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </div>
-        <h3 class="bk-card-title">WhatsApp Us</h3>
-        <p class="bk-card-text">Send us a message and get a reply in minutes. Share your address and preferred time — we handle the rest.</p>
-        <div class="bk-card-detail">+971 56 794 3412</div>
-        <div class="bk-card-cta bk-cta-green">
-          Open WhatsApp
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-      <!-- Card 2: Call -->
-      <a href="tel:+971567943412" class="bk-card">
-        <div class="bk-icon bk-icon-blue">
-          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </div>
-        <h3 class="bk-card-title">Call Us Directly</h3>
-        <p class="bk-card-text">Prefer to talk? Call Franco's team directly and book your free inspection in under 2 minutes.</p>
-        <div class="bk-card-detail">+971 56 794 3412</div>
-        <div class="bk-card-cta bk-cta-blue">
-          Call Now
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-      <!-- Card 3: Free Quote (scroll to quiz) -->
-      <a href="#quiz" class="bk-card">
-        <div class="bk-icon bk-icon-navy">
-          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        </div>
-        <h3 class="bk-card-title">Get an Instant Quote</h3>
-        <p class="bk-card-text">Use our 30-second price calculator — 4 quick taps and see your personalised estimate instantly.</p>
-        <div class="bk-card-detail">No email required · Free</div>
-        <div class="bk-card-cta bk-cta-navy">
-          See My Price
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- Trust strip -->
-    <div class="bk-trust">
-      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Free on-site inspection</div>
-      <div class="bk-trust-div"></div>
-      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Fixed price, no surprises</div>
-      <div class="bk-trust-div"></div>
-      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Fast slots when available</div>
-      <div class="bk-trust-div"></div>
-      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Responds within minutes</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== REVIEWS ===================== -->
-<section id="reviews" class="rev-bg">
-  <div class="sec">
-    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
-    <h2 class="sec-t">Rated <em class="blue-em">4.7 Stars</em> by Dubai Families</h2>
-    <p class="sec-sub">Real WhatsApp messages from 6,000+ families across Dubai — not stock testimonials, not paid reviews.</p>
-    <div class="g-strip">
-      <div style="display:flex;align-items:center;gap:8px">
-        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        <span style="font-size:13px;font-weight:500;color:var(--navy)">Google Reviews</span>
-      </div>
-      <div class="gs-div"></div>
-      <span class="google-rating-badge google-rating-badge--strip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span>
-      <div class="gs-badge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Google rating shown</div>
-    </div>
-    <div class="rev-grid">
-      <div class="rev-card"><div class="rev-qt">"</div>
-        <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">AC Duct Cleaning</span></div>
-        <div class="rev-head"><div class="rev-av">KK</div><div><div class="rev-nm">Kavi Kapila</div><div class="rev-si">Client since 2025</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
-        <p class="rev-text">Happy to confirm my previous experiences have been reinforced again. Prompt responses, punctual and most important, efficient motivated and professional team. No short cuts, final result is great.</p>
-                                <div class="wa-ss">
-          <img src="assets/whatsapp-review-ac-duct-cleaning.webp" alt="WhatsApp review screenshot — AC duct cleaning service feedback" loading="lazy">
-        </div>
-      </div>
-      <div class="rev-card"><div class="rev-qt">"</div>
-        <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Villa Deep Cleaning</span></div>
-        <div class="rev-head"><div class="rev-av">PV</div><div><div class="rev-nm">P.V.</div><div class="rev-si">Client since 2026</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
-        <p class="rev-text">Excellent service..Franco is very particular and prompt. Takes a lot of interest. Have used them for our villa and office. For mattresses, sofas, carpets and all pur AC ducts. Very happy to give them excellent recommendations.</p>
-        <div class="wa-ss">
-          <img src="assets/whatsapp-review-villa-deep-cleaning.webp" alt="WhatsApp review screenshot — villa deep cleaning feedback" loading="lazy">
-        </div>
-      </div>
-      <div class="rev-card"><div class="rev-qt">"</div>
-        <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Sanitization</span></div>
-        <div class="rev-head"><div class="rev-av">CT</div><div><div class="rev-nm">Chantelle Thompson</div><div class="rev-si">Client since 2026</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
-        <p class="rev-text">Pro Aqua recently came out to deep clean my cream sofa and did an amazing job. They were available within just a few hours of reaching out to them. Extremely happy with both customer service and quality of service. Will be using again.</p>
-        <div class="wa-ss">
-          <img src="assets/whatsapp-review-sofa-sanitizing.webp" alt="WhatsApp review screenshot — sofa sanitizing feedback" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-    <!-- Reviews closing CTA -->
-    <div style="margin-top:36px;text-align:center;border-top:1px solid var(--bg3);padding-top:32px">
-      <p style="font-size:16px;font-weight:700;color:var(--navy);margin:0 0 6px">Join 6,000+ Dubai families.</p>
-      <p style="font-size:14px;color:var(--g500);margin:0 0 22px">Book your free inspection — it costs nothing and takes 30 seconds.</p>
-      <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20to%20book%20a%20free%20inspection%20for%20my%20home%20in%20Dubai." style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35)" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Book My Free Inspection
-      </a>
-      <p style="margin-top:10px;font-size:12px;color:var(--g400);font-style:italic">Free · No obligation · Responds within minutes</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="proc-bg" id="process">
-  <div class="sec">
-    <div class="chip-row" style="justify-content:center"><span class="chip cb">How It Works</span></div>
-    <h2 class="sec-t" style="text-align:center">Simple, <em class="blue-em">Transparent</em> Process</h2>
-    <p style="text-align:center;font-size:15px;color:var(--g500);max-width:500px;margin:0 auto 0;line-height:1.65">No surprises. Fixed price confirmed before we start. Before &amp; after proof on every job.</p>
-    <div class="proc-grid">
-      <div class="proc-step"><div class="proc-num">1</div><h3>Share Your Needs</h3><p>Answer 4 quick questions — or WhatsApp us photos of your space for a faster quote.</p></div>
-      <div class="proc-step"><div class="proc-num">2</div><h3>Free Inspection</h3><p>We visit at zero cost, zero pressure, and confirm the full scope on-site.</p></div>
-      <div class="proc-step"><div class="proc-num">3</div><h3>Fixed Quote</h3><p>You approve the exact price before any work starts. No hidden extras, ever.</p></div>
-      <div class="proc-step"><div class="proc-num">4</div><h3>Clean &amp; Proof</h3><p>Franco's trained team cleans. Before &amp; after photos document every result.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING + GUARANTEE -->
 <section id="pricing" style="background:var(--bg2);padding:72px 0">
   <div class="sec">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start">
@@ -2750,6 +2585,171 @@ document.addEventListener('keydown',function(e){
 </div>
 
 <!-- BUSINESS -->
+<!-- ===================== QUOTE QUIZ ===================== -->
+<section class="quiz-bg" id="quiz" style="position:relative;overflow:visible">
+  <div class="sec">
+    <div style="text-align:center;padding-bottom:24px">
+      <h2 class="sec-t" style="text-align:center">Know What You're Getting<br><em class="blue-em">Before You Spend a Dirham</em></h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Four taps. Your personalised price estimate. Free inspection to confirm it. No email, no pressure.</p>
+    </div>
+    <div class="quiz-wrap">
+      <div class="quiz-float-chip quiz-chip-tl">In 30 Seconds</div>
+      <div class="quiz-float-chip quiz-chip-br">No Commitment</div>
+      <div class="quiz-card" id="qcard1">
+        <div class="qprog">
+          <div class="qprog-top"><span id="ql1">Step 1 of 4</span><span id="qp1">25%</span></div>
+          <div class="qprog-bar"><div class="qprog-fill" id="qf1" style="width:25%"></div></div>
+        </div>
+        <div class="quiz-step on" id="q1s1">
+          <div class="qQ">What do you need cleaned?</div><div class="qHint">Tap to select — moves automatically</div>
+          <div class="qopts">
+            <button class="qopt" onclick="pick1(this,'service','ac',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div><div><span class="qopt-l">AC Duct Cleaning</span><span class="qopt-s">Cleaner, healthier air</span></div></button>
+            <button class="qopt" onclick="pick1(this,'service','fabric',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"/></svg></div><div><span class="qopt-l">Fabric Sanitizing</span><span class="qopt-s">Sofas &amp; carpets</span></div></button>
+            <button class="qopt" onclick="pick1(this,'service','mattress',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M2 4v16M22 4v16M2 12h20M6 12V8a2 2 0 012-2h8a2 2 0 012 2v4"/></svg></div><div><span class="qopt-l">Mattress Sanitizing</span><span class="qopt-s">Sleep clean tonight</span></div></button>
+            <button class="qopt" onclick="pick1(this,'service','bundle',2)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><span class="qopt-l">Full Bundle</span><span class="qopt-s">All 3 services</span></div></button>
+          </div>
+        </div>
+        <div class="quiz-step" id="q1s2">
+          <div class="qQ">What type of property?</div><div class="qHint">This helps us send the right team</div>
+          <div class="qopts">
+            <button class="qopt" onclick="pick1(this,'type','apt',3)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div><span class="qopt-l">Apartment</span><span class="qopt-s">Studio to 4+ BR</span></div></button>
+            <button class="qopt" onclick="pick1(this,'type','villa',3)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><span class="qopt-l">Villa</span><span class="qopt-s">Townhouse or standalone</span></div></button>
+            <button class="qopt" onclick="pick1(this,'type','office',3)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div><span class="qopt-l">Office</span><span class="qopt-s">Workspace or retail</span></div></button>
+          </div>
+          <div class="quiz-nav"><button class="q-back" onclick="gos1(1)">← Back</button></div>
+        </div>
+        <div class="quiz-step" id="q1s3">
+          <div class="qQ">How big is your property?</div><div class="qHint">Approximate size is fine</div>
+          <div class="qopts">
+            <button class="qopt" onclick="pick1(this,'size','s',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><div><span class="qopt-l">Studio</span><span class="qopt-s">Up to 500 sqft</span></div></button>
+            <button class="qopt" onclick="pick1(this,'size','1',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg></div><div><span class="qopt-l">1 Bedroom</span><span class="qopt-s">500–850 sqft</span></div></button>
+            <button class="qopt" onclick="pick1(this,'size','2',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div><div><span class="qopt-l">2 Bedrooms</span><span class="qopt-s">850–1,400 sqft</span></div></button>
+            <button class="qopt" onclick="pick1(this,'size','3',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div><div><span class="qopt-l">3 Bedrooms</span><span class="qopt-s">1,400–2,200 sqft</span></div></button>
+            <button class="qopt" onclick="pick1(this,'size','4',4)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div><span class="qopt-l">4 Bedrooms+</span><span class="qopt-s">2,200 sqft &amp; above</span></div></button>
+          </div>
+          <div class="quiz-nav"><button class="q-back" onclick="gos1(2)">← Back</button></div>
+        </div>
+        <div class="quiz-step" id="q1s4">
+          <div class="qQ">When do you need it?</div><div class="qHint">We'll confirm your slot right away</div>
+          <div class="qopts w1">
+            <button class="qopt" onclick="pick1(this,'timing','today',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><span class="qopt-l">Today or tomorrow</span><span class="qopt-s">Ask for the fastest available slot</span></div></button>
+            <button class="qopt" onclick="pick1(this,'timing','week',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#71C49F" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><span class="qopt-l">This week</span><span class="qopt-s">Flexible timing</span></div></button>
+            <button class="qopt" onclick="pick1(this,'timing','later',0)"><div class="qopt-ico"><svg width="20" height="20" fill="none" stroke="#5899E3" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="qopt-l">Just getting a quote</span><span class="qopt-s">Planning ahead</span></div></button>
+          </div>
+          <div class="quiz-nav"><button class="q-back" onclick="gos1(3)">← Back</button></div>
+        </div>
+        <div class="quiz-step" id="q1sr">
+          <div class="qr">
+            <div class="qr-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4DA882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
+            <div class="qr-t">Your Specialist Quote Is Ready</div>
+            <div class="qr-s">Your specialist confirms the exact price during your free inspection — before any work begins.</div>
+            <div class="qr-box"><div class="qr-lbl">Estimated Starting From</div><div class="qr-p" id="rp1">AED 550</div><div class="qr-n">Confirmed at your free inspection · Fixed price · Zero hidden fees</div></div>
+            <div class="qr-trust" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0 4px">
+              <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Free on-site inspection</span>
+              <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Fixed price before we start</span>
+              <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Free re-clean if not satisfied</span>
+            </div>
+            <div class="qr-sum" id="rs1"></div>
+            <div class="qr-btns">
+              <a href="https://wa.me/971567943412?text=Hello%2C+I+got+a+quote+and+would+like+to+book+a+free+inspection" class="btn btn-blue btn-lg" style="padding:16px 28px;font-size:16px;background:#25D366;box-shadow:0 4px 16px rgba(37,211,102,.45)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Claim My Free Inspection →</a>
+              <a href="tel:+971567943412" class="btn btn-outline btn-lg"> Call Us</a>
+            </div>
+            <div id="quiz-urgency" style="display:none;margin-top:12px;background:#FEF3C7;border:1.5px solid #F59E0B;border-radius:10px;padding:12px 16px;text-align:center;font-size:13px;font-weight:600;color:#92400E;">
+              ⚡ Your quote is held for 24 hours — secure your inspection slot now.
+            </div>
+            <div style="text-align:center;margin-top:10px"><button onclick="restart1()" class="q-restart">← Start over</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proc-bg" id="process">
+  <div class="sec">
+    <div class="chip-row" style="justify-content:center"><span class="chip cb">How It Works</span></div>
+    <h2 class="sec-t" style="text-align:center">Simple, <em class="blue-em">Transparent</em> Process</h2>
+    <p style="text-align:center;font-size:15px;color:var(--g500);max-width:500px;margin:0 auto 0;line-height:1.65">No surprises. Fixed price confirmed before we start. Before &amp; after proof on every job.</p>
+    <div class="proc-grid">
+      <div class="proc-step"><div class="proc-num">1</div><h3>Share Your Needs</h3><p>Answer 4 quick questions — or WhatsApp us photos of your space for a faster quote.</p></div>
+      <div class="proc-step"><div class="proc-num">2</div><h3>Free Inspection</h3><p>We visit at zero cost, zero pressure, and confirm the full scope on-site.</p></div>
+      <div class="proc-step"><div class="proc-num">3</div><h3>Fixed Quote</h3><p>You approve the exact price before any work starts. No hidden extras, ever.</p></div>
+      <div class="proc-step"><div class="proc-num">4</div><h3>Clean &amp; Proof</h3><p>Franco's trained team cleans. Before &amp; after photos document every result.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING + GUARANTEE -->
+<!-- ===================== BOOKING SECTION ===================== -->
+<section class="booking-bg" id="booking" style="background:var(--bg2)">
+  <div class="sec">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="chip-row" style="justify-content:center"><span class="chip cb">Book in 30 Seconds</span><span class="chip cg">Free · No Obligation</span></div>
+      <h2 class="sec-t" style="text-align:center">Your Home Deserves <em class="blue-em">Better Air</em>.</h2>
+      <p class="sec-sub" style="margin:0 auto;text-align:center">Most families wait until symptoms appear. You don't have to — the first step is free and takes 30 seconds. Franco's team responds within minutes, 7 days a week.</p>
+    </div>
+
+    <div class="bk-grid">
+
+      <!-- Card 1: WhatsApp -->
+      <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+free+inspection+for+my+home+in+Dubai." class="bk-card bk-card-primary">
+        <div class="bk-card-badge">Fastest Response</div>
+        <div class="bk-icon bk-icon-green">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <h3 class="bk-card-title">WhatsApp Us</h3>
+        <p class="bk-card-text">Send us a message and get a reply in minutes. Share your address and preferred time — we handle the rest.</p>
+        <div class="bk-card-detail">+971 56 794 3412</div>
+        <div class="bk-card-cta bk-cta-green">
+          Open WhatsApp
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Card 2: Call -->
+      <a href="tel:+971567943412" class="bk-card">
+        <div class="bk-icon bk-icon-blue">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3 class="bk-card-title">Call Us Directly</h3>
+        <p class="bk-card-text">Prefer to talk? Call Franco's team directly and book your free inspection in under 2 minutes.</p>
+        <div class="bk-card-detail">+971 56 794 3412</div>
+        <div class="bk-card-cta bk-cta-blue">
+          Call Now
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Card 3: Free Quote (scroll to quiz) -->
+      <a href="#quiz" class="bk-card">
+        <div class="bk-icon bk-icon-navy">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <h3 class="bk-card-title">Get an Instant Quote</h3>
+        <p class="bk-card-text">Use our 30-second price calculator — 4 quick taps and see your personalised estimate instantly.</p>
+        <div class="bk-card-detail">No email required · Free</div>
+        <div class="bk-card-cta bk-cta-navy">
+          See My Price
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Trust strip -->
+    <div class="bk-trust">
+      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Free on-site inspection</div>
+      <div class="bk-trust-div"></div>
+      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Fixed price, no surprises</div>
+      <div class="bk-trust-div"></div>
+      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Fast slots when available</div>
+      <div class="bk-trust-div"></div>
+      <div class="bk-trust-item"><svg width="16" height="16" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Responds within minutes</div>
+    </div>
+
+  </div>
+</section>
+
 <section class="business-bg" id="business">
   <div class="sec">
     <div class="business-in">
@@ -3304,11 +3304,11 @@ function playVideo(){
    Maps every content section to the buyer-journey station shown in the header. */
 (function(){
   var navJourney=[
-    {key:'why',anchor:'why',sections:['hero','compare','warning-signs','vent-check','quiz','why','solution']},
+    {key:'why',anchor:'why',sections:['hero','why','warning-signs','vent-check','solution']},
     {key:'franco',anchor:'franco',sections:['franco']},
-    {key:'services',anchor:'services',sections:['services','before-after']},
-    {key:'booking',anchor:'booking',sections:['booking','process','pricing','business','arabic','seasonal','areas']},
     {key:'reviews',anchor:'reviews',sections:['reviews']},
+    {key:'services',anchor:'services',sections:['compare','services','before-after']},
+    {key:'booking',anchor:'booking',sections:['pricing','quiz','process','booking','business','arabic','seasonal','areas']},
     {key:'faq',anchor:'faq',sections:['faq']}
   ];
 
