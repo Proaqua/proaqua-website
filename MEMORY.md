@@ -615,3 +615,11 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Commit:** 98bd1b7 (lokal, nicht gepusht)
 - **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions (Stadtteil + Monat/Jahr).
 - **Nächster Schritt:** Website lokal testen. Wenn Giampiero freigibt: `git push origin Franco2:main --force` (Giampiero führt manuell im Terminal aus).
+
+### 2026-06-15 — Codex — `assets/pictures_videos/` geprüft: Proof-/Ad-Material bewertet
+
+- **Ordner geprüft:** `assets/pictures_videos/AC Clean /` und `assets/pictures_videos/Deep_clean_home/` mit Bildern und Videos inventarisiert.
+- **Stärkste Website-Proof-Assets:** AC Coil Before/After, AC Grid/Duct Work mit Team im Dubai-Hochhaus, Mattress Dirty Water Result, Carpet Cleaning Proof.
+- **Stärkste Social-/Ad-Clips:** kurze AC-Grid-/Duct-Loops, Mattress-Cleaning, Team-at-work, Bathroom/Toilet Sanitizing, Villa Window Cleaning. Besonders geeignet für Meta/Instagram Reels und Retargeting Creatives.
+- **Bewertung:** Rohmaterial ist conversion-stark, aber nicht direkt als Produktionsasset nutzen: Dateinamen mit Leerzeichen/Typos, gemischte Formate, `.DS_Store`, teils keine Posterframes/Watermarks. Besser kuratieren, wasserzeichnen, WebP/MP4 optimieren und mit sauberen Namen in `assets/` oder `assets/proof/` bereitstellen.
+- **Empfohlener nächster Umsetzungsschritt:** Aus dem Rohmaterial ein kuratiertes Proof-System bauen: 8-12 optimierte Website-Bilder + 5-6 kurze Video-Loops mit Posterframes. Danach gezielt in Services, Before/After und ggf. neue Section "Real Proof From Dubai Homes" einbauen.
