@@ -31,6 +31,15 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Risk-Check-Section + geschützte Bild-Lightbox umgesetzt
+- **Erledigt:** `#warning-signs` als bildstarke Risk-Check-Section im Stil des gelieferten Screenshots überarbeitet: 5 runde Warning-Sign-Bilder, klare Headline, CTA "Start Risk Check Quiz — Free" und Hinweis "Popup quiz · 6 questions · WhatsApp result".
+- **Erledigt:** Bestehendes Risk-Check-Popup weiterverwendet; CTA öffnet das vorhandene 6-Fragen-Quiz. Zwei zu harte Popup-Claims entschärft (`bacteria / mould confirmed` → Inspection-Warnsignal, `#1 cause` → kann beitragen).
+- **Erledigt:** Globale geschützte Bild-Lightbox für Content-Bilder ergänzt. Normale Service-/Proof-/Review-/Seasonal-/Warning-Bilder öffnen bei Klick in einem großen Overlay mit Pro-Aqua-Dubai-Wasserzeichen und Caption. Logos, Avatare und UI-Icons bleiben ausgeschlossen.
+- **Erledigt:** 21 Content-Bilddateien in `assets/` mit eingebranntem Pro-Aqua-Logo-Wasserzeichen verstärkt; zusätzlich zeigt die Lightbox ein wiederholtes Pro-Aqua-Logo-Overlay. Hinweis: Ein Web-Wasserzeichen ist nie absolut unentfernbar, aber hier ist es nicht nur CSS, sondern in die ausgelieferten Bilddateien eingebettet.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/` mit Chrome/Playwright geprüft. Desktop 1280px und Mobile 390px: kein horizontaler Overflow, 5 Warning-Bilder, 25 anklickbare Content-Bilder, Risk-Quiz öffnet, Lightbox öffnet mit Wasserzeichen, Console 0 Errors / 0 Warnings.
+- **Nicht angefasst/staged:** Bestehende lokale `.DS_Store`-/Screenshot-/`assets/pictures_videos/`-Dateien bleiben unberührt.
+- **Nächster Schritt:** Visuelle Feinabstimmung der Warning-Sign-Bildauswahl möglich, sobald echte passende Pro-Aqua-Fotos für die 5 Symptome final ausgewählt sind.
+
 ### 2026-06-15 — Codex — ProAqua-2 GitHub-Push abgeschlossen
 - **Erledigt:** Lokale Branch `Franco2` erfolgreich als `main` in das neue Repo gepusht: https://github.com/agentdimarco-cloud/ProAqua-2
 - **Remote:** Separater Remote `proaqua2` zeigt auf `https://github.com/agentdimarco-cloud/ProAqua-2.git`.

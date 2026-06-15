@@ -1161,21 +1161,44 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 }
 /* ── Section visual separation ─────────────────────────────────── */
 section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
-/* ── Warning Signs Section ──────────────────────────────────────── */
-#warning-signs{background:var(--bg2)}
-.ws-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25);border-radius:20px;padding:5px 13px;font-size:12px;font-weight:700;color:#DC2626;letter-spacing:.4px;margin-bottom:18px}
-.ws-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:32px 0 40px}
-.ws-card{background:#fff;border-radius:14px;padding:24px 14px 20px;text-align:center;border:1px solid var(--bg3);transition:transform .2s,box-shadow .2s}
-.ws-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.ws-ico{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-.ws-label{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3}
-.ws-desc{font-size:12px;color:#6b7280;line-height:1.5}
-.ws-cta-wrap{text-align:center}
-.ws-btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:15px 30px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .2s}
-.ws-btn:hover{background:#253e55;transform:translateY(-1px)}
-.ws-btn-note{font-size:12px;color:#9ca3af;margin-top:10px}
-@media(max-width:900px){.ws-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:10px}.ws-card{padding:16px 10px 14px}.ws-ico{width:44px;height:44px}.ws-label{font-size:12.5px}}
+/* ── Warning Signs / Risk Check Section ─────────────────────────── */
+#warning-signs{background:linear-gradient(180deg,#fff 0%,var(--bg2) 100%)}
+.ws-head{text-align:center;max-width:760px;margin:0 auto}
+.ws-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.22);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:800;color:#DC2626;letter-spacing:.04em;margin-bottom:18px}
+.ws-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;max-width:900px;margin:42px auto 38px;align-items:start}
+.ws-card{appearance:none;background:transparent;border:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:default;color:inherit;min-width:0}
+.ws-photo{width:116px;height:116px;border-radius:50%;padding:4px;background:#fff;box-shadow:0 10px 28px rgba(28,50,68,.12);border:1px solid rgba(220,38,38,.16);position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.ws-photo::after{content:'';position:absolute;inset:4px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75);pointer-events:none}
+.ws-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;user-select:none;-webkit-user-drag:none}
+.ws-card:hover .ws-photo,.ws-card:focus-visible .ws-photo{transform:translateY(-4px);box-shadow:0 16px 36px rgba(28,50,68,.18);border-color:rgba(220,38,38,.3)}
+.ws-card:focus-visible{outline:3px solid rgba(88,153,227,.42);outline-offset:8px;border-radius:16px}
+.ws-label{font-size:14px;font-weight:800;color:var(--navy);line-height:1.25;max-width:138px}
+.ws-cta-wrap{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.ws-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:17px 34px;font-size:16px;font-weight:800;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(88,153,227,.28);min-height:54px}
+.ws-btn:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 12px 30px rgba(88,153,227,.34)}
+.ws-btn-note{font-size:12px;color:#7b8794;font-style:italic}
+.ws-mini-proof{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--bg3);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--navy);box-shadow:var(--sh0)}
+.ws-mini-proof i{width:7px;height:7px;border-radius:50%;background:#25D366;display:inline-block;box-shadow:0 0 0 4px rgba(37,211,102,.12)}
+@media(max-width:900px){.ws-grid{grid-template-columns:repeat(3,1fr);max-width:620px}.ws-photo{width:108px;height:108px}}
+@media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;margin:34px auto}.ws-photo{width:96px;height:96px}.ws-label{font-size:13px}.ws-btn{width:100%;padding:16px 18px}.ws-mini-proof{width:100%;justify-content:center}}
+/* ── Protected Image Lightbox ───────────────────────────────────── */
+.pa-lightbox-ready{cursor:zoom-in}
+.pa-img-lightbox{position:fixed;inset:0;z-index:10020;background:rgba(10,22,34,.84);display:flex;align-items:center;justify-content:center;padding:28px;opacity:0;pointer-events:none;transition:opacity .22s ease}
+.pa-img-lightbox.open{opacity:1;pointer-events:auto}
+.pa-lightbox-panel{width:min(1120px,100%);max-height:92vh;display:flex;flex-direction:column;gap:12px;transform:translateY(14px) scale(.985);transition:transform .22s ease}
+.pa-img-lightbox.open .pa-lightbox-panel{transform:translateY(0) scale(1)}
+.pa-lightbox-top{display:flex;align-items:center;justify-content:space-between;gap:14px;color:#fff}
+.pa-lightbox-brand{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.pa-lightbox-brand img{height:30px;width:auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,.2))}
+.pa-lightbox-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .18s,border-color .18s}
+.pa-lightbox-close:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.38)}
+.pa-lightbox-frame{position:relative;border-radius:18px;overflow:hidden;background:#0b1621;border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 80px rgba(0,0,0,.45)}
+.pa-lightbox-frame::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url('assets/logo-full.webp');background-repeat:repeat;background-size:210px auto;opacity:.09;transform:rotate(-14deg) scale(1.18);transform-origin:center}
+.pa-lightbox-frame::after{content:'PRO AQUA DUBAI';position:absolute;right:18px;bottom:16px;z-index:3;background:rgba(255,255,255,.88);color:var(--navy);border-radius:999px;padding:7px 14px;font-size:11px;font-weight:900;letter-spacing:.08em;box-shadow:0 8px 28px rgba(0,0,0,.2);pointer-events:none}
+.pa-lightbox-img{display:block;width:100%;max-height:76vh;object-fit:contain;background:#fff;user-select:none;-webkit-user-drag:none}
+.pa-lightbox-caption{color:rgba(255,255,255,.78);font-size:13px;line-height:1.45;min-height:18px}
+@media(max-width:640px){.pa-img-lightbox{padding:14px}.pa-lightbox-top{align-items:flex-start}.pa-lightbox-brand span{display:none}.pa-lightbox-frame{border-radius:14px}.pa-lightbox-frame::before{background-size:150px auto;opacity:.1}.pa-lightbox-frame::after{right:10px;bottom:10px;font-size:9px;padding:5px 9px}.pa-lightbox-img{max-height:72vh}}
+@media(prefers-reduced-motion:reduce){.pa-img-lightbox,.pa-lightbox-panel{transition:none}}
 /* ── Risk Check Popup — Step-by-Step ─────────────────────────────── */
 .risk-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
 .risk-overlay.open{opacity:1;pointer-events:auto}
@@ -1437,7 +1460,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
           <div class="rs-option" onclick="rsAnswer(2,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">No smell at all</div><div class="rs-opt-sub">Good sign</div></div></div>
           <div class="rs-option" onclick="rsAnswer(2,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Rarely — very mild</div><div class="rs-opt-sub">Early warning</div></div></div>
           <div class="rs-option" onclick="rsAnswer(2,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">Often — noticeable</div><div class="rs-opt-sub">Mould likely present</div></div></div>
-          <div class="rs-option" onclick="rsAnswer(2,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Every time — strong smell</div><div class="rs-opt-sub">Urgent — bacteria / mould confirmed</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(2,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Every time — strong smell</div><div class="rs-opt-sub">Urgent warning sign — needs inspection</div></div></div>
         </div>
       </div>
       <!-- Q4 -->
@@ -1465,7 +1488,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <!-- Q6 -->
       <div class="rs-q-step" id="rsq-5" style="display:none">
         <div class="rs-question">Are family members experiencing symptoms at home?</div>
-        <div class="rs-q-hint">Poor indoor air quality is the #1 cause of unexplained allergy symptoms in Dubai homes</div>
+        <div class="rs-q-hint">Poor indoor air quality can contribute to allergy-like symptoms in Dubai homes</div>
         <div class="rs-options">
           <div class="rs-option" onclick="rsAnswer(5,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">No symptoms at home</div><div class="rs-opt-sub">All clear</div></div></div>
           <div class="rs-option" onclick="rsAnswer(5,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Mild, occasional sneezing</div><div class="rs-opt-sub">Monitor closely</div></div></div>
@@ -1821,56 +1844,44 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 
 <!-- ===================== WARNING SIGNS ===================== -->
 <section id="warning-signs">
-  <div class="sec" style="text-align:center">
-    <span class="ws-chip">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      Warning Signs
-    </span>
-    <h2 class="sec-t">Does Your Home Show These<br><em style="color:#DC2626;font-style:normal">Warning Signs?</em></h2>
-    <p class="sec-sub" style="max-width:560px;margin:0 auto 0">If you recognise any of these, your AC ducts or home may need professional attention.</p>
-    <div class="ws-grid">
+  <div class="sec">
+    <div class="ws-head">
+      <span class="ws-chip">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Warning Signs
+      </span>
+      <h2 class="sec-t">Does Your Home Show These<br><em style="color:#DC2626;font-style:italic">Warning Signs?</em></h2>
+      <p class="sec-sub" style="max-width:640px;margin:0 auto">If you recognise any of these, your AC ducts or home may need professional attention. Take the free Risk Check Quiz before you book anything.</p>
+    </div>
+    <div class="ws-grid" aria-label="AC risk warning signs">
       <div class="ws-card">
-        <div class="ws-ico" style="background:rgba(220,38,38,.1)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="ws-label">Allergy Triggers</div>
-        <div class="ws-desc">Sneezing, itchy eyes or headaches that improve when you leave home</div>
+        <span class="ws-photo"><img src="assets/campaign-back-to-school-allergy-reset-dubai-v2.webp" alt="Allergy trigger warning sign in a Dubai family home" loading="lazy"></span>
+        <span class="ws-label">Allergy triggers</span>
       </div>
       <div class="ws-card">
-        <div class="ws-ico" style="background:rgba(251,188,4,.1)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        </div>
-        <div class="ws-label">Musty Smell from AC</div>
-        <div class="ws-desc">Stale or mouldy odour every time the AC turns on or airflow starts</div>
+        <span class="ws-photo"><img src="assets/before-after-ac-duct-deep-cleaning-dubai.webp" alt="AC duct contamination that can cause bad smell from vents" loading="lazy"></span>
+        <span class="ws-label">Bad smell from vents</span>
       </div>
       <div class="ws-card">
-        <div class="ws-ico" style="background:rgba(107,114,128,.1)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
-        </div>
-        <div class="ws-label">Dust or Mould at Vents</div>
-        <div class="ws-desc">Dark marks or visible dust buildup around AC grilles and diffusers</div>
+        <span class="ws-photo"><img src="assets/before-after-ac-grills-cleaning.webp" alt="Black dust and mould warning signs around AC grills" loading="lazy"></span>
+        <span class="ws-label">Black dust or mould around AC grills</span>
       </div>
       <div class="ws-card">
-        <div class="ws-ico" style="background:rgba(88,153,227,.1)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5899E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
-        </div>
-        <div class="ws-label">Weak Airflow</div>
-        <div class="ws-desc">Poor cooling or low airflow despite the AC running at full capacity</div>
+        <span class="ws-photo"><img src="assets/before-after-ac-filter-sanitizing.webp" alt="Dirty AC filter warning sign for weak airflow or poor cooling" loading="lazy"></span>
+        <span class="ws-label">Weak airflow or poor cooling</span>
       </div>
       <div class="ws-card">
-        <div class="ws-ico" style="background:rgba(77,168,130,.1)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4DA882" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div class="ws-label">High DEWA Bills</div>
-        <div class="ws-desc">Electricity bills that keep rising without a change in usage habits</div>
+        <span class="ws-photo"><img src="assets/campaign-summer-ac-check-dubai-v2.webp" alt="AC inspection warning sign linked to high DEWA bills" loading="lazy"></span>
+        <span class="ws-label">High DEWA bills</span>
       </div>
     </div>
     <div class="ws-cta-wrap">
       <button class="ws-btn" onclick="openRisk()">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        Check Your AC Risk — Free
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Start Risk Check Quiz — Free
       </button>
-      <div class="ws-btn-note">Takes 30 seconds · No commitment</div>
+      <div class="ws-mini-proof"><i></i> Popup quiz · 6 questions · WhatsApp result</div>
+      <div class="ws-btn-note">Takes 90 seconds · No commitment</div>
     </div>
   </div>
 </section>
@@ -3184,6 +3195,89 @@ function playVideo(){
 
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initScrollSpy);
   else initScrollSpy();
+})();
+</script>
+
+<!-- PROTECTED IMAGE LIGHTBOX -->
+<div id="pa-img-lightbox" class="pa-img-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image preview">
+  <div class="pa-lightbox-panel" role="document">
+    <div class="pa-lightbox-top">
+      <div class="pa-lightbox-brand">
+        <img src="assets/logo-full.webp" alt="Pro Aqua Dubai">
+        <span>Protected Pro Aqua Dubai image</span>
+      </div>
+      <button type="button" class="pa-lightbox-close" aria-label="Close image preview">×</button>
+    </div>
+    <div class="pa-lightbox-frame">
+      <img id="pa-lightbox-img" class="pa-lightbox-img" src="" alt="" draggable="false">
+    </div>
+    <div id="pa-lightbox-caption" class="pa-lightbox-caption"></div>
+  </div>
+</div>
+<script>
+(function(){
+  function initProtectedLightbox(){
+    var overlay=document.getElementById('pa-img-lightbox');
+    var imgEl=document.getElementById('pa-lightbox-img');
+    var capEl=document.getElementById('pa-lightbox-caption');
+    var closeBtn=overlay&&overlay.querySelector('.pa-lightbox-close');
+    if(!overlay||!imgEl||!capEl||!closeBtn)return;
+    var lastFocus=null;
+
+    function findCaption(img){
+      var card=img.closest('.ba-card,.srv-card,.season-card,.rev-card,.franco-card');
+      if(card){
+        var title=card.querySelector('.ba-cap-t,h3,strong');
+        if(title&&title.textContent.trim())return title.textContent.trim();
+      }
+      return img.getAttribute('alt')||'Pro Aqua Dubai image';
+    }
+    function isEligible(img){
+      if(!img||img.dataset.noLightbox!==undefined)return false;
+      if(img.closest('nav,footer,.fc-av,.risk-overlay'))return false;
+      var src=(img.currentSrc||img.getAttribute('src')||'').toLowerCase();
+      if(!src||src.indexOf('logo')>-1||src.indexOf('favicon')>-1)return false;
+      return true;
+    }
+    function openFor(img){
+      if(!isEligible(img))return;
+      lastFocus=document.activeElement;
+      imgEl.src=img.currentSrc||img.src;
+      imgEl.alt=img.alt||'Pro Aqua Dubai protected image';
+      capEl.textContent=findCaption(img);
+      overlay.classList.add('open');
+      overlay.removeAttribute('aria-hidden');
+      document.body.style.overflow='hidden';
+      closeBtn.focus({preventScroll:true});
+    }
+    function closeLightbox(){
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      window.setTimeout(function(){imgEl.removeAttribute('src')},180);
+      if(lastFocus&&typeof lastFocus.focus==='function')lastFocus.focus({preventScroll:true});
+    }
+    [].slice.call(document.querySelectorAll('section img,.hero img')).forEach(function(img){
+      if(!isEligible(img)||img.dataset.paLightboxBound)return;
+      img.dataset.paLightboxBound='1';
+      img.classList.add('pa-lightbox-ready');
+      img.setAttribute('draggable','false');
+      img.addEventListener('contextmenu',function(e){e.preventDefault()});
+      img.addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        openFor(img);
+      });
+    });
+    imgEl.addEventListener('contextmenu',function(e){e.preventDefault()});
+    closeBtn.addEventListener('click',closeLightbox);
+    overlay.addEventListener('click',function(e){if(e.target===overlay)closeLightbox()});
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&overlay.classList.contains('open'))closeLightbox();
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initProtectedLightbox);
+  else initProtectedLightbox();
 })();
 </script>
 <!-- MOBILE NAV OVERLAY -->
