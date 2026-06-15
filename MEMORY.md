@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hidden-Danger-Icons an Aussagen angepasst
+- **Befund:** Die vier Icons in `#why` waren zu generisch und passten nicht sauber zu den Aussagen: Zahnrad, Wind, Matratzen-/Fensterform und einzelner Blitz wirkten nicht selbsterklärend.
+- **Erledigt:** Icons gezielt ersetzt: staubiger AC-Vent fuer `Dust Can Build Up Fast`, Haus/Indoor-Air fuer `Indoor Air Can Be Worse`, Matratze mit Mite/Allergen fuer `Dust Mites & Allergens`, Rechnung mit Blitz fuer `AC Works Harder`/High Bills.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/#why` per Playwright geöffnet und Screenshot geprüft; alle vier neuen SVGs sind genau einmal im DOM vorhanden; `git diff --check` ohne Befund.
+- **Nächster Schritt:** Bei Freigabe zusammen mit den lokalen Commits nach `proaqua2/main` pushen.
+
 ### 2026-06-16 — Codex — Google-Rating-Nachweis verlinkt
 - **Befund:** In der Reviews-Sektion war das Google-Rating als Proof sichtbar, aber nicht klickbar; Nutzer konnten den öffentlichen Nachweis nicht direkt prüfen.
 - **Erledigt:** In `#reviews` die Google-Proof-Zeile verlinkt: Google-Logo/Text, 4.7-Rating-Badge und rechter Proof-Chip öffnen jetzt den Google-Nachweis fuer `pro aqua dubai` in einem neuen Tab.
