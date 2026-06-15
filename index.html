@@ -931,8 +931,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
   .qopt{min-height:64px}
   .fq-q{min-height:56px}
 }
-html{scroll-padding-top:72px}
-:target{scroll-margin-top:72px}
+html{scroll-padding-top:92px}
+:target{scroll-margin-top:92px}
 
 /* === FRANCO STAT CHIPS === */
 .franco-in>*{min-width:0}
@@ -1421,12 +1421,12 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <img src="assets/logo-full.webp" alt="Pro Aqua — Disinfection &amp; Sterilization LLC Dubai" width="160" height="77" style="height:44px;width:auto;display:block">
     </a>
     <div class="nav-links">
-      <a href="#why" class="act">Good to Know</a>
-      <a href="#franco">Franco</a>
-      <a href="#services">Services</a>
-      <a href="#booking">Book</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+      <a href="#why" class="act" data-nav-key="why" aria-current="true">Good to Know</a>
+      <a href="#franco" data-nav-key="franco">Franco</a>
+      <a href="#services" data-nav-key="services">Services</a>
+      <a href="#booking" data-nav-key="booking">Book</a>
+      <a href="#reviews" data-nav-key="reviews">Reviews</a>
+      <a href="#faq" data-nav-key="faq">FAQ</a>
     </div>
     <!-- Mobile hamburger -->
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -3208,47 +3208,76 @@ function playVideo(){
 })();
 </script>
 <script>
-/* NAV SCROLLSPY
-   Keeps desktop and mobile navigation aligned with the section in view. */
+/* NAV JOURNEY SCROLLSPY
+   Maps every content section to the buyer-journey station shown in the header. */
 (function(){
-  var sectionIds=['why','franco','services','booking','reviews','faq'];
+  var navJourney=[
+    {key:'why',anchor:'why',sections:['hero','compare','warning-signs','quiz','why','solution']},
+    {key:'franco',anchor:'franco',sections:['franco']},
+    {key:'services',anchor:'services',sections:['services','before-after']},
+    {key:'booking',anchor:'booking',sections:['booking','process','pricing','business','arabic','seasonal','areas']},
+    {key:'reviews',anchor:'reviews',sections:['reviews']},
+    {key:'faq',anchor:'faq',sections:['faq']}
+  ];
 
   function initScrollSpy(){
-    var links=[].slice.call(document.querySelectorAll('.nav-links a[href^="#"],.mobile-nav a[href^="#"]'));
-    var sections=sectionIds.map(function(id){return document.getElementById(id)}).filter(Boolean).sort(function(a,b){
-      return a.offsetTop-b.offsetTop;
-    });
+    var links=[].slice.call(document.querySelectorAll('.nav-links a[data-nav-key],.mobile-nav a[data-nav-key]'));
+    var sectionMap=[];
     var ticking=false;
-    if(!links.length||!sections.length)return;
+    if(!links.length)return;
 
-    function setActive(id){
+    navJourney.forEach(function(group){
+      group.sections.forEach(function(id){
+        var el=document.getElementById(id);
+        if(el)sectionMap.push({id:id,key:group.key,anchor:group.anchor,el:el});
+      });
+    });
+    sectionMap.sort(function(a,b){return a.el.offsetTop-b.el.offsetTop});
+    if(!sectionMap.length)return;
+
+    function navOffset(){
+      var nav=document.querySelector('nav');
+      var trust=document.getElementById('sticky-trust');
+      var navH=nav?nav.getBoundingClientRect().height:68;
+      var trustH=trust&&trust.classList.contains('stb-visible')?trust.getBoundingClientRect().height:0;
+      return Math.round(navH+trustH+16);
+    }
+
+    function setActive(key){
       links.forEach(function(link){
-        var isActive=link.getAttribute('href')==='#'+id;
+        var isActive=link.getAttribute('data-nav-key')===key;
         link.classList.toggle('act',isActive);
         if(isActive)link.setAttribute('aria-current','true');
         else link.removeAttribute('aria-current');
       });
     }
 
-    function updateActive(){
-      var marker=Math.max(110,window.innerHeight*.26);
+    function activeKeyFromScroll(){
+      var marker=navOffset()+Math.max(72,window.innerHeight*.18);
       var viewportHeight=window.innerHeight||document.documentElement.clientHeight;
-      var active=sections[0].id;
-      var bestVisible=0;
+      var best=null;
+      var bestScore=-999999;
       var doc=document.documentElement;
       var atBottom=window.innerHeight+window.scrollY>=doc.scrollHeight-4;
-      sections.forEach(function(section){
-        var rect=section.getBoundingClientRect();
-        var visible=Math.min(rect.bottom,viewportHeight)-Math.max(rect.top,0);
-        if(visible>bestVisible){
-          bestVisible=visible;
-          active=section.id;
-        }else if(!bestVisible&&rect.top<=marker){
-          active=section.id;
+
+      sectionMap.forEach(function(item){
+        var rect=item.el.getBoundingClientRect();
+        var visible=Math.max(0,Math.min(rect.bottom,viewportHeight)-Math.max(rect.top,0));
+        var crossesMarker=rect.top<=marker&&rect.bottom>marker;
+        var score=visible-(Math.abs(rect.top-marker)*.18);
+        if(crossesMarker)score+=viewportHeight;
+        if(score>bestScore){
+          bestScore=score;
+          best=item;
         }
       });
-      if(atBottom&&!bestVisible)active=sections[sections.length-1].id;
-      setActive(active);
+
+      if(atBottom)return sectionMap[sectionMap.length-1].key;
+      return best?best.key:sectionMap[0].key;
+    }
+
+    function updateActive(){
+      setActive(activeKeyFromScroll());
     }
 
     function scheduleUpdate(){
@@ -3261,14 +3290,24 @@ function playVideo(){
     }
 
     links.forEach(function(link){
-      link.addEventListener('click',function(){
-        var id=link.getAttribute('href').slice(1);
-        if(sectionIds.indexOf(id)>-1)setActive(id);
+      link.addEventListener('click',function(e){
+        var href=link.getAttribute('href')||'';
+        if(href.charAt(0)!=='#')return;
+        var target=document.getElementById(href.slice(1));
+        if(!target)return;
+        e.preventDefault();
+        setActive(link.getAttribute('data-nav-key'));
+        var top=target.getBoundingClientRect().top+window.scrollY-navOffset();
+        window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+        if(window.history&&window.history.pushState)window.history.pushState(null,'',href);
+        else window.location.hash=href;
       });
     });
+
     window.addEventListener('scroll',scheduleUpdate,{passive:true});
     window.addEventListener('resize',scheduleUpdate);
     window.addEventListener('hashchange',scheduleUpdate);
+    window.addEventListener('load',scheduleUpdate);
     updateActive();
   }
 
@@ -3367,12 +3406,12 @@ function playVideo(){
 <!-- MOBILE NAV OVERLAY -->
 <div class="mobile-nav" id="mobileNav">
   <button class="m-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>
-  <a href="#why" onclick="toggleMenu()">Good to Know</a>
-  <a href="#franco" onclick="toggleMenu()">Franco</a>
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#booking" onclick="toggleMenu()">Book</a>
-  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
-  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#why" class="act" data-nav-key="why" aria-current="true" onclick="toggleMenu()">Good to Know</a>
+  <a href="#franco" data-nav-key="franco" onclick="toggleMenu()">Franco</a>
+  <a href="#services" data-nav-key="services" onclick="toggleMenu()">Services</a>
+  <a href="#booking" data-nav-key="booking" onclick="toggleMenu()">Book</a>
+  <a href="#reviews" data-nav-key="reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#faq" data-nav-key="faq" onclick="toggleMenu()">FAQ</a>
   <div class="mobile-nav-divider"></div>
   <a href="https://wa.me/971567943412" class="hbtn hbtn-green" onclick="toggleMenu()" style="margin-top:12px;font-size:15px;width:100%;justify-content:center;padding:16px 24px;border-radius:14px">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>

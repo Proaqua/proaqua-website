@@ -663,3 +663,10 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Problem:** Das 4.7-Google-Rating wurde über die Seite unterschiedlich dargestellt (`⭐ 4.7 on Google`, `4.7★ Google`, große Stat-Zahl, Trust-Belt-Text, Review-Strip).
 - **Korrektur:** Einheitliches `.google-rating-badge`-Pattern in `index.html` ergänzt und alle sichtbaren Google-Rating-Badge-Stellen darauf umgestellt: Sticky Trust Bar, Hero Chips, Hero Stats, Hero Review Bar, Trust Belt, Comparison Proof, Franco Floating Chip, Review Chip Row und Review Google Strip.
 - **QA:** Lokale Vorschau `http://localhost:8742` im Browser geprüft. Desktop Hero/Reviews und Mobile 390px geprüft; keine Console Errors, keine Badge-Überläufe. Risk-Quiz Popup öffnete beim Scroll-Test automatisch und wurde für Review-Screenshot geschlossen.
+
+### 2026-06-15 — Codex — Header Section-Leiste professionell mit Scroll-Journey verbunden
+
+- **Problem:** Die Header-Navigation war nur mit sechs direkten IDs verbunden (`why`, `franco`, `services`, `booking`, `reviews`, `faq`), während die Seite deutlich mehr reale Verkaufsabschnitte hat. Dadurch blieb der aktive Header-Link beim Scrollen psychologisch und visuell zu oft falsch bzw. zu grob.
+- **Korrektur:** Alten Scrollspy durch Journey-basiertes Mapping ersetzt: `Good to Know` deckt Hero/Compare/Warning/Risk/Why/Solution ab, `Franco` den Founder-Trust, `Services` Services + Before/After, `Book` Booking/Process/Pricing/B2B/Arabic/Seasonal/Areas, `Reviews` Reviews und `FAQ` FAQ. Desktop- und Mobile-Nav nutzen jetzt `data-nav-key` + synchrones `aria-current`.
+- **UX:** Nav-Klicks verhindern den rohen Hash-Sprung, berechnen Sticky-Header-/Trust-Bar-Offset und scrollen smooth zum Ziel. `scroll-padding-top`/`:target` auf 92px erhöht.
+- **QA:** Lokale Vorschau `http://localhost:8742` im Browser geprüft. Scroll-Matrix für 17 Sections bestätigt die erwarteten aktiven Header-Stationen. Header-Klicks auf `Franco`, `Services`, `Book`, `Reviews`, `FAQ`, `Good to Know` geprüft: Active-State, Hash und Zielposition stimmen. Mobile 390px geprüft: Hamburger-Menü zeigt denselben Active-State. Keine Console Errors/Warnings.
