@@ -3302,6 +3302,31 @@ function playVideo(){
 </div>
 
 <script>
+/* SCROLL-TRIGGERED QUIZ POPUP
+   Opens the Risk Check popup once when the user has scrolled ~40 % of the page.
+   Only fires once per visit (flag in memory, not storage). */
+(function(){
+  var fired=false;
+  function checkScroll(){
+    if(fired)return;
+    var scrolled=window.scrollY||window.pageYOffset;
+    var total=Math.max(document.body.scrollHeight-window.innerHeight,1);
+    if(scrolled/total>0.40){
+      fired=true;
+      window.removeEventListener('scroll',checkScroll);
+      setTimeout(function(){
+        var m=document.getElementById('risk-modal');
+        if(m&&!m.classList.contains('open')&&document.body.style.overflow!=='hidden'){
+          if(typeof openRisk==='function')openRisk();
+        }
+      },1500);
+    }
+  }
+  window.addEventListener('scroll',checkScroll,{passive:true});
+})();
+</script>
+
+<script>
 /* Klont das Hero-Video in den mobilen .hero-vid-mobile Container.
    Hält den base64-Source nur 1× im HTML. */
 (function(){
