@@ -630,3 +630,10 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Prompt erstellt und ausgeführt:** Identity-preserving Founder-Portrait auf Basis des vorhandenen Franco-Screenshots: weißes Pro-Aqua-Polo, Premium-Dubai-Interior, freundlicher direkter Blick, subtiler Daumen-hoch-Gestus.
 - **Asset ersetzt:** `assets/franco-founder-pro-aqua-dubai.webp` wurde gezielt durch das neue 1086x1448 WebP ersetzt. `index.html` musste nicht angepasst werden, weil alle bestehenden Stellen bereits diesen Dateinamen verwenden.
 - **Hinweis:** Das Bild ist KI-generiert auf Basis des Referenzbilds. Vor Live-Nutzung idealerweise von Franco freigeben lassen.
+
+### 2026-06-15 — Codex — Franco Portrait korrigiert: CEO-Gesicht stärker erhalten
+
+- **Problem:** Giampiero hat klargestellt, dass Franco als echter CEO/Identity-Anker exakt wiedererkennbar sein muss; die erste Version war zu generisch und zu stark "Marketing-Portrait".
+- **Korrektur:** Neues Image-2.0-Prompt mit sechs Close-up-Screenshots als primäre Identitätsreferenz, Gesicht/Alter/Brille/Haarlinie/Mimik als "locked" priorisiert. Daumen-hoch entfernt, engerer CEO-Portrait-Crop gewählt.
+- **Asset erneut ersetzt:** `assets/franco-founder-pro-aqua-dubai.webp` jetzt 941x1672 WebP mit stärkerer Ähnlichkeit zum echten Franco und weiterhin weißem Pro-Aqua-Polo.
+- **Strategischer Hinweis:** Für maximale Glaubwürdigkeit bleibt ein echtes Foto-Shooting oder ein hochwertig upgescalter Original-Video-Still langfristig besser als jede KI-Generierung.
