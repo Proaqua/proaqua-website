@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hidden-Danger-Badges verständlicher gemacht
+- **Befund:** Die vier großen Werte in `#why` wirkten wie interne Abkürzungen (`12mo`, `2–5×`, `Hidden` im abweichenden Stil, `DEWA` als Dopplung zu Energy Bills).
+- **Erledigt:** Die Werte typografisch vereinheitlicht und lesbarer formuliert: `12 months`, `2-5 times`, `Hidden inside`, `High bills`. Card-Titel geschärft: Dust Can Build Up Fast, Indoor Air Can Be Worse, AC Works Harder.
+- **Erledigt:** Im Inspection-Note-Bild rechts den Fokus auf `object-position:center 30%` gesetzt, damit der Mitarbeiter mit Gerät besser im Ausschnitt liegt.
+- **Verifikation:** Lokale Vorschau `#why` geprüft; alte Kürzel/DEWA-Großbadge entfernt, rechtes Foto zeigt Mitarbeiter und Gerät klarer.
+- **Nächster Schritt:** Bei Freigabe zusammen mit dem bereits lokalen Risk-Quiz-Fix nach `proaqua2/main` pushen.
+
 ### 2026-06-16 — Codex — Risk-Quiz Modal-Position und FAQ-Fehlplatzierung korrigiert
 - **Befund:** Das Risk-Quiz war global als Bottom-Sheet gebaut (`align-items:flex-end`), deshalb klebte es auf Desktop unten am Viewport. Zusätzlich war der FAQ-Eintrag „How fast can I get an appointment?" versehentlich im Quiz-Progress-Block gelandet.
 - **Erledigt:** Desktop-Risk-Modal zentriert und mit rundem Dialog-Styling versehen; Mobile bleibt bewusst als Bottom-Sheet erhalten.
