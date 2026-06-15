@@ -1529,8 +1529,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <div class="rs-scope-box">
         <span class="rs-scope-ico">📷</span>
         <div>
-          <div class="rs-scope-ttl">Included when you book from this result</div>
-          <div class="rs-scope-body">Franco uses a <strong>scope camera</strong> during your visit and sends you photos of what he found inside your ducts directly on WhatsApp — before and after. This is how we keep you fully informed, always.</div>
+          <div class="rs-scope-ttl">Included with your booking</div>
+          <div class="rs-scope-body">Franco photographs every duct with a <strong>scope camera</strong> and sends you the photos on WhatsApp — what he found before cleaning, and the result after. You see it with your own eyes. Most technicians skip this step entirely.</div>
         </div>
       </div>
       <a id="rs-wa" href="#" class="rs-wa-btn" target="_blank" rel="noopener">
@@ -3349,17 +3349,20 @@ function playVideo(){
 
 <script>
 /* ── SMART QUIZ TRIGGER + FLOATING BADGE ──────────────────────────────────
-   Compound-Trigger (State-of-the-Art):
-   • 45 % Scroll → sofort (stark engagierter User)
-   • 25 % Scroll + 10 s Verweildauer → gewünschter Sweet Spot
-   • Exit-Intent (Maus verlässt Viewport oben) nach 5 s → Desktop-Fang
-   • 35 s Fallback → harter Zeitleser
-   Nur 1× pro Session (sessionStorage). Badge erscheint ab 200 px Scroll.
+   Ablauf (State-of-the-Art):
+   1. Badge erscheint ab 200 px Scroll
+   2. Popup feuert FRÜHESTENS 8 s nachdem Badge sichtbar wurde — nie vorher
+   3. Popup-Trigger: 40 % Scroll ODER 20 % + 12 s Verweildauer
+      ODER Exit-Intent (≥ 5 s auf Seite) ODER 40 s Fallback
+   4. Sperre: localStorage mit 4h-Expiry (Reload-safe; Inkognito = Reset)
    ──────────────────────────────────────────────────────────────────────── */
 (function(){
-  var SESS_KEY='pa_rc';
+  var LS_KEY='pa_rc_ts';
+  var EXPIRY_MS=4*60*60*1000; /* 4 Stunden */
   var fabEl=document.getElementById('quiz-fab');
   var badgeShown=false;
+  var badgeShownAt=0;
+  var BADGE_GRACE_MS=8000; /* Badge muss min. 8 s sichtbar sein, bevor Popup feuert */
 
   /* Floating Badge — ab 200 px sichtbar */
   function showBadge(){
@@ -3367,14 +3370,18 @@ function playVideo(){
     if((window.scrollY||window.pageYOffset)>200){
       fabEl.classList.add('qf-visible');
       badgeShown=true;
+      badgeShownAt=Date.now();
     }
   }
   window.addEventListener('scroll',showBadge,{passive:true});
   showBadge();
 
-  /* Auto-Trigger — nur wenn noch nicht in dieser Session gezeigt */
+  /* Auto-Trigger — Sperre via localStorage mit Timestamp */
   var alreadySeen=false;
-  try{alreadySeen=!!(typeof sessionStorage!=='undefined'&&sessionStorage.getItem(SESS_KEY))}catch(e){}
+  try{
+    var ts=typeof localStorage!=='undefined'&&localStorage.getItem(LS_KEY);
+    if(ts&&(Date.now()-parseInt(ts,10))<EXPIRY_MS)alreadySeen=true;
+  }catch(e){}
   if(alreadySeen)return;
 
   var fired=false;
@@ -3382,11 +3389,13 @@ function playVideo(){
 
   function go(){
     if(fired)return;
+    /* Badge muss min. BADGE_GRACE_MS sichtbar gewesen sein */
+    if(!badgeShown||(Date.now()-badgeShownAt)<BADGE_GRACE_MS)return;
     fired=true;
     window.removeEventListener('scroll',chk,{passive:true});
     document.removeEventListener('mouseleave',onExit);
     clearTimeout(timerFallback);
-    try{if(typeof sessionStorage!=='undefined')sessionStorage.setItem(SESS_KEY,'1')}catch(e){}
+    try{if(typeof localStorage!=='undefined')localStorage.setItem(LS_KEY,String(Date.now()))}catch(e){}
     setTimeout(function(){
       var m=document.getElementById('risk-modal');
       if(m&&!m.classList.contains('open')){
@@ -3400,19 +3409,22 @@ function playVideo(){
     if(fired)return;
     var pct=(window.scrollY||window.pageYOffset)/Math.max(document.body.scrollHeight-window.innerHeight,1);
     var elapsed=Date.now()-pageStart;
-    if(pct>0.45||(pct>0.25&&elapsed>10000))go();
+    if(pct>0.40||(pct>0.20&&elapsed>12000))go();
   }
 
   function onExit(e){
-    if(e.clientY>5)return; /* nur oberer Rand */
-    if(Date.now()-pageStart<5000)return; /* min. 5 s auf Seite */
+    if(e.clientY>5)return;
+    if(Date.now()-pageStart<5000)return;
     go();
   }
 
+  /* Fallback: 40 s — prüft alle 2 s ob Badge-Grace erfüllt, dann feuert */
   var timerFallback=setTimeout(function(){
     var pct=(window.scrollY||window.pageYOffset)/Math.max(document.body.scrollHeight-window.innerHeight,1);
     if(pct>0.10&&!fired)go();
-  },35000);
+    /* Falls Badge-Grace noch nicht um: nochmals in 3 s versuchen */
+    if(!fired&&badgeShown)setTimeout(function(){if(!fired)go();},3000);
+  },40000);
 
   window.addEventListener('scroll',chk,{passive:true});
   document.addEventListener('mouseleave',onExit);
