@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Lightbox per Bild-Tap schließbar gemacht
+- **Erledigt:** Die Warning-Signs-Bilder waren bereits als wassergezeichnete Assets in `#warning-signs` eingebunden; Einbindung in `index.html` erneut geprüft.
+- **Erledigt:** Geschützte Bild-Lightbox UX verbessert: Ein Klick/Tap auf das geöffnete Bild schließt die Lightbox jetzt direkt, damit Mobile-Nutzer nicht das X suchen müssen. Das X und Escape bleiben weiterhin aktiv.
+- **Erledigt:** Cursor für geöffnetes Bild/Frame auf `zoom-out` gesetzt, damit die Interaktion auch auf Desktop verständlich ist.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/` mit Chrome/Playwright: Desktop 1280px und Mobile 390px, 25 Lightbox-Bilder, Warning-Signs zeigen die 5 neuen wassergezeichneten Assets, Bild öffnet und schließt per erneutem Tap/Klick, kein Overflow, Console 0 Errors / 0 Warnings.
+- **Nächster Schritt:** Falls gewünscht, kann die Lightbox zusätzlich einen kurzen Mobile-Hinweis wie "Tap image to close" bekommen; aktuell ist die Interaktion bewusst ohne extra Text gehalten.
+
 ### 2026-06-15 — Codex — Image2 Warning-Signs-Pain-Bilder generiert und eingebaut
 - **Erledigt:** Fuenf verkaufspsychologische Image2-Bilder fuer `#warning-signs` generiert: Allergy triggers, Bad smell from vents, Black dust/mould around AC grills, Weak airflow/poor cooling und High DEWA bills.
 - **Erledigt:** Erste Generation visuell geprueft; zwei Motive wegen ungewuenschtem Kreis-im-Bild neu generiert, damit die Website den Kreis sauber per CSS croppt.

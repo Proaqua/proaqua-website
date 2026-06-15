@@ -1193,10 +1193,10 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .pa-lightbox-brand img{height:30px;width:auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,.2))}
 .pa-lightbox-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .18s,border-color .18s}
 .pa-lightbox-close:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.38)}
-.pa-lightbox-frame{position:relative;border-radius:18px;overflow:hidden;background:#0b1621;border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 80px rgba(0,0,0,.45)}
+.pa-lightbox-frame{position:relative;border-radius:18px;overflow:hidden;background:#0b1621;border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 80px rgba(0,0,0,.45);cursor:zoom-out}
 .pa-lightbox-frame::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url('assets/logo-full.webp');background-repeat:repeat;background-size:210px auto;opacity:.09;transform:rotate(-14deg) scale(1.18);transform-origin:center}
 .pa-lightbox-frame::after{content:'PRO AQUA DUBAI';position:absolute;right:18px;bottom:16px;z-index:3;background:rgba(255,255,255,.88);color:var(--navy);border-radius:999px;padding:7px 14px;font-size:11px;font-weight:900;letter-spacing:.08em;box-shadow:0 8px 28px rgba(0,0,0,.2);pointer-events:none}
-.pa-lightbox-img{display:block;width:100%;max-height:76vh;object-fit:contain;background:#fff;user-select:none;-webkit-user-drag:none}
+.pa-lightbox-img{display:block;width:100%;max-height:76vh;object-fit:contain;background:#fff;user-select:none;-webkit-user-drag:none;cursor:zoom-out}
 .pa-lightbox-caption{color:rgba(255,255,255,.78);font-size:13px;line-height:1.45;min-height:18px}
 @media(max-width:640px){.pa-img-lightbox{padding:14px}.pa-lightbox-top{align-items:flex-start}.pa-lightbox-brand span{display:none}.pa-lightbox-frame{border-radius:14px}.pa-lightbox-frame::before{background-size:150px auto;opacity:.1}.pa-lightbox-frame::after{right:10px;bottom:10px;font-size:9px;padding:5px 9px}.pa-lightbox-img{max-height:72vh}}
 @media(prefers-reduced-motion:reduce){.pa-img-lightbox,.pa-lightbox-panel{transition:none}}
@@ -3300,6 +3300,11 @@ function playVideo(){
       });
     });
     imgEl.addEventListener('contextmenu',function(e){e.preventDefault()});
+    imgEl.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      closeLightbox();
+    });
     closeBtn.addEventListener('click',closeLightbox);
     overlay.addEventListener('click',function(e){if(e.target===overlay)closeLightbox()});
     document.addEventListener('keydown',function(e){
