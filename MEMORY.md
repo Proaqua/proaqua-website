@@ -31,6 +31,11 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Vent-Check SIGN 1 Bildpfad final nachgezogen
+- **Erledigt:** Nach dem Origin-Push wurde eine letzte lokale Änderung in `index.html` gefunden: Vent-Check SIGN 1 nutzt jetzt `assets/real-ac-grid-clean.webp` statt `assets/real-ac-duct-clean.webp`.
+- **Prüfung:** Beide Dateien existieren und sind getrackt; `real-ac-grid-clean.webp` passt besser zum Alt-Text "Dirty AC grill with dust buildup — real Dubai job".
+- **Nächster Schritt:** Diese letzte `index.html`-Änderung nach `origin/main` pushen, damit die Live-Seite exakt dem lokalen Stand entspricht.
+
 ### 2026-06-15 — Codex — Origin/main mit echten Foto-Assets gepusht
 - **Erledigt:** Nach ausdrücklicher Freigabe wurde lokale Branch `Franco2` normal nach `origin/main` gepusht: `git push origin Franco2:main`.
 - **Ergebnis:** `origin/main` wurde von `f5545d5` auf `7581245` aktualisiert. Damit sind die echten wassergezeichneten Fotos für Vent Check, Franco's Inspection Note und Before/After Gallery im Netlify-Deploy-Repository.
