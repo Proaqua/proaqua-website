@@ -548,3 +548,20 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
   - CSS: hellblauer Box-Hintergrund (`#f0f6ff`) mit dezenter Border — unauffällig aber auffällig genug.
   - WhatsApp-Prefill-Texte aller 3 Risk-Level aktualisiert → erwähnen jetzt "vent scope photo report" damit Franco intern informiert ist.
 - **Design-Entscheidung:** Giampiero wollte keinen Rabatt der unglaubwürdig wirkt. Einigkeit auf: konkreter Service-Zusatz (Scope-Kamera-Report), kein Preisdruck. Richtiger Ansatz für Dubai-Markt (Vertrauen > Preisnachlass).
+
+### 2026-06-15 — Claude (Cowork) — Scope Box Text verbessert + Popup-Trigger auf localStorage umgestellt · Commit 617e18f
+
+- **Scope Box Text (verbessert):**
+  - Titel: "Included when you book from this result" → "Included with your booking"
+  - Body: Neuer Text: "Franco photographs every duct with a scope camera and sends you the photos on WhatsApp — what he found before cleaning, and the result after. You see it with your own eyes. Most technicians skip this step entirely."
+  - Stärker: aktiv/konkret, emotionaler Nutzen (eigene Augen sehen), Differenzierungssatz ("Most technicians skip this step").
+
+- **Popup-Trigger-Logik (komplett neu):**
+  - **Problem:** `sessionStorage` key `pa_rc` blieb nach ⌘R-Reload gesetzt → Auto-Trigger feuerte bei erneutem Testen nie.
+  - **Fix:** Umstieg auf `localStorage` mit 4h-Timestamp-Expiry (Key `pa_rc_ts`). Nach 4h oder im Inkognito-Tab wird der Trigger wieder aktiv.
+  - **Badge-Grace-Mechanismus:** Popup darf FRÜHESTENS 8 Sekunden nach Badge-Erscheinen feuern. Sichert UX-Sequenz: Badge erst sichtbar → User sieht Badge → Popup erst danach. Variable `badgeShownAt` trackt Zeitpunkt.
+  - **Trigger-Schwellen:** 40% Scroll (sofort) oder 20%+12s Verweildauer. Exit-Intent nach 5s. 40s Fallback mit 3s Retry-Mechanismus wenn Badge-Grace noch nicht erfüllt.
+  - **Für Tests:** Inkognito-Tab öffnen → frische localStorage → Trigger feuert wieder. Oder warten bis 4h abgelaufen.
+
+- **Commit:** 617e18f (lokal, nicht gepusht)
+- **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions.
