@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — ProAqua-2 GitHub-Push abgeschlossen
+- **Erledigt:** Lokale Branch `Franco2` erfolgreich als `main` in das neue Repo gepusht: https://github.com/agentdimarco-cloud/ProAqua-2
+- **Remote:** Separater Remote `proaqua2` zeigt auf `https://github.com/agentdimarco-cloud/ProAqua-2.git`.
+- **Wichtig:** Es wurde nicht nach `origin` gepusht. `origin` bleibt `https://github.com/Proaqua/proaqua-website.git`.
+- **Nicht committed:** Lokale Finder-Dateien `.DS_Store` und `assets/.DS_Store` bleiben absichtlich uncommitted.
+- **Nächster Schritt:** Review-/Weitergabe-Link verwenden; bei weiteren Website-Änderungen aufpassen, ob sie nach `proaqua2` oder nur lokal bleiben sollen.
+
 ### 2026-06-15 — Codex — Neues GitHub-Repo ProAqua-2 vorbereitet
 - **Erledigt:** Neues leeres GitHub-Repo `agentdimarco-cloud/ProAqua-2` angelegt: https://github.com/agentdimarco-cloud/ProAqua-2
 - **Erledigt:** Zwei zuvor ungetrackte Research-Dokumente committed: `conversion-research/native-ad-application-recommendations.md` und `conversion-research/native-ad-idea-generation-prompt.md`.
