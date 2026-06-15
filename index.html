@@ -1161,6 +1161,50 @@ a:focus-visible,button:focus-visible,.hbtn:focus-visible,.bb-cta:focus-visible,.
 }
 /* ── Section visual separation ─────────────────────────────────── */
 section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
+/* ── Warning Signs Section ──────────────────────────────────────── */
+#warning-signs{background:var(--bg2)}
+.ws-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25);border-radius:20px;padding:5px 13px;font-size:12px;font-weight:700;color:#DC2626;letter-spacing:.4px;margin-bottom:18px}
+.ws-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:32px 0 40px}
+.ws-card{background:#fff;border-radius:14px;padding:24px 14px 20px;text-align:center;border:1px solid var(--bg3);transition:transform .2s,box-shadow .2s}
+.ws-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.ws-ico{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.ws-label{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.ws-desc{font-size:12px;color:#6b7280;line-height:1.5}
+.ws-cta-wrap{text-align:center}
+.ws-btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:15px 30px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .2s}
+.ws-btn:hover{background:#253e55;transform:translateY(-1px)}
+.ws-btn-note{font-size:12px;color:#9ca3af;margin-top:10px}
+@media(max-width:900px){.ws-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:10px}.ws-card{padding:16px 10px 14px}.ws-ico{width:44px;height:44px}.ws-label{font-size:12.5px}}
+/* ── Risk Check Popup ───────────────────────────────────────────── */
+.risk-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
+.risk-overlay.open{opacity:1;pointer-events:auto}
+.risk-box{background:#fff;border-radius:20px;padding:36px 30px 30px;width:100%;max-width:500px;position:relative;max-height:90vh;overflow-y:auto;transform:translateY(18px);transition:transform .25s}
+.risk-overlay.open .risk-box{transform:translateY(0)}
+.risk-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:24px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px}
+.risk-close:hover{color:var(--navy)}
+.rs-step{display:none}
+.rs-step.rs-active{display:block}
+.rs-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:#DC2626;margin-bottom:14px}
+.rs-q{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:5px;line-height:1.3}
+.rs-hint{font-size:13px;color:#6b7280;margin-bottom:20px}
+.rs-checks{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.rs-checks label{display:flex;align-items:center;gap:11px;background:var(--bg);border:1.5px solid var(--bg3);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--navy);transition:border-color .15s,background .15s;line-height:1.4}
+.rs-checks label:hover{background:rgba(88,153,227,.06);border-color:var(--blue)}
+.rs-checks label:has(input:checked){background:rgba(88,153,227,.08);border-color:var(--blue)}
+.rs-checks input[type=checkbox]{width:17px;height:17px;accent-color:var(--blue);flex-shrink:0;cursor:pointer}
+.rs-go{width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
+.rs-go:hover{background:#253e55}
+.rs-note{text-align:center;font-size:12px;color:#9ca3af;margin-top:10px}
+.rs-result-hd{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--bg3)}
+.rs-risk-pill{display:inline-block;border-radius:30px;padding:6px 20px;font-size:15px;font-weight:800;margin:8px 0 4px}
+.rs-low{background:rgba(77,168,130,.12);color:#2d7a5c}
+.rs-med{background:rgba(251,188,4,.12);color:#a16207}
+.rs-high{background:rgba(220,38,38,.1);color:#DC2626}
+.rs-result-msg{font-size:14.5px;color:#374151;text-align:center;margin:0 0 22px;line-height:1.65}
+.rs-wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;background:#25D366;color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35);transition:background .2s}
+.rs-wa-btn:hover{background:#1da854}
+.rs-back-btn{display:block;width:100%;text-align:center;margin-top:12px;font-size:13px;color:#9ca3af;cursor:pointer;background:none;border:none;padding:4px}
 </style>
 <script type="application/ld+json">
 {
@@ -1337,6 +1381,43 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     </div>
   </div>
 </nav>
+
+<!-- ===================== RISK CHECK MODAL ===================== -->
+<div id="risk-modal" class="risk-overlay" role="dialog" aria-modal="true" aria-label="AC Risk Check" aria-hidden="true">
+  <div class="risk-box">
+    <button class="risk-close" onclick="closeRisk()" aria-label="Close">×</button>
+    <!-- Step 1 -->
+    <div class="rs-step rs-active" id="rs1">
+      <div class="rs-badge">⚠️ AC Risk Check</div>
+      <div class="rs-q">Which of these do you notice at home?</div>
+      <div class="rs-hint">Tick all that apply — takes 30 seconds</div>
+      <div class="rs-checks" id="rs-checks">
+        <label><input type="checkbox"> Dust on surfaces settles back quickly after cleaning</label>
+        <label><input type="checkbox"> Musty or stale smell when the AC turns on</label>
+        <label><input type="checkbox"> Dark dust or black marks around AC vents</label>
+        <label><input type="checkbox"> Weak airflow or poor cooling despite AC running</label>
+        <label><input type="checkbox"> DEWA electricity bills have increased noticeably</label>
+        <label><input type="checkbox"> Family members sneezing, itchy eyes or headaches at home</label>
+      </div>
+      <button class="rs-go" onclick="showRiskResult()">Show My Risk Level →</button>
+      <div class="rs-note">No email required · Free inspection included</div>
+    </div>
+    <!-- Step 2: Result -->
+    <div class="rs-step" id="rs2">
+      <div class="rs-result-hd">
+        <div id="rs-icon" style="font-size:36px;margin-bottom:6px"></div>
+        <div id="rs-pill" class="rs-risk-pill"></div>
+        <div style="font-size:13px;color:#6b7280;margin-top:2px">Based on your answers</div>
+      </div>
+      <p id="rs-msg" class="rs-result-msg"></p>
+      <a id="rs-wa" href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%20just%20checked%20my%20AC%20risk%20and%20I%27d%20like%20to%20book%20a%20free%20inspection." class="rs-wa-btn" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book My Free Inspection →
+      </a>
+      <button class="rs-back-btn" onclick="restartRisk()">← Check again</button>
+    </div>
+  </div>
+</div>
 
 <!-- ===================== STICKY TRUST BAR ===================== -->
 <div id="sticky-trust" aria-hidden="true">
@@ -1665,6 +1746,116 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     </div>
   </div>
 </section>
+
+<!-- ===================== WARNING SIGNS ===================== -->
+<section id="warning-signs">
+  <div class="sec" style="text-align:center">
+    <span class="ws-chip">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Warning Signs
+    </span>
+    <h2 class="sec-t">Does Your Home Show These<br><em style="color:#DC2626;font-style:normal">Warning Signs?</em></h2>
+    <p class="sec-sub" style="max-width:560px;margin:0 auto 0">If you recognise any of these, your AC ducts or home may need professional attention.</p>
+    <div class="ws-grid">
+      <div class="ws-card">
+        <div class="ws-ico" style="background:rgba(220,38,38,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="ws-label">Allergy Triggers</div>
+        <div class="ws-desc">Sneezing, itchy eyes or headaches that improve when you leave home</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-ico" style="background:rgba(251,188,4,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div class="ws-label">Musty Smell from AC</div>
+        <div class="ws-desc">Stale or mouldy odour every time the AC turns on or airflow starts</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-ico" style="background:rgba(107,114,128,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
+        </div>
+        <div class="ws-label">Dust or Mould at Vents</div>
+        <div class="ws-desc">Dark marks or visible dust buildup around AC grilles and diffusers</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-ico" style="background:rgba(88,153,227,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5899E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        </div>
+        <div class="ws-label">Weak Airflow</div>
+        <div class="ws-desc">Poor cooling or low airflow despite the AC running at full capacity</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-ico" style="background:rgba(77,168,130,.1)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4DA882" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="ws-label">High DEWA Bills</div>
+        <div class="ws-desc">Electricity bills that keep rising without a change in usage habits</div>
+      </div>
+    </div>
+    <div class="ws-cta-wrap">
+      <button class="ws-btn" onclick="openRisk()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Check Your AC Risk — Free
+      </button>
+      <div class="ws-btn-note">Takes 30 seconds · No commitment</div>
+    </div>
+  </div>
+</section>
+
+<script>
+function openRisk(){
+  var m=document.getElementById('risk-modal');
+  if(!m)return;
+  m.classList.add('open');
+  m.removeAttribute('aria-hidden');
+  document.body.style.overflow='hidden';
+}
+function closeRisk(){
+  var m=document.getElementById('risk-modal');
+  if(!m)return;
+  m.classList.remove('open');
+  m.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function showRiskResult(){
+  var count=document.querySelectorAll('#rs-checks input:checked').length;
+  var icon,pill,pillCls,msg,waText;
+  if(count===0){
+    icon='✅';pill='Low Risk';pillCls='rs-low';
+    msg='Your home shows no obvious warning signs right now — great! However, ducts still accumulate dust over time. A routine check every 12–18 months keeps your AC efficient and your air clean.';
+    waText='Hi%20Pro%20Aqua%2C%20I%20ran%20the%20AC%20risk%20check%20and%20got%20Low%20Risk.%20I%27d%20like%20to%20book%20a%20routine%20check-up.';
+  } else if(count<=2){
+    icon='⚠️';pill='Moderate Risk';pillCls='rs-med';
+    msg='You\'ve spotted '+count+' warning sign'+(count>1?'s':'')+'. These are early indicators that your AC ducts may be accumulating dust or mould. A professional inspection now can prevent bigger issues — and higher bills — later.';
+    waText='Hi%20Pro%20Aqua%2C%20I%20ran%20the%20AC%20risk%20check%20and%20got%20Moderate%20Risk%20('+count+'%20signs).%20I%27d%20like%20a%20free%20inspection.';
+  } else {
+    icon='🔴';pill='High Risk';pillCls='rs-high';
+    msg='You\'ve noticed '+count+' warning signs — this suggests your ducts likely need professional cleaning. Contaminated ducts reduce air quality, strain your AC, and push up energy bills. We recommend booking a free inspection soon.';
+    waText='Hi%20Pro%20Aqua%2C%20I%20ran%20the%20AC%20risk%20check%20and%20got%20High%20Risk%20('+count+'%20signs).%20I%27d%20like%20to%20book%20a%20free%20inspection%20urgently.';
+  }
+  document.getElementById('rs-icon').textContent=icon;
+  var p=document.getElementById('rs-pill');
+  p.textContent=pill;
+  p.className='rs-risk-pill '+pillCls;
+  document.getElementById('rs-msg').textContent=msg;
+  document.getElementById('rs-wa').href='https://wa.me/971567943412?text='+waText;
+  document.getElementById('rs1').classList.remove('rs-active');
+  document.getElementById('rs2').classList.add('rs-active');
+}
+function restartRisk(){
+  document.querySelectorAll('#rs-checks input').forEach(function(cb){cb.checked=false;});
+  document.getElementById('rs2').classList.remove('rs-active');
+  document.getElementById('rs1').classList.add('rs-active');
+}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('risk-modal');
+  if(m&&e.target===m)closeRisk();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeRisk();
+});
+</script>
 
 <!-- ===================== 60-SECOND VENT CHECK ===================== -->
 <section style="background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)">
