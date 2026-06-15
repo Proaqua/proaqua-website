@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — ProAqua-2 Remote-Uploads integriert vor Push
+- **Erledigt:** Push nach `proaqua2/main` vorbereitet. Erster Push wurde abgelehnt, weil auf `proaqua2/main` zwischenzeitlich Remote-Commit `469a98b Add files via upload` lag.
+- **Erledigt:** `git fetch proaqua2` und nicht-destruktiver Merge von `proaqua2/main` in lokale Branch `Franco2`; dadurch bleiben die 20 remote hochgeladenen Asset-Dateien erhalten.
+- **Wichtig:** Es wurde weiterhin nicht nach `origin` gepusht. Ziel bleibt ausschließlich Remote `proaqua2` (`agentdimarco-cloud/ProAqua-2`).
+- **Nicht committed:** Lokale Finder-Dateien `.DS_Store` und `assets/.DS_Store` bleiben absichtlich uncommitted.
+- **Nächster Schritt:** `Franco2` nach `proaqua2/main` pushen.
+
 ### 2026-06-15 — Codex — Lightbox per Bild-Tap schließbar gemacht
 - **Erledigt:** Die Warning-Signs-Bilder waren bereits als wassergezeichnete Assets in `#warning-signs` eingebunden; Einbindung in `index.html` erneut geprüft.
 - **Erledigt:** Geschützte Bild-Lightbox UX verbessert: Ein Klick/Tap auf das geöffnete Bild schließt die Lightbox jetzt direkt, damit Mobile-Nutzer nicht das X suchen müssen. Das X und Escape bleiben weiterhin aktiv.
