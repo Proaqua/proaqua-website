@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — Origin/main mit echten Foto-Assets gepusht
+- **Erledigt:** Nach ausdrücklicher Freigabe wurde lokale Branch `Franco2` normal nach `origin/main` gepusht: `git push origin Franco2:main`.
+- **Ergebnis:** `origin/main` wurde von `f5545d5` auf `7581245` aktualisiert. Damit sind die echten wassergezeichneten Fotos für Vent Check, Franco's Inspection Note und Before/After Gallery im Netlify-Deploy-Repository.
+- **Wichtig:** Kein Force-Push nötig, weil `origin/main` direkter Vorgänger war.
+- **Nicht committed:** Lokale Finder-Dateien `.DS_Store` und `assets/.DS_Store` bleiben unberührt.
+- **Nächster Schritt:** Netlify-Deploy abwarten und die Live-Seite prüfen.
+
 ### 2026-06-15 — Codex — Origin/main per Franco2 wiederhergestellt
 - **Erledigt:** Nach ausdrücklicher Freigabe wurde lokale Branch `Franco2` per `git push origin Franco2:main --force-with-lease` nach `origin/main` gepusht.
 - **Grund:** `origin/main` enthielt kaputte GitHub-Web-Commits (`Delete index.html` / `Add files via upload`), wodurch Netlify die Seite fehlerhaft deployen konnte.
