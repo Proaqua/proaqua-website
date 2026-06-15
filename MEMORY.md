@@ -161,6 +161,19 @@
 - **Verifikation:** 14/14 Python-Checks grün. Kein `git push`.
 - **Nächster Schritt:** T2 Tracking (GA4 + Meta Pixel IDs von Giampiero) oder S6 Before/After echte Daten (Stadtteil + Monat). Beide blockiert auf externe Infos. Als nächste interne Aufgabe: Prüfen ob Service-Seiten für SEO/AI Search sinnvoll wären (P2 aus Research-Dok).
 
+### 2026-06-15 — Claude (Cowork) — Alle 12 echten Fotos vollständig eingebaut · Commits 3bf6c35 + 65a9d0d
+
+- **Erledigt:** Franco-Foto `franco.webp` (900×1227px, 82KB) in ALLE 4 Vorkommen eingebaut: Hero Franco-Card Desktop, Hero Franco-Card Mobile, #why-Sektion Hauptbild, TODO-Kommentar aktualisiert.
+- **Erledigt:** Gallery von 6 auf 8 echte Fotos erweitert:
+  - Card 4 (war generic sofa) → `real-mattress-result-1.webp`
+  - Card 5 (war generic AC filter) → `real-carpet-clean.webp`
+  - Card 7 (neu) → `real-ac-duct-grid-work-2.webp`
+  - Card 8 (neu) → `real-ac-motorhousing.webp`
+- **Erledigt:** Service-Cards mit echten Fotos: AC Duct → `real-ac-grid-work.webp`, Mattress → `real-mattress-result-2.webp` (statt generic Graphics).
+- **Erledigt:** #why Inspection Note: 2-Spalten-Layout mit `real-mattress-water-held.webp` + `real-ac-duct-clean.webp` nebeneinander.
+- **Status Task 26 ABGESCHLOSSEN:** Alle 12 `real-*.webp` Fotos sind jetzt eingebaut — 0 ungenutzt.
+- **Nächster Schritt (GEBLOCKT auf Giampiero):** Before/After-Karten echte Stadtteile + Monat/Jahr; GA4-ID; Meta-Pixel-ID; Ab-Preise bestätigen.
+
 ### 2026-06-13 — Claude (Cowork) — S6 Before/After Kontext-Struktur · Commit be720bd
 - **Erledigt:** Neues CSS `.ba-meta` + `.ba-meta svg` für Standort-/Datum-Zeile.
 - **Erledigt:** Alle 6 Before/After-Karten um `.ba-meta`-Element ergänzt (Standortpin-Icon + Platzhalter "Dubai, UAE · Jahr"). Kein Erfinden echter Daten.
