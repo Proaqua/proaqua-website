@@ -1176,35 +1176,40 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .ws-btn-note{font-size:12px;color:#9ca3af;margin-top:10px}
 @media(max-width:900px){.ws-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:10px}.ws-card{padding:16px 10px 14px}.ws-ico{width:44px;height:44px}.ws-label{font-size:12.5px}}
-/* ── Risk Check Popup ───────────────────────────────────────────── */
+/* ── Risk Check Popup — Step-by-Step ─────────────────────────────── */
 .risk-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
 .risk-overlay.open{opacity:1;pointer-events:auto}
-.risk-box{background:#fff;border-radius:20px;padding:36px 30px 30px;width:100%;max-width:500px;position:relative;max-height:90vh;overflow-y:auto;transform:translateY(18px);transition:transform .25s}
+.risk-box{background:#fff;border-radius:20px;padding:28px 28px 26px;width:100%;max-width:500px;position:relative;max-height:92vh;overflow-y:auto;transform:translateY(18px);transition:transform .25s}
 .risk-overlay.open .risk-box{transform:translateY(0)}
-.risk-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:24px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px}
+.risk-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:1}
 .risk-close:hover{color:var(--navy)}
-.rs-step{display:none}
-.rs-step.rs-active{display:block}
-.rs-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:#DC2626;margin-bottom:14px}
-.rs-q{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:5px;line-height:1.3}
-.rs-hint{font-size:13px;color:#6b7280;margin-bottom:20px}
-.rs-checks{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
-.rs-checks label{display:flex;align-items:center;gap:11px;background:var(--bg);border:1.5px solid var(--bg3);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--navy);transition:border-color .15s,background .15s;line-height:1.4}
-.rs-checks label:hover{background:rgba(88,153,227,.06);border-color:var(--blue)}
-.rs-checks label:has(input:checked){background:rgba(88,153,227,.08);border-color:var(--blue)}
-.rs-checks input[type=checkbox]{width:17px;height:17px;accent-color:var(--blue);flex-shrink:0;cursor:pointer}
-.rs-go{width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
-.rs-go:hover{background:#253e55}
-.rs-note{text-align:center;font-size:12px;color:#9ca3af;margin-top:10px}
-.rs-result-hd{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--bg3)}
-.rs-risk-pill{display:inline-block;border-radius:30px;padding:6px 20px;font-size:15px;font-weight:800;margin:8px 0 4px}
+.rs-header-badge{display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:20px;padding:5px 14px;font-size:11px;font-weight:800;color:#92400E;letter-spacing:.6px}
+.rs-title{font-size:22px;font-weight:800;color:var(--navy);margin:10px 0 5px;line-height:1.25}
+.rs-title span{color:var(--blue)}
+.rs-subtitle{font-size:13px;color:#6b7280;line-height:1.5;margin-bottom:18px}
+.rs-progress-wrap{margin-bottom:20px}
+.rs-progress-meta{display:flex;justify-content:space-between;font-size:11.5px;font-weight:600;color:#9ca3af;margin-bottom:6px}
+.rs-progress-track{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.rs-progress-fill{height:100%;background:var(--blue);border-radius:2px;transition:width .35s ease}
+.rs-question{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.rs-q-hint{font-size:12px;color:#9ca3af;margin-bottom:14px;line-height:1.4}
+.rs-options{display:flex;flex-direction:column;gap:8px}
+.rs-option{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--bg3);border-radius:12px;padding:12px 15px;cursor:pointer;transition:border-color .15s,background .15s,transform .1s}
+.rs-option:hover{border-color:var(--blue);background:rgba(88,153,227,.04);transform:translateY(-1px)}
+.rs-option.rs-selected{border-color:var(--blue);background:rgba(88,153,227,.08)}
+.rs-opt-icon{font-size:20px;flex-shrink:0;width:26px;text-align:center}
+.rs-opt-title{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.3}
+.rs-opt-sub{font-size:11.5px;color:#6b7280;margin-top:1px}
+.rs-result-hd{text-align:center;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--bg3)}
+.rs-risk-pill{display:inline-block;border-radius:30px;padding:6px 22px;font-size:15px;font-weight:800;margin:8px 0 3px}
 .rs-low{background:rgba(77,168,130,.12);color:#2d7a5c}
 .rs-med{background:rgba(251,188,4,.12);color:#a16207}
 .rs-high{background:rgba(220,38,38,.1);color:#DC2626}
-.rs-result-msg{font-size:14.5px;color:#374151;text-align:center;margin:0 0 22px;line-height:1.65}
+.rs-result-msg{font-size:14px;color:#374151;text-align:center;margin:0 0 20px;line-height:1.65}
 .rs-wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;background:#25D366;color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35);transition:background .2s}
 .rs-wa-btn:hover{background:#1da854}
 .rs-back-btn{display:block;width:100%;text-align:center;margin-top:12px;font-size:13px;color:#9ca3af;cursor:pointer;background:none;border:none;padding:4px}
+@media(max-width:480px){.risk-box{padding:22px 18px 20px}.rs-title{font-size:19px}.rs-question{font-size:15px}}
 </style>
 <script type="application/ld+json">
 {
@@ -1383,38 +1388,105 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 </nav>
 
 <!-- ===================== RISK CHECK MODAL ===================== -->
-<div id="risk-modal" class="risk-overlay" role="dialog" aria-modal="true" aria-label="AC Risk Check" aria-hidden="true">
+<div id="risk-modal" class="risk-overlay" role="dialog" aria-modal="true" aria-label="AC Mould Risk Check" aria-hidden="true">
   <div class="risk-box">
     <button class="risk-close" onclick="closeRisk()" aria-label="Close">×</button>
-    <!-- Step 1 -->
-    <div class="rs-step rs-active" id="rs1">
-      <div class="rs-badge">⚠️ AC Risk Check</div>
-      <div class="rs-q">Which of these do you notice at home?</div>
-      <div class="rs-hint">Tick all that apply — takes 30 seconds</div>
-      <div class="rs-checks" id="rs-checks">
-        <label><input type="checkbox"> Dust on surfaces settles back quickly after cleaning</label>
-        <label><input type="checkbox"> Musty or stale smell when the AC turns on</label>
-        <label><input type="checkbox"> Dark dust or black marks around AC vents</label>
-        <label><input type="checkbox"> Weak airflow or poor cooling despite AC running</label>
-        <label><input type="checkbox"> DEWA electricity bills have increased noticeably</label>
-        <label><input type="checkbox"> Family members sneezing, itchy eyes or headaches at home</label>
-      </div>
-      <button class="rs-go" onclick="showRiskResult()">Show My Risk Level →</button>
-      <div class="rs-note">No email required · Free inspection included</div>
+    <!-- Static header -->
+    <div style="text-align:center;margin-bottom:2px">
+      <span class="rs-header-badge">⚠️ FREE · NO OBLIGATION · 90 SECONDS</span>
     </div>
-    <!-- Step 2: Result -->
-    <div class="rs-step" id="rs2">
+    <div class="rs-title" style="text-align:center">AC Mould <span>Risk Check</span></div>
+    <div class="rs-subtitle" style="text-align:center">Find out if your AC system may be harbouring hidden mould, dust or contamination.</div>
+    <!-- Progress bar -->
+    <div class="rs-progress-wrap" id="rs-progress">
+      <div class="rs-progress-meta">
+        <span id="rs-q-label">Question 1 of 6</span>
+        <span id="rs-pct">0%</span>
+      </div>
+      <div class="rs-progress-track"><div class="rs-progress-fill" id="rs-progress-fill" style="width:0%"></div></div>
+    </div>
+    <!-- Questions -->
+    <div id="rs-questions">
+      <!-- Q1 -->
+      <div class="rs-q-step" id="rsq-0">
+        <div class="rs-question">When was your last full AC deep cleaning?</div>
+        <div class="rs-q-hint">Full cleaning = FCU internals, coil, drain pan & ductwork — not just filter cleaning</div>
+        <div class="rs-options">
+          <div class="rs-option" onclick="rsAnswer(0,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">Less than 12 months ago</div><div class="rs-opt-sub">Recently serviced</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(0,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">1–2 years ago</div><div class="rs-opt-sub">Getting overdue</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(0,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">More than 2 years ago</div><div class="rs-opt-sub">High contamination risk</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(0,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Never / I don't know</div><div class="rs-opt-sub">Most common answer in Dubai</div></div></div>
+        </div>
+      </div>
+      <!-- Q2 -->
+      <div class="rs-q-step" id="rsq-1" style="display:none">
+        <div class="rs-question">Does dust settle back quickly after cleaning at home?</div>
+        <div class="rs-q-hint">Surfaces re-dusting within 1–2 days is a classic duct contamination sign</div>
+        <div class="rs-options">
+          <div class="rs-option" onclick="rsAnswer(1,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">No — stays clean for days</div><div class="rs-opt-sub">Normal</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(1,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Sometimes, mild</div><div class="rs-opt-sub">Worth monitoring</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(1,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">Yes, within a day or two</div><div class="rs-opt-sub">Likely duct contamination</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(1,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Yes, constantly</div><div class="rs-opt-sub">Strong indicator — needs inspection</div></div></div>
+        </div>
+      </div>
+      <!-- Q3 -->
+      <div class="rs-q-step" id="rsq-2" style="display:none">
+        <div class="rs-question">Any musty or stale smell when your AC turns on?</div>
+        <div class="rs-q-hint">Musty odours indicate mould or bacteria growth inside the ductwork</div>
+        <div class="rs-options">
+          <div class="rs-option" onclick="rsAnswer(2,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">No smell at all</div><div class="rs-opt-sub">Good sign</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(2,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Rarely — very mild</div><div class="rs-opt-sub">Early warning</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(2,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">Often — noticeable</div><div class="rs-opt-sub">Mould likely present</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(2,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Every time — strong smell</div><div class="rs-opt-sub">Urgent — bacteria / mould confirmed</div></div></div>
+        </div>
+      </div>
+      <!-- Q4 -->
+      <div class="rs-q-step" id="rsq-3" style="display:none">
+        <div class="rs-question">Any visible dust or dark marks around your AC vents?</div>
+        <div class="rs-q-hint">Dark rings on grilles = particles escaping from contaminated ducts</div>
+        <div class="rs-options">
+          <div class="rs-option" onclick="rsAnswer(3,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">Vents look clean</div><div class="rs-opt-sub">No visible buildup</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(3,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Slight dust ring</div><div class="rs-opt-sub">Mild accumulation</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(3,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">Visible dust buildup</div><div class="rs-opt-sub">Duct cleaning recommended</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(3,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Dark stains + heavy buildup</div><div class="rs-opt-sub">Immediate inspection needed</div></div></div>
+        </div>
+      </div>
+      <!-- Q5 -->
+      <div class="rs-q-step" id="rsq-4" style="display:none">
+        <div class="rs-question">How is the cooling & airflow from your AC?</div>
+        <div class="rs-q-hint">Blocked ducts reduce efficiency and force the system to overwork</div>
+        <div class="rs-options">
+          <div class="rs-option" onclick="rsAnswer(4,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">Strong and even — cools well</div><div class="rs-opt-sub">System performing normally</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(4,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Slightly reduced lately</div><div class="rs-opt-sub">Early blockage possible</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(4,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">Noticeably weak for the setting</div><div class="rs-opt-sub">Partial duct blockage likely</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(4,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Very poor — runs all day, still warm</div><div class="rs-opt-sub">Severe blockage — high DEWA bills</div></div></div>
+        </div>
+      </div>
+      <!-- Q6 -->
+      <div class="rs-q-step" id="rsq-5" style="display:none">
+        <div class="rs-question">Are family members experiencing symptoms at home?</div>
+        <div class="rs-q-hint">Poor indoor air quality is the #1 cause of unexplained allergy symptoms in Dubai homes</div>
+        <div class="rs-options">
+          <div class="rs-option" onclick="rsAnswer(5,0)"><span class="rs-opt-icon">✅</span><div><div class="rs-opt-title">No symptoms at home</div><div class="rs-opt-sub">All clear</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(5,1)"><span class="rs-opt-icon">📅</span><div><div class="rs-opt-title">Mild, occasional sneezing</div><div class="rs-opt-sub">Monitor closely</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(5,2)"><span class="rs-opt-icon">⚠️</span><div><div class="rs-opt-title">Regular itchy eyes or headaches</div><div class="rs-opt-sub">Likely air quality issue</div></div></div>
+          <div class="rs-option" onclick="rsAnswer(5,3)"><span class="rs-opt-icon">🔴</span><div><div class="rs-opt-title">Frequent — worse at home than outside</div><div class="rs-opt-sub">Contaminated air — act now</div></div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Result -->
+    <div id="rs-result" style="display:none">
       <div class="rs-result-hd">
-        <div id="rs-icon" style="font-size:36px;margin-bottom:6px"></div>
+        <div id="rs-icon" style="font-size:38px;margin-bottom:6px"></div>
         <div id="rs-pill" class="rs-risk-pill"></div>
-        <div style="font-size:13px;color:#6b7280;margin-top:2px">Based on your answers</div>
+        <div style="font-size:12px;color:#9ca3af;margin-top:3px">Based on your 6 answers</div>
       </div>
       <p id="rs-msg" class="rs-result-msg"></p>
-      <a id="rs-wa" href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%20just%20checked%20my%20AC%20risk%20and%20I%27d%20like%20to%20book%20a%20free%20inspection." class="rs-wa-btn" target="_blank" rel="noopener">
+      <a id="rs-wa" href="#" class="rs-wa-btn" target="_blank" rel="noopener">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Book My Free Inspection →
       </a>
-      <button class="rs-back-btn" onclick="restartRisk()">← Check again</button>
+      <button class="rs-back-btn" onclick="restartRisk()">← Take the check again</button>
     </div>
   </div>
 </div>
@@ -1804,9 +1876,15 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 </section>
 
 <script>
+/* ── Risk Check — step-by-step wizard ── */
+var rsScores=[];
+var rsCurrentQ=0;
+var RS_TOTAL=6;
+
 function openRisk(){
   var m=document.getElementById('risk-modal');
   if(!m)return;
+  restartRisk();
   m.classList.add('open');
   m.removeAttribute('aria-hidden');
   document.body.style.overflow='hidden';
@@ -1818,35 +1896,73 @@ function closeRisk(){
   m.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
 }
-function showRiskResult(){
-  var count=document.querySelectorAll('#rs-checks input:checked').length;
+function rsShowQuestion(idx){
+  for(var i=0;i<RS_TOTAL;i++){
+    var el=document.getElementById('rsq-'+i);
+    if(el) el.style.display=(i===idx?'block':'none');
+  }
+  document.getElementById('rs-questions').style.display='block';
+  document.getElementById('rs-result').style.display='none';
+  document.getElementById('rs-progress').style.display='block';
+  /* clear selection highlight */
+  var opts=document.getElementById('rsq-'+idx);
+  if(opts) opts.querySelectorAll('.rs-option').forEach(function(o){o.classList.remove('rs-selected');});
+  /* update progress */
+  var pct=Math.round((idx/RS_TOTAL)*100);
+  document.getElementById('rs-progress-fill').style.width=pct+'%';
+  document.getElementById('rs-pct').textContent=pct+'%';
+  document.getElementById('rs-q-label').textContent='Question '+(idx+1)+' of '+RS_TOTAL;
+}
+function rsAnswer(qIdx,score){
+  /* highlight selected */
+  var step=document.getElementById('rsq-'+qIdx);
+  if(step){
+    step.querySelectorAll('.rs-option').forEach(function(o){o.classList.remove('rs-selected');});
+    var chosen=step.querySelectorAll('.rs-option')[score];
+    if(chosen) chosen.classList.add('rs-selected');
+  }
+  rsScores[qIdx]=score;
+  /* auto-advance after short delay */
+  setTimeout(function(){
+    if(qIdx+1<RS_TOTAL){
+      rsCurrentQ=qIdx+1;
+      rsShowQuestion(rsCurrentQ);
+    } else {
+      rsShowResult();
+    }
+  },280);
+}
+function rsShowResult(){
+  var total=rsScores.reduce(function(a,b){return a+(b||0);},0);
   var icon,pill,pillCls,msg,waText;
-  if(count===0){
+  /* 0-3 = Low, 4-9 = Moderate, 10-18 = High */
+  if(total<=3){
     icon='✅';pill='Low Risk';pillCls='rs-low';
-    msg='Your home shows no obvious warning signs right now — great! However, ducts still accumulate dust over time. A routine check every 12–18 months keeps your AC efficient and your air clean.';
-    waText='Hi%20Pro%20Aqua%2C%20I%20ran%20the%20AC%20risk%20check%20and%20got%20Low%20Risk.%20I%27d%20like%20to%20book%20a%20routine%20check-up.';
-  } else if(count<=2){
+    msg='Good news — your home shows low indicators right now. However, ducts still accumulate dust over time. A routine deep clean every 12–18 months keeps your AC efficient and your air genuinely clean.';
+    waText='Hi%20Pro%20Aqua%2C%20I%20completed%20the%20AC%20Risk%20Check%20and%20got%20Low%20Risk.%20I%27d%20like%20to%20book%20a%20routine%20inspection.';
+  } else if(total<=9){
     icon='⚠️';pill='Moderate Risk';pillCls='rs-med';
-    msg='You\'ve spotted '+count+' warning sign'+(count>1?'s':'')+'. These are early indicators that your AC ducts may be accumulating dust or mould. A professional inspection now can prevent bigger issues — and higher bills — later.';
-    waText='Hi%20Pro%20Aqua%2C%20I%20ran%20the%20AC%20risk%20check%20and%20got%20Moderate%20Risk%20('+count+'%20signs).%20I%27d%20like%20a%20free%20inspection.';
+    msg='Your answers indicate several warning signs. Your ducts are likely accumulating dust and may have early mould growth. A professional inspection now prevents bigger issues — and higher electricity bills — later.';
+    waText='Hi%20Pro%20Aqua%2C%20I%20completed%20the%20AC%20Risk%20Check%20and%20got%20Moderate%20Risk.%20I%27d%20like%20to%20book%20a%20free%20inspection.';
   } else {
     icon='🔴';pill='High Risk';pillCls='rs-high';
-    msg='You\'ve noticed '+count+' warning signs — this suggests your ducts likely need professional cleaning. Contaminated ducts reduce air quality, strain your AC, and push up energy bills. We recommend booking a free inspection soon.';
-    waText='Hi%20Pro%20Aqua%2C%20I%20ran%20the%20AC%20risk%20check%20and%20got%20High%20Risk%20('+count+'%20signs).%20I%27d%20like%20to%20book%20a%20free%20inspection%20urgently.';
+    msg='Your results indicate a high likelihood of contamination in your AC system. Contaminated ducts reduce air quality, overwork the unit, and push up DEWA bills. We strongly recommend booking a free inspection as soon as possible.';
+    waText='Hi%20Pro%20Aqua%2C%20I%20completed%20the%20AC%20Risk%20Check%20and%20got%20High%20Risk.%20Please%20book%20a%20free%20inspection%20urgently.';
   }
+  document.getElementById('rs-questions').style.display='none';
+  document.getElementById('rs-progress').style.display='none';
+  document.getElementById('rs-result').style.display='block';
   document.getElementById('rs-icon').textContent=icon;
   var p=document.getElementById('rs-pill');
   p.textContent=pill;
   p.className='rs-risk-pill '+pillCls;
   document.getElementById('rs-msg').textContent=msg;
   document.getElementById('rs-wa').href='https://wa.me/971567943412?text='+waText;
-  document.getElementById('rs1').classList.remove('rs-active');
-  document.getElementById('rs2').classList.add('rs-active');
 }
 function restartRisk(){
-  document.querySelectorAll('#rs-checks input').forEach(function(cb){cb.checked=false;});
-  document.getElementById('rs2').classList.remove('rs-active');
-  document.getElementById('rs1').classList.add('rs-active');
+  rsScores=[];
+  rsCurrentQ=0;
+  rsShowQuestion(0);
 }
 document.addEventListener('click',function(e){
   var m=document.getElementById('risk-modal');
