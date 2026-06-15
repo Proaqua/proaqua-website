@@ -425,3 +425,13 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - Booking Section (Fear→Relief Abschluss)
 - Franco-Sektion (mehr Specificity in der Story)
 - Reviews (Single Metric Hammer)
+
+### 2026-06-15 — Claude (Cowork) — Warning Signs Section + Risk Check Popup · Commit ab013cf
+
+- **CSS (vorheriger Schritt):** Alle Styles für `#warning-signs` (ws-chip, ws-grid, ws-card, ws-ico, ws-label, ws-desc, ws-cta-wrap, ws-btn, ws-btn-note + Responsive-Breakpoints) sowie Risk-Popup (risk-overlay, risk-box, risk-close, rs-step, rs-badge, rs-q, rs-hint, rs-checks, rs-go, rs-note, rs-result-hd, rs-risk-pill, rs-low/rs-med/rs-high, rs-result-msg, rs-wa-btn, rs-back-btn) wurden dem `<style>`-Block hinzugefügt.
+- **Risk Check Modal HTML:** `<div id="risk-modal" class="risk-overlay">` vor `<!-- STICKY TRUST BAR -->` eingefügt. Step 1: 6 Checkboxen (Dust/Smell/Vents/Airflow/DEWA/Allergies). Step 2: Ergebnisanzeige mit dynamischem Risk-Pill (rs-low/rs-med/rs-high), Nachricht und WA-CTA mit risikoabhängigem Prefill.
+- **Warning Signs Section HTML:** `<section id="warning-signs">` direkt vor `<!-- 60-SECOND VENT CHECK -->` eingefügt. 5 Karten: Allergy Triggers (rot), Musty Smell (amber), Dust/Mould at Vents (grau), Weak Airflow (blau), High DEWA Bills (grün). CTA-Button öffnet Popup via `openRisk()`.
+- **JS-Block:** Direkt nach der Section als `<script>`-Tag. Funktionen: `openRisk()`, `closeRisk()`, `showRiskResult()`, `restartRisk()`. Risk-Level: 0 Häkchen=Low, 1-2=Moderate, 3+=High. WA-Prefill je Level verschieden. Overlay-Click + Escape-Key schließen Popup.
+- **Psychologisches Framework:** Fear→Relief: 5 Symptom-Karten (Angst/Erkennung) → 30-Sek-Quiz → personalisierter Risk-Level → WA-CTA (Erleichterung/Handlung). Entspricht der Conversion-Strategy: Identity (schlauer Haushalter der sein Risiko kennt) + Trust Stack (kein Email-Feld, Free Inspection, No Commitment).
+- **Commit:** ab013cf (lokal, nicht gepusht)
+- **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions.
