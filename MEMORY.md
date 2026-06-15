@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Conversion-Flow-Stand nach ProAqua-2 gepusht
+- **Erledigt:** Aktuellen lokalen Stand mit Conversation-Psychology-Reorder, Compliance-/Copy-Fixes, Mobile-/Floating-/FAQ-Feinschliff und Arbeitslog in Commit `db8095d` gesichert.
+- **Erledigt:** Nach ausdrücklicher Freigabe auf `proaqua2/main` gepusht: `git push proaqua2 HEAD:main`.
+- **Ergebnis:** Der Implementierungsstand wurde von `a0787a3` auf `db8095d` aktualisiert; dieser Arbeitslog-Eintrag wird als separater Follow-up-Commit nachgeschoben.
+- **Hinweis:** Push ging nur an `proaqua2`, nicht an `origin`.
+- **Nächster Schritt:** Live-/Repo-Stand auf ProAqua-2 prüfen; offene Blocker bleiben echte Before/After-Captions, DM-Approval-Nachweis und GA4/Meta-IDs.
+
 ### 2026-06-16 — Claude (Cowork) — Mobile-/Floating-/FAQ-Feinschliff (nach GPT-5.5-Review)
 - **Kontext:** Nach dem Reorder eine erneute Bewertung (Claude + GPT-5.5 ~8,2/10). GPT-Punkte am Code verifiziert: 39 CTAs (WA 25 / tel 7 / quiz 6 / mail 1), `quiz-fab` (bottom:96px) + `wa-fl` (bottom:24px) stapeln sich unten rechts, Mobile-Hero lang.
 - **Floating-Split (Giampiero-Entscheid: „Quiz oben, WhatsApp unten"):** Additiver Controller per `<script>` am Body-Ende + CSS-Klassen `.quiz-fab.qf-belowsplit` / `.wa-fl.wa-off`. Split = Top von `#franco` (−140px). Oberhalb: Quiz-FAB sichtbar, WhatsApp-Float aus; unterhalb umgekehrt. Bestehende Quiz-FAB-Popup-/Grace-IIFE NICHT angefasst (nur additiv überschrieben).
