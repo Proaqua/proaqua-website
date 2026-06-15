@@ -1393,10 +1393,25 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
         "@type": "Answer",
         "text": "Yes — we document every single job with before and after photos. You receive photo proof of the cleaned ducts, filters, coils and any other areas we worked on. This is part of our standard service and Clean-Air Guarantee."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can I get an appointment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are active 7 days a week and usually reply on WhatsApp within minutes. Depending on your area and current schedule, inspections can often be arranged within 24–48 hours."
+      }
     }
   ]
 }
 </script>
+<style>
+/* Floating split (Conversation-Flow): Quiz-FAB obere Haelfte, WhatsApp-Float ab Mitte */
+.quiz-fab.qf-belowsplit{opacity:0!important;transform:translateX(90px) scale(.94)!important;pointer-events:none!important}
+.wa-fl.wa-off{opacity:0!important;pointer-events:none!important;transform:scale(.4)!important}
+/* Mobile-Hero kuerzen: dekoratives Hero-Video auf kleinen Phones raus, Franco-Foto bleibt als Trust-Anker; schneller zur ersten Pain-Sektion */
+@media(max-width:600px){.hero-vid-mobile{display:none!important}.hero-main{padding-bottom:18px}.hero{padding-top:24px}}
+</style>
 </head>
 <body>
 
@@ -1422,10 +1437,10 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     </a>
     <div class="nav-links">
       <a href="#why" class="act" data-nav-key="why" aria-current="true">Good to Know</a>
-      <a href="#franco" data-nav-key="franco">Franco</a>
       <a href="#services" data-nav-key="services">Services</a>
-      <a href="#booking" data-nav-key="booking">Book</a>
+      <a href="#franco" data-nav-key="franco">Franco</a>
       <a href="#reviews" data-nav-key="reviews">Reviews</a>
+      <a href="#booking" data-nav-key="booking">Book</a>
       <a href="#faq" data-nav-key="faq">FAQ</a>
     </div>
     <!-- Mobile hamburger -->
@@ -1461,6 +1476,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
         <span id="rs-pct">0%</span>
       </div>
       <div class="rs-progress-track"><div class="rs-progress-fill" id="rs-progress-fill" style="width:0%"></div></div>
+      <div class="fq" onclick="fq(this)"><div class="fq-q">How fast can I get an appointment? <span class="fq-i">+</span></div><div class="fq-a">We’re active 7 days a week and usually reply on WhatsApp within minutes. Depending on your area and our current schedule, inspections can often be arranged within 24–48 hours — message us and we’ll offer you the fastest available slot.</div></div>
     </div>
     <!-- Questions -->
     <div id="rs-questions">
@@ -1627,7 +1643,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
               <span class="kin hl-b" style="--kin-delay:.20s">looks clean.</span><br>
               <span class="kin" style="--kin-delay:.34s">Your AC ducts</span> <span class="kin hl-r" style="--kin-delay:.46s">don't.</span>
             </h1>
-      <p class="hero-sub">Dust, allergens &amp; moisture-related buildup inside your AC ducts — <strong>typical apartment jobs take around 2–3 hours</strong>. Fixed price, fast booking when slots are available.</p>
+      <p class="hero-sub">The same air recirculates through your ducts every time the AC runs — dust, allergens and moisture-related buildup included.</p>
       <p class="hero-claim" style="font-size:15px;font-weight:700;color:var(--navy);max-width:460px;margin:-14px 0 28px;line-height:1.55">Specialist AC and deep cleaning at family-fair fixed prices. <span style="color:var(--blue-d)">One team, one face you know</span> — proof on every job.</p>
 
       <!-- Video — mobile only, appears right after subtext -->
@@ -1744,88 +1760,10 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 <!-- TRUST BELT -->
 <div class="belt">
   <div class="belt-t">
-    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Professional Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Clients Served</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
-    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Professional Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Clients Served</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
+    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Professional Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Clients Served</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Safe Cleaning Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
+    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Professional Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Clients Served</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Safe Cleaning Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
   </div>
 </div>
-
-<!-- ===================== HIDDEN DANGER ===================== -->
-<section class="danger-bg" id="why">
-  <div class="sec">
-    <div class="chip-row"><span class="chip" style="background:var(--red-l);color:var(--red);border:1px solid rgba(239,68,68,.2);font-size:11px">From Franco's Inspections</span></div>
-    <h2 class="sec-t">What We Often Find<br><em class="red-em">During Dubai AC Inspections</em></h2>
-    <p class="sec-sub">Not a lab study. What Franco's team actually documents — in Dubai homes, every single week.</p>
-    <div class="danger-grid">
-
-      <div class="dcard">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 8V6m0 12v-2M8 12H6m12 0h-2M9.17 9.17 7.76 7.76m8.48 8.48-1.41-1.41M9.17 14.83l-1.41 1.41m8.48-8.48-1.41 1.41"/></svg>
-        </div>
-        <div class="d-num">12<em>mo</em></div>
-        <h3>Is All It Takes</h3>
-        <p>In Dubai's dusty climate, AC ducts can accumulate dust, debris and moisture-related buildup within months — our free inspections document it every week.</p>
-        <a class="d-src" href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          WHO &middot; Household Air Pollution
-        </a>
-      </div>
-
-      <div class="dcard">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
-        </div>
-        <div class="d-num">5<em>×</em></div>
-        <h3>More Indoor Pollution</h3>
-        <p>Indoor air can be 2–5&times; more polluted than outdoor air when AC filters and ducts are left uncleaned, per US EPA research.</p>
-        <a class="d-src" href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          US EPA &middot; Indoor Air Quality
-        </a>
-      </div>
-
-      <div class="dcard hi">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M8 9v9m8-9v9"/></svg>
-        </div>
-        <div class="d-num">Hidden</div>
-        <h3>Dust Mites &amp; Allergens</h3>
-        <p>Mattresses can hold dust mites and allergens that trigger sneezing, poor sleep and irritation — even when the surface looks clean.</p>
-        <a class="d-src" href="https://www.aafa.org/dust-mite-allergy/" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          AAFA &middot; Asthma &amp; Allergy Foundation
-        </a>
-      </div>
-
-      <div class="dcard">
-        <div class="d-ico">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <div class="d-num">DEWA</div>
-        <h3>Higher Energy Bills</h3>
-        <p>A clogged AC system can work harder than it should — wasting electricity and money every single month.</p>
-        <a class="d-src" href="https://consensus.app/papers/details/f3917d0963295153bbb01529c94b9876/" target="_blank" rel="noopener noreferrer">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Ildiri et al. &middot; Energy &amp; Buildings, 2024
-        </a>
-      </div>
-
-    </div>
-    <div style="margin-top:28px;background:rgba(88,153,227,.07);border:1px solid rgba(88,153,227,.18);border-radius:12px;padding:18px 22px;max-width:580px;margin-left:auto;margin-right:auto">
-      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px">Franco&#39;s Inspection Note</div>
-      <p style="font-size:14px;color:var(--g600);line-height:1.7;margin:0 0 14px">&ldquo;Most families call us when the smell starts. The better moment is earlier &mdash; when dust keeps coming back around vents, or the bedroom feels heavy after the AC runs. That&rsquo;s usually when we find the most.&rdquo;</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div style="border-radius:8px;overflow:hidden">
-          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from a mattress during deep cleaning — Pro Aqua Dubai" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center 40%;display:block">
-          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Mattress extraction · 2025</div>
-        </div>
-        <div style="border-radius:8px;overflow:hidden">
-          <img src="assets/real-ac-duct-clean.webp" alt="Pro Aqua technician vacuuming AC duct interior — Dubai job 2025" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block">
-          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Duct cleaning · 2025</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===================== WARNING SIGNS ===================== -->
 <section id="warning-signs">
@@ -2027,6 +1965,190 @@ document.addEventListener('keydown',function(e){
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Send Franco a Photo
       </a>
+      <a href="#why" class="vent-secondary" style="display:inline-block;margin-top:14px;font-size:.92rem;color:var(--ink-soft,#5b6b7b);text-decoration:underline;text-underline-offset:3px">Not sure yet? See what we typically find ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HIDDEN DANGER ===================== -->
+<section class="danger-bg" id="why">
+  <div class="sec">
+    <div class="chip-row"><span class="chip" style="background:var(--red-l);color:var(--red);border:1px solid rgba(239,68,68,.2);font-size:11px">From Franco's Inspections</span></div>
+    <h2 class="sec-t">What We Often Find<br><em class="red-em">During Dubai AC Inspections</em></h2>
+    <p class="sec-sub">Not a lab study. What Franco's team actually documents — in Dubai homes, every single week.</p>
+    <div class="danger-grid">
+
+      <div class="dcard">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 8V6m0 12v-2M8 12H6m12 0h-2M9.17 9.17 7.76 7.76m8.48 8.48-1.41-1.41M9.17 14.83l-1.41 1.41m8.48-8.48-1.41 1.41"/></svg>
+        </div>
+        <div class="d-num">12<em>mo</em></div>
+        <h3>Is All It Takes</h3>
+        <p>In Dubai's dusty climate, AC ducts can accumulate dust, debris and moisture-related buildup within months — our free inspections document it every week.</p>
+        <a class="d-src" href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          WHO &middot; Household Air Pollution
+        </a>
+      </div>
+
+      <div class="dcard">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        </div>
+        <div class="d-num">2–5<em>×</em></div>
+        <h3>More Indoor Pollution</h3>
+        <p>Indoor air can be 2–5&times; more polluted than outdoor air when AC filters and ducts are left uncleaned, per US EPA research.</p>
+        <a class="d-src" href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          US EPA &middot; Indoor Air Quality
+        </a>
+      </div>
+
+      <div class="dcard hi">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M8 9v9m8-9v9"/></svg>
+        </div>
+        <div class="d-num">Hidden</div>
+        <h3>Dust Mites &amp; Allergens</h3>
+        <p>Mattresses can hold dust mites and allergens that trigger sneezing, poor sleep and irritation — even when the surface looks clean.</p>
+        <a class="d-src" href="https://www.aafa.org/dust-mite-allergy/" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AAFA &middot; Asthma &amp; Allergy Foundation
+        </a>
+      </div>
+
+      <div class="dcard">
+        <div class="d-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="d-num">DEWA</div>
+        <h3>Higher Energy Bills</h3>
+        <p>A clogged AC system can work harder than it should — wasting electricity and money every single month.</p>
+        <a class="d-src" href="https://consensus.app/papers/details/f3917d0963295153bbb01529c94b9876/" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ildiri et al. &middot; Energy &amp; Buildings, 2024
+        </a>
+      </div>
+
+    </div>
+    <div style="margin-top:28px;background:rgba(88,153,227,.07);border:1px solid rgba(88,153,227,.18);border-radius:12px;padding:18px 22px;max-width:580px;margin-left:auto;margin-right:auto">
+      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px">Franco&#39;s Inspection Note</div>
+      <p style="font-size:14px;color:var(--g600);line-height:1.7;margin:0 0 14px">&ldquo;Most families call us when the smell starts. The better moment is earlier &mdash; when dust keeps coming back around vents, or the bedroom feels heavy after the AC runs. That&rsquo;s usually when we find the most.&rdquo;</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="border-radius:8px;overflow:hidden">
+          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from a mattress during deep cleaning — Pro Aqua Dubai" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center 40%;display:block">
+          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Mattress extraction · 2025</div>
+        </div>
+        <div style="border-radius:8px;overflow:hidden">
+          <img src="assets/real-ac-duct-clean.webp" alt="Pro Aqua technician vacuuming AC duct interior — Dubai job 2025" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block">
+          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Duct cleaning · 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEFORE / AFTER + BOOKING BOX ===================== -->
+<section class="ba-sec" id="before-after">
+  <div class="sec">
+    <div class="chip-row"><span class="chip cw">Before &amp; After Dubai</span><span class="chip" style="background:rgba(113,196,159,.15);color:rgba(113,196,159,.9);border:1px solid rgba(113,196,159,.25);font-size:11px">Real Dubai Cleaning Results</span></div>
+    <h2 class="sec-t">Pictures Say <em class="blue-em">More</em><br>Than 1,000 Words</h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.45)">Documented before/after photos from Dubai cleaning jobs — real proof before you book.</p>
+
+    <div class="ba-inner">
+      <!-- LEFT: before/after cards stacked -->
+      <div class="ba-cards">
+        <!-- S6: ba-meta = Area · Month/Year — TODO GIAMPIERO: echte Stadtteile + Monat/Jahr eintragen -->
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job 2025" loading="lazy">
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Coil — Before Deep Cleaning</div>
+            <div class="ba-cap-s">Years of dust and grime — actual job photo</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from mattress during deep cleaning — Pro Aqua Dubai 2025" loading="lazy" style="object-position:center 40%">
+          <div class="ba-cap">
+            <div class="ba-cap-t">Mattress Deep Cleaning — Extracted Water</div>
+            <div class="ba-cap-s">What came out of a "clean" mattress — real proof photo</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-ac-coil-after.webp" alt="AC coil being cleaned by Pro Aqua technician — Dubai 2025" loading="lazy" style="object-position:left top">
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Coil — During Professional Cleaning</div>
+            <div class="ba-cap-s">Full decontamination &amp; efficiency restoration</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-mattress-result-1.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized and fresh Dubai 2025" loading="lazy">
+          <div class="ba-cap">
+            <div class="ba-cap-t">Mattress After Deep Cleaning — Clean Result</div>
+            <div class="ba-cap-s">Deep-cleaned, hygienic &amp; fresh — documented result</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-carpet-clean.webp" alt="Pro Aqua carpet deep cleaning in progress — Dubai 2025" loading="lazy" style="object-position:center 60%">
+          <div class="ba-cap">
+            <div class="ba-cap-t">Carpet Deep Cleaning — In Progress</div>
+            <div class="ba-cap-s">Hot water extraction &amp; deep sanitizing</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-ac-duct-grid-work-1.webp" alt="Two Pro Aqua technicians cleaning AC ducts in Dubai high-rise apartment" loading="lazy" style="object-position:center top">
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Duct &amp; Grill Cleaning — Team Job</div>
+            <div class="ba-cap-s">Full duct vacuum &amp; grill sanitizing — 2-man crew</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-ac-duct-grid-work-2.webp" alt="Pro Aqua crew working on AC duct grills — full-service cleaning Dubai 2025" loading="lazy" style="object-position:center top">
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Grill &amp; Duct Work — Full Service</div>
+            <div class="ba-cap-s">Every vent, every grill — no shortcuts</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+        <div class="ba-card ba-card-full">
+          <img src="assets/real-ac-motorhousing.webp" alt="AC motor housing deep cleaning — internal decontamination Dubai 2025" loading="lazy">
+          <div class="ba-cap">
+            <div class="ba-cap-t">AC Motor Housing — Internal Decontamination</div>
+            <div class="ba-cap-s">Components most companies never touch — we do</div>
+            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
+            <div class="ba-proof">Real job · photo documented</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Booking box -->
+      <div class="ba-book">
+        <div class="bb-free">FREE · NO OBLIGATION</div>
+        <div class="bb-t">Book Your Free<br>Home Inspection</div>
+        <div class="bb-s">We come to you — no cost, no pressure</div>
+        <ul class="bb-list">
+          <li><span class="bb-ck">✓</span>Fast booking when slots are available</li>
+          <li><span class="bb-ck">✓</span>Trained professional technicians</li>
+          <li><span class="bb-ck">✓</span>Professional equipment</li>
+          <li><span class="bb-ck">✓</span>Before &amp; after documentation</li>
+          <li><span class="bb-ck">✓</span>Fixed price — zero hidden fees</li>
+        </ul>
+        <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+free+inspection" class="bb-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp — Book Free Inspection</a>
+        <a href="tel:+971567943412" class="bb-cta2"> Call Us: +971 56 794 3412</a>
+        <div class="bb-note">Responds within minutes · 7 days a week</div>
+      </div>
     </div>
   </div>
 </section>
@@ -2039,7 +2161,7 @@ document.addEventListener('keydown',function(e){
       <span style="font-size:14px;font-weight:600;color:var(--g500);letter-spacing:.08em;text-transform:uppercase">The Pro Aqua Solution</span>
     </div>
     <h2 class="sec-t">How We <em class="blue-em">Fix</em> It — For Good</h2>
-    <p class="sec-sub">Professional equipment. Trained technicians. Photo-documented results, with free re-clean if an agreed area is missed.</p>
+    <p class="sec-sub">That musty smell when the AC starts? It comes from inside the ductwork. Here’s exactly how we remove it — for good.</p>
     <div class="sol-tile-grid">
 
       <div class="sol-tile">
@@ -2097,6 +2219,57 @@ document.addEventListener('keydown',function(e){
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Book Free Inspection
       </a>
       <div style="font-size:12px;color:var(--g400);margin-top:10px;font-style:italic">No commitment · Free on-site inspection · Fixed price always</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT WE CLEAN ===================== -->
+<section class="srv-bg" id="services">
+  <div class="sec">
+    <div class="chip-row"><span class="chip cb">Our Services</span><span class="chip cg">Safe for Kids &amp; Pets</span></div>
+    <h2 class="sec-t">Built for the Parts of Your Home You <em class="blue-em">Can’t See</em></h2>
+    <p class="sec-sub">Each service uses professional equipment and carefully selected products for family homes.</p>
+    <div class="srv-grid">
+      <div class="srv-card">
+        <div class="srv-photo" style="background:linear-gradient(135deg,var(--green-ll),var(--bg))">
+            <img src="assets/sofa-washing-cleaning-service-dubai.webp" alt="Sofa Washing &amp; Cleaning Service Dubai" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+        <div class="srv-body">
+          <div class="srv-tag">Fabric Sanitizing &amp; Washing</div>
+          <h3>Sofas &amp; Carpets Deep Clean</h3>
+          <p>Helping remove allergens, mites and residue from your soft furnishings with professional extraction machines.</p>
+          <ul class="srv-feats"><li>Sofa &amp; upholstery treatment</li><li>Carpet deep extraction</li><li>Allergen reduction</li><li>Odor neutralization</li></ul>
+          <div class="srv-price">From <em>AED 149</em></div>
+          <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20sofa%20or%20carpet%20cleaning%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Sofa &amp; Carpet Clean</a>
+        </div>
+      </div>
+      <div class="srv-card feat" style="position:relative">
+        <div class="srv-float-chip">★ Most Popular</div>
+        <div class="srv-photo">
+          <img src="assets/real-ac-grid-work.webp" alt="Pro Aqua technician cleaning AC grill and duct — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+        </div>
+        <div class="srv-body">
+          <div class="srv-tag">AC Duct Cleaning</div>
+          <h3>Clean Air Every Day</h3>
+          <p>Complete HVAC treatment — removing dust, debris and moisture-related buildup for cleaner daily airflow.</p>
+          <ul class="srv-feats"><li>Full duct inspection &amp; cleaning</li><li>High-power vacuum extraction</li><li>Targeted sanitizing treatment</li><li>Before &amp; after documentation</li></ul>
+          <div class="srv-price">From <em>AED 399</em></div>
+          <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20free%20AC%20duct%20inspection%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Free AC Inspection</a>
+        </div>
+      </div>
+      <div class="srv-card">
+        <div class="srv-photo">
+          <img src="assets/real-mattress-result-2.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized result Dubai" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+        </div>
+        <div class="srv-body">
+          <div class="srv-tag">Mattress Sanitizing</div>
+          <h3>Sleep on a Clean Mattress</h3>
+          <p>Help remove dust mites, allergens and residue hiding inside your mattress — a careful process for baby rooms.</p>
+          <ul class="srv-feats"><li>Deep extraction treatment</li><li>Dust mite reduction</li><li>Deep hygiene treatment</li><li>Family-home process</li></ul>
+          <div class="srv-price">From <em>AED 89</em></div>
+          <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20mattress%20sanitizing%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Mattress Sanitizing</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2166,7 +2339,7 @@ document.addEventListener('keydown',function(e){
       <div class="rev-card"><div class="rev-qt">"</div>
         <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">AC Duct Cleaning</span></div>
         <div class="rev-head"><div class="rev-av">KK</div><div><div class="rev-nm">Kavi Kapila</div><div class="rev-si">Client since 2025</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
+        <div class="stars">★★★★★</div><div class="verified">✓ Real WhatsApp message</div>
         <p class="rev-text">Happy to confirm my previous experiences have been reinforced again. Prompt responses, punctual and most important, efficient motivated and professional team. No short cuts, final result is great.</p>
                                 <div class="wa-ss">
           <img src="assets/whatsapp-review-ac-duct-cleaning.webp" alt="WhatsApp review screenshot — AC duct cleaning service feedback" loading="lazy">
@@ -2175,7 +2348,7 @@ document.addEventListener('keydown',function(e){
       <div class="rev-card"><div class="rev-qt">"</div>
         <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Villa Deep Cleaning</span></div>
         <div class="rev-head"><div class="rev-av">PV</div><div><div class="rev-nm">P.V.</div><div class="rev-si">Client since 2026</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
+        <div class="stars">★★★★★</div><div class="verified">✓ Real WhatsApp message</div>
         <p class="rev-text">Excellent service..Franco is very particular and prompt. Takes a lot of interest. Have used them for our villa and office. For mattresses, sofas, carpets and all pur AC ducts. Very happy to give them excellent recommendations.</p>
         <div class="wa-ss">
           <img src="assets/whatsapp-review-villa-deep-cleaning.webp" alt="WhatsApp review screenshot — villa deep cleaning feedback" loading="lazy">
@@ -2184,7 +2357,7 @@ document.addEventListener('keydown',function(e){
       <div class="rev-card"><div class="rev-qt">"</div>
         <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Sanitization</span></div>
         <div class="rev-head"><div class="rev-av">CT</div><div><div class="rev-nm">Chantelle Thompson</div><div class="rev-si">Client since 2026</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Verified WhatsApp Review</div>
+        <div class="stars">★★★★★</div><div class="verified">✓ Real WhatsApp message</div>
         <p class="rev-text">Pro Aqua recently came out to deep clean my cream sofa and did an amazing job. They were available within just a few hours of reaching out to them. Extremely happy with both customer service and quality of service. Will be using again.</p>
         <div class="wa-ss">
           <img src="assets/whatsapp-review-sofa-sanitizing.webp" alt="WhatsApp review screenshot — sofa sanitizing feedback" loading="lazy">
@@ -2338,162 +2511,6 @@ document.addEventListener('keydown',function(e){
   </div>
 </section>
 
-<!-- ===================== WHAT WE CLEAN ===================== -->
-<section class="srv-bg" id="services">
-  <div class="sec">
-    <div class="chip-row"><span class="chip cb">Our Services</span><span class="chip cg">Safe for Kids &amp; Pets</span></div>
-    <h2 class="sec-t">Professional <em class="blue-em">Cleaning</em> Services in Dubai</h2>
-    <p class="sec-sub">Each service uses professional equipment and carefully selected products for family homes.</p>
-    <div class="srv-grid">
-      <div class="srv-card">
-        <div class="srv-photo" style="background:linear-gradient(135deg,var(--green-ll),var(--bg))">
-            <img src="assets/sofa-washing-cleaning-service-dubai.webp" alt="Sofa Washing &amp; Cleaning Service Dubai" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          </div>
-        <div class="srv-body">
-          <div class="srv-tag">Fabric Sanitizing &amp; Washing</div>
-          <h3>Sofas &amp; Carpets Deep Clean</h3>
-          <p>Helping remove allergens, mites and residue from your soft furnishings with professional extraction machines.</p>
-          <ul class="srv-feats"><li>Sofa &amp; upholstery treatment</li><li>Carpet deep extraction</li><li>Allergen reduction</li><li>Odor neutralization</li></ul>
-          <div class="srv-price">From <em>AED 149</em></div>
-          <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20sofa%20or%20carpet%20cleaning%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Sofa &amp; Carpet Clean</a>
-        </div>
-      </div>
-      <div class="srv-card feat" style="position:relative">
-        <div class="srv-float-chip">★ Most Popular</div>
-        <div class="srv-photo">
-          <img src="assets/real-ac-grid-work.webp" alt="Pro Aqua technician cleaning AC grill and duct — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
-        </div>
-        <div class="srv-body">
-          <div class="srv-tag">AC Duct Cleaning</div>
-          <h3>Clean Air Every Day</h3>
-          <p>Complete HVAC treatment — removing dust, debris and moisture-related buildup for cleaner daily airflow.</p>
-          <ul class="srv-feats"><li>Full duct inspection &amp; cleaning</li><li>High-power vacuum extraction</li><li>Targeted sanitizing treatment</li><li>Before &amp; after documentation</li></ul>
-          <div class="srv-price">From <em>AED 399</em></div>
-          <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20free%20AC%20duct%20inspection%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Free AC Inspection</a>
-        </div>
-      </div>
-      <div class="srv-card">
-        <div class="srv-photo">
-          <img src="assets/real-mattress-result-2.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized result Dubai" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
-        </div>
-        <div class="srv-body">
-          <div class="srv-tag">Mattress Sanitizing</div>
-          <h3>Sleep on a Clean Mattress</h3>
-          <p>Help remove dust mites, allergens and residue hiding inside your mattress — a careful process for baby rooms.</p>
-          <ul class="srv-feats"><li>Deep extraction treatment</li><li>Dust mite reduction</li><li>Deep hygiene treatment</li><li>Family-home process</li></ul>
-          <div class="srv-price">From <em>AED 89</em></div>
-          <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20mattress%20sanitizing%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Mattress Sanitizing</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== BEFORE / AFTER + BOOKING BOX ===================== -->
-<section class="ba-sec" id="before-after">
-  <div class="sec">
-    <div class="chip-row"><span class="chip cw">Before &amp; After Dubai</span><span class="chip" style="background:rgba(113,196,159,.15);color:rgba(113,196,159,.9);border:1px solid rgba(113,196,159,.25);font-size:11px">Real Dubai Cleaning Results</span></div>
-    <h2 class="sec-t">Pictures Say <em class="blue-em">More</em><br>Than 1,000 Words</h2>
-    <p class="sec-sub" style="color:rgba(255,255,255,.45)">Documented before/after photos from Dubai cleaning jobs — real proof before you book.</p>
-
-    <div class="ba-inner">
-      <!-- LEFT: before/after cards stacked -->
-      <div class="ba-cards">
-        <!-- S6: ba-meta = Area · Month/Year — TODO GIAMPIERO: echte Stadtteile + Monat/Jahr eintragen -->
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job 2025" loading="lazy">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Coil — Before Deep Cleaning</div>
-            <div class="ba-cap-s">Years of dust and grime — actual job photo</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from mattress during deep cleaning — Pro Aqua Dubai 2025" loading="lazy" style="object-position:center 40%">
-          <div class="ba-cap">
-            <div class="ba-cap-t">Mattress Deep Cleaning — Extracted Water</div>
-            <div class="ba-cap-s">What came out of a "clean" mattress — real proof photo</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-coil-after.webp" alt="AC coil being cleaned by Pro Aqua technician — Dubai 2025" loading="lazy" style="object-position:left top">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Coil — During Professional Cleaning</div>
-            <div class="ba-cap-s">Full decontamination &amp; efficiency restoration</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-mattress-result-1.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized and fresh Dubai 2025" loading="lazy">
-          <div class="ba-cap">
-            <div class="ba-cap-t">Mattress After Deep Cleaning — Clean Result</div>
-            <div class="ba-cap-s">Deep-cleaned, hygienic &amp; fresh — documented result</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-carpet-clean.webp" alt="Pro Aqua carpet deep cleaning in progress — Dubai 2025" loading="lazy" style="object-position:center 60%">
-          <div class="ba-cap">
-            <div class="ba-cap-t">Carpet Deep Cleaning — In Progress</div>
-            <div class="ba-cap-s">Hot water extraction &amp; deep sanitizing</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-duct-grid-work-1.webp" alt="Two Pro Aqua technicians cleaning AC ducts in Dubai high-rise apartment" loading="lazy" style="object-position:center top">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Duct &amp; Grill Cleaning — Team Job</div>
-            <div class="ba-cap-s">Full duct vacuum &amp; grill sanitizing — 2-man crew</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-duct-grid-work-2.webp" alt="Pro Aqua crew working on AC duct grills — full-service cleaning Dubai 2025" loading="lazy" style="object-position:center top">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Grill &amp; Duct Work — Full Service</div>
-            <div class="ba-cap-s">Every vent, every grill — no shortcuts</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-motorhousing.webp" alt="AC motor housing deep cleaning — internal decontamination Dubai 2025" loading="lazy">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Motor Housing — Internal Decontamination</div>
-            <div class="ba-cap-s">Components most companies never touch — we do</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, UAE &middot; 2025</div>
-            <div class="ba-proof">Real job · photo documented</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: Booking box -->
-      <div class="ba-book">
-        <div class="bb-free">FREE · NO OBLIGATION</div>
-        <div class="bb-t">Book Your Free<br>Home Inspection</div>
-        <div class="bb-s">We come to you — no cost, no pressure</div>
-        <ul class="bb-list">
-          <li><span class="bb-ck">✓</span>Fast booking when slots are available</li>
-          <li><span class="bb-ck">✓</span>Trained professional technicians</li>
-          <li><span class="bb-ck">✓</span>Professional equipment</li>
-          <li><span class="bb-ck">✓</span>Before &amp; after documentation</li>
-          <li><span class="bb-ck">✓</span>Fixed price — zero hidden fees</li>
-        </ul>
-        <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+free+inspection" class="bb-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp — Book Free Inspection</a>
-        <a href="tel:+971567943412" class="bb-cta2"> Call Us: +971 56 794 3412</a>
-        <div class="bb-note">Responds within minutes · 7 days a week</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="pricing" style="background:var(--bg2);padding:72px 0">
   <div class="sec">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start">
@@ -2571,6 +2588,20 @@ document.addEventListener('keydown',function(e){
   <style>
     @media(max-width:860px){#pricing .sec>div{grid-template-columns:1fr!important;gap:32px!important}#pricing .sec>div>div:last-child{position:static!important}}
   </style>
+</section>
+
+<section class="proc-bg" id="process">
+  <div class="sec">
+    <div class="chip-row" style="justify-content:center"><span class="chip cb">How It Works</span></div>
+    <h2 class="sec-t" style="text-align:center">Simple, <em class="blue-em">Transparent</em> Process</h2>
+    <p style="text-align:center;font-size:15px;color:var(--g500);max-width:500px;margin:0 auto 0;line-height:1.65">No surprises. Fixed price confirmed before we start. Before &amp; after proof on every job.</p>
+    <div class="proc-grid">
+      <div class="proc-step"><div class="proc-num">1</div><h3>Share Your Needs</h3><p>Answer 4 quick questions — or WhatsApp us photos of your space for a faster quote.</p></div>
+      <div class="proc-step"><div class="proc-num">2</div><h3>Free Inspection</h3><p>We visit at zero cost, zero pressure, and confirm the full scope on-site.</p></div>
+      <div class="proc-step"><div class="proc-num">3</div><h3>Fixed Quote</h3><p>You approve the exact price before any work starts. No hidden extras, ever.</p></div>
+      <div class="proc-step"><div class="proc-num">4</div><h3>Clean &amp; Proof</h3><p>Franco's trained team cleans. Before &amp; after photos document every result.</p></div>
+    </div>
+  </div>
 </section>
 
 <!-- CTA -->
@@ -2661,20 +2692,6 @@ document.addEventListener('keydown',function(e){
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="proc-bg" id="process">
-  <div class="sec">
-    <div class="chip-row" style="justify-content:center"><span class="chip cb">How It Works</span></div>
-    <h2 class="sec-t" style="text-align:center">Simple, <em class="blue-em">Transparent</em> Process</h2>
-    <p style="text-align:center;font-size:15px;color:var(--g500);max-width:500px;margin:0 auto 0;line-height:1.65">No surprises. Fixed price confirmed before we start. Before &amp; after proof on every job.</p>
-    <div class="proc-grid">
-      <div class="proc-step"><div class="proc-num">1</div><h3>Share Your Needs</h3><p>Answer 4 quick questions — or WhatsApp us photos of your space for a faster quote.</p></div>
-      <div class="proc-step"><div class="proc-num">2</div><h3>Free Inspection</h3><p>We visit at zero cost, zero pressure, and confirm the full scope on-site.</p></div>
-      <div class="proc-step"><div class="proc-num">3</div><h3>Fixed Quote</h3><p>You approve the exact price before any work starts. No hidden extras, ever.</p></div>
-      <div class="proc-step"><div class="proc-num">4</div><h3>Clean &amp; Proof</h3><p>Franco's trained team cleans. Before &amp; after photos document every result.</p></div>
     </div>
   </div>
 </section>
@@ -2867,7 +2884,7 @@ document.addEventListener('keydown',function(e){
   <div class="sec">
     <div class="chip-row"><span class="chip cb">Coverage</span></div>
     <h2 class="sec-t">We Serve All of <em class="blue-em">Dubai</em></h2>
-    <p class="sec-sub">AC duct cleaning, fabric sanitizing and mattress treatment across all major Dubai districts.</p>
+    <p class="sec-sub">Families in Dubai Marina, JVC and Arabian Ranches book their AC check before summer — we cover all major Dubai districts.</p>
     <div class="areas-wrap">
       <div class="area">Downtown Dubai</div><div class="area">Dubai Marina</div><div class="area">JBR</div><div class="area">Business Bay</div><div class="area">Jumeirah</div><div class="area">Arabian Ranches</div><div class="area">Palm Jumeirah</div><div class="area">DIFC</div><div class="area">Al Barsha</div><div class="area">Mirdif</div><div class="area">Deira</div><div class="area">Karama</div><div class="area">JVC</div><div class="area">Sports City</div><div class="area">Motor City</div><div class="area">Dubai Hills</div><div class="area">Silicon Oasis</div><div class="area">Meadows &amp; Springs</div><div class="area">The Lakes</div><div class="area">Nad Al Sheba</div><div class="area">Discovery Gardens</div><div class="area">International City</div>
     </div>
@@ -3520,10 +3537,10 @@ function playVideo(){
 <div class="mobile-nav" id="mobileNav">
   <button class="m-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>
   <a href="#why" class="act" data-nav-key="why" aria-current="true" onclick="toggleMenu()">Good to Know</a>
-  <a href="#franco" data-nav-key="franco" onclick="toggleMenu()">Franco</a>
   <a href="#services" data-nav-key="services" onclick="toggleMenu()">Services</a>
-  <a href="#booking" data-nav-key="booking" onclick="toggleMenu()">Book</a>
+  <a href="#franco" data-nav-key="franco" onclick="toggleMenu()">Franco</a>
   <a href="#reviews" data-nav-key="reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#booking" data-nav-key="booking" onclick="toggleMenu()">Book</a>
   <a href="#faq" data-nav-key="faq" onclick="toggleMenu()">FAQ</a>
   <div class="mobile-nav-divider"></div>
   <a href="https://wa.me/971567943412" class="hbtn hbtn-green" onclick="toggleMenu()" style="margin-top:12px;font-size:15px;width:100%;justify-content:center;padding:16px 24px;border-radius:14px">
@@ -3698,6 +3715,22 @@ function playVideo(){
   } else {
     inject();
   }
+})();
+</script>
+<script>
+/* Floating split: Quiz-FAB nur obere Haelfte, WhatsApp-Float ab Mitte (vermeidet Konkurrenz unten rechts) */
+(function(){
+  function splitY(){var f=document.getElementById('franco');return f?(f.offsetTop-140):(document.documentElement.scrollHeight*0.45);}
+  function apply(){
+    var y=window.scrollY||window.pageYOffset,s=splitY(),upper=y<s;
+    var q=document.getElementById('quiz-fab'),w=document.querySelector('.wa-fl');
+    if(q){if(upper)q.classList.remove('qf-belowsplit');else q.classList.add('qf-belowsplit');}
+    if(w){if(upper)w.classList.add('wa-off');else w.classList.remove('wa-off');}
+  }
+  window.addEventListener('scroll',apply,{passive:true});
+  window.addEventListener('resize',apply,{passive:true});
+  window.addEventListener('load',apply);
+  if(document.readyState!=='loading')apply();else document.addEventListener('DOMContentLoaded',apply);
 })();
 </script>
 </body>
