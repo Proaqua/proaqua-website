@@ -623,3 +623,10 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Stärkste Social-/Ad-Clips:** kurze AC-Grid-/Duct-Loops, Mattress-Cleaning, Team-at-work, Bathroom/Toilet Sanitizing, Villa Window Cleaning. Besonders geeignet für Meta/Instagram Reels und Retargeting Creatives.
 - **Bewertung:** Rohmaterial ist conversion-stark, aber nicht direkt als Produktionsasset nutzen: Dateinamen mit Leerzeichen/Typos, gemischte Formate, `.DS_Store`, teils keine Posterframes/Watermarks. Besser kuratieren, wasserzeichnen, WebP/MP4 optimieren und mit sauberen Namen in `assets/` oder `assets/proof/` bereitstellen.
 - **Empfohlener nächster Umsetzungsschritt:** Aus dem Rohmaterial ein kuratiertes Proof-System bauen: 8-12 optimierte Website-Bilder + 5-6 kurze Video-Loops mit Posterframes. Danach gezielt in Services, Before/After und ggf. neue Section "Real Proof From Dubai Homes" einbauen.
+
+### 2026-06-15 — Codex — Franco Founder Portrait per Image 2.0 neu erstellt
+
+- **Ziel:** Placeholder/Screenshot-Franco ersetzen, damit die Kernpositionierung "Du buchst Franco" visuell glaubwürdig wird.
+- **Prompt erstellt und ausgeführt:** Identity-preserving Founder-Portrait auf Basis des vorhandenen Franco-Screenshots: weißes Pro-Aqua-Polo, Premium-Dubai-Interior, freundlicher direkter Blick, subtiler Daumen-hoch-Gestus.
+- **Asset ersetzt:** `assets/franco-founder-pro-aqua-dubai.webp` wurde gezielt durch das neue 1086x1448 WebP ersetzt. `index.html` musste nicht angepasst werden, weil alle bestehenden Stellen bereits diesen Dateinamen verwenden.
+- **Hinweis:** Das Bild ist KI-generiert auf Basis des Referenzbilds. Vor Live-Nutzung idealerweise von Franco freigeben lassen.
