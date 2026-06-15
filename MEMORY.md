@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Grafischer UI/UX-/Conversion-Audit erstellt
+- **Erledigt:** Den von Giampiero gelieferten Profi-Audit-Prompt gegen den aktuellen lokalen Stand ausgefuehrt: Desktop-Hero, Mobile 390x844, Sektionsreihenfolge, Console und Overflow geprueft.
+- **Dokumentiert:** Neuer Audit unter `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` mit Executive Summary, Scorecard, Top-Problemen, Stärken, Sektionsaudit, Designrichtung, Quick Wins und strategischen Verbesserungen.
+- **Befund:** Flow ist stark und paid-testbar (~7.8/10), aber vor Scaling bleiben P0-Themen: GA4/Meta-Tracking, echte Before/After-Provenienz, mobile Hero-Dichte, Review-Wording, Booking-Typo und Logo-Polish.
+- **Verifikation:** Playwright Console 0 Errors/Warnings; Mobile 390px ohne horizontalen Overflow; Hero-Counter final `6,000+`; 18 Sektions-IDs in korrekter Reihenfolge.
+- **Nächster Schritt:** P0-Quick-Wins aus dem Audit umsetzen, zuerst Booking-Typo, Review-Wording und Mobile-Hero-Entschlackung; danach Tracking/Proof-Daten.
+
 ### 2026-06-16 — Codex — Franco-Badge vom Pro-Aqua-Logo wegpositioniert
 - **Befund:** Im Franco-Foto ist oben rechts ein Pro-Aqua-Logo eingebrannt; der schwebende `2016 Founded`-Badge lag zu nah an diesem Logo und wirkte wie eine Überlagerung.
 - **Erledigt:** Den oberen Franco-Stat-Chip von rechts oben nach links oben verschoben (`.franco-stat-tr`), damit das Logo im Bild frei sichtbar bleibt. Das echte Franco-Foto und der Google-Badge unten links blieben unverändert.
