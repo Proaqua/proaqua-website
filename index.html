@@ -240,6 +240,19 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 .hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;animation:fadeUp .4s ease both}
 .hero-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:.01em;border:1px solid var(--g300);background:#fff;color:var(--g700);box-shadow:var(--sh0)}
 .hero-chip.dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;animation:blink 2s infinite}
+.google-rating-badge{--grb-score:18px;--grb-star:11px;display:inline-grid;grid-template-columns:1fr;justify-items:center;align-items:center;gap:2px;min-width:88px;padding:8px 12px;border-radius:14px;background:#fff;border:1px solid rgba(251,188,4,.34);box-shadow:0 6px 18px rgba(28,50,68,.07);color:var(--navy);line-height:1;text-decoration:none;white-space:nowrap}
+.google-rating-badge .grb-score{font-size:var(--grb-score);font-weight:800;letter-spacing:-.04em;color:var(--navy)}
+.google-rating-badge .grb-stars{font-size:var(--grb-star);letter-spacing:.8px;color:#FBBC04}
+.google-rating-badge .grb-label{font-size:10.5px;font-weight:600;color:var(--g500)}
+.google-rating-badge .grb-count{font-size:10.5px;font-weight:500;color:var(--g400)}
+.google-rating-badge--inline,.google-rating-badge--bar,.google-rating-badge--chip{display:inline-flex;min-width:0;flex-direction:row;gap:6px;padding:5px 11px;border-radius:100px;--grb-score:12px;--grb-star:10px;box-shadow:var(--sh0)}
+.google-rating-badge--bar{padding:4px 8px;box-shadow:none;--grb-score:12px;--grb-star:9px}
+.google-rating-badge--stat{min-width:92px;padding:7px 10px;box-shadow:none}
+.google-rating-badge--review{min-width:112px;padding:8px 12px}
+.google-rating-badge--proof{min-width:0;padding:6px 10px;--grb-score:13px;--grb-star:10px;box-shadow:none}
+.google-rating-badge--floating{min-width:86px;padding:6px 9px;box-shadow:none}
+.google-rating-badge--strip{min-width:108px;padding:8px 12px}
+.hstat-rating{align-items:center;justify-content:center}
 
 /* eyebrow — small line + uppercase text */
 .hero-eyebrow{font-size:12px;font-weight:600;color:var(--navy);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:16px;animation:fadeUp .4s .05s ease both;opacity:.7}
@@ -1389,7 +1402,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 
 <!-- TODO GIAMPIERO: Ab-Preise aller Services pruefen & bestaetigen (AC Duct ab AED 400? Villa Deep Clean? Mattress AED 89?) bevor Live-Gang -->
 <!-- DED Trade License No. 748159 eingetragen (15.06.2026) -->
-<!-- TODO GIAMPIERO: Echtes Foto Franco als assets/franco.jpg ablegen (aktuell Dummy) -->
+<!-- Franco-Foto: assets/franco.webp (echtes Foto, 900x1227px, eingebaut 15.06.2026) -->
 <!-- TOP BAR -->
 <div class="topbar">
   <a href="tel:+971567943412">
@@ -1545,7 +1558,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 <!-- ===================== STICKY TRUST BAR ===================== -->
 <div id="sticky-trust" aria-hidden="true">
   <div class="stb-left">
-    <span class="stb-stat"><span class="stb-star">★★★★★</span> 4.7 Google</span>
+    <span class="stb-stat"><span class="google-rating-badge google-rating-badge--bar" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></span>
     <span class="stb-dot"></span>
     <span class="stb-stat">6,000+ Families</span>
     <span class="stb-dot"></span>
@@ -1605,7 +1618,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     <div class="hero-left">
       <div class="hero-chips">
         <span class="hero-chip dot">Trusted since 2016</span>
-        <span class="hero-chip">⭐ 4.7 on Google</span>
+        <span class="google-rating-badge google-rating-badge--inline" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span>
         <span class="hero-chip">💰 Fixed Price · No Surprises</span>
       </div>
       <div class="hero-eyebrow">Professional Cleaning Dubai · نظافة متكاملة</div>
@@ -1626,7 +1639,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 
       <!-- Franco card — mobile only, appears after video -->
       <div class="franco-card franco-card-mobile">
-        <div class="fc-av"><img src="assets/franco-founder-pro-aqua-dubai.webp" alt="Franco — Founder &amp; CEO, Pro Aqua Dubai" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center top" onerror="this.parentNode.textContent='Fr'"></div>
+        <div class="fc-av"><img src="assets/franco.webp" alt="Franco — Founder &amp; CEO, Pro Aqua Dubai" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center top" onerror="this.parentNode.textContent='Fr'"></div>
         <div>
           <div class="fc-name">Franco — Founder &amp; CEO, Pro Aqua Dubai</div>
           <div class="fc-role">Cleaning expert · Dubai since 2016</div>
@@ -1637,7 +1650,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n"><span class="count-up" data-countup data-count-to="6000" data-count-suffix="+">6,000+</span></div><div class="hstat-l">Happy Clients</div></div>
         <div class="hstat-div"></div>
-        <div class="hstat"><div class="hstat-n">4.7</div><div class="hstat-l"><span class="hs-star" style="font-size:14px;letter-spacing:1px;color:#FBBC04">★★★★★</span> Google</div></div>
+        <div class="hstat hstat-rating"><span class="google-rating-badge google-rating-badge--stat" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
         <div class="hstat-div"></div>
         <div class="hstat"><div class="hstat-n">10+</div><div class="hstat-l">Years in Dubai</div></div>
       </div>
@@ -1676,7 +1689,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 
       <!-- FRANCO CARD -->
       <div class="franco-card">
-        <div class="fc-av"><img src="assets/franco-founder-pro-aqua-dubai.webp" alt="Franco — Founder &amp; CEO, Pro Aqua Dubai" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center top" onerror="this.parentNode.textContent='Fr'"></div>
+        <div class="fc-av"><img src="assets/franco.webp" alt="Franco — Founder &amp; CEO, Pro Aqua Dubai" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center top" onerror="this.parentNode.textContent='Fr'"></div>
         <div>
           <div class="fc-name">Franco — Founder &amp; CEO, Pro Aqua Dubai</div>
           <div class="fc-role">Cleaning expert · Dubai since 2016</div>
@@ -1697,9 +1710,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
           <div class="hr-av" style="background:#71C49F;margin-left:-8px">SR</div>
           <div class="hr-av" style="background:#5899E3;margin-left:-8px">TF</div>
         </div>
-        <div class="hr-big-num">4.7</div>
-        <div class="hr-big-stars">★★★★★</div>
-        <div class="hr-big-count">60 Google Reviews</div>
+        <span class="google-rating-badge google-rating-badge--review" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span>
       </div>
       <!-- Right: 3 review cards -->
       <div class="hr-cards">
@@ -1733,8 +1744,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 <!-- TRUST BELT -->
 <div class="belt">
   <div class="belt-t">
-    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Medical-Grade Equipment</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.7 Google · 60 Reviews</span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Verified Clients</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
-    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Medical-Grade Equipment</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.7 Google · 60 Reviews</span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Verified Clients</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
+    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Medical-Grade Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Verified Clients</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
+    <span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Trusted since 2016</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Licensed &amp; Insured · DED No. 748159</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Medical-Grade Equipment</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span><span class="chip cw chip-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp · 7 Days</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>6,000+ Verified Clients</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Fixed Price · No Hidden Fees</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Villas &amp; Apartments</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014.3 8.04A7 7 0 0118 5.5a7 7 0 01.96 4.87A7 7 0 0111 20z"/><path d="M11 20l-.19-9.32"/></svg>Eco-Safe Products</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Safe for Kids &amp; Pets</span><span class="chip cw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>DED Lic. No. 748159</span>
   </div>
 </div>
 
@@ -1812,7 +1823,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
         </div>
         <div class="cmp-hero-line">You always know who's coming, what they found — and you see the proof.</div>
         <div class="cmp-proof-row" aria-label="Pro Aqua proof">
-          <div class="cmp-proof"><strong>4.7★ Google</strong><span>verified public rating</span></div>
+          <div class="cmp-proof cmp-proof-rating"><span class="google-rating-badge google-rating-badge--proof" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span><span>verified public rating</span></div>
           <div class="cmp-proof"><strong>6,000+</strong><span>Dubai families served</span></div>
           <div class="cmp-proof"><strong>Since 2016</strong><span>still here — still Franco</span></div>
           <div class="cmp-proof"><strong>Photo proof</strong><span>on every single job</span></div>
@@ -2303,12 +2314,11 @@ document.addEventListener('keydown',function(e){
             <div class="fsc-lbl">Founded</div>
           </div>
           <div class="franco-stat-chip franco-stat-bl">
-            <div class="fsc-num">4.7★</div>
-            <div class="fsc-lbl">Google Rating</div>
+            <span class="google-rating-badge google-rating-badge--floating" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span>
           </div>
           <!-- Photo -->
           <div class="franco-photo">
-            <img src="assets/franco-founder-pro-aqua-dubai.webp" alt="Franco Lapeschi — Founder &amp; CEO, Pro Aqua Dubai" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            <img src="assets/franco.webp" alt="Franco Lapeschi — Founder &amp; CEO, Pro Aqua Dubai" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
           </div>
         </div>
 
@@ -2548,7 +2558,7 @@ document.addEventListener('keydown',function(e){
 <!-- ===================== REVIEWS ===================== -->
 <section id="reviews" class="rev-bg">
   <div class="sec">
-    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="chip" style="background:rgba(251,188,4,.12);color:#b45309;border:1px solid rgba(251,188,4,.3);font-size:11px">★ 4.7 Google</span></div>
+    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
     <h2 class="sec-t">Rated <em class="blue-em">4.7 Stars</em> by Dubai Families</h2>
     <p class="sec-sub">Real WhatsApp messages from 6,000+ families across Dubai — not stock testimonials, not paid reviews.</p>
     <div class="g-strip">
@@ -2557,8 +2567,7 @@ document.addEventListener('keydown',function(e){
         <span style="font-size:13px;font-weight:500;color:var(--navy)">Google Reviews</span>
       </div>
       <div class="gs-div"></div>
-      <div><div class="gs-s">★★★★★</div><div class="gs-c">60 verified reviews</div></div>
-      <div><div class="gs-r">4.7</div><div class="gs-c">Average rating</div></div>
+      <span class="google-rating-badge google-rating-badge--strip" aria-label="Google rating 4.7 out of 5 from 60 verified reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 verified reviews</span></span>
       <div class="gs-badge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Google Verified</div>
     </div>
     <div class="rev-grid">
