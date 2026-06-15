@@ -456,15 +456,39 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 
 ### 2026-06-15 — Claude (Cowork) — Scroll-Trigger für Risk Check Popup · Commit 9b27242
 
-- **Anlass:** Giampiero: "wenn ich scrolle erscheint der pop für das quiz nicht" — der Risk-Check-Popup sollte automatisch erscheinen, wenn man scrollt, nicht nur per Button-Klick.
-- **Ursache:** Kein Scroll-Trigger existierte. Der Popup öffnete sich nur manuell über `openRisk()`.
-- **Fix:** Neuer `<script>`-Block (25 Zeilen) vor dem Video-Klon-Script eingefügt. Mechanismus:
-  - Lauscht passiv auf `scroll`-Events.
-  - Wenn `scrollY / (scrollHeight - innerHeight) > 0.40` (d.h. 40 % der Seite gescrollt): Popup öffnet sich nach 1,5 Sek. Verzögerung.
-  - Fired nur 1× pro Seitenaufruf (Flag `fired=true`).
-  - Prüft ob Popup nicht bereits offen und kein anderer Overlay aktiv ist.
-- **Commit:** 9b27242 (lokal, nicht gepusht)
-- **Nächster Schritt:** Auf weiteren Wunsch von Giampiero reagieren.
+- **Anlass:** Giampiero: "wenn ich scrolle erscheint der pop für das quiz nicht"
+- **Fix:** 40%-Scroll-Trigger mit 1,5s Delay. Commit 9b27242.
+- **⚠️ DURCH 78f813d ÜBERHOLT — neuer Trigger in Commit 78f813d.**
+
+### 2026-06-15 — Claude (Cowork) — Quiz Popup Bottom-Sheet + Floating Badge + Smart Trigger · Commit 78f813d
+
+- **Anlass (3 Issues von Giampiero):**
+  1. "Hintergrund friert ein wenn popup aufgeht" — `body.overflow:hidden` in `openRisk()` war Ursache.
+  2. "Badge der mit der Seite mitgeht um Test zu starten" — fehlte komplett.
+  3. "40% sind zu viel — state of the art" — zu aggressiv, keine Strategie.
+
+- **Fix 1 — Hintergrund scrollbar:**
+  - `document.body.style.overflow='hidden'` aus `openRisk()` entfernt, `=''` aus `closeRisk()` entfernt.
+  - Modal von zentriertem Fullscreen-Overlay zu **Bottom-Sheet** umgebaut: `align-items:flex-end`, `border-radius:22px 22px 0 0`, `translateY(100%)→translateY(0)`, `max-height:82vh`.
+  - `.risk-bd` Backdrop-Div eingefügt: `pointer-events:none` per default, `pointer-events:auto` wenn `.open` — dimmt Hintergrund, schließt bei Klick, OHNE `overflow:hidden`.
+  - `.risk-sheet-handle` Drag-Handle oben im Sheet (optisch wie native iOS/Android Bottom Sheet).
+
+- **Fix 2 — Floating Badge `#quiz-fab`:**
+  - `position:fixed;bottom:96px;right:20px` (über WA-Float-Button).
+  - Erscheint nach 200px Scroll (via `qf-visible` CSS-Klasse + Pulse-Animation).
+  - Versteckt sich wenn `openRisk()` aufgerufen wird, kommt zurück nach `closeRisk()`.
+  - Dismiss-Button (×) zum dauerhaften Wegklicken.
+
+- **Fix 3 — Smart Compound-Trigger (sessionStorage `pa_rc`):**
+  - `>45% Scroll` → sofort (stark engagierter User)
+  - `>25% Scroll` + `>10s Verweildauer` → Sweet Spot für echte Interessenten
+  - Exit-Intent (`mouseleave` top) nach `>5s` auf Seite → Desktop-Fang
+  - `35s` Fallback-Timer → Langsam-Leser
+  - **Nur 1× pro Session** via `sessionStorage.setItem('pa_rc','1')`
+  - 600ms Verzögerung nach Trigger (statt 1,5s — User ist bereits engaged)
+
+- **Commit:** 78f813d (lokal, nicht gepusht)
+- **Nächster Schritt:** Giampiero testen lassen. Offene BLOCKED-Items unverändert.
 
 ### 2026-06-15 — Claude (Cowork) — Risk Check Popup: Checkbox → 6-Fragen Step-by-Step Wizard · Commit 111ee90
 
