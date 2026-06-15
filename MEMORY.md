@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Google-Rating-Nachweis verlinkt
+- **Befund:** In der Reviews-Sektion war das Google-Rating als Proof sichtbar, aber nicht klickbar; Nutzer konnten den öffentlichen Nachweis nicht direkt prüfen.
+- **Erledigt:** In `#reviews` die Google-Proof-Zeile verlinkt: Google-Logo/Text, 4.7-Rating-Badge und rechter Proof-Chip öffnen jetzt den Google-Nachweis fuer `pro aqua dubai` in einem neuen Tab.
+- **Erledigt:** Rechten Chip von passivem „Google rating shown" auf aktives „Check on Google" geändert, damit die Interaktion eindeutig ist.
+- **Verifikation:** `git diff --check` ohne Befund; 3 Google-Links in der Reviews-Proof-Zeile vorhanden, alter Passivtext entfernt.
+- **Nächster Schritt:** Bei Freigabe zusammen mit den lokalen Commits nach `proaqua2/main` pushen.
+
 ### 2026-06-16 — Codex — Hidden-Danger-Badges verständlicher gemacht
 - **Befund:** Die vier großen Werte in `#why` wirkten wie interne Abkürzungen (`12mo`, `2–5×`, `Hidden` im abweichenden Stil, `DEWA` als Dopplung zu Energy Bills).
 - **Erledigt:** Die Werte typografisch vereinheitlicht und lesbarer formuliert: `12 months`, `2-5 times`, `Hidden inside`, `High bills`. Card-Titel geschärft: Dust Can Build Up Fast, Indoor Air Can Be Worse, AC Works Harder.
