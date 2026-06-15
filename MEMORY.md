@@ -573,3 +573,33 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 
 - **Commit:** 617e18f (lokal, nicht gepusht)
 - **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions.
+
+### 2026-06-15 — Claude (Cowork) — 12 echte Fotos mit Wasserzeichen in Website integriert · Commit 98bd1b7
+
+- **Wasserzeichen-Script:** Python/Pillow-Script erstellt. Alle Fotos aus `assets/pictures_videos/` verarbeitet: diagonaler "Pro Aqua Dubai"-Schriftzug (semi-transparent) + Corner-Box. WebP-Konversion, max 1600px, quality=82.
+- **12 neue Assets in `assets/`:**
+  - `real-ac-coil-before.webp` — schmutzige AC-Spule vor Reinigung
+  - `real-ac-coil-after.webp` — Techniker reinigt AC-Spule
+  - `real-ac-grid-work.webp` — Pro Aqua Tech mit Dubai Skyline
+  - `real-ac-duct-clean.webp` — Techniker auf Leiter, Duct-Staubsauger
+  - `real-ac-grid-clean.webp` — Gitter-Reinigung
+  - `real-ac-motorhousing.webp` — Motorgehäuse
+  - `real-ac-duct-grid-work-1.webp` — 2 Techniker, Dubai-Hochhaus (HERO-Qualität)
+  - `real-ac-duct-grid-work-2.webp` — Team-Job
+  - `real-carpet-clean.webp` — Teppich-Reinigung
+  - `real-mattress-result-1.webp` — Vivenso-Behälter auf Matratze
+  - `real-mattress-water-held.webp` — Person hält braunen Wasserbehälter (CONVERSION BOMB)
+  - `real-mattress-result-2.webp` — Behälter auf Premium-Matratze
+- **Vent Check Section (3 Karten):** AI-Before/After-Bilder ersetzt durch:
+  - SIGN 1: `real-ac-duct-clean.webp` (Duct-Reinigung in Aktion)
+  - SIGN 2: `real-ac-coil-before.webp` (dreckige Spule — schockt, ohne Text nötig)
+  - SIGN 3: `real-ac-duct-grid-work-1.webp` (2-Mann-Team, Dubai-Hochhaus)
+- **Franco's Inspection Note Box (#why):** `real-mattress-water-held.webp` als Beweisfoto unterhalb des Zitats eingefügt. Caption "Real extraction result · Pro Aqua Dubai · 2025".
+- **Before/After Gallery (6 Karten):** 4 AI-Karten durch echte Fotos ersetzt:
+  - AC Duct Deep Cleaning → `real-ac-coil-before.webp` + Titel "AC Coil — Before Deep Cleaning"
+  - Mattress Deep Cleaning → `real-mattress-water-held.webp` + Titel "Mattress Deep Cleaning — Extracted Water"
+  - AC Coil Cleaning → `real-ac-coil-after.webp` + Titel "AC Coil — During Professional Cleaning"
+  - AC Grills Cleaning → `real-ac-duct-grid-work-1.webp` + Titel "AC Duct & Grill Cleaning — Team Job"
+- **Commit:** 98bd1b7 (lokal, nicht gepusht)
+- **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions (Stadtteil + Monat/Jahr).
+- **Nächster Schritt:** Website lokal testen. Wenn Giampiero freigibt: `git push origin Franco2:main --force` (Giampiero führt manuell im Terminal aus).
