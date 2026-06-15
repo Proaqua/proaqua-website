@@ -1201,12 +1201,25 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 @media(max-width:640px){.pa-img-lightbox{padding:14px}.pa-lightbox-top{align-items:flex-start}.pa-lightbox-brand span{display:none}.pa-lightbox-frame{border-radius:14px}.pa-lightbox-frame::before{background-size:150px auto;opacity:.1}.pa-lightbox-frame::after{right:10px;bottom:10px;font-size:9px;padding:5px 9px}.pa-lightbox-img{max-height:72vh}}
 @media(prefers-reduced-motion:reduce){.pa-img-lightbox,.pa-lightbox-panel{transition:none}}
 /* ── Risk Check Popup — Step-by-Step ─────────────────────────────── */
-.risk-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
-.risk-overlay.open{opacity:1;pointer-events:auto}
-.risk-box{background:#fff;border-radius:20px;padding:28px 28px 26px;width:100%;max-width:500px;position:relative;max-height:92vh;overflow-y:auto;transform:translateY(18px);transition:transform .25s}
+/* Bottom-sheet modal — Hintergrund bleibt scrollbar */
+.risk-overlay{position:fixed;inset:0;z-index:10000;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
+.risk-bd{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .3s;pointer-events:none;cursor:pointer}
+.risk-overlay.open .risk-bd{opacity:1;pointer-events:auto}
+.risk-box{background:#fff;border-radius:22px 22px 0 0;padding:10px 28px 36px;width:100%;max-width:600px;position:relative;max-height:82vh;overflow-y:auto;overflow-x:hidden;transform:translateY(100%);transition:transform .36s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(0,0,0,.2);pointer-events:auto}
 .risk-overlay.open .risk-box{transform:translateY(0)}
-.risk-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:1}
+.risk-sheet-handle{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:6px auto 18px;display:block}
+.risk-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:1}
 .risk-close:hover{color:var(--navy)}
+/* ── Floating Quiz Badge ── */
+.quiz-fab{position:fixed;bottom:96px;right:20px;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;transform:translateX(90px);transition:opacity .4s .2s,transform .4s .2s;white-space:nowrap;line-height:1.2;text-align:left}
+.quiz-fab.qf-visible{opacity:1;transform:translateX(0);animation:qfPulse 3.5s ease-in-out 1s infinite}
+.quiz-fab-ico{font-size:18px;flex-shrink:0}
+.quiz-fab-label{display:block;font-size:12px;font-weight:800;letter-spacing:.2px}
+.quiz-fab-sub{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.7);margin-top:1px}
+.quiz-fab-dismiss{position:absolute;top:-6px;right:-6px;background:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;color:#9ca3af;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);padding:0;display:none}
+.quiz-fab.qf-visible .quiz-fab-dismiss{display:block}
+@keyframes qfPulse{0%,100%{box-shadow:0 4px 20px rgba(28,50,68,.4)}50%{box-shadow:0 4px 28px rgba(28,50,68,.65),0 0 0 6px rgba(28,50,68,.12)}}
+@media(max-width:480px){.quiz-fab{bottom:90px;right:16px;padding:9px 14px 9px 11px}}
 .rs-header-badge{display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:20px;padding:5px 14px;font-size:11px;font-weight:800;color:#92400E;letter-spacing:.6px}
 .rs-title{font-size:22px;font-weight:800;color:var(--navy);margin:10px 0 5px;line-height:1.25}
 .rs-title span{color:var(--blue)}
@@ -1413,7 +1426,9 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 
 <!-- ===================== RISK CHECK MODAL ===================== -->
 <div id="risk-modal" class="risk-overlay" role="dialog" aria-modal="true" aria-label="AC Mould Risk Check" aria-hidden="true">
+  <div class="risk-bd" onclick="closeRisk()" aria-hidden="true"></div>
   <div class="risk-box">
+    <span class="risk-sheet-handle" aria-hidden="true"></span>
     <button class="risk-close" onclick="closeRisk()" aria-label="Close">×</button>
     <!-- Static header -->
     <div style="text-align:center;margin-bottom:2px">
@@ -1899,14 +1914,18 @@ function openRisk(){
   restartRisk();
   m.classList.add('open');
   m.removeAttribute('aria-hidden');
-  document.body.style.overflow='hidden';
+  /* Kein overflow:hidden — Hintergrund bleibt scrollbar */
+  var fab=document.getElementById('quiz-fab');
+  if(fab)fab.classList.remove('qf-visible');
 }
 function closeRisk(){
   var m=document.getElementById('risk-modal');
   if(!m)return;
   m.classList.remove('open');
   m.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
+  /* Badge wieder einblenden wenn User schon am scrollen war */
+  var fab=document.getElementById('quiz-fab');
+  if(fab&&(window.scrollY||window.pageYOffset)>200)fab.classList.add('qf-visible');
 }
 function rsShowQuestion(idx){
   for(var i=0;i<RS_TOTAL;i++){
@@ -2835,6 +2854,16 @@ document.addEventListener('keydown',function(e){
   </div>
 </footer>
 
+<!-- Floating Quiz Badge -->
+<button id="quiz-fab" class="quiz-fab" onclick="openRisk()" aria-label="Check your AC mould risk — free, 90 seconds">
+  <span class="quiz-fab-ico">🔍</span>
+  <span>
+    <span class="quiz-fab-label">Check AC Risk</span>
+    <span class="quiz-fab-sub">Free · 90 sec</span>
+  </span>
+  <span class="quiz-fab-dismiss" onclick="event.stopPropagation();document.getElementById('quiz-fab').style.display='none'" aria-label="Dismiss" tabindex="-1">×</span>
+</button>
+
 <a href="https://wa.me/971567943412" class="wa-fl"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <script>
@@ -3302,27 +3331,74 @@ function playVideo(){
 </div>
 
 <script>
-/* SCROLL-TRIGGERED QUIZ POPUP
-   Opens the Risk Check popup once when the user has scrolled ~40 % of the page.
-   Only fires once per visit (flag in memory, not storage). */
+/* ── SMART QUIZ TRIGGER + FLOATING BADGE ──────────────────────────────────
+   Compound-Trigger (State-of-the-Art):
+   • 45 % Scroll → sofort (stark engagierter User)
+   • 25 % Scroll + 10 s Verweildauer → gewünschter Sweet Spot
+   • Exit-Intent (Maus verlässt Viewport oben) nach 5 s → Desktop-Fang
+   • 35 s Fallback → harter Zeitleser
+   Nur 1× pro Session (sessionStorage). Badge erscheint ab 200 px Scroll.
+   ──────────────────────────────────────────────────────────────────────── */
 (function(){
-  var fired=false;
-  function checkScroll(){
-    if(fired)return;
-    var scrolled=window.scrollY||window.pageYOffset;
-    var total=Math.max(document.body.scrollHeight-window.innerHeight,1);
-    if(scrolled/total>0.40){
-      fired=true;
-      window.removeEventListener('scroll',checkScroll);
-      setTimeout(function(){
-        var m=document.getElementById('risk-modal');
-        if(m&&!m.classList.contains('open')&&document.body.style.overflow!=='hidden'){
-          if(typeof openRisk==='function')openRisk();
-        }
-      },1500);
+  var SESS_KEY='pa_rc';
+  var fabEl=document.getElementById('quiz-fab');
+  var badgeShown=false;
+
+  /* Floating Badge — ab 200 px sichtbar */
+  function showBadge(){
+    if(badgeShown||!fabEl)return;
+    if((window.scrollY||window.pageYOffset)>200){
+      fabEl.classList.add('qf-visible');
+      badgeShown=true;
     }
   }
-  window.addEventListener('scroll',checkScroll,{passive:true});
+  window.addEventListener('scroll',showBadge,{passive:true});
+  showBadge();
+
+  /* Auto-Trigger — nur wenn noch nicht in dieser Session gezeigt */
+  var alreadySeen=false;
+  try{alreadySeen=!!(typeof sessionStorage!=='undefined'&&sessionStorage.getItem(SESS_KEY))}catch(e){}
+  if(alreadySeen)return;
+
+  var fired=false;
+  var pageStart=Date.now();
+
+  function go(){
+    if(fired)return;
+    fired=true;
+    window.removeEventListener('scroll',chk,{passive:true});
+    document.removeEventListener('mouseleave',onExit);
+    clearTimeout(timerFallback);
+    try{if(typeof sessionStorage!=='undefined')sessionStorage.setItem(SESS_KEY,'1')}catch(e){}
+    setTimeout(function(){
+      var m=document.getElementById('risk-modal');
+      if(m&&!m.classList.contains('open')){
+        if(typeof openRisk==='function')openRisk();
+      }
+    },600);
+  }
+
+  function chk(){
+    showBadge();
+    if(fired)return;
+    var pct=(window.scrollY||window.pageYOffset)/Math.max(document.body.scrollHeight-window.innerHeight,1);
+    var elapsed=Date.now()-pageStart;
+    if(pct>0.45||(pct>0.25&&elapsed>10000))go();
+  }
+
+  function onExit(e){
+    if(e.clientY>5)return; /* nur oberer Rand */
+    if(Date.now()-pageStart<5000)return; /* min. 5 s auf Seite */
+    go();
+  }
+
+  var timerFallback=setTimeout(function(){
+    var pct=(window.scrollY||window.pageYOffset)/Math.max(document.body.scrollHeight-window.innerHeight,1);
+    if(pct>0.10&&!fired)go();
+  },35000);
+
+  window.addEventListener('scroll',chk,{passive:true});
+  document.addEventListener('mouseleave',onExit);
 })();
 </script>
 
