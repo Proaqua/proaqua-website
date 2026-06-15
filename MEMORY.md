@@ -445,6 +445,18 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Commit:** ab013cf (lokal, nicht gepusht)
 - **BLOCKED (unverändert):** GA4 Measurement ID, Meta Pixel ID, echte DED License No., echte Before/After-Captions.
 
+### 2026-06-15 — Claude (Cowork) — Scroll-Trigger für Risk Check Popup · Commit 9b27242
+
+- **Anlass:** Giampiero: "wenn ich scrolle erscheint der pop für das quiz nicht" — der Risk-Check-Popup sollte automatisch erscheinen, wenn man scrollt, nicht nur per Button-Klick.
+- **Ursache:** Kein Scroll-Trigger existierte. Der Popup öffnete sich nur manuell über `openRisk()`.
+- **Fix:** Neuer `<script>`-Block (25 Zeilen) vor dem Video-Klon-Script eingefügt. Mechanismus:
+  - Lauscht passiv auf `scroll`-Events.
+  - Wenn `scrollY / (scrollHeight - innerHeight) > 0.40` (d.h. 40 % der Seite gescrollt): Popup öffnet sich nach 1,5 Sek. Verzögerung.
+  - Fired nur 1× pro Seitenaufruf (Flag `fired=true`).
+  - Prüft ob Popup nicht bereits offen und kein anderer Overlay aktiv ist.
+- **Commit:** 9b27242 (lokal, nicht gepusht)
+- **Nächster Schritt:** Auf weiteren Wunsch von Giampiero reagieren.
+
 ### 2026-06-15 — Claude (Cowork) — Risk Check Popup: Checkbox → 6-Fragen Step-by-Step Wizard · Commit 111ee90
 
 - **Anlass:** Giampiero hat Screenshot von `proaqua-dubai.netlify.app` gezeigt — dort ist das Popup als Step-by-Step-Wizard umgesetzt (eine Frage pro Screen, Auto-Advance, Progress Bar). Unser Popup war noch das alte Checkbox-Format.
