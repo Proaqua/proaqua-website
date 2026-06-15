@@ -1202,13 +1202,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 @media(prefers-reduced-motion:reduce){.pa-img-lightbox,.pa-lightbox-panel{transition:none}}
 /* ── Risk Check Popup — Step-by-Step ─────────────────────────────── */
 /* Bottom-sheet modal — Hintergrund bleibt scrollbar */
-.risk-overlay{position:fixed;inset:0;z-index:10000;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
+.risk-overlay{position:fixed;inset:0;z-index:10000;pointer-events:none;display:flex;align-items:flex-end;justify-content:center;visibility:hidden}
+.risk-overlay.open{visibility:visible}
 .risk-bd{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .3s;pointer-events:none;cursor:pointer}
 .risk-overlay.open .risk-bd{opacity:1;pointer-events:auto}
-.risk-box{background:#fff;border-radius:22px 22px 0 0;padding:10px 28px 36px;width:100%;max-width:600px;position:relative;max-height:82vh;overflow-y:auto;overflow-x:hidden;transform:translateY(100%);transition:transform .36s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(0,0,0,.2);pointer-events:auto}
+.risk-box{background:#fff;border-radius:22px 22px 0 0;padding:10px 28px 36px;width:100%;max-width:600px;position:relative;z-index:1;max-height:82vh;overflow-y:auto;overflow-x:hidden;transform:translateY(100%);transition:transform .36s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(0,0,0,.2);pointer-events:auto}
 .risk-overlay.open .risk-box{transform:translateY(0)}
 .risk-sheet-handle{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:6px auto 18px;display:block}
-.risk-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:1}
+.risk-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:2}
 .risk-close:hover{color:var(--navy)}
 /* ── Floating Quiz Badge ── */
 .quiz-fab{position:fixed;bottom:96px;right:20px;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;transform:translateX(90px);transition:opacity .4s .2s,transform .4s .2s;white-space:nowrap;line-height:1.2;text-align:left}
