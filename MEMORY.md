@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-Quick-Wins Runde 1 umgesetzt
+- **Erledigt:** Erste umsetzbare P0/P1-Punkte aus `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` in `index.html` umgesetzt: Topbar von doppelter Telefonnummer befreit, Header-Logo auf schärferes Icon+Text-System umgestellt, Mobile-Hero auf zwei Trust-Chips reduziert, mobiler blauer Hero-CTA visuell sekundärer gemacht und Mobile-Header-CTA ausgeblendet.
+- **Erledigt:** Review-Wording transparenter gemacht (`Selected Customer Reviews`, `Selected real WhatsApp messages plus a public Google rating`) und Hero-Review-Leiste als `Selected customer reviews` gekennzeichnet, damit keine automatische Live-/Verified-Review-Logik suggeriert wird.
+- **Erledigt:** Franco-Section mit Accountability-Signatur ergänzt (`Every job has my name on it. — Franco`) und Servicekarten mit `Best if`-Symptomzeilen versehen.
+- **Verifikation:** Playwright Desktop/Mobile geprüft; Console 0 Errors/Warnings; Mobile 390px ohne horizontalen Overflow (`scrollWidth=390`); Review-Chip, Service-Fit-Zeilen, Franco-Signatur, Booking-Headline und Topbar-Telefonanzahl per DOM verifiziert.
+- **Nächster Schritt:** Weitere Audit-Punkte umsetzen: Warning-Signs/Hidden-Danger-Layout stärker bildlastig machen, Compare-Pro-Aqua-Spalte weiter aufwerten, Seasonal-Campaign-States vorbereiten. Externe Blocker bleiben GA4/Meta-IDs, echte Before/After-Provenienz und neues Foto-/Video-Material.
+
 ### 2026-06-16 — Codex — Grafischer UI/UX-/Conversion-Audit erstellt
 - **Erledigt:** Den von Giampiero gelieferten Profi-Audit-Prompt gegen den aktuellen lokalen Stand ausgefuehrt: Desktop-Hero, Mobile 390x844, Sektionsreihenfolge, Console und Overflow geprueft.
 - **Dokumentiert:** Neuer Audit unter `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` mit Executive Summary, Scorecard, Top-Problemen, Stärken, Sektionsaudit, Designrichtung, Quick Wins und strategischen Verbesserungen.

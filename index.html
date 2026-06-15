@@ -124,6 +124,7 @@ button{font-family:'Inter',sans-serif;cursor:pointer}
 nav{background:#fff;border-bottom:1px solid var(--g300);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,.05)}
 .nav-in{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo img{height:38px;width:auto;display:block;image-rendering:auto}
 .logo-txt strong{display:block;font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-.3px;line-height:1.2}
 .logo-txt span{display:block;font-size:9px;font-weight:500;color:var(--g400);letter-spacing:1.5px;text-transform:uppercase;margin-top:1px}
 /* Nav links — spaced, medium weight */
@@ -341,6 +342,7 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 .hr-card-text::after{content:'"'}
 .hr-card-footer{display:flex;align-items:center;justify-content:space-between}
 .hr-card-name{font-size:12px;font-weight:600;color:var(--navy)}
+.hr-subnote{font-size:10.5px;color:var(--g400);font-weight:500;line-height:1.4;max-width:160px}
 .hr-avatars{display:flex;margin-bottom:8px}
 .hr-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;border:2px solid #fff;flex-shrink:0}
 .hr-big-num{font-family:'Inter',sans-serif;font-size:38px;font-weight:800;color:var(--navy);letter-spacing:-1px;line-height:1;margin-bottom:2px}
@@ -479,6 +481,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .franco-bg h2{font-family:'Inter',sans-serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:16px;letter-spacing:-.15px}
 .franco-bg h2 em{font-style:italic;color:var(--blue);font-weight:700}
 .franco-p{font-size:15px;color:var(--g500);line-height:1.78;margin-bottom:12px;font-weight:300}
+.franco-signature{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--g300);border-radius:999px;padding:8px 14px;margin:4px 0 16px;font-size:13px;font-weight:800;color:var(--navy);box-shadow:var(--sh0)}
+.franco-signature span{font-style:italic;color:var(--blue-d)}
 .franco-pts{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
 .franco-pts li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--g600);font-weight:300}
 .fp-dot{width:18px;height:18px;border-radius:50%;background:var(--blue-l);border:1.5px solid var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
@@ -502,6 +506,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .srv-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:7px}
 .srv-card h3{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:7px;line-height:1.2;letter-spacing:-.2px}
 .srv-card p{font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:12px;font-weight:300}
+.srv-fit{display:inline-flex;align-items:flex-start;gap:6px;background:var(--blue-ll);border:1px solid rgba(88,153,227,.18);color:var(--navy);border-radius:8px;padding:7px 9px;font-size:12px;font-weight:700;line-height:1.35;margin:0 0 12px}
+.srv-fit span{color:var(--blue-d);white-space:nowrap}
 .srv-feats{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:15px}
 .srv-feats li{font-size:12px;color:var(--g600);display:flex;align-items:center;gap:7px;font-weight:300}
 .srv-feats li::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--green);flex-shrink:0;
@@ -821,7 +827,11 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .sol-tile-grid,.danger-grid{grid-template-columns:1fr}
   .hr-cards{grid-template-columns:1fr}
   .hero-reviews-inner{grid-template-columns:1fr}
-  .nav-btns .btn-outline{display:none}
+  .nav-btns{display:none}
+  .logo{gap:9px}
+  .logo img{height:34px}
+  .logo-txt strong{font-size:15px}
+  .logo-txt span{font-size:8px;letter-spacing:1.2px}
   .proc-grid{grid-template-columns:1fr}
   section{padding:44px 16px}
   footer{padding-bottom:96px}
@@ -1417,7 +1427,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .quiz-fab.qf-belowsplit{opacity:0!important;transform:translateX(90px) scale(.94)!important;pointer-events:none!important}
 .wa-fl.wa-off{opacity:0!important;pointer-events:none!important;transform:scale(.4)!important}
 /* Mobile-Hero kuerzen: dekoratives Hero-Video auf kleinen Phones raus, Franco-Foto bleibt als Trust-Anker; schneller zur ersten Pain-Sektion */
-@media(max-width:600px){.hero-vid-mobile{display:none!important}.hero-main{padding-bottom:18px}.hero{padding-top:24px}}
+@media(max-width:600px){
+  .hero-vid-mobile{display:none!important}
+  .hero-main{padding-bottom:18px}
+  .hero{padding-top:24px}
+  .hero-chips .hero-chip.dot{display:none}
+  .hero-btns .hbtn-blue{background:#fff;color:var(--blue-d);border:1.5px solid rgba(88,153,227,.28);box-shadow:var(--sh0)}
+  .hero-btns .hbtn-blue:hover{background:var(--blue-ll);color:var(--blue-d)}
+}
 </style>
 </head>
 <body>
@@ -1431,7 +1448,6 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     +971 56 794 3412
   </a>
-  <a href="tel:+971567943412"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> +971 56 794 3412</a>
   <span class="tb-hi">FREE AC MOLD &amp; AIR QUALITY INSPECTION</span>
   <a href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+my+free+inspection" class="tb-btn">Book Your Free Check</a>
 </div>
@@ -1440,7 +1456,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 <nav>
   <div class="nav-in">
     <a href="#" class="logo">
-      <img src="assets/logo-full.webp" alt="Pro Aqua — Disinfection &amp; Sterilization LLC Dubai" width="160" height="77" style="height:44px;width:auto;display:block">
+      <img src="assets/logo-icon.webp" alt="Pro Aqua Dubai logo" width="80" height="75">
+      <span class="logo-txt"><strong>PRO-AQUA</strong><span>Disinfection &amp; Sterilization LLC</span></span>
     </a>
     <div class="nav-links">
       <a href="#why" class="act" data-nav-key="why" aria-current="true">Good to Know</a>
@@ -1726,13 +1743,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     <div class="hero-reviews-inner">
       <!-- Left: avatars + big rating -->
       <div class="hr-left">
-        <div class="hr-label">WHAT OUR CLIENTS SAY</div>
+        <div class="hr-label">SELECTED CUSTOMER REVIEWS</div>
         <div class="hr-avatars">
           <div class="hr-av" style="background:#7BB8D4">FD</div>
           <div class="hr-av" style="background:#71C49F;margin-left:-8px">SR</div>
           <div class="hr-av" style="background:#5899E3;margin-left:-8px">TF</div>
         </div>
         <span class="google-rating-badge google-rating-badge--review" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span>
+        <div class="hr-subnote">Selected 5-star messages · Google rating linked</div>
       </div>
       <!-- Right: 3 review cards -->
       <div class="hr-cards">
@@ -2244,6 +2262,7 @@ document.addEventListener('keydown',function(e){
           <div class="srv-tag">Fabric Sanitizing &amp; Washing</div>
           <h3>Sofas &amp; Carpets Deep Clean</h3>
           <p>Helping remove allergens, mites and residue from your soft furnishings with professional extraction machines.</p>
+          <div class="srv-fit"><span>Best if</span> your sofa smells dusty, feels heavy, or needs a move-in refresh.</div>
           <ul class="srv-feats"><li>Sofa &amp; upholstery treatment</li><li>Carpet deep extraction</li><li>Allergen reduction</li><li>Odor neutralization</li></ul>
           <div class="srv-price">From <em>AED 149</em></div>
           <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20sofa%20or%20carpet%20cleaning%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Sofa &amp; Carpet Clean</a>
@@ -2258,6 +2277,7 @@ document.addEventListener('keydown',function(e){
           <div class="srv-tag">AC Duct Cleaning</div>
           <h3>Clean Air Every Day</h3>
           <p>Complete HVAC treatment — removing dust, debris and moisture-related buildup for cleaner daily airflow.</p>
+          <div class="srv-fit"><span>Best if</span> you notice musty AC smells, black dust, weak airflow, or allergy flare-ups.</div>
           <ul class="srv-feats"><li>Full duct inspection &amp; cleaning</li><li>High-power vacuum extraction</li><li>Targeted sanitizing treatment</li><li>Before &amp; after documentation</li></ul>
           <div class="srv-price">From <em>AED 399</em></div>
           <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20free%20AC%20duct%20inspection%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Free AC Inspection</a>
@@ -2271,6 +2291,7 @@ document.addEventListener('keydown',function(e){
           <div class="srv-tag">Mattress Sanitizing</div>
           <h3>Sleep on a Clean Mattress</h3>
           <p>Help remove dust mites, allergens and residue hiding inside your mattress — a careful process for baby rooms.</p>
+          <div class="srv-fit"><span>Best if</span> sneezing, poor sleep, baby-room hygiene, or visible mattress residue is a concern.</div>
           <ul class="srv-feats"><li>Deep extraction treatment</li><li>Dust mite reduction</li><li>Deep hygiene treatment</li><li>Family-home process</li></ul>
           <div class="srv-price">From <em>AED 89</em></div>
           <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%27d%20like%20a%20mattress%20sanitizing%20quote%20for%20my%20home%20in%20Dubai." class="btn" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;background:#25D366;color:#fff;border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(37,211,102,.3)" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book Mattress Sanitizing</a>
@@ -2311,6 +2332,7 @@ document.addEventListener('keydown',function(e){
         <h2>Why 6,000+ Dubai Families Trust <em class="blue-em">Franco</em></h2>
         <p class="franco-p">In 2016, I started Pro Aqua after seeing families in Dubai struggle with allergies and respiratory issues — not from outdoor pollution, but from the air conditioning running 24/7 inside their own homes. Dubai's climate forces it: a full year of AC use means whatever builds up inside the ducts goes straight to your family's lungs.</p>
         <p class="franco-p">Every job I personally oversee — same trained team, same standards, every time. You'll know exactly who's coming, and you'll receive before-and-after photo proof sent directly to you when we leave.</p>
+        <div class="franco-signature">Every job has my name on it. <span>— Franco</span></div>
         <ul class="franco-pts">
           <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>High-power vacuum extraction — professional equipment for technical HVAC cleaning</li>
           <li><div class="fp-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5899E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Before &amp; after photos sent directly to you — documented on every single job</li>
@@ -2329,9 +2351,9 @@ document.addEventListener('keydown',function(e){
 <!-- ===================== REVIEWS ===================== -->
 <section id="reviews" class="rev-bg">
   <div class="sec">
-    <div class="chip-row"><span class="chip cb">Verified Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
+    <div class="chip-row"><span class="chip cb">Selected Customer Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
     <h2 class="sec-t">Rated <em class="blue-em">4.7 Stars</em> by Dubai Families</h2>
-    <p class="sec-sub">Real WhatsApp messages from 6,000+ families across Dubai — not stock testimonials, not paid reviews.</p>
+    <p class="sec-sub">Selected real WhatsApp messages plus a public Google rating — not stock testimonials, not paid reviews.</p>
     <div class="g-strip">
       <a class="g-review-link" href="https://www.google.com/search?q=pro+aqua+dubai" target="_blank" rel="noopener noreferrer" aria-label="Open Pro Aqua Dubai Google reviews">
         <svg width="22" height="22" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
