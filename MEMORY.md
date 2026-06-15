@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-15 — Codex — ProAqua-2 Push erfolgreich abgeschlossen
+- **Erledigt:** Lokale Branch `Franco2` erfolgreich nach `proaqua2/main` gepusht.
+- **Remote:** `https://github.com/agentdimarco-cloud/ProAqua-2.git`
+- **Ergebnis:** `proaqua2/main` wurde von `469a98b` auf `5c177e7` aktualisiert; die lokalen Website-/Quiz-/Lightbox-/Warning-Signs-Commits plus der Remote-Upload-Merge sind jetzt im ProAqua-2-Repository.
+- **Wichtig:** Es wurde nicht nach `origin` gepusht. Original-Remote `origin` bleibt unverändert.
+- **Nicht committed:** Lokale Finder-Dateien `.DS_Store` und `assets/.DS_Store` bleiben absichtlich uncommitted.
+- **Nächster Schritt:** ProAqua-2 online/repo-seitig prüfen; weitere Änderungen wieder lokal committen und nur auf ausdrücklichen Wunsch pushen.
+
 ### 2026-06-15 — Codex — ProAqua-2 Remote-Uploads integriert vor Push
 - **Erledigt:** Push nach `proaqua2/main` vorbereitet. Erster Push wurde abgelehnt, weil auf `proaqua2/main` zwischenzeitlich Remote-Commit `469a98b Add files via upload` lag.
 - **Erledigt:** `git fetch proaqua2` und nicht-destruktiver Merge von `proaqua2/main` in lokale Branch `Franco2`; dadurch bleiben die 20 remote hochgeladenen Asset-Dateien erhalten.
