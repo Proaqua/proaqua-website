@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Risk-Quiz Modal-Position und FAQ-Fehlplatzierung korrigiert
+- **Befund:** Das Risk-Quiz war global als Bottom-Sheet gebaut (`align-items:flex-end`), deshalb klebte es auf Desktop unten am Viewport. Zusätzlich war der FAQ-Eintrag „How fast can I get an appointment?" versehentlich im Quiz-Progress-Block gelandet.
+- **Erledigt:** Desktop-Risk-Modal zentriert und mit rundem Dialog-Styling versehen; Mobile bleibt bewusst als Bottom-Sheet erhalten.
+- **Erledigt:** Fehlplatzierten FAQ-Accordion aus `#rs-progress` entfernt und denselben Termin-Eintrag in die echte `#faq`-Liste eingefügt.
+- **Verifikation:** Browserprüfung Desktop 1007×844: Modal top 138 / bottom 706, nicht unten angeheftet; Mobile 390×844: Bottom-Sheet top 242 / bottom 844; `#rs-progress .fq` = 0; keine Console-Warnings/Errors.
+- **Nächster Schritt:** Bei Freigabe nach `proaqua2/main` pushen; offene Blocker bleiben GA4/Meta-IDs und DM-Approval-Nachweis.
+
 ### 2026-06-16 — Codex — Before/After-Captions committed und nach ProAqua-2 gepusht
 - **Erledigt:** Offene `index.html`-Änderungen mit 8 Before/After-Captions 2026 sowie den zugehörigen Arbeitslog-Eintrag gesichert.
 - **Erledigt:** Nach ausdrücklicher Freigabe auf `proaqua2/main` gepusht.

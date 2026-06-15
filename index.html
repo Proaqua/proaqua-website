@@ -1214,14 +1214,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 @media(max-width:640px){.pa-img-lightbox{padding:14px}.pa-lightbox-top{align-items:flex-start}.pa-lightbox-brand span{display:none}.pa-lightbox-frame{border-radius:14px}.pa-lightbox-frame::before{background-size:150px auto;opacity:.1}.pa-lightbox-frame::after{right:10px;bottom:10px;font-size:9px;padding:5px 9px}.pa-lightbox-img{max-height:72vh}}
 @media(prefers-reduced-motion:reduce){.pa-img-lightbox,.pa-lightbox-panel{transition:none}}
 /* ── Risk Check Popup — Step-by-Step ─────────────────────────────── */
-/* Bottom-sheet modal — Hintergrund bleibt scrollbar */
-.risk-overlay{position:fixed;inset:0;z-index:10000;pointer-events:none;display:flex;align-items:flex-end;justify-content:center;visibility:hidden}
+/* Desktop modal, mobile bottom sheet — Hintergrund bleibt scrollbar */
+.risk-overlay{position:fixed;inset:0;z-index:10000;pointer-events:none;display:flex;align-items:center;justify-content:center;visibility:hidden;padding:24px 16px}
 .risk-overlay.open{visibility:visible}
 .risk-bd{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .3s;pointer-events:none;cursor:pointer}
 .risk-overlay.open .risk-bd{opacity:1;pointer-events:auto}
-.risk-box{background:#fff;border-radius:22px 22px 0 0;padding:10px 28px 36px;width:100%;max-width:600px;position:relative;z-index:1;max-height:82vh;overflow-y:auto;overflow-x:hidden;transform:translateY(100%);transition:transform .36s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(0,0,0,.2);pointer-events:auto}
-.risk-overlay.open .risk-box{transform:translateY(0)}
-.risk-sheet-handle{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:6px auto 18px;display:block}
+.risk-box{background:#fff;border-radius:22px;padding:18px 28px 28px;width:100%;max-width:600px;position:relative;z-index:1;max-height:calc(100vh - 48px);overflow-y:auto;overflow-x:hidden;transform:translateY(18px) scale(.985);transition:transform .28s cubic-bezier(.4,0,.2,1);box-shadow:0 22px 70px rgba(0,0,0,.24);pointer-events:auto}
+.risk-overlay.open .risk-box{transform:translateY(0) scale(1)}
+.risk-sheet-handle{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:6px auto 18px;display:none}
 .risk-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:2}
 .risk-close:hover{color:var(--navy)}
 /* ── Floating Quiz Badge ── */
@@ -1264,7 +1264,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .rs-wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;background:#25D366;color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35);transition:background .2s}
 .rs-wa-btn:hover{background:#1da854}
 .rs-back-btn{display:block;width:100%;text-align:center;margin-top:12px;font-size:13px;color:#9ca3af;cursor:pointer;background:none;border:none;padding:4px}
-@media(max-width:480px){.risk-box{padding:22px 18px 20px}.rs-title{font-size:19px}.rs-question{font-size:15px}}
+@media(max-width:640px){.risk-overlay{align-items:flex-end;padding:0 12px}.risk-box{border-radius:22px 22px 0 0;padding:22px 18px calc(20px + env(safe-area-inset-bottom));max-height:88vh;transform:translateY(100%);box-shadow:0 -8px 40px rgba(0,0,0,.22)}.risk-overlay.open .risk-box{transform:translateY(0)}.risk-sheet-handle{display:block}.rs-title{font-size:19px}.rs-question{font-size:15px}}
 </style>
 <script type="application/ld+json">
 {
@@ -1476,7 +1476,6 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
         <span id="rs-pct">0%</span>
       </div>
       <div class="rs-progress-track"><div class="rs-progress-fill" id="rs-progress-fill" style="width:0%"></div></div>
-      <div class="fq" onclick="fq(this)"><div class="fq-q">How fast can I get an appointment? <span class="fq-i">+</span></div><div class="fq-a">We’re active 7 days a week and usually reply on WhatsApp within minutes. Depending on your area and our current schedule, inspections can often be arranged within 24–48 hours — message us and we’ll offer you the fastest available slot.</div></div>
     </div>
     <!-- Questions -->
     <div id="rs-questions">
@@ -2898,6 +2897,7 @@ document.addEventListener('keydown',function(e){
     <div class="faq-list">
       <div class="fq" onclick="fq(this)"><div class="fq-q">How often should I clean my AC ducts in Dubai? <span class="fq-i">+</span></div><div class="fq-a">Due to Dubai's dusty climate and year-round AC usage, we recommend every 12 months. Homes with pets, young children or allergy sufferers benefit from every 6–9 months.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">What is included in the free inspection? <span class="fq-i">+</span></div><div class="fq-a">Our technician visits your home, inspects all AC units, vents and ducts, and provides a full photo report. No charge, no obligation — we show you exactly what's inside.</div></div>
+      <div class="fq" onclick="fq(this)"><div class="fq-q">How fast can I get an appointment? <span class="fq-i">+</span></div><div class="fq-a">We are active 7 days a week and usually reply on WhatsApp within minutes. Depending on your area and current schedule, inspections can often be arranged within 24–48 hours — message us and we will offer the fastest available slot.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">Is the cleaning safe for children and pets? <span class="fq-i">+</span></div><div class="fq-a">Yes. We use professional equipment and residential-use cleaning products, and we confirm suitability for homes with children and pets before we start.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">How long does AC duct cleaning take? <span class="fq-i">+</span></div><div class="fq-a">A 1–2 bedroom apartment takes 2–3 hours. Villas may take 4–6 hours. We always provide a time estimate upfront.</div></div>
       <div class="fq" onclick="fq(this)"><div class="fq-q">Do you offer a satisfaction guarantee? <span class="fq-i">+</span></div><div class="fq-a">Yes. We document every job with before and after photos. If you're not satisfied, we return and re-clean at no additional charge.</div></div>
