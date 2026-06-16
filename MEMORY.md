@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-Quick-Wins Runde 4: Mobile Campaign-State und Warning-Signs verfeinert
+- **Erledigt:** Den Seasonal-/Campaign-Block in `index.html` verfeinert: Die Saison-Sektion bleibt automatisch dynamisch (`summer-ac` im Juni), aber Hero-Campaign-Chip und Hero-WhatsApp-Text werden nur noch bei echten Kampagnen-Signalen gesetzt (`?campaign=...`, `?season=...`, UTM, Hash oder manuell per API). Dadurch wirkt der normale Mobile-Hero nicht unnötig überladen.
+- **Erledigt:** Mobile Warning-Signs-Grid verbessert: Auf kleinen Screens bleiben die ersten vier Pain-Punkte als 2×2-Raster, die fünfte Karte `High DEWA bills` spannt jetzt als breiter CTA-naher Teaser über die ganze Breite.
+- **Verifikation:** `git diff --check` ohne Befund; Browser-QA auf `http://localhost:8742`: Mobile 390px ohne Kampagne zeigt nur `4.7 Google` + `Fixed Price`; `?campaign=sandstorm` zeigt gezielt `Campaign: Book Sandstorm Reset` und setzt Hero-WhatsApp auf `WhatsApp: Book Sandstorm Reset`; Warning-Signs fünfte Karte `grid-column: 1 / -1`, `scrollWidth=390`; Console 0 Errors/Warnings.
+- **Nächster Schritt:** Externe Blocker bleiben unverändert: GA4 Measurement ID + Meta Pixel ID, DM-Approval-Nachweis, echte Before/After-Provenienz final bestätigen, neues Foto-/Video-Material und echte arabische Landing-Version.
+
 ### 2026-06-16 — Codex — Audit-Quick-Wins Runde 3 umgesetzt
 - **Erledigt:** Weitere umsetzbare Punkte aus `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` in `index.html` umgesetzt: Vent-Check-Karten mit `What it means` + konkretem `Send Franco`-Prompt erweitert, Solution-Section mit `Inspect → Extract → Show Proof`-Flow ergänzt, Process-Section mit WhatsApp-naher Ablaufleiste ergänzt.
 - **Erledigt:** Pricing-Section um `What affects price?`-Box erweitert (Property size, AC units, mattress/sofa count, access/scope), damit Fixed-Price-/Ab-Preis-Erwartungen sauberer sind.
