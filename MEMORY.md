@@ -31,6 +31,11 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Desktop-Topbar und Header-CTA-Konkurrenz reduziert
+- **Problem:** Im Desktop-Hero konkurrierten Topbar-CTA, Header-WhatsApp, Header-Quote und Hero-CTAs gleichzeitig. Das erzeugte oben zu viele Einstiegspunkte, obwohl WhatsApp/Inspection der klare Primärpfad bleiben soll.
+- **Korrektur in `index.html`:** Topbar von einem aktiven Buchungsbutton befreit: jetzt nur noch ein Telefonlink plus ruhige Trust-/Inspection-Aussage (`FREE AC MOLD & AIR QUALITY INSPECTION · FIXED PRICE BEFORE WORK STARTS`). Der sekundäre Header-Quote-CTA ist im Desktop-Header ausgeblendet; der Quote-/Inspection-Einstieg bleibt im Hero und den späteren CTA-Sektionen erhalten.
+- **QA:** Browser-QA Desktop 1280px: Topbar hat 1 sichtbaren Link, 0 WhatsApp-Links, Header rechts zeigt nur `WhatsApp Us`, kein horizontaler Overflow, keine Console Errors/Warnings. Mobile 390px: Topbar ausgeblendet, Burger sichtbar, keine Nav-Buttons, Hero-Chips stabil, `scrollWidth=390`.
+
 ### 2026-06-16 — Codex — Google-Rating-Badge mit Real-Reviews-Hinweis ergänzt
 - **Erledigt:** Sichtbaren Labeltext der wiederverwendbaren Google-Rating-Badge-Komponente in `index.html` per CSS-Pseudo-Label auf `Real Reviews` umgestellt. Die bestehenden Aria-Labels behalten den Google-Rating-Kontext.
 - **Verifikation:** Browser-QA Mobile 390px: Badge zeigt pseudoContent `Real Reviews`, kein horizontaler Overflow (`scrollWidth=390`), Console 0 Errors/Warnings. Hinweis: Die Chip-Zeile darf auf Mobile umbrechen, bleibt aber stabil.
