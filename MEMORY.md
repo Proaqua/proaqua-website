@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Visual/UI/UX/Conversion-Audit v3 neu ausgeführt
+- **Ziel:** Giampieros Audit-Prompt erneut gegen den aktuellen Stand ausführen und ehrlich bewerten, nachdem Mobile-Hero-Schieber, Badge-Tausch, Proof-Hierarchie und Arabic-Self-Check umgesetzt wurden.
+- **Erledigt:** Neuer Audit unter `conversion-research/visual-ui-ux-graphic-audit-2026-06-16-v3.md` erstellt. Enthält aktualisierte Prüfgrundlage, Scorecard, Top-Probleme, Stärken, Sektionsaudit, Designrichtung, Quick Wins, strategische Verbesserungen und finales Paid-Traffic-Urteil.
+- **Aktuelle Messwerte:** Hauptseite Mobile 390×844: `#hero` ca. 756px, `hero-reviews` ca. 115px, `#warning-signs` startet bei ca. 995px, Slider `value=75`, kein horizontaler Overflow. Hauptseite Desktop 1280×844: `#hero` ca. 1070px, `#warning-signs` bei ca. 1526px. Arabic Mobile: `#hero` ca. 771px, Trust-Zone bei ca. 873px, Self-Check bei ca. 2402px, 4 Self-Check-Items. Tracking-IDs weiter leer.
+- **Ehrliche Bewertung:** Website jetzt bei ca. 8.3/10 gesamt; kontrollierte Paid-Tests sinnvoll, aber Scaling weiter blockiert durch GA4/Meta IDs, DM-Approval-Nachweis, finale Preis-/Scope-Freigabe, native Arabic-Copy-Review und mehr echte Video-/Foto-Assets.
+
 ### 2026-06-16 — Codex — Mobile-Hero Slider-Fix, stärkere Proof-Copy und Badge-Tausch
 - **Ziel:** Giampieros Screenshot-Feedback umgesetzt: weißer nativer Slider-Thumb im Bild entfernen, Proof-Satz deutlicher machen und mobile Trust-Badges tauschen.
 - **Erledigt:** `index.html` gezielt angepasst: Range-Input im Hero-Schieber mit `appearance:none` plus transparenten WebKit/Mozilla-Thumbs browserfest unsichtbar gemacht. Proof-Copy unter dem Bild visuell stärker (`13px`, `font-weight:950` auf Mobile). Mobile Top-Chips jetzt `2016 Founded` + `Fixed Price · No Surprises`; Google-Rating sitzt stattdessen in der unteren Stats-Zeile neben `10,000+ Happy clients`.
