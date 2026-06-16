@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-v3 Quick Wins umgesetzt
+- **Ziel:** Aus dem neuen Audit v3 direkt risikoarme Conversion-Quick-Wins in `index.html` umsetzen, ohne die große Datei neu zu generieren.
+- **Erledigt:** AC Self-Check CTA geschärft: Nutzer sollen Franco jetzt explizit ein `10-second vent video or photo` senden; WhatsApp-Prefill fragt genau danach. Compare-Pro-Aqua-Spalte stärker auf Accountability formuliert: Badge `FRANCO ACCOUNTABLE CHOICE`, neuer Trust-Chip `Every job has Franco's name on it`, Reco-Chip `Franco accountable`.
+- **Erledigt:** Quote-/Risk-Quiz-Ergebnis klarer gemacht: Headline `Your Risk Level & Starting Estimate`, Ergebnis-Pill zeigt jetzt `Risk level: Low/Medium/High` plus konkrete nächste Empfehlung. WhatsApp-Ergebnistext übernimmt Risk-Level und Result.
+- **Verifikation:** `git diff --check` und HTML-Parser sauber. Browser-QA Mobile 390×844: `scrollWidth=390`, Self-Check CTA/Href korrekt, Compare-Badge und Accountability-Chips korrekt, Quiz mit AC/today zeigt `Risk level: High · High risk — book an AC inspection first`, WhatsApp-Prefill korrekt.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe. Externe Blocker bleiben GA4/Meta IDs, DM-Approval-Nachweis, finale Preis-/Scope-Freigabe, native Arabic-Copy-Review und neue Video-/Foto-Assets.
+
 ### 2026-06-16 — Codex — Visual/UI/UX/Conversion-Audit v3 neu ausgeführt
 - **Ziel:** Giampieros Audit-Prompt erneut gegen den aktuellen Stand ausführen und ehrlich bewerten, nachdem Mobile-Hero-Schieber, Badge-Tausch, Proof-Hierarchie und Arabic-Self-Check umgesetzt wurden.
 - **Erledigt:** Neuer Audit unter `conversion-research/visual-ui-ux-graphic-audit-2026-06-16-v3.md` erstellt. Enthält aktualisierte Prüfgrundlage, Scorecard, Top-Probleme, Stärken, Sektionsaudit, Designrichtung, Quick Wins, strategische Verbesserungen und finales Paid-Traffic-Urteil.
