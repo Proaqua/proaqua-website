@@ -11,7 +11,7 @@
 - **Firma:** Pro Aqua Disinfection & Sterilization LLC, Dubai, seit 2016. Inhaber: Franco (als Person auf der Website sichtbar).
 - **Leistungen:** AC Duct Cleaning, Deep Cleaning, Mattress/Fabric Sanitizing.
 - **Website:** Statische One-Page-Site, `index.html` (~3,2 MB, alles inline). Netlify-Deployment via `netlify.toml`. Repo: github.com/Proaqua/proaqua-website (nur lokal arbeiten!).
-- **Social Proof:** 4,7★ Google, 6.000+ Kunden/Familien, 10+ Jahre Dubai.
+- **Social Proof:** 4,7★ Google, 10.000+ zufriedene Kunden, 10+ Jahre Dubai.
 - **Ziel:** Klare Marktpositionierung, mehr Anfragen/Conversions.
 
 ## Werkzeuge & Konventionen
@@ -30,6 +30,14 @@
 - [x] **Positionierungs-These FINAL (13.06.2026, mit Giampiero abgestimmt; Copy am 15.06.2026 claim-sicher entschärft):** Persönlicher Spezialist (Franco als Gesicht) + professionelle Ausrüstung + fairer Festpreis + Proof auf jedem Job. B2B/Property als eigene Sektion, NICHT in der Hauptbotschaft. Frühere Kurzform mit "Hospital-grade" ist wegen Claim-Hygiene überholt.
 
 ## Arbeitslog
+
+### 2026-06-16 — Codex — Social Proof auf 10.000+ zufriedene Kunden aktualisiert
+- **Anlass:** Giampiero hat nach Francos Rückmeldung bestätigt, dass Pro Aqua inzwischen mehr als 10.000 zufriedene Kunden hat.
+- **Erledigt:** `index.html` gezielt von `6,000+` auf `10,000+` aktualisiert: JSON-LD-Beschreibung, Sticky-Trust-Bar, Hero-Count-up (`data-count-to="10000"`), Hero-Stat-Label, Trust-Belt, Franco-H2, Reviews-CTA und Comparison-Proof.
+- **Robustheit:** Count-up zeigt in Hintergrund-/automatisierten Tabs direkt den finalen Wert, damit der Counter nicht bei `0+` hängen bleibt, wenn `requestAnimationFrame` pausiert.
+- **Copy-Entscheidung:** Sichtbar konsistent als `10,000+ Happy Clients` / `10,000+ Clients Served`, damit der Claim klarer zu Francos Aussage "zufriedene Kunden" passt.
+- **Verifikation:** `rg` zeigt keine `6,000`/`6000`-Vorkommen mehr in `index.html`; `git diff --check` sauber. Browser-QA Desktop 1280px und Mobile 390px: Hero-Counter endet auf `10,000+`, `data-count-to="10000"`, kein horizontaler Overflow, keine Console Errors/Warnings.
+- **Nächster Schritt:** Commit und Push auf `origin/main` + `proaqua2/main` ausführen, da Giampiero Push ausdrücklich freigegeben hat.
 
 ### 2026-06-16 — Codex — Floating Risk-Check-Badge auf dunklen Sektionen kontrastfähig gemacht
 - **Problem:** Der fixe `Check AC Risk`-Badge lag beim Scrollen über der dunklen `#before-after`-Sektion weiterhin im dunklen Navy-Style und hatte dort zu wenig visuellen Kontrast.
