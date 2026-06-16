@@ -31,6 +31,19 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero Dopamin-/Aha-Proof finalisiert
+- **Ziel:** Giampieros Wunsch umgesetzt, nach dem Hero-Statement sofort einen hochwertigen visuellen Aha-Beweis zu zeigen, ohne billige Clickbait-Elemente wie Neon-Pfeile oder `#1`-Claims.
+- **Erledigt:** `index.html` Mobile-Hero erweitert: wassergezeichnetes echtes Before/After-Asset `assets/before-after-ac-coil-cleaning.webp` als Curiosity-Proof-Kachel direkt nach der Subline. Copy: `Real Dubai AC result` und `Tap to reveal what your AC may be hiding`. Die Kachel ist auf Mobile klickbar und öffnet die bestehende geschützte Lightbox.
+- **Scroll-Bridge:** Neuer Link `Next step: check the 5 warning signs` führt direkt zu `#warning-signs`, damit der Nutzer nach dem Aha-Moment logisch weiterscrollt.
+- **Verifikation:** Mobile 390×844: `scrollWidth=390`, Hero-Höhe ca. 728px, WhatsApp-CTA bei ca. 614px im First View, Lightbox öffnet korrekt, Scroll-Bridge springt zu `#warning-signs`. Desktop 1280×844 bleibt unverändert: Proof-Kachel/Bridge ausgeblendet, Desktop-Video sichtbar, `scrollWidth=1280`.
+- **Preview:** Screenshot aktualisiert unter `output/playwright/hero-proof-mobile-preview.png`. Kein Push ohne ausdrückliche Freigabe.
+
+### 2026-06-16 — Codex — Hero-Before/After-Proof als lokale Vorschau eingebaut
+- **Ziel:** Giampieros Idee als Vorschau testen: direkt im Mobile-Hero ein echter Before/After-Beweis, damit das Hero-Statement sofort visuell belegt wird.
+- **Erledigt:** `index.html` lokal erweitert: neue `.hero-proof-shot`-Kachel nutzt das vorhandene wassergezeichnete Asset `assets/before-after-ac-coil-cleaning.webp`. Die Kachel erscheint aktuell nur auf Mobile und ersetzt dort das Franco-Mini-Video, damit der Hero nicht wieder zu schwer wird. Desktop bleibt unverändert beim großen Franco-Video.
+- **Verifikation:** Mobile 390×844: Proof-Kachel sichtbar (358×154px), WhatsApp-CTA weiter im First View, `scrollWidth=390`, keine Console Errors. Desktop 1280×844: Proof-Kachel ausgeblendet, Desktop-Video sichtbar, `scrollWidth=1280`.
+- **Preview:** Screenshot gespeichert unter `output/playwright/hero-proof-mobile-preview.png`. Noch kein Commit und kein Push; Entscheidung offen, ob diese Variante übernommen oder weiter angepasst wird.
+
 ### 2026-06-16 — Codex — Hero-Subline stärker formuliert
 - **Ziel:** Giampieros Feedback umgesetzt, dass die mobile/hero Subline `Dubai AC runs all day...` zu sachlich war und das Hero-Statement nicht stark genug unterfüttert.
 - **Erledigt:** `index.html` Hero-Subline ersetzt durch: `Your AC is the lungs of your Dubai home. Dirty ducts can push dust and odours into every room.` Die Formulierung ist bildhafter, Dubai-spezifisch und bleibt claim-sicher durch `can`.

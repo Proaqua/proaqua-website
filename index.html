@@ -284,6 +284,14 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 
 /* Sub — light weight, readable */
 .hero-sub{font-size:16px;font-weight:400;color:var(--g600);line-height:1.7;max-width:450px;margin-bottom:28px;animation:fadeUp .4s .15s ease both;letter-spacing:0}
+.hero-proof-shot{display:none;max-width:460px;margin:-12px 0 26px;background:#fff;border:1px solid rgba(205,211,218,.86);border-radius:18px;overflow:hidden;box-shadow:0 16px 44px rgba(28,50,68,.12);animation:fadeUp .4s .18s ease both}
+.hero-proof-shot img{width:100%;aspect-ratio:16/7.2;object-fit:cover;object-position:center;display:block}
+.hero-proof-shot-bar{display:grid;grid-template-columns:1fr;gap:3px;padding:10px 12px;background:linear-gradient(90deg,#fff,#F8FBFF)}
+.hero-proof-shot-kicker{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#DC2626}
+.hero-proof-shot-copy{font-size:12px;font-weight:800;color:var(--navy);text-align:left;line-height:1.24}
+.hero-scroll-bridge{display:none;align-items:center;justify-content:center;gap:6px;margin:8px 0 14px;color:var(--blue-d);font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.01em}
+.hero-scroll-bridge svg{transition:transform .2s ease}
+.hero-scroll-bridge:hover svg{transform:translateY(2px)}
 
 /* Stats row — exactly like screenshot: big number + small label in a row */
 .hero-stats{display:flex;gap:32px;margin-bottom:28px;animation:fadeUp .4s .2s ease both}
@@ -1618,6 +1626,13 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   .hero{padding-top:20px}
   .hero-eyebrow{display:none}
   .hero-sub{font-size:15px;line-height:1.52;margin-bottom:18px}
+  .hero-proof-shot{display:block;margin:-4px 0 14px;border-radius:16px;box-shadow:0 10px 28px rgba(28,50,68,.11)}
+  .hero-proof-shot img{aspect-ratio:16/5.4}
+  .hero-proof-shot-bar{padding:8px 10px}
+  .hero-proof-shot-kicker{font-size:8.8px}
+  .hero-proof-shot-copy{font-size:11.5px}
+  .hero-scroll-bridge{display:inline-flex;width:100%;margin:7px 0 12px}
+  .hero-vid-mobile{display:none!important}
   .hero-claim{display:none!important}
   .hero-chips{gap:6px}
   .hero-chips .hero-chip.dot{display:none}
@@ -1888,6 +1903,17 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
             </h1>
       <p class="hero-sub">Your AC is the lungs of your Dubai home. Dirty ducts can push dust and odours into every room.</p>
       <p class="hero-claim" style="font-size:15px;font-weight:700;color:var(--navy);max-width:460px;margin:-14px 0 28px;line-height:1.55">Franco's trained team. <span style="color:var(--blue-d)">Fixed price before we start</span> — photo proof after every job.</p>
+      <div class="hero-proof-shot">
+        <img src="assets/before-after-ac-coil-cleaning.webp" alt="Real Dubai AC coil before and after cleaning by Pro Aqua Dubai" loading="eager" decoding="async">
+        <div class="hero-proof-shot-bar">
+          <span class="hero-proof-shot-kicker">Real Dubai AC result</span>
+          <span class="hero-proof-shot-copy">Tap to reveal what your AC may be hiding</span>
+        </div>
+      </div>
+      <a href="#warning-signs" class="hero-scroll-bridge">
+        Next step: check the 5 warning signs
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
+      </a>
 
       <!-- Video — mobile only, appears right after subtext -->
       <div class="hero-vid-mobile">
