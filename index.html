@@ -1511,20 +1511,21 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .wa-fl.wa-off{opacity:0!important;pointer-events:none!important;transform:scale(.4)!important}
 
 /* Proof sections: less template-card density, more editorial evidence. */
-.vent-proof-section{background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)}
-.vent-proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;max-width:1020px;margin:0 auto;border-radius:20px;overflow:hidden;background:var(--navy);box-shadow:0 24px 70px rgba(28,50,68,.18)}
-.vent-proof-item{display:grid;grid-template-rows:auto 1fr;min-width:0;background:rgba(255,255,255,.02);border-right:1px solid rgba(255,255,255,.12)}
-.vent-proof-item:last-child{border-right:0}
-.vent-proof-photo{position:relative;height:235px;overflow:hidden;background:#0b1e2f}
-.vent-proof-photo img{display:block;transition:transform .35s ease,filter .35s ease;filter:saturate(1.06) contrast(1.04)}
-.vent-proof-item:hover .vent-proof-photo img{transform:scale(1.035)}
-.vent-proof-copy{padding:18px 18px 20px;text-align:left;background:linear-gradient(180deg,rgba(28,50,68,.98),rgba(15,32,48,.98));color:#fff}
-.vent-proof-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:7px;line-height:1.3}
-.vent-proof-text{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.55}
-#vent-check .vent-card-note{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:0;padding:10px 0 0;margin-top:13px;text-align:left;border-left:0;border-right:0;border-bottom:0}
-#vent-check .vent-card-note strong{color:#8DC8FF}
-#vent-check .vent-card-note span{color:rgba(255,255,255,.72)}
-#vent-check .vent-card-send{background:rgba(37,211,102,.13);border-color:rgba(37,211,102,.26);color:#DDFBE8}
+.vent-proof-section{background:linear-gradient(180deg,#fff 0%,#F3FAF6 100%);padding:62px 0 58px;border-top:1px solid var(--bg3)}
+.ac-check-board{max-width:1040px;margin:34px auto 0;background:linear-gradient(135deg,rgba(234,248,238,.96),rgba(241,248,252,.98));border:1px solid rgba(77,168,130,.22);border-radius:24px;padding:24px;box-shadow:0 24px 70px rgba(28,50,68,.13)}
+.ac-check-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ac-check-item{background:rgba(255,255,255,.72);border:1px solid rgba(77,168,130,.22);border-radius:15px;padding:14px 14px 15px;min-height:132px;box-shadow:0 8px 24px rgba(28,50,68,.05)}
+.ac-check-ico{width:36px;height:36px;border-radius:999px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 8px 18px rgba(77,168,130,.22)}
+.ac-check-ico svg{width:18px;height:18px;display:block}
+.ac-check-item h3{font-size:15px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:6px;letter-spacing:-.1px}
+.ac-check-item p{font-size:12px;color:var(--g600);line-height:1.42;margin:0}
+.ac-check-alert{display:flex;align-items:flex-start;gap:10px;margin-top:14px;background:#FFE2E2;border:1px solid rgba(220,38,38,.18);border-radius:14px;padding:14px 16px;color:#7F1D1D;font-size:15px;font-weight:800;line-height:1.35}
+.ac-check-alert svg{flex-shrink:0;margin-top:1px;color:#DC2626}
+.ac-check-cta{margin-top:22px;text-align:center}
+.ac-check-cta p{font-size:14px;color:var(--g600);line-height:1.6;margin:0 0 16px}
+.ac-check-cta strong{color:var(--navy)}
+.ac-check-source{display:inline-flex;align-items:center;gap:7px;margin-top:12px;color:var(--g400);font-size:11.5px;font-weight:700}
+.ac-check-source a{color:var(--blue-d);text-decoration:underline;text-underline-offset:3px}
 
 #why .danger-grid{gap:0;max-width:1080px;margin:38px auto 0;border-top:1px solid rgba(239,68,68,.18);border-bottom:1px solid rgba(239,68,68,.18);background:linear-gradient(90deg,rgba(255,255,255,.72),rgba(255,255,255,.42));border-radius:16px;overflow:hidden}
 #why .dcard{background:transparent;border:0;border-right:1px solid rgba(239,68,68,.14);border-radius:0;box-shadow:none;text-align:left;padding:28px 22px 26px;transform:none}
@@ -1550,20 +1551,20 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 #why .field-note-quote{font-size:17px;line-height:1.75;color:rgba(255,255,255,.88)}
 
 @media(max-width:900px){
-  .vent-proof-grid{grid-template-columns:1fr;max-width:640px}
-  .vent-proof-item{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-rows:auto;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
-  .vent-proof-item:last-child{border-bottom:0}
-  .vent-proof-photo{height:100%}
+  .ac-check-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   #why .danger-grid{grid-template-columns:repeat(2,1fr)}
   #why .dcard:nth-child(2n){border-right:0}
   #why .dcard:nth-child(-n+2){border-bottom:1px solid rgba(239,68,68,.14)}
   #why .field-note{grid-template-columns:1fr}
 }
 @media(max-width:560px){
-  .vent-proof-grid{border-radius:16px}
-  .vent-proof-item{grid-template-columns:1fr}
-  .vent-proof-photo{height:215px}
-  .vent-proof-copy{padding:16px}
+  .ac-check-board{padding:14px;border-radius:18px;margin-top:28px}
+  .ac-check-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .ac-check-item{padding:12px;min-height:124px;border-radius:13px}
+  .ac-check-ico{width:32px;height:32px;margin-bottom:8px}
+  .ac-check-item h3{font-size:13.5px}
+  .ac-check-item p{font-size:11.2px;line-height:1.36}
+  .ac-check-alert{font-size:13px;padding:12px;margin-top:12px}
   #why .danger-grid{grid-template-columns:1fr;border-radius:14px}
   #why .dcard,#why .dcard:nth-child(2n){border-right:0;border-bottom:1px solid rgba(239,68,68,.14);padding:24px 20px}
   #why .dcard:last-child{border-bottom:0}
@@ -2134,61 +2135,70 @@ document.addEventListener('keydown',function(e){
 });
 </script>
 
-<!-- ===================== 60-SECOND VENT CHECK ===================== -->
+<!-- ===================== AC HOME SELF CHECK ===================== -->
 <section id="vent-check" class="vent-proof-section">
   <div class="sec">
-    <div class="chip-row"><span class="chip" style="background:rgba(88,153,227,.1);color:var(--blue);border:1px solid rgba(88,153,227,.2);font-size:11px">Quick Self-Check</span></div>
-    <h2 class="sec-t" style="text-align:center">Franco's 60-Second<br><em class="blue-em">AC Vent Check</em></h2>
-    <p class="sec-sub" style="text-align:center;margin:0 auto 28px">Before you book anyone — check these three signs in the room you use most.</p>
-    <div class="vent-proof-grid">
+    <div class="chip-row"><span class="chip" style="background:rgba(77,168,130,.12);color:var(--green-d);border:1px solid rgba(77,168,130,.24);font-size:11px">60-Second AC Self-Check</span></div>
+    <h2 class="sec-t" style="text-align:center">Do You Have Any of These <br><em class="blue-em">AC Problems at Home?</em></h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto">Before you book anyone, check the room you use most. These are the signs Franco asks families to look for first.</p>
 
-      <div class="vent-proof-item">
-        <div class="vent-proof-photo">
-          <img src="assets/real-ac-grid-clean.webp" alt="Dirty AC grill with dust buildup — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center">
-          <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 1</div>
+    <div class="ac-check-board">
+      <div class="ac-check-grid" aria-label="AC problems customers can check at home">
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 16c3-1 5-3 5-6"/><path d="M11 19c4-2 6-5 6-10"/><path d="M5 8c2 0 3 1 4 3"/></svg></span>
+          <h3>Bad odours</h3>
+          <p>Unpleasant smells coming from your vents when the AC starts.</p>
         </div>
-	        <div class="vent-proof-copy">
-	          <div class="vent-proof-title">Dark ring around the AC vent</div>
-	          <div class="vent-proof-text">A dusty or dark outline on the vent cover — visible buildup on and inside the grille.</div>
-	          <div class="vent-card-note"><strong>What it means</strong><span>Dust may be collecting around the return path, not only on visible surfaces.</span></div>
-	          <div class="vent-card-send">Send: close-up vent photo</div>
-	        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11z"/><path d="M9 15c.8 1.5 2.1 2.2 4 2.1"/></svg></span>
+          <h3>Water leakage</h3>
+          <p>Dripping or pooling water around your AC unit or vent area.</p>
+        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z"/><path d="M12 18h.01"/></svg></span>
+          <h3>Poor cooling</h3>
+          <p>The room never reaches the right temperature, even with AC running.</p>
+        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 10c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M4 16c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg></span>
+          <h3>High humidity</h3>
+          <p>Sticky, damp air even while the AC is on and the room is closed.</p>
+        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="8" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="17" cy="9" r="1"/><circle cx="10" cy="14" r="1"/><circle cx="16" cy="16" r="1"/><path d="M5 19h14"/></svg></span>
+          <h3>Dust buildup</h3>
+          <p>Excessive dust settling around vents, grills or nearby furniture.</p>
+        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18"/><path d="M7 8c2.5 0 5 2 5 5"/><path d="M17 8c-2.5 0-5 2-5 5"/><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/></svg></span>
+          <h3>Allergy symptoms</h3>
+          <p>Sneezing, coughing or irritation increases when you stay indoors.</p>
+        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17c2.5-6 7.5-6 10 0"/><path d="M5 17h14"/><path d="M9 13l-2-3"/><path d="M15 13l2-3"/></svg></span>
+          <h3>Mould smell or signs</h3>
+          <p>Musty mould smell or visible dark marks near the AC system.</p>
+        </div>
+        <div class="ac-check-item">
+          <span class="ac-check-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 10v4h3l4 4V6l-4 4H4z"/><path d="M16 9c1 1.2 1 4.8 0 6"/><path d="M19 6c2.4 3.2 2.4 8.8 0 12"/></svg></span>
+          <h3>Unusual noises</h3>
+          <p>Strange sounds coming from the AC unit, ducts or vents.</p>
+        </div>
       </div>
 
-      <div class="vent-proof-item">
-        <div class="vent-proof-photo">
-          <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center">
-          <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 2</div>
-        </div>
-	        <div class="vent-proof-copy">
-	          <div class="vent-proof-title">Musty smell when AC starts</div>
-	          <div class="vent-proof-text">An earthy or stale odour in the first few minutes — buildup inside the ducts can blow directly into the room.</div>
-	          <div class="vent-card-note"><strong>What it means</strong><span>Moisture-related buildup may be hiding deeper than the grille or filter.</span></div>
-	          <div class="vent-card-send">Send: smell + room name</div>
-	        </div>
+      <div class="ac-check-alert">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6"/><path d="M9 9l6 6"/></svg>
+        <span>These may be signs that your AC system has not received proper maintenance.</span>
       </div>
 
-      <div class="vent-proof-item">
-        <div class="vent-proof-photo">
-          <img src="assets/real-ac-duct-grid-work-1.webp" alt="Pro Aqua technicians cleaning AC ducts and grilles — Dubai high-rise" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top">
-          <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 3</div>
-        </div>
-	        <div class="vent-proof-copy">
-	          <div class="vent-proof-title">Dust returns quickly after cleaning</div>
-	          <div class="vent-proof-text">Surfaces need wiping again within days — the AC is redistributing what's inside the ducts.</div>
-	          <div class="vent-card-note"><strong>What it means</strong><span>The room may be clean, while the AC keeps reintroducing fine dust.</span></div>
-	          <div class="vent-card-send">Send: dust pattern photo</div>
-	        </div>
-      </div>
-
-    </div>
-    <div style="margin-top:28px;text-align:center">
-      <p style="font-size:14px;color:var(--g600);margin:0 0 16px">Notice any of these? <strong style="color:var(--navy)">Send Franco a photo of your AC vent.</strong><br>He'll tell you honestly whether it needs attention — for free.</p>
-      <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%20checked%20my%20AC%20vent%20and%20would%20like%20Franco%27s%20team%20to%20take%20a%20look.%20I%20can%20send%20photos." style="display:inline-flex;align-items:center;gap:8px;padding:14px 26px;font-size:15px;font-weight:600;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35)">
+      <div class="ac-check-cta">
+        <p>Notice one or more of these? <strong>Send Franco a photo or short video.</strong><br>He'll tell you honestly whether it needs attention — for free.</p>
+        <a href="https://wa.me/971567943412?text=Hi%20Pro%20Aqua%2C%20I%20checked%20my%20AC%20at%20home%20and%20noticed%3A%20__.%20Can%20Franco%27s%20team%20tell%20me%20if%20this%20needs%20attention%3F%20Area%3A%20__." data-lead-source="ac_home_self_check" data-wa-topic="ac_self_check" style="display:inline-flex;align-items:center;gap:8px;padding:14px 26px;font-size:15px;font-weight:600;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.35)">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Send Franco a Photo
-      </a>
-      <a href="#why" class="vent-secondary" style="display:inline-block;margin-top:14px;font-size:.92rem;color:var(--ink-soft,#5b6b7b);text-decoration:underline;text-underline-offset:3px">Not sure yet? See what we typically find ↓</a>
+          Send Franco a Photo
+        </a>
+        <a href="#why" class="vent-secondary" style="display:inline-block;margin-top:14px;font-size:.92rem;color:var(--ink-soft,#5b6b7b);text-decoration:underline;text-underline-offset:3px">Not sure yet? See what we typically find ↓</a>
+      </div>
     </div>
   </div>
 </section>

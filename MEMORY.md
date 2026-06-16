@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Vent Check zu echtem AC-Home-Self-Check umgebaut
+- **Befund:** Die bisherige `#vent-check`-Sektion war als `SIGN 1/2/3`-Inspektionsstrecke formuliert. Giampiero hat korrekt angemerkt, dass dieser Block aus Kundensicht ein schneller Selbstcheck sein sollte, nicht Pro-Aquas Arbeitsschritt-Logik.
+- **Quelle/Briefing:** Francos Gamma-Dokument/Screenshot `AC Health Maintenance Notice E` mit Symptomen wie Bad Odours, Water Leakage, Poor Cooling, High Humidity, Dust Buildup, Allergy Symptoms, Mould Smell/Signs und Unusual Noises wurde als inhaltliche Vorlage genutzt.
+- **Erledigt:** `#vent-check` in `index.html` zu einem hellen `60-Second AC Self-Check` mit 8 Symptomen umgebaut. Headline: `Do You Have Any of These AC Problems at Home?`; CTA fragt nach Foto/kurzem Video an Franco und setzt `data-lead-source="ac_home_self_check"` / `data-wa-topic="ac_self_check"`.
+- **Verifikation:** `git diff --check` ohne Befund; HTML-Parser-Smoke-Test ohne offene Tags; 8/8 `.ac-check-item` vorhanden; alte `SIGN 1/2/3`-Labels entfernt. Browser-QA Desktop: 4x2 Grid, keine Console Errors/Warnings, `scrollWidth=1280`. Browser-QA Mobile 390px: 2-Spalten-Grid, CTA-Prefill korrekt, `scrollWidth=390`, keine Console Errors/Warnings.
+- **Nächster Schritt:** Lokalen Commit sichern; kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Mobile-Mini-Video-Copy auf Franco-Trust umgestellt
 - **Befund:** Der erste Mobile-Mini-Video-Text (`Watch Franco's inspection preview` / `Muted autoplay preview`) wirkte wie ein technischer UI-Hinweis und nicht wie der strategische Trust-/Accountability-Anker.
 - **Erledigt:** Mini-Video-Copy im Hero auf Giampieros gewünschte Franco-Zeilen umgestellt: `Franco — Founder & CEO, Pro Aqua Dubai`, `Cleaning expert · Dubai since 2016`, `"Every job has my name on it. — Franco"`.
