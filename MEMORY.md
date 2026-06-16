@@ -33,8 +33,8 @@
 
 ### 2026-06-16 — Codex — Original-Teamfoto als Source-Asset ergänzt und Push vorbereitet
 - **Ziel:** Giampieros Hinweis auf das Originalbild `proaqua_dubai_cleaning_service_team` aufnehmen und den aktuellen Team-/Fleet-Proof vollständig ins Repository bringen.
-- **Erledigt:** Das Original-JPG aus dem Projektroot in den Asset-Ordner verschoben und als `assets/proaqua_dubai_cleaning_service_team.jpg` abgelegt. Die Website verwendet weiterhin das daraus bereinigte/optimierte `assets/pro-aqua-dubai-team-fleet.webp`, weil dort Screenshot-Balken und Carousel-Pfeil entfernt sind.
-- **Verifikation:** Source-JPG 1280×856, optimiertes WebP 1162×798 / ca. 151 KB. Keine Änderung an der sichtbaren Einbindung nötig; `index.html` bleibt beim sauberen WebP.
+- **Erledigt:** Das bessere Originalbild aus `origin/main` integriert und als `assets/proaqua_dubai_cleaning_service_team.jpeg` behalten. Die sichtbare Website-Version `assets/pro-aqua-dubai-team-fleet.webp` daraus neu erzeugt: sauber ohne Screenshot-Balken/Carousel-Pfeil, mit Pro-Aqua-Wasserzeichen unten rechts.
+- **Verifikation:** Source-JPEG 1581×995, optimiertes WebP 1581×995 / ca. 206 KB. `index.html`-Bildattribute auf die neue Größe aktualisiert; schlechtere 1280×856-`.jpg`-Duplikatquelle entfernt. Cache-Buster `?v=20260616` am Bild-src ergänzt, damit Browser/Netlify sofort die neue Version laden.
 - **Nächster Schritt:** Commit erstellen und nach ausdrücklicher Freigabe von Giampiero auf `origin/main` und `proaqua2/main` pushen.
 
 ### 2026-06-16 — Codex — Team-/Fleet-Proof in Franco-Sektion eingebaut
