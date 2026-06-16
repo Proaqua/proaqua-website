@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero weiter entschlackt
+- **Ziel:** Giampieros Feedback umgesetzt, dass der mobile Hero trotz vorheriger Kürzung noch zu textlastig und visuell heavy wirkt.
+- **Erledigt:** `index.html` gezielt angepasst: mobile Eyebrow/Trust-Bullets bleiben ausgeblendet, der zweite Hero-Claim wird auf Mobile entfernt, der Hero-Problemtext wurde auf einen kurzen Satz reduziert und die mobile Stats-Zeile von drei auf zwei Proof-Karten vereinfacht (`10,000+ Happy clients`, `2016 Founded in Dubai`). Die doppelte Google-Statistik ist auf Mobile entfernt, weil das Google-Badge bereits oben sichtbar ist.
+- **Desktop:** Desktop behält den gekürzten Claim sichtbar: `Franco's trained team. Fixed price before we start — photo proof after every job.` Video und Hero-Layout bleiben unverändert aktiv.
+- **Verifikation:** HTML-Parser-Smoke-Test ohne offene Tags; `git diff --check` sauber. Browser-QA: Mobile 390×844 ohne horizontalen Overflow (`scrollWidth=390`), Hero-Höhe ca. 599px, `#warning-signs` startet bei ca. 838px, Mini-Video läuft stumm (`paused=false`), ausgeblendete Mobile-Layer (`hero-claim`, Eyebrow, Trust-Bullets, Mini-Quote) korrekt. Desktop 1280×844 ohne Overflow; Desktop-Claim und Desktop-Video sichtbar.
+- **Nächster Schritt:** Live gegen Netlify erst nach ausdrücklicher Push-Freigabe aktualisieren. Externe Blocker bleiben GA4/Meta IDs, DM-Approval-Nachweis, bestätigte Ab-Preise und native Arabic-Copy-Review.
+
 ### 2026-06-16 — Codex — Audit-v2 Quick-Wins final umgesetzt und geprüft
 - **Ziel:** Giampieros Visual/UI/UX/Conversion-Audit v2 praktisch abschließen und die umsetzbaren Punkte direkt in der Hauptseite und Arabic-RTL-Seite verankern.
 - **Erledigt:** `index.html`: Hero-Reviews-Bar aus `#hero` gelöst und mobil stark komprimiert, damit der erste Pain-Block deutlich früher kommt. Floating Risk-Check-Badge so umgebaut, dass er sichtbar und unsichtbar innerhalb des Viewports bleibt (`visibility` statt seitlichem Herausschieben).
