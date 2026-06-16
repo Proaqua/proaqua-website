@@ -1672,11 +1672,15 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   .hero-chips .google-rating-badge--inline .grb-label::after{font-size:9.2px}
   .hero-chips .hero-chip:not(.dot):not(.campaign-hero-chip){font-size:11px;padding:5px 10px}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:8px;margin:12px 0 14px}
-  .hero-stats .hstat:not(.hstat-rating){background:#fff;border:1px solid rgba(205,211,218,.85);border-radius:13px;min-height:50px;align-items:center;justify-content:center;padding:7px 6px;box-shadow:0 4px 14px rgba(28,50,68,.05)}
-  .hero-stats .hstat-rating{display:flex;background:#fff;border:1px solid rgba(205,211,218,.85);border-radius:13px;min-height:50px;align-items:center;justify-content:center;padding:7px 6px;box-shadow:0 4px 14px rgba(28,50,68,.05)}
+  .hero-stats .hstat:not(.hstat-rating){background:#fff;border:1px solid rgba(205,211,218,.85);border-radius:14px;height:72px;box-sizing:border-box;align-items:center;justify-content:center;padding:8px 6px;box-shadow:0 4px 14px rgba(28,50,68,.05)}
+  .hero-stats .hstat-rating{display:flex;background:#fff;border:1px solid rgba(205,211,218,.85);border-radius:14px;height:72px;box-sizing:border-box;align-items:center;justify-content:center;padding:8px 6px;box-shadow:0 4px 14px rgba(28,50,68,.05)}
+  .hero-stats .hstat-rating .google-rating-badge--stat{width:100%;min-width:0;height:auto;padding:0;border:0;background:transparent;box-shadow:none;border-radius:0}
+  .hero-stats .hstat-rating .grb-score{font-size:24px;letter-spacing:-.04em}
+  .hero-stats .hstat-rating .grb-stars{font-size:12px;line-height:1;margin-top:2px}
+  .hero-stats .hstat-rating .grb-label::after{font-size:10.5px;color:var(--g500)}
   .hero-stats .hstat-founded{display:none!important}
   .hero-stats .hstat-div{display:none}
-  .hero-stats .hstat-n{font-size:20px;letter-spacing:-.35px;text-align:center}
+  .hero-stats .hstat-n{font-size:24px;letter-spacing:-.45px;text-align:center}
   .hero-stats .hstat-l{text-align:center;font-size:10.5px;line-height:1.25;margin-top:4px;color:var(--g500)}
   .hero-btns{margin-bottom:12px}
   .hero-btns .hbtn-green{order:1}

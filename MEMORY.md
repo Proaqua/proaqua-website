@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero Proof-Karten optisch vereinheitlicht und Push vorbereitet
+- **Ziel:** Giampieros Screenshot-Feedback umgesetzt: Die beiden mobilen Hero-Proof-Karten (`10,000+ Happy clients` und `4.7 Real Reviews`) wirkten nicht gleich, weil die Google-Badge-Innenstruktur die rechte Karte höher machte.
+- **Erledigt:** `index.html` gezielt angepasst: Mobile `.hero-stats`-Karten haben jetzt identische feste Höhe (`72px`), gleiche Border, gleichen Radius und gleiche Y-Position. Die Google-Stat-Badge ist im Hero-Stat transparent/ohne eigene Innen-Border und füllt die äußere Card sauber.
+- **Verifikation:** Browser-QA Mobile 390×844: beide sichtbaren Hero-Stats exakt `175×72px`, gleiche `x/y`, `scrollWidth=390`, Hero-Slider nutzt die sauberen Before/After-Crops (`hero-ac-coil-before-clean.webp`/`hero-ac-coil-after-clean.webp`) mit `--pos=64%`. Desktop 1280×844 ohne Overflow (`scrollWidth=1280`), Sticky-Footer Desktop aus. Arabic Mobile 390×844 ohne Overflow, `lang=ar-AE`, `dir=rtl`, Console 0 Errors/Warnings. Screenshot: `output/playwright/hero-stats-equal-mobile.png`.
+- **Nächster Schritt:** Änderungen lokal committen und wegen Giampieros ausdrücklicher Freigabe pushen; danach Seite live erneut bewerten.
+
 ### 2026-06-16 — Codex — Hero Before/After grafisch bereinigt und weißes Flecken-Problem entfernt
 - **Ziel:** Giampieros Feedback umgesetzt: Der Hero-Swipe hatte beim Bewegen noch weiße Flecken/Textflächen im Bild, und der Before/After-Effekt sollte klarer erkennbar werden.
 - **Erledigt:** Aus dem vorhandenen echten AC-Coil-Proof zwei neue saubere Hero-Crops ohne eingebettete `BEFORE`/`AFTER`/`AC COIL CLEANING`-Grafikflächen erstellt: `assets/hero-ac-coil-before-clean.webp` und `assets/hero-ac-coil-after-clean.webp`. `index.html` nutzt im Hero-Slider jetzt zwei echte Layer statt ein fertiges Layout-Bild.
