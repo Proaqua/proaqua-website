@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero Before/After-Schieber umgesetzt
+- **Ziel:** Giampieros Feedback umgesetzt, dass der Hero-Proof nicht nur als statisches Bild funktionieren soll, sondern als echter Links/Rechts-Schieber, damit der Unterschied zwischen kontaminierter und gereinigter AC-Spule sofort sichtbar wird.
+- **Erledigt:** `index.html` gezielt angepasst: Die mobile `hero-proof-shot`-Kachel nutzt jetzt zwei überlagerte Bildhälften aus `assets/before-after-ac-coil-cleaning.webp`, einen sichtbaren Divider-Griff und einen unsichtbaren Range-Slider (`min=8`, `max=92`). Copy auf `Drag the slider to reveal what your AC may be hiding` geändert. Desktop bleibt unverändert beim Franco-Video.
+- **Verifikation:** Statische Checks sauber (`git diff --check`, HTML-Parser). Browser-QA Mobile 390×844: `scrollWidth=390`, Schieber sichtbar, Frame ca. 356×120px, CSS-Position startet bei `50%`, Divider bewegt sich korrekt von 78% auf 22%, keine Console Errors. Desktop 1280×844: Schieber ausgeblendet, Desktop-Video gefunden und läuft stumm (`paused=false`, `muted=true`), kein Overflow.
+- **Preview:** Screenshot gespeichert unter `output/playwright/hero-proof-slider-mobile-preview.png`. Kein Push ohne erneute ausdrückliche Push-Freigabe.
+
 ### 2026-06-16 — Codex — Mobile-Hero Dopamin-/Aha-Proof finalisiert
 - **Ziel:** Giampieros Wunsch umgesetzt, nach dem Hero-Statement sofort einen hochwertigen visuellen Aha-Beweis zu zeigen, ohne billige Clickbait-Elemente wie Neon-Pfeile oder `#1`-Claims.
 - **Erledigt:** `index.html` Mobile-Hero erweitert: wassergezeichnetes echtes Before/After-Asset `assets/before-after-ac-coil-cleaning.webp` als Curiosity-Proof-Kachel direkt nach der Subline. Copy: `Real Dubai AC result` und `Tap to reveal what your AC may be hiding`. Die Kachel ist auf Mobile klickbar und öffnet die bestehende geschützte Lightbox.
