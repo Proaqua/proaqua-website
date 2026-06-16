@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Booking-Typo geprüft und Franco-Accountability-Signatur vereinheitlicht
+- **Booking-Headline:** `#booking` geprüft: HTML steht korrekt als `Your Home Deserves <em class="blue-em">Better Air</em>.` und rendert als `Your Home Deserves Better Air.` ohne Leerzeichen vor dem Punkt. Es war im aktuellen Stand kein Code-Typo mehr vorhanden.
+- **Franco-Anker:** Hero-Franco-Karten (Desktop/Mobile) von allgemeiner Clean-Air-Quote auf die Accountability-Signatur umgestellt: `I personally oversee every job my team accepts.`
+- **Franco-Section:** Die gleiche Signatur in `#franco` mit `— Franco` gesetzt. Den Fließtext leicht angepasst, damit die Signatur nicht doppelt wiederholt wird.
+- **QA:** Browser-DOM geprüft: beide `.fc-quote` enthalten die neue Signatur, `#franco .franco-signature` enthält denselben Satz plus `— Franco`, alte `Clean air is not a luxury`-Quote ist aus den Hero-Franco-Karten entfernt, Booking-Headline korrekt, keine Console Errors/Warnings.
+
 ### 2026-06-16 — Codex — Hero-Garantiezeile wieder stärker formuliert
 - **Entscheidung:** Giampiero bevorzugt die frühere Risk-Reversal-Zeile, weil sie direkter und verkäuferisch klarer ist als die zwischenzeitliche `Satisfaction guaranteed`-Variante.
 - **Korrektur in `index.html`:** Mobile-/Hero-Garantie wieder auf `Not happy? We re-clean for free — no questions asked.` gesetzt. Bewertung: psychologisch stärker, weil es den Einwand konkret auflöst und weniger generisch klingt.
