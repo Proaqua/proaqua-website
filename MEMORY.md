@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Arabic-Funnel und Meta-Ad-Asset-System ergänzt
+- **Erledigt:** Arabic-Section in `index.html` weiter ausgebaut: die rechten Proof-Karten sind jetzt ebenfalls arabisch/RTL statt englischer Erklärungstexte, damit die Section weniger wie Deko und mehr wie ein echter Arabic-Funnel wirkt.
+- **Erledigt:** Audience-Layer ergänzt: `?lang=ar`, `?audience=arabic`, `?campaign=arabic...` oder passende UTM-Werte setzen `data-audience="arabic"`, markieren `#arabic` als aktive Audience und schalten den Hero auf `Arabic WhatsApp available` + arabischen WhatsApp-Prefill. Base-Page bleibt unverändert.
+- **Erledigt:** Lead-Tracking erweitert: `lead_click` enthält jetzt `audience`; Arabic-Section-WhatsApp bekommt `lead_source="arabic_whatsapp"`. `window.proaquaAudience` erlaubt später manuelle Audience-Aktivierung.
+- **Erledigt:** Neues Produktionsdokument `conversion-research/meta-ad-proof-asset-system-2026-06-16.md` erstellt: 5 Hook-Angles, 5 Pain-Bilder, 5 Proof-Videos, 5 Franco-Trust-Clips, Naming, Job-Metadaten, Website-Mapping und Approval-Checklist.
+- **Verifikation:** `git diff --check` ohne Befund; Browser-QA `?lang=ar` Mobile 390px: `data-audience=arabic`, Hero-Chip `Arabic WhatsApp available`, Hero-CTA `واتساب بالعربية`, `data-lead-source=hero_arabic`, arabischer Prefill korrekt, 3 arabische RTL-Proof-Karten, `scrollWidth=390`; Base-Page danach wieder `audience=default`, generischer Hero-WhatsApp-CTA; Console 0 Errors/Warnings.
+- **Nächster Schritt:** Es bleiben nur externe Produktions-/Nachweis-Blocker: echte GA4/Meta IDs eintragen, DM-Approval belegen, Before/After-Provenienz final bestätigen, reale neue Foto-/Video-Assets produzieren und Arabic-Funnel sprachlich von einem Muttersprachler final freigeben.
+
 ### 2026-06-16 — Codex — Tracking-Bootstrap für GA4/Meta vorbereitet
 - **Erledigt:** `index.html` um sichere Tracking-Config im Head erweitert: `<meta name="proaqua-ga4-id" content="">` und `<meta name="proaqua-meta-pixel-id" content="">`. Solange die Werte leer sind, wird nichts extern geladen.
 - **Erledigt:** Bestehenden Seasonal-/Lead-Tracking-Block um Bootstrap-Funktionen ergänzt: echte GA4 Measurement IDs (`G-...`) laden automatisch `gtag.js`; numerische Meta Pixel IDs laden automatisch `fbevents.js`, initialisieren PageView und nutzen den vorhandenen Event-Hook.

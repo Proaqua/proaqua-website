@@ -678,6 +678,7 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .arabic-cta{display:inline-flex;align-items:center;justify-content:center;background:#25D366;color:#fff;border-radius:var(--rl);padding:14px 22px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.32)}
 .arabic-side{display:grid;gap:14px}
 .arabic-proof{background:#fff;border:1px solid var(--g300);border-radius:var(--rl);padding:18px 20px;box-shadow:var(--sh0)}
+.arabic-proof[dir="rtl"]{text-align:right}
 .arabic-proof strong{display:block;font-size:15px;color:var(--navy);margin-bottom:5px}
 .arabic-proof span{font-size:13px;color:var(--g500);line-height:1.55}
 .seasonal-bg{background:var(--bg2)}
@@ -2945,9 +2946,9 @@ document.addEventListener('keydown',function(e){
         <a class="arabic-cta" href="https://wa.me/971567943412?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C+%D8%A3%D8%B1%D9%8A%D8%AF+%D8%AD%D8%AC%D8%B2+%D9%81%D8%AD%D8%B5+%D9%85%D8%AC%D8%A7%D9%86%D9%8A+%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81+%D9%85%D8%AC%D8%A7%D8%B1%D9%8A+%D8%A7%D9%84%D8%AA%D9%83%D9%8A%D9%8A%D9%81+%D8%A3%D9%88+%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81+%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D9%82+%D9%81%D9%8A+%D8%AF%D8%A8%D9%8A." target="_blank" rel="noopener">احجز فحصاً مجانياً عبر واتساب</a>
       </div>
       <div class="arabic-side">
-        <div class="arabic-proof"><strong>Arabic-speaking clients</strong><span>A clear Arabic summary makes villa and family buyers feel seen before they message.</span></div>
-        <div class="arabic-proof"><strong>Owner-led specialist team</strong><span>The same Pro Aqua positioning, now visible for Arabic-speaking Dubai households.</span></div>
-        <div class="arabic-proof"><strong>Free inspection first</strong><span>No pressure, no hidden fees: scope and price are confirmed before cleaning starts.</span></div>
+        <div class="arabic-proof" lang="ar" dir="rtl"><strong>للعملاء العرب وأصحاب الفلل</strong><span>رسالة واضحة باللغة العربية قبل التواصل، مع فحص مجاني وتوضيح الخدمة المناسبة للمنزل.</span></div>
+        <div class="arabic-proof" lang="ar" dir="rtl"><strong>فريق متخصص بقيادة فرانكو</strong><span>نفس فكرة برو أكوا الأساسية: فريق معروف، مسؤولية واضحة، وصور قبل وبعد لكل عمل.</span></div>
+        <div class="arabic-proof" lang="ar" dir="rtl"><strong>السعر واضح قبل البدء</strong><span>لا ضغط ولا مفاجآت: يتم تأكيد النطاق والسعر بعد الفحص وقبل بدء التنظيف.</span></div>
       </div>
     </div>
   </div>
@@ -3165,7 +3166,9 @@ function playVideo(){
   };
   window.proaquaTracking=trackingState;
   var currentSeason='';
+  var currentAudience='default';
   var manualSeason='';
+  var manualAudience='';
   var campaigns={
     'summer-ac':{
       title:'Summer AC Check for Dubai Homes',
@@ -3213,6 +3216,22 @@ function playVideo(){
     if(s.indexOf('summer')>-1||s.indexOf('heat')>-1||s.indexOf('ac-check')>-1)return'summer-ac';
     return'';
   }
+  function audienceFromText(value){
+    if(!value)return'';
+    var s=String(value).toLowerCase().replace(/[_\s]+/g,'-');
+    if(s==='ar'||s==='ar-ae'||s==='arabic'||s==='arabic-villa'||s==='emirati'||s.indexOf('arab')>-1||s.indexOf('emirati')>-1)return'arabic';
+    return'';
+  }
+  function pickAudience(){
+    if(manualAudience)return manualAudience;
+    var p=params();
+    var fields=['lang','language','audience','campaign','utm_campaign','utm_content','utm_term'];
+    for(var i=0;i<fields.length;i++){
+      var k=audienceFromText(p.get(fields[i]));
+      if(k)return k;
+    }
+    return audienceFromText(window.location.hash.replace('#',''));
+  }
   function autoSeason(){
     var month=(new Date()).getMonth()+1;
     if(month===8||month===9)return'back-to-school';
@@ -3235,6 +3254,12 @@ function playVideo(){
   }
   function waUrl(message){
     return'https://wa.me/971567943412?text='+encodeURIComponent(message);
+  }
+  function setLinkText(link,text){
+    var done=false;
+    Array.prototype.forEach.call(link.childNodes,function(n){
+      if(n.nodeType===3){if(!done){n.nodeValue=' '+text;done=true}else n.nodeValue=''}
+    });
   }
   function applySeason(){
     var key=pickSeason();
@@ -3259,8 +3284,7 @@ function playVideo(){
 	      heroWa.href=waUrl(c.message+' Campaign: '+c.event+'.');
 	      heroWa.setAttribute('data-lead-source','hero_'+c.event);
 	      heroWa.setAttribute('data-wa-topic',key);
-	      var heroTextDone=false;
-	      Array.prototype.forEach.call(heroWa.childNodes,function(n){if(n.nodeType===3){if(!heroTextDone){n.nodeValue=' WhatsApp: '+c.cta;heroTextDone=true}else n.nodeValue=''}});
+	      setLinkText(heroWa,'WhatsApp: '+c.cta);
 	    }
 	    if(title)title.textContent=c.title;
     if(copy)copy.textContent=c.copy;
@@ -3277,6 +3301,27 @@ function playVideo(){
       if(on)card.setAttribute('data-current','true');
       else card.removeAttribute('data-current');
     });
+  }
+  function applyAudienceLayer(){
+    var audience=pickAudience();
+    currentAudience=audience||'default';
+    document.documentElement.setAttribute('data-audience',currentAudience);
+    if(audience!=='arabic')return;
+    var heroChip=document.querySelector('[data-season-hero-chip]');
+    var heroWa=document.querySelector('.hero-btns a[href^="https://wa.me/971567943412"]');
+    var arabicWa='مرحباً، أريد حجز فحص مجاني من فريق برو أكوا في دبي. المنطقة: __. نوع العقار: شقة/فيلا. الخدمة المطلوبة: مجاري التكييف / مرتبة / كنبة / تنظيف عميق.';
+    if(heroChip&&!explicitSeasonKey()){
+      heroChip.textContent='Arabic WhatsApp available';
+      heroChip.classList.add('on');
+    }
+    if(heroWa&&!explicitSeasonKey()){
+      heroWa.href=waUrl(arabicWa);
+      heroWa.setAttribute('data-lead-source','hero_arabic');
+      heroWa.setAttribute('data-wa-topic','arabic');
+      setLinkText(heroWa,'واتساب بالعربية');
+    }
+    var arabicSection=document.getElementById('arabic');
+    if(arabicSection)arabicSection.setAttribute('data-active-audience','arabic');
   }
   function sectionName(el){
     var node=el.closest('section,header,footer,.mobile-nav,nav,.topbar');
@@ -3347,6 +3392,7 @@ function playVideo(){
     var location=sectionName(link);
     var text=(link.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
     if(link.id==='rs-wa')return'risk_quiz_result';
+    if(location==='arabic')return'arabic_whatsapp';
     if(link.hasAttribute('data-season-cta'))return'seasonal_'+(currentSeason||'default');
     if(text.indexOf('business')>-1||text.indexOf('property')>-1||text.indexOf('office')>-1)return location+'_business';
     if(text.indexOf('mattress')>-1)return location+'_mattress';
@@ -3368,6 +3414,7 @@ function playVideo(){
   function track(eventName,data){
     data=data||{};
     data.season=currentSeason||'default';
+    data.audience=currentAudience||'default';
     window.dataLayer=window.dataLayer||[];
     window.dataLayer.push(Object.assign({event:eventName},data));
     if(typeof window.gtag==='function')window.gtag('event',eventName,data);
@@ -3395,6 +3442,7 @@ function playVideo(){
         link_text:(link.textContent||'').replace(/\s+/g,' ').trim().slice(0,80),
         lead_source:link.getAttribute('data-lead-source')||sectionName(link),
         wa_topic:link.getAttribute('data-wa-topic')||'',
+        audience:currentAudience||'default',
         utm_source:p.get('utm_source')||'',
         utm_medium:p.get('utm_medium')||'',
         utm_campaign:p.get('utm_campaign')||'',
@@ -3404,10 +3452,11 @@ function playVideo(){
   }
   window.proaquaTrack=track;
   window.proaquaCampaign={getSeason:function(){return currentSeason||'default'},setSeason:function(key){if(campaigns[key]){manualSeason=key;applySeason();normalizeLeadLinks()}}};
+  window.proaquaAudience={getAudience:function(){return currentAudience||'default'},setAudience:function(key){if(key==='arabic'){manualAudience=key;applyAudienceLayer();normalizeLeadLinks()}}};
   if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',function(){applySeason();normalizeLeadLinks();bindLeadTracking()});
+    document.addEventListener('DOMContentLoaded',function(){applySeason();applyAudienceLayer();normalizeLeadLinks();bindLeadTracking()});
   }else{
-    applySeason();normalizeLeadLinks();bindLeadTracking();
+    applySeason();applyAudienceLayer();normalizeLeadLinks();bindLeadTracking();
   }
 })();
 </script>
