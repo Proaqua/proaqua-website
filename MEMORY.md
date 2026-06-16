@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero-Schieber auf 25% Clean-Start und stärkere Microcopy gestellt
+- **Ziel:** Giampieros Feinschliff umgesetzt: Der mobile Before/After-Schieber soll initial nur ca. 25% der sauberen AC-Seite zeigen, damit der erste Eindruck stärker auf dem Problem liegt und der Nutzer aktiv zum Reveal gezogen wird.
+- **Erledigt:** `index.html` gezielt angepasst: `.hero-proof-shot` startet jetzt mit `--pos:75%`, Range-Input mit `value="75"` (entspricht 25% sichtbarer sauberer rechter Seite). Copy unter dem Bild geändert auf `This is why we inspect before we quote`. Micro-CTA exakt gesetzt auf `Next: 5 warning signs to check at home ↓`.
+- **Verifikation:** `git diff --check` und HTML-Parser sauber. Browser-QA Mobile 390×844: `rangeValue=75`, `cssPos=75%`, `cleanVisiblePct=25`, Copy und Bridge-Text korrekt, `scrollWidth=390`, keine Console Errors. Preview: `output/playwright/hero-proof-slider-75-mobile-preview.png`.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe.
+
 ### 2026-06-16 — Codex — Mobile-Hero Before/After-Schieber umgesetzt
 - **Ziel:** Giampieros Feedback umgesetzt, dass der Hero-Proof nicht nur als statisches Bild funktionieren soll, sondern als echter Links/Rechts-Schieber, damit der Unterschied zwischen kontaminierter und gereinigter AC-Spule sofort sichtbar wird.
 - **Erledigt:** `index.html` gezielt angepasst: Die mobile `hero-proof-shot`-Kachel nutzt jetzt zwei überlagerte Bildhälften aus `assets/before-after-ac-coil-cleaning.webp`, einen sichtbaren Divider-Griff und einen unsichtbaren Range-Slider (`min=8`, `max=92`). Copy auf `Drag the slider to reveal what your AC may be hiding` geändert. Desktop bleibt unverändert beim Franco-Video.
