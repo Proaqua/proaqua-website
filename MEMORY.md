@@ -31,6 +31,11 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Google-Rating-Badge mit Real-Reviews-Hinweis ergänzt
+- **Erledigt:** Sichtbaren Labeltext der wiederverwendbaren Google-Rating-Badge-Komponente in `index.html` per CSS-Pseudo-Label auf `Real Reviews` umgestellt. Die bestehenden Aria-Labels behalten den Google-Rating-Kontext.
+- **Verifikation:** Browser-QA Mobile 390px: Badge zeigt pseudoContent `Real Reviews`, kein horizontaler Overflow (`scrollWidth=390`), Console 0 Errors/Warnings. Hinweis: Die Chip-Zeile darf auf Mobile umbrechen, bleibt aber stabil.
+- **Nicht gestaged:** Lokale `.DS_Store`-Änderung bleibt unberührt.
+
 ### 2026-06-16 — Codex — Arabic-Funnel und Meta-Ad-Asset-System ergänzt
 - **Erledigt:** Arabic-Section in `index.html` weiter ausgebaut: die rechten Proof-Karten sind jetzt ebenfalls arabisch/RTL statt englischer Erklärungstexte, damit die Section weniger wie Deko und mehr wie ein echter Arabic-Funnel wirkt.
 - **Erledigt:** Audience-Layer ergänzt: `?lang=ar`, `?audience=arabic`, `?campaign=arabic...` oder passende UTM-Werte setzen `data-audience="arabic"`, markieren `#arabic` als aktive Audience und schalten den Hero auf `Arabic WhatsApp available` + arabischen WhatsApp-Prefill. Base-Page bleibt unverändert.
