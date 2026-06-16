@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero Mini-Video als ruhige Autoplay-Preview eingebaut
+- **Befund:** Das Hero-Video war auf kleinen Smartphones bewusst per CSS ausgeblendet (`.hero-vid-mobile{display:none!important}`), weil der Mobile-Hero vorher zu lang und zu voll war.
+- **Erledigt:** Statt das große 16:9-Video zurückzubringen, wurde ein kompaktes Mobile-Mini-Video direkt unter der Hero-Copy eingebaut: kleine Preview-Kachel + Text `Watch Franco's inspection preview` und Hinweis `Muted autoplay preview · no interruption`.
+- **UX-Entscheidung:** Das Mini-Video startet leise (`muted autoplay loop playsinline`) und zeigt keinen Sound-Button, weil Browser-Sound-Policies beim Entmuten mobil unzuverlässig sein können. So bleibt der Hero ruhig, schnell und ohne störenden Lead-Flow-Abbruch.
+- **Verifikation:** `git diff --check` ohne Befund; HTML-Parser-Smoke-Test ohne offene Tags; Browser-QA Mobile 390px: `.hero-vid-mobile` sichtbar (`display:flex`), Video vorhanden, `muted=true`, `autoplay=true`, `loop=true`, `paused=false`, `scrollWidth=390`, keine Console Errors/Warnings.
+- **Nächster Schritt:** Lokalen Commit sichern; kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Live-Deploy-Remote geklärt und Origin-Push vorbereitet
 - **Befund:** Die Änderungen waren korrekt nach `proaqua2/main` gepusht, aber `https://proaqua-dubai.netlify.app` zeigte sie nicht. Live-HTML enthielt weder `Top proof` noch `Strongest AC signal`/`ba-feature-grid`.
 - **Ursache:** Netlify hängt offenbar am Original-Remote `origin/main` (`github.com/Proaqua/proaqua-website`), nicht am Arbeits-Remote `proaqua2/main`. `origin/main` stand noch bei `af2d505`, während `Franco2`/`proaqua2/main` bereits bei `e361e36` waren.

@@ -311,6 +311,7 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 /* Mobile-only hero elements — hidden on desktop, shown in media query below */
 .franco-card-mobile{display:none!important;margin-top:20px;margin-bottom:24px}
 .hero-vid-mobile{display:none;margin-top:20px}
+.hero-video-mini-copy{display:none}
 
 /* Video card — dark navy card like screenshot */
 .hero-vid{border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(28,50,68,.18);position:relative;aspect-ratio:16/11;background:linear-gradient(rgba(28,50,68,.18),rgba(28,50,68,.18)),url("assets/hero-video-poster.jpg") center/cover no-repeat,var(--navy);cursor:pointer}
@@ -1571,9 +1572,16 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   #why .field-proof img{height:220px}
   #why .field-note-copy{padding:24px 22px}
 }
-/* Mobile-Hero kuerzen: dekoratives Hero-Video auf kleinen Phones raus, Franco-Foto bleibt als Trust-Anker; schneller zur ersten Pain-Sektion */
+/* Mobile-Hero: kleines muted Autoplay-Video als Trust-Teaser, ohne den First View zu ueberladen */
 @media(max-width:600px){
-  .hero-vid-mobile{display:none!important}
+  .hero-vid-mobile{display:flex!important;align-items:center;gap:12px;margin:-8px 0 16px;padding:10px 12px;background:rgba(255,255,255,.9);border:1px solid rgba(205,211,218,.9);border-radius:16px;box-shadow:0 8px 24px rgba(28,50,68,.08)}
+  .hero-vid-mobile .hero-vid{width:118px;min-width:118px;aspect-ratio:16/10;border-radius:13px;box-shadow:0 8px 22px rgba(28,50,68,.14);background-size:cover}
+  .hero-vid-mobile .hero-vid-player{object-fit:cover}
+  .hero-vid-mobile .hero-vid-mute-btn{display:none}
+  .hero-video-mini-copy{display:flex;flex-direction:column;gap:3px;min-width:0;text-align:left}
+  .hero-video-mini-copy strong{font-size:13px;line-height:1.28;color:var(--navy);font-weight:800;letter-spacing:-.1px}
+  .hero-video-mini-copy span{font-size:11.5px;line-height:1.35;color:var(--g500);font-weight:500}
+  .hero-video-mini-copy em{font-style:normal;color:var(--green-d);font-weight:800}
   .hero-main{padding-bottom:18px}
   .hero{padding-top:24px}
   .hero-chips{gap:6px}
@@ -1597,6 +1605,11 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   .hero-trust{gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(205,211,218,.7)}
   .hero-trust .ht-item{width:100%;align-items:flex-start;font-size:12.5px;line-height:1.45}
   .hero-trust .ht-dot{margin-top:6px}
+}
+@media(max-width:360px){
+  .hero-vid-mobile .hero-vid{width:104px;min-width:104px}
+  .hero-video-mini-copy strong{font-size:12.5px}
+  .hero-video-mini-copy span{font-size:11px}
 }
 </style>
 </head>
@@ -1835,8 +1848,12 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 
       <!-- Video — mobile only, appears right after subtext -->
       <div class="hero-vid-mobile">
-        <div class="hero-vid" onclick="playVideo()">
+        <div class="hero-vid hero-vid-mini" onclick="playVideo(this)">
           <button class="hero-vid-mute-btn" type="button" aria-label="Toggle sound" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
+        </div>
+        <div class="hero-video-mini-copy">
+          <strong>Watch Franco's inspection preview</strong>
+          <span><em>Muted autoplay preview</em> · no interruption</span>
         </div>
       </div>
 
@@ -3254,7 +3271,14 @@ function toggleMenu(){
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
 /* VIDEO */
-function playVideo(){
+function playVideo(el){
+  if(el&&el.closest&&el.closest('.hero-vid-mobile')){
+    var local=el.querySelector('.hero-vid-player');
+    if(local){
+      try{local.play().catch(function(){})}catch(e){}
+      return;
+    }
+  }
   var id='VIDEO_ID';/* Replace with Franco's YouTube video ID */
   if(id==='VIDEO_ID'){
     /* No video yet — open WhatsApp instead */
