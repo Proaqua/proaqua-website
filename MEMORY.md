@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Live-Deploy-Remote geklärt und Origin-Push vorbereitet
+- **Befund:** Die Änderungen waren korrekt nach `proaqua2/main` gepusht, aber `https://proaqua-dubai.netlify.app` zeigte sie nicht. Live-HTML enthielt weder `Top proof` noch `Strongest AC signal`/`ba-feature-grid`.
+- **Ursache:** Netlify hängt offenbar am Original-Remote `origin/main` (`github.com/Proaqua/proaqua-website`), nicht am Arbeits-Remote `proaqua2/main`. `origin/main` stand noch bei `af2d505`, während `Franco2`/`proaqua2/main` bereits bei `e361e36` waren.
+- **Sicherheit:** `origin/main` ist ein Vorfahre von `Franco2`; ein normaler Fast-Forward-Push reicht, kein Force-Push nötig.
+- **Nächster Schritt:** Diesen Log-Eintrag committen und `Franco2` nach `origin/main` pushen, damit Netlify neu deployt.
+
 ### 2026-06-16 — Codex — Proof-Hierarchie in Warning Signs und Before/After umgesetzt
 - **Erledigt:** `#warning-signs` visuell priorisiert: `Black dust or mould around AC grills` und `Bad smell from vents` stehen jetzt als größere Featured-Pain-Cards oben mit klarerer Pain-Copy und konkretem Foto-/Raum-Hinweis für Franco. Die restlichen drei Warning Signs bleiben kompakter; Mobile nutzt Featured-Cards zuerst und darunter kompakte Signals ohne horizontalen Overflow.
 - **Erledigt:** `#before-after` von gleichförmiger 8er-Liste auf Proof-Story umgebaut: Top-3-Case-Cards sind jetzt `Mattress Deep Cleaning — Extracted Water`, `AC Coil — Before Deep Cleaning` und `AC Duct & Grill Cleaning — Team Job`; die übrigen fünf Fotos laufen als kleinere dokumentierte Galerie darunter.
