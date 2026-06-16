@@ -1476,6 +1476,69 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 /* Floating split (Conversation-Flow): Quiz-FAB obere Haelfte, WhatsApp-Float ab Mitte */
 .quiz-fab.qf-belowsplit{opacity:0!important;transform:translateX(90px) scale(.94)!important;pointer-events:none!important}
 .wa-fl.wa-off{opacity:0!important;pointer-events:none!important;transform:scale(.4)!important}
+
+/* Proof sections: less template-card density, more editorial evidence. */
+.vent-proof-section{background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)}
+.vent-proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;max-width:1020px;margin:0 auto;border-radius:20px;overflow:hidden;background:var(--navy);box-shadow:0 24px 70px rgba(28,50,68,.18)}
+.vent-proof-item{display:grid;grid-template-rows:auto 1fr;min-width:0;background:rgba(255,255,255,.02);border-right:1px solid rgba(255,255,255,.12)}
+.vent-proof-item:last-child{border-right:0}
+.vent-proof-photo{position:relative;height:235px;overflow:hidden;background:#0b1e2f}
+.vent-proof-photo img{display:block;transition:transform .35s ease,filter .35s ease;filter:saturate(1.06) contrast(1.04)}
+.vent-proof-item:hover .vent-proof-photo img{transform:scale(1.035)}
+.vent-proof-copy{padding:18px 18px 20px;text-align:left;background:linear-gradient(180deg,rgba(28,50,68,.98),rgba(15,32,48,.98));color:#fff}
+.vent-proof-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:7px;line-height:1.3}
+.vent-proof-text{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.55}
+#vent-check .vent-card-note{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:0;padding:10px 0 0;margin-top:13px;text-align:left;border-left:0;border-right:0;border-bottom:0}
+#vent-check .vent-card-note strong{color:#8DC8FF}
+#vent-check .vent-card-note span{color:rgba(255,255,255,.72)}
+#vent-check .vent-card-send{background:rgba(37,211,102,.13);border-color:rgba(37,211,102,.26);color:#DDFBE8}
+
+#why .danger-grid{gap:0;max-width:1080px;margin:38px auto 0;border-top:1px solid rgba(239,68,68,.18);border-bottom:1px solid rgba(239,68,68,.18);background:linear-gradient(90deg,rgba(255,255,255,.72),rgba(255,255,255,.42));border-radius:16px;overflow:hidden}
+#why .dcard{background:transparent;border:0;border-right:1px solid rgba(239,68,68,.14);border-radius:0;box-shadow:none;text-align:left;padding:28px 22px 26px;transform:none}
+#why .dcard:last-child{border-right:0}
+#why .dcard:hover{background:rgba(255,255,255,.62);box-shadow:none;transform:none;border-color:rgba(239,68,68,.14)}
+#why .dcard::before{left:22px;right:auto;top:0;width:46px;height:3px;border-radius:0}
+#why .dcard.hi{background:rgba(255,255,255,.52);box-shadow:none;border-color:rgba(239,68,68,.14)}
+#why .dcard.hi::before{height:3px}
+#why .d-ico{width:44px;height:44px;margin:0 0 14px;border-radius:14px;background:#fff;box-shadow:0 6px 18px rgba(239,68,68,.08)}
+#why .d-num{justify-content:flex-start;margin-bottom:9px}
+#why .d-num span{font-size:36px}
+#why .d-num.word span{font-size:30px}
+#why .dcard h3{font-size:13.5px;margin-bottom:8px}
+#why .dcard p{font-size:12.5px;line-height:1.65}
+#why .d-src{background:rgba(255,255,255,.62);border-color:rgba(205,211,218,.8)}
+#why .field-note{max-width:1080px;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:0;padding:0;background:var(--navy);border:0;border-radius:20px;overflow:hidden;box-shadow:0 26px 76px rgba(28,50,68,.22)}
+#why .field-note-media{order:-1;gap:0;grid-template-columns:1fr 1fr}
+#why .field-proof{position:relative;border:0;border-radius:0;box-shadow:none;background:#071a2a}
+#why .field-proof img{height:300px;filter:saturate(1.06) contrast(1.04)}
+#why .field-proof-cap{position:absolute;left:12px;bottom:12px;background:rgba(10,22,34,.74);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 10px;backdrop-filter:blur(8px)}
+#why .field-note-copy{padding:30px 32px;background:linear-gradient(135deg,rgba(28,50,68,.94),rgba(20,42,61,.98))}
+#why .field-note-kicker{color:#8DC8FF}
+#why .field-note-quote{font-size:17px;line-height:1.75;color:rgba(255,255,255,.88)}
+
+@media(max-width:900px){
+  .vent-proof-grid{grid-template-columns:1fr;max-width:640px}
+  .vent-proof-item{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-rows:auto;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .vent-proof-item:last-child{border-bottom:0}
+  .vent-proof-photo{height:100%}
+  #why .danger-grid{grid-template-columns:repeat(2,1fr)}
+  #why .dcard:nth-child(2n){border-right:0}
+  #why .dcard:nth-child(-n+2){border-bottom:1px solid rgba(239,68,68,.14)}
+  #why .field-note{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .vent-proof-grid{border-radius:16px}
+  .vent-proof-item{grid-template-columns:1fr}
+  .vent-proof-photo{height:215px}
+  .vent-proof-copy{padding:16px}
+  #why .danger-grid{grid-template-columns:1fr;border-radius:14px}
+  #why .dcard,#why .dcard:nth-child(2n){border-right:0;border-bottom:1px solid rgba(239,68,68,.14);padding:24px 20px}
+  #why .dcard:last-child{border-bottom:0}
+  #why .field-note{border-radius:16px}
+  #why .field-note-media{grid-template-columns:1fr}
+  #why .field-proof img{height:220px}
+  #why .field-note-copy{padding:24px 22px}
+}
 /* Mobile-Hero kuerzen: dekoratives Hero-Video auf kleinen Phones raus, Franco-Foto bleibt als Trust-Anker; schneller zur ersten Pain-Sektion */
 @media(max-width:600px){
   .hero-vid-mobile{display:none!important}
@@ -2012,47 +2075,47 @@ document.addEventListener('keydown',function(e){
 </script>
 
 <!-- ===================== 60-SECOND VENT CHECK ===================== -->
-<section id="vent-check" style="background:#fff;padding:52px 0 48px;border-top:1px solid var(--bg3)">
+<section id="vent-check" class="vent-proof-section">
   <div class="sec">
     <div class="chip-row"><span class="chip" style="background:rgba(88,153,227,.1);color:var(--blue);border:1px solid rgba(88,153,227,.2);font-size:11px">Quick Self-Check</span></div>
     <h2 class="sec-t" style="text-align:center">Franco's 60-Second<br><em class="blue-em">AC Vent Check</em></h2>
     <p class="sec-sub" style="text-align:center;margin:0 auto 28px">Before you book anyone — check these three signs in the room you use most.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:720px;margin:0 auto">
+    <div class="vent-proof-grid">
 
-      <div style="background:var(--bg1);border:1.5px solid var(--bg3);border-radius:16px;overflow:hidden;text-align:center">
-        <div style="position:relative;height:170px;overflow:hidden">
+      <div class="vent-proof-item">
+        <div class="vent-proof-photo">
           <img src="assets/real-ac-grid-clean.webp" alt="Dirty AC grill with dust buildup — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center">
           <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 1</div>
         </div>
-	        <div style="padding:16px 14px 18px">
-	          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Dark ring around the AC vent</div>
-	          <div style="font-size:12px;color:var(--g500);line-height:1.5">A dusty or dark outline on the vent cover — visible buildup on and inside the grille.</div>
+	        <div class="vent-proof-copy">
+	          <div class="vent-proof-title">Dark ring around the AC vent</div>
+	          <div class="vent-proof-text">A dusty or dark outline on the vent cover — visible buildup on and inside the grille.</div>
 	          <div class="vent-card-note"><strong>What it means</strong><span>Dust may be collecting around the return path, not only on visible surfaces.</span></div>
 	          <div class="vent-card-send">Send: close-up vent photo</div>
 	        </div>
       </div>
 
-      <div style="background:var(--bg1);border:1.5px solid var(--bg3);border-radius:16px;overflow:hidden;text-align:center">
-        <div style="position:relative;height:170px;overflow:hidden">
+      <div class="vent-proof-item">
+        <div class="vent-proof-photo">
           <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center">
           <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 2</div>
         </div>
-	        <div style="padding:16px 14px 18px">
-	          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Musty smell when AC starts</div>
-	          <div style="font-size:12px;color:var(--g500);line-height:1.5">An earthy or stale odour in the first few minutes — buildup inside the ducts can blow directly into the room.</div>
+	        <div class="vent-proof-copy">
+	          <div class="vent-proof-title">Musty smell when AC starts</div>
+	          <div class="vent-proof-text">An earthy or stale odour in the first few minutes — buildup inside the ducts can blow directly into the room.</div>
 	          <div class="vent-card-note"><strong>What it means</strong><span>Moisture-related buildup may be hiding deeper than the grille or filter.</span></div>
 	          <div class="vent-card-send">Send: smell + room name</div>
 	        </div>
       </div>
 
-      <div style="background:var(--bg1);border:1.5px solid var(--bg3);border-radius:16px;overflow:hidden;text-align:center">
-        <div style="position:relative;height:170px;overflow:hidden">
+      <div class="vent-proof-item">
+        <div class="vent-proof-photo">
           <img src="assets/real-ac-duct-grid-work-1.webp" alt="Pro Aqua technicians cleaning AC ducts and grilles — Dubai high-rise" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top">
           <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 3</div>
         </div>
-	        <div style="padding:16px 14px 18px">
-	          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Dust returns quickly after cleaning</div>
-	          <div style="font-size:12px;color:var(--g500);line-height:1.5">Surfaces need wiping again within days — the AC is redistributing what's inside the ducts.</div>
+	        <div class="vent-proof-copy">
+	          <div class="vent-proof-title">Dust returns quickly after cleaning</div>
+	          <div class="vent-proof-text">Surfaces need wiping again within days — the AC is redistributing what's inside the ducts.</div>
 	          <div class="vent-card-note"><strong>What it means</strong><span>The room may be clean, while the AC keeps reintroducing fine dust.</span></div>
 	          <div class="vent-card-send">Send: dust pattern photo</div>
 	        </div>

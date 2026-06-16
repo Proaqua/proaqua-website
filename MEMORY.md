@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Proof-Sektionen bildlastiger und weniger card-lastig gemacht
+- **Problem:** Mehrere Proof-Bereiche wirkten durch ähnliche weiße Cards, Chips und Badges zu templated. Dadurch verloren echte Beweise wie Vent-Fotos, Duct-Fotos und Mattress-Extraction-Fotos an Wucht.
+- **Korrektur in `index.html`:** `#vent-check` von drei einzelnen hellen Inline-Cards in einen zusammenhängenden dunklen, bildlastigen Proof-Strip umgebaut (`.vent-proof-grid`, `.vent-proof-item`, `.vent-proof-photo`, `.vent-proof-copy`). Bilder sind größer, die drei Signs wirken jetzt wie eine echte Inspektionsstrecke statt wie generische Cards.
+- **Korrektur in `#why`:** Vier Hidden-Danger-Cards per CSS zu einer ruhigeren Evidence-Leiste umgestaltet: keine weißen Einzelkarten/Schlagschatten mehr, sondern ein gemeinsamer Proof-Container mit dezenten Trennlinien. Franco's Inspection Note wurde in einen dunklen Foto-Report mit großem Bildanteil umgebaut; die beiden Beweisfotos sitzen nicht mehr als kleine weiße Cards im blauen Kasten.
+- **QA:** `git diff --check` ohne Befund. Browser-QA Desktop 1280px: Vent-Grid 3 Spalten à 340px, Bildhöhe 235px, `#why` ohne weiße Card-Boxen, Field-Report 1080px breit mit 2×300px Bildern, kein Overflow, keine Console Errors/Warnings. Mobile 390px: `scrollWidth=390`, Vent-Strip stapelt einspaltig, `#why` und Field-Report einspaltig, keine Console Errors/Warnings.
+
 ### 2026-06-16 — Codex — Mobile-Hero Proof-Bereich und Review-Logik entschärft
 - **Problem:** Der Mobile-Hero unterhalb der Hauptcopy wirkte durch Stats, zwei CTAs, Garantiebox, WhatsApp-Status und Trust-Bullets zu gestapelt. Zusätzlich war redaktionell noch nicht klar genug getrennt, was ausgewählte WhatsApp-Nachrichten und was öffentlicher Google-Rating-Nachweis ist.
 - **Korrektur in `index.html`:** Mobile-Hero-Stats zu drei ruhigen Proof-Karten verdichtet (`6,000+ Dubai families`, Google-Badge unverändert, `2016 Founded in Dubai`). Auf Mobile steht WhatsApp visuell vor dem sekundären Inspection-Button; die grüne Garantiebox wurde zu einem klareren Garantie-Hinweis (`Satisfaction guaranteed. If not, we re-clean it for free.`), die zusätzliche WhatsApp-Status-Pille ist mobil ausgeblendet.
