@@ -404,6 +404,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .qr-ico{font-size:40px;margin-bottom:12px}
 .qr-t{font-family:'Inter',sans-serif;font-size:24px;color:var(--navy);margin-bottom:7px;font-weight:700}
 .qr-s{font-size:14px;color:var(--g500);margin-bottom:20px;font-weight:300;line-height:1.65;font-style:italic}
+.qr-risk-pill{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:100px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:var(--red);font-size:12px;font-weight:800;padding:6px 13px;margin:-6px 0 16px;line-height:1.2}
+.qr-risk-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
 .qr-box{background:linear-gradient(135deg,var(--blue-l),var(--green-l));border:1px solid rgba(88,153,227,.2);border-radius:var(--rl);padding:22px;margin-bottom:16px}
 .qr-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-d);margin-bottom:7px}
 .qr-p{font-family:'Inter',sans-serif;font-size:52px;color:var(--navy);line-height:1;animation:popIn .4s ease both;font-weight:800;letter-spacing:-1px}
@@ -433,6 +435,16 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .d-src{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:10.5px;color:var(--g500);text-decoration:none;background:var(--g100);border:1px solid var(--g300);border-radius:20px;padding:4px 10px;transition:all .2s;line-height:1;font-weight:500}
 .d-src:hover{color:var(--navy);border-color:rgba(2,35,69,.3);background:#fff}
 .d-src svg{flex-shrink:0}
+.field-note{margin:30px auto 0;max-width:940px;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:18px;align-items:stretch;background:linear-gradient(135deg,rgba(88,153,227,.09),rgba(77,168,130,.08));border:1px solid rgba(88,153,227,.2);border-radius:16px;padding:20px;box-shadow:0 12px 34px rgba(28,50,68,.08)}
+.field-note-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.field-note-kicker{font-size:11px;font-weight:800;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.7px}
+.field-note-quote{font-size:15px;color:var(--g600);line-height:1.75;margin:0}
+.field-note-media{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.field-proof{border-radius:12px;overflow:hidden;background:#fff;border:1px solid rgba(88,153,227,.16);box-shadow:var(--sh0)}
+.field-proof img{width:100%;height:210px;object-fit:cover;display:block}
+.field-proof-cap{font-size:10.5px;color:var(--g500);padding:7px 9px;text-align:center;letter-spacing:.2px;background:#fff}
+@media(max-width:760px){.field-note{grid-template-columns:1fr;padding:16px}.field-note-media{grid-template-columns:1fr 1fr}.field-proof img{height:150px}}
+@media(max-width:480px){.field-note-media{grid-template-columns:1fr}.field-proof img{height:190px}}
 
 /* ======================================================
    SOLUTION — same square tile design as hidden danger
@@ -667,6 +679,8 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .season-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .season-card h3{font-size:16px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:8px}
 .season-card p{font-size:13px;color:var(--g500);line-height:1.6}
+.season-card-cta{display:inline-flex;align-items:center;justify-content:center;margin-top:14px;min-height:36px;border-radius:10px;background:#25D366;color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:8px 12px;box-shadow:0 4px 14px rgba(37,211,102,.22);transition:all .2s}
+.season-card-cta:hover{background:#20BD5A;transform:translateY(-1px)}
 .season-active-note{display:none;margin:18px auto 0;max-width:680px;border:1px solid rgba(88,153,227,.2);background:var(--blue-ll);border-radius:var(--rl);padding:12px 16px;color:var(--navy);font-size:13px;line-height:1.55}
 .season-active-note.on{display:block}
 .season-cta-row{display:flex;justify-content:center;margin-top:30px}
@@ -1250,7 +1264,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .quiz-fab-dismiss{position:absolute;top:-6px;right:-6px;background:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;color:#9ca3af;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);padding:0;display:none}
 .quiz-fab.qf-visible .quiz-fab-dismiss{display:block}
 @keyframes qfPulse{0%,100%{box-shadow:0 4px 20px rgba(28,50,68,.4)}50%{box-shadow:0 4px 28px rgba(28,50,68,.65),0 0 0 6px rgba(28,50,68,.12)}}
-@media(max-width:480px){.quiz-fab{bottom:calc(118px + env(safe-area-inset-bottom));right:14px;padding:9px 13px 9px 11px;transform:translateX(90px) scale(.94);transform-origin:bottom right}.quiz-fab.qf-visible{transform:translateX(0) scale(.94)}.quiz-fab-label{font-size:11.5px}.quiz-fab-sub{font-size:9.5px}}
+@media(max-width:480px){.quiz-fab{bottom:calc(104px + env(safe-area-inset-bottom));right:14px;padding:8px 11px 8px 10px;box-shadow:0 4px 16px rgba(28,50,68,.32);transform:translateX(90px) scale(.9);transform-origin:bottom right}.quiz-fab.qf-visible{transform:translateX(0) scale(.9)}.quiz-fab-label{font-size:11px}.quiz-fab-sub{font-size:9px}}
 .rs-header-badge{display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:20px;padding:5px 14px;font-size:11px;font-weight:800;color:#92400E;letter-spacing:.6px}
 .rs-title{font-size:22px;font-weight:800;color:var(--navy);margin:10px 0 5px;line-height:1.25}
 .rs-title span{color:var(--blue)}
@@ -2055,17 +2069,19 @@ document.addEventListener('keydown',function(e){
       </div>
 
     </div>
-    <div style="margin-top:28px;background:rgba(88,153,227,.07);border:1px solid rgba(88,153,227,.18);border-radius:12px;padding:18px 22px;max-width:580px;margin-left:auto;margin-right:auto">
-      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px">Franco&#39;s Inspection Note</div>
-      <p style="font-size:14px;color:var(--g600);line-height:1.7;margin:0 0 14px">&ldquo;Most families call us when the smell starts. The better moment is earlier &mdash; when dust keeps coming back around vents, or the bedroom feels heavy after the AC runs. That&rsquo;s usually when we find the most.&rdquo;</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div style="border-radius:8px;overflow:hidden">
-          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from a mattress during deep cleaning — Pro Aqua Dubai" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center 40%;display:block">
-          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Mattress extraction · 2025</div>
+    <div class="field-note">
+      <div class="field-note-copy">
+        <div class="field-note-kicker">Franco&#39;s Inspection Note</div>
+        <p class="field-note-quote">&ldquo;Most families call us when the smell starts. The better moment is earlier &mdash; when dust keeps coming back around vents, or the bedroom feels heavy after the AC runs. That&rsquo;s usually when we find the most.&rdquo;</p>
+      </div>
+      <div class="field-note-media">
+        <div class="field-proof">
+          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from a mattress during deep cleaning — Pro Aqua Dubai" loading="lazy" style="object-position:center 40%">
+          <div class="field-proof-cap">Mattress extraction · 2025</div>
         </div>
-        <div style="border-radius:8px;overflow:hidden">
-          <img src="assets/real-ac-duct-clean.webp" alt="Pro Aqua technician vacuuming AC duct interior — Dubai job 2025" loading="lazy" style="width:100%;height:160px;object-fit:cover;object-position:center 30%;display:block">
-          <div style="font-size:10px;color:var(--g500);margin-top:5px;text-align:center;letter-spacing:.2px">Duct cleaning · 2025</div>
+        <div class="field-proof">
+          <img src="assets/real-ac-duct-clean.webp" alt="Pro Aqua technician vacuuming AC duct interior — Dubai job 2025" loading="lazy" style="object-position:center 30%">
+          <div class="field-proof-cap">Duct cleaning · 2025</div>
         </div>
       </div>
     </div>
@@ -2424,13 +2440,16 @@ document.addEventListener('keydown',function(e){
     .cmp-card ul{list-style:none;margin:0;padding:0}
     .cmp-card li{font-size:13.5px;line-height:1.5;padding:7px 0 7px 24px;position:relative;color:var(--g500);border-top:1px solid var(--bg3)}
     .cmp-card li:before{content:"–";position:absolute;left:4px;color:var(--g400);font-weight:700}
-    .cmp-hero{border:2px solid var(--green-d);box-shadow:0 18px 44px rgba(77,168,130,.22);background:linear-gradient(180deg,#fff 0%,var(--green-ll) 100%);padding:30px 24px;transform:translateY(-8px);z-index:1}
+    .cmp-hero{border:2.5px solid var(--green-d);box-shadow:0 20px 52px rgba(77,168,130,.25);background:linear-gradient(180deg,#fff 0%,var(--green-ll) 100%);padding:30px 24px;transform:translateY(-8px);z-index:1}
     .cmp-hero .cmp-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:6px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 20px rgba(28,50,68,.18)}
     .cmp-brand{display:flex;align-items:center;gap:12px;margin:0 0 12px}
     .cmp-mark{width:46px;height:46px;min-width:46px;border-radius:12px;background:linear-gradient(135deg,var(--green-d),var(--blue));color:#fff;display:grid;place-items:center;font-size:16px;font-weight:800;box-shadow:0 8px 22px rgba(77,168,130,.28)}
     .cmp-brand h3{font-size:23px;margin:0;color:var(--navy)}
     .cmp-owner{font-size:12px;font-weight:700;color:var(--green-d);line-height:1.35}
     .cmp-hero-line{font-size:13.5px;color:var(--navy);font-weight:700;line-height:1.55;margin:0 0 14px}
+    .cmp-reco-strip{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+    .cmp-reco-strip span{display:inline-flex;align-items:center;gap:5px;border-radius:100px;background:#fff;border:1px solid rgba(77,168,130,.25);color:var(--green-d);font-size:11px;font-weight:800;padding:5px 9px;line-height:1.2}
+    .cmp-reco-strip span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
     .cmp-proof-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 18px}
     .cmp-proof{background:#fff;border:1px solid rgba(77,168,130,.24);border-radius:12px;padding:9px 10px;min-height:64px;box-shadow:0 6px 16px rgba(28,50,68,.05)}
     .cmp-proof strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
@@ -2471,7 +2490,7 @@ document.addEventListener('keydown',function(e){
         <p class="cmp-honest">✓ <strong>Right choice if:</strong> You need affordable general home tidying.</p>
       </div>
       <div class="cmp-card cmp-hero">
-        <div class="cmp-badge">THE SPECIALIST CHOICE</div>
+        <div class="cmp-badge">OWNER-LED SPECIALIST CHOICE</div>
         <div class="cmp-brand">
           <div class="cmp-mark" aria-hidden="true">PA</div>
           <div>
@@ -2480,6 +2499,11 @@ document.addEventListener('keydown',function(e){
           </div>
         </div>
         <div class="cmp-hero-line">You always know who's coming, what they found — and you see the proof.</div>
+        <div class="cmp-reco-strip" aria-label="Best fit for Pro Aqua">
+          <span>Same team</span>
+          <span>Fixed price</span>
+          <span>Photo proof</span>
+        </div>
         <div class="cmp-proof-row" aria-label="Pro Aqua proof">
           <div class="cmp-proof cmp-proof-rating"><span class="google-rating-badge google-rating-badge--proof" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span><span>verified public rating</span></div>
           <div class="cmp-proof"><strong>6,000+</strong><span>Dubai families served</span></div>
@@ -2700,8 +2724,9 @@ document.addEventListener('keydown',function(e){
         <div class="quiz-step" id="q1sr">
           <div class="qr">
             <div class="qr-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4DA882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
-            <div class="qr-t">Your Specialist Quote Is Ready</div>
-            <div class="qr-s">Your specialist confirms the exact price during your free inspection — before any work begins.</div>
+            <div class="qr-t">Your Cleaning Risk &amp; Starting Estimate</div>
+            <div class="qr-s">Based on your answers, Franco's team can confirm the visible risk signals and the exact fixed price during your free inspection.</div>
+            <div class="qr-risk-pill" id="riskLevel1">Result: Priority check</div>
             <div class="qr-box"><div class="qr-lbl">Estimated Starting From</div><div class="qr-p" id="rp1">AED 550</div><div class="qr-n">Confirmed at your free inspection · Fixed price · Zero hidden fees</div></div>
             <div class="qr-trust" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0 4px">
               <span style="font-size:12px;color:var(--green-d);background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.2);border-radius:20px;padding:4px 11px">✓ Free on-site inspection</span>
@@ -2881,24 +2906,28 @@ document.addEventListener('keydown',function(e){
         <div class="season-tag">Summer AC Check</div>
         <h3>When the AC runs all day</h3>
         <p>Book duct inspection and cleaning before heavy daily AC use turns dust and moisture into recurring air-quality problems.</p>
+        <a class="season-card-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+Summer+AC+Check+inspection+for+my+home+in+Dubai." target="_blank" rel="noopener">Book Summer AC Check</a>
       </div>
       <div class="season-card" data-season-card="sandstorm">
         <img class="season-img" src="assets/campaign-sandstorm-reset-dubai-v2.webp" alt="Pro Aqua technician in a white polo cleaning dust from an AC vent with a Vivenso-style water filtration system" width="900" height="1407" loading="lazy">
         <div class="season-tag">Sandstorm Reset</div>
         <h3>After dusty weeks</h3>
         <p>Refresh ducts, filters, sofas and carpets after sand and fine dust settle inside the home.</p>
+        <a class="season-card-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+Sandstorm+Reset+inspection+for+my+home+in+Dubai." target="_blank" rel="noopener">Book Sandstorm Reset</a>
       </div>
       <div class="season-card" data-season-card="ramadan-eid">
         <img class="season-img" src="assets/campaign-ramadan-eid-cleaning-dubai-v2.webp" alt="Pro Aqua technician in a white polo cleaning sofa fabric with Vivenso-style spray extraction equipment" width="900" height="1407" loading="lazy">
         <div class="season-tag">Ramadan &amp; Eid</div>
         <h3>Before family visits</h3>
         <p>Deep clean villas, mattresses and fabric surfaces before guests, gatherings and holiday routines.</p>
+        <a class="season-card-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+Ramadan+or+Eid+deep+cleaning+for+my+home+in+Dubai." target="_blank" rel="noopener">Book Ramadan/Eid Clean</a>
       </div>
       <div class="season-card" data-season-card="back-to-school">
         <img class="season-img" src="assets/campaign-back-to-school-allergy-reset-dubai-v2.webp" alt="Pro Aqua technician in a white polo cleaning a mattress with Vivenso-style spray extraction equipment" width="900" height="1407" loading="lazy">
         <div class="season-tag">Back-to-School</div>
         <h3>Allergy reset for kids</h3>
         <p>Sanitize mattresses, sofas and AC air paths before bedrooms and study spaces return to daily use.</p>
+        <a class="season-card-cta" href="https://wa.me/971567943412?text=Hello%2C+I+would+like+to+book+a+Back-to-School+allergy+reset+inspection+for+my+home+in+Dubai." target="_blank" rel="noopener">Book Allergy Reset</a>
       </div>
     </div>
     <div class="season-cta-row">
@@ -2976,7 +3005,7 @@ var L={ac:'AC Duct Cleaning',fabric:'Fabric Sanitizing & Washing',mattress:'Matt
 var Q1={service:'',type:'',size:'',timing:''};
 function pick1(btn,k,v,n){btn.closest('.qopts').querySelectorAll('.qopt').forEach(function(o){o.classList.remove('sel')});btn.classList.add('sel');Q1[k]=v;setTimeout(function(){n===0?showResult1():gos1(n)},320);}
 function gos1(n){document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1s'+n).classList.add('on');var p=Math.round((n/4)*100);document.getElementById('qf1').style.width=p+'%';document.getElementById('ql1').textContent='Step '+n+' of 4';document.getElementById('qp1').textContent=p+'%';}
-function showResult1(){var s=Q1.service||'ac',t=Q1.type||'apt',z=Q1.size||'1';var price=P[s]&&P[s][t]&&P[s][t][z]?P[s][t][z]:500;document.getElementById('rp1').textContent='AED '+price.toLocaleString();var sum='🔹 '+( L[s]||s)+'\n🔹 '+(L[t]||t)+'\n🔹 '+(L[z]||z)+'\n🔹 '+(L[Q1.timing]||'—');var el=document.getElementById('rs1');el.style.whiteSpace='pre-line';el.textContent=sum;document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1sr').classList.add('on');var urgencyEl=document.getElementById('quiz-urgency');if(urgencyEl)urgencyEl.style.display='block';document.getElementById('qf1').style.width='100%';document.getElementById('ql1').textContent='Done!';document.getElementById('qp1').textContent='100%';}
+function showResult1(){var s=Q1.service||'ac',t=Q1.type||'apt',z=Q1.size||'1';var price=P[s]&&P[s][t]&&P[s][t][z]?P[s][t][z]:500;document.getElementById('rp1').textContent='AED '+price.toLocaleString();var risk='Medium-priority inspection';if(s==='ac'||s==='bundle'||Q1.timing==='today')risk='High-priority AC inspection';else if(s==='mattress')risk='Mattress allergen inspection';else if(s==='fabric')risk='Fabric hygiene inspection';var riskEl=document.getElementById('riskLevel1');if(riskEl)riskEl.textContent='Result: '+risk;var sum='🔹 '+( L[s]||s)+'\n🔹 '+(L[t]||t)+'\n🔹 '+(L[z]||z)+'\n🔹 '+(L[Q1.timing]||'—');var el=document.getElementById('rs1');el.style.whiteSpace='pre-line';el.textContent=sum;document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1sr').classList.add('on');var urgencyEl=document.getElementById('quiz-urgency');if(urgencyEl)urgencyEl.style.display='block';document.getElementById('qf1').style.width='100%';document.getElementById('ql1').textContent='Done!';document.getElementById('qp1').textContent='100%';}
 function restart1(){Q1={service:'',type:'',size:'',timing:''};document.querySelectorAll('#qcard1 .qopt').forEach(function(o){o.classList.remove('sel')});document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1s1').classList.add('on');document.getElementById('qf1').style.width='25%';document.getElementById('ql1').textContent='Step 1 of 4';document.getElementById('qp1').textContent='25%';}
 
 /* FAQ */

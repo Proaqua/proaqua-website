@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-Quick-Wins Runde 2 umgesetzt
+- **Erledigt:** Weitere umsetzbare Punkte aus `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` in `index.html` umgesetzt: Hidden-Danger/Inspection-Note als stärkeres Beweis-Panel mit größeren echten Fotos aufgebaut, ohne Bilder neu zu generieren oder die Datei großflächig umzuschreiben.
+- **Erledigt:** Compare-Pro-Aqua-Karte klarer als empfohlene, owner-led Specialist-Option markiert (`OWNER-LED SPECIALIST CHOICE`) und mit kompakten Entscheidungschips (`Same team`, `Fixed price`, `Photo proof`) ergänzt.
+- **Erledigt:** Risk-Quiz-Ergebnis psychologisch sauberer geframed: nicht nur Quote, sondern `Cleaning Risk & Starting Estimate` mit dynamischer, konservativer Inspection-Priorität. Seasonal-Karten erhielten eigene konkrete WhatsApp-CTAs für spätere Meta-/Instagram-Kampagnen.
+- **Verifikation:** `git diff --check` ohne Befund; Browser-QA auf `http://localhost:8742`: Console 0 Errors/Warnings, Desktop Compare-Badge/Reco-Chips sichtbar, Quiz-Interaktion bis Ergebnis getestet (`Result: High-priority AC inspection`, `AED 660`, `100%`), Mobile 390px ohne horizontalen Overflow (`scrollWidth=390`), 4 Seasonal-CTAs im DOM.
+- **Nächster Schritt:** Nächste Audit-Punkte mit echtem Material/Tracking angehen: GA4/Meta-IDs eintragen, echte Before/After-Provenienz final bestätigen, neue Foto-/Video-Assets für stärkere Ad-Creatives sammeln.
+
 ### 2026-06-16 — Codex — Audit-Quick-Wins Runde 1 umgesetzt
 - **Erledigt:** Erste umsetzbare P0/P1-Punkte aus `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` in `index.html` umgesetzt: Topbar von doppelter Telefonnummer befreit, Header-Logo auf schärferes Icon+Text-System umgestellt, Mobile-Hero auf zwei Trust-Chips reduziert, mobiler blauer Hero-CTA visuell sekundärer gemacht und Mobile-Header-CTA ausgeblendet.
 - **Erledigt:** Review-Wording transparenter gemacht (`Selected Customer Reviews`, `Selected real WhatsApp messages plus a public Google rating`) und Hero-Review-Leiste als `Selected customer reviews` gekennzeichnet, damit keine automatische Live-/Verified-Review-Logik suggeriert wird.
