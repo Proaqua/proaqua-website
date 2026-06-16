@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Visual/UI/UX/Conversion-Audit v2 ausgeführt
+- **Ziel:** Giampieros bestehenden Profi-Audit-Prompt auf den aktuellen Website-Stand bringen und anschließend gegen die aktuelle Hauptseite plus neue Arabic-RTL-Seite ausführen.
+- **Erledigt:** Neuer Audit unter `conversion-research/visual-ui-ux-graphic-audit-2026-06-16-v2.md` erstellt. Enthält verbesserten Prompt mit aktuellem Kontext (10,000+ Kunden, Arabic `/ar/`, AC Self-Check, Proof-Hierarchie, Tracking-Bootstrap, offene Blocker) sowie die ausgeführte Bewertung in den Abschnitten A-I.
+- **Browser-Befund:** Hauptseite und Arabic-Seite lokal auf Desktop 1280×844 und Mobile 390×844 geprüft. Beide ohne horizontalen Overflow und ohne Console Errors/Warnings. Hauptseite bleibt conversion-stark, aber Hero ist noch zu hoch (`.hero` ca. 1403px Desktop / 1761px Mobile; `#warning-signs` beginnt mobil erst bei ca. 1885px). Arabic-Seite ist markenkonsistenter und kompakter (`hero` ca. 662px Desktop / 771px Mobile).
+- **Wichtigster nächster Hebel:** Haupt-Hero mobil/desktop verdichten und Hero-Reviews-Bar aus dem Hero lösen oder stark kürzen; danach Tracking-IDs (GA4/Meta) eintragen.
+- **Nächster Schritt:** Lokalen Commit sichern. Kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Arabic-Page optisch an Hauptseite angepasst
 - **Ziel:** Giampieros Feedback umgesetzt, dass die Arabic-Version nicht wie ein separater Sonderentwurf wirken soll, sondern Design, Navigation, Grafik-/Hero-System und Badges der Hauptseite aufnehmen muss.
 - **Erledigt:** `ar/index.html` gezielt überarbeitet: helle Pro-Aqua-Hero-Fläche statt dunklem Sonder-Hero, Topbar nach Hauptseiten-Logik, schärferer Header mit `logo-icon.webp`, gleiche Badge-/Button-Sprache, rechter Arabic-Copy-Block und linker Video-/Franco-Beweisblock.
