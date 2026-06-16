@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Mini-Video-Copy auf Franco-Trust umgestellt
+- **Befund:** Der erste Mobile-Mini-Video-Text (`Watch Franco's inspection preview` / `Muted autoplay preview`) wirkte wie ein technischer UI-Hinweis und nicht wie der strategische Trust-/Accountability-Anker.
+- **Erledigt:** Mini-Video-Copy im Hero auf Giampieros gewünschte Franco-Zeilen umgestellt: `Franco — Founder & CEO, Pro Aqua Dubai`, `Cleaning expert · Dubai since 2016`, `"Every job has my name on it. — Franco"`.
+- **Feinschliff:** Kleine Schrift-/Zeilenhöhen-Anpassung, damit die dreizeilige Copy neben dem Mini-Video auf 390px sauber sitzt.
+- **Verifikation:** `git diff --check` ohne Befund; HTML-Parser-Smoke-Test ohne offene Tags; Browser-QA Mobile 390px: Copy sichtbar, Video läuft weiter leise (`muted=true`, `paused=false`), `scrollWidth=390`, keine Console Errors/Warnings.
+- **Nächster Schritt:** Lokalen Commit sichern; kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Mobile-Hero Mini-Video als ruhige Autoplay-Preview eingebaut
 - **Befund:** Das Hero-Video war auf kleinen Smartphones bewusst per CSS ausgeblendet (`.hero-vid-mobile{display:none!important}`), weil der Mobile-Hero vorher zu lang und zu voll war.
 - **Erledigt:** Statt das große 16:9-Video zurückzubringen, wurde ein kompaktes Mobile-Mini-Video direkt unter der Hero-Copy eingebaut: kleine Preview-Kachel + Text `Watch Franco's inspection preview` und Hinweis `Muted autoplay preview · no interruption`.
