@@ -1283,6 +1283,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .ws-card:hover .ws-photo,.ws-card:focus-visible .ws-photo{transform:translateY(-4px);box-shadow:0 16px 36px rgba(28,50,68,.18);border-color:rgba(220,38,38,.3)}
 .ws-card:focus-visible{outline:3px solid rgba(88,153,227,.42);outline-offset:8px;border-radius:16px}
 .ws-label{font-size:14px;font-weight:800;color:var(--navy);line-height:1.25;max-width:138px}
+.ws-card-compact .ws-text{display:none}
 .ws-copy{min-width:0}
 .ws-kicker{display:inline-flex;margin-bottom:7px;color:#DC2626;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
 .ws-card-featured .ws-photo{width:164px;height:132px;border-radius:18px;padding:0;border-color:rgba(220,38,38,.2);box-shadow:0 14px 34px rgba(28,50,68,.16)}
@@ -1299,8 +1300,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .ws-mini-proof{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--bg3);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--navy);box-shadow:var(--sh0)}
 .ws-mini-proof i{width:7px;height:7px;border-radius:50%;background:#25D366;display:inline-block;box-shadow:0 0 0 4px rgba(37,211,102,.12)}
 @media(max-width:900px){.ws-grid{grid-template-columns:repeat(2,1fr);max-width:720px}.ws-card-featured{grid-column:span 2}.ws-card-compact{grid-column:span 1}.ws-photo{width:108px;height:108px}}
-@media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:14px 12px;margin:34px auto}.ws-card-featured{grid-column:1/-1;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:10px 12px;border-radius:16px}.ws-card-featured .ws-photo{width:104px;height:104px;border-radius:14px}.ws-card-featured .ws-photo::after,.ws-card-featured .ws-photo img{border-radius:14px}.ws-card-featured .ws-label{font-size:14px;margin-bottom:5px}.ws-kicker{font-size:9px;margin-bottom:5px}.ws-text{font-size:12px;line-height:1.4}.ws-micro{display:none}.ws-photo{width:92px;height:92px}.ws-label{font-size:13px}.ws-card-compact.ws-wide{grid-column:1/-1;display:grid;grid-template-columns:92px minmax(0,1fr);align-items:center;justify-items:start;text-align:left;gap:12px;background:#fff;border:1px solid rgba(220,38,38,.16);border-radius:16px;padding:10px 12px;box-shadow:var(--sh0)}.ws-card-compact.ws-wide .ws-label{max-width:none;text-align:left}.ws-btn{width:100%;padding:16px 18px}.ws-mini-proof{width:100%;justify-content:center}}
-@media(max-width:390px){.ws-card-featured{grid-template-columns:92px minmax(0,1fr)}.ws-card-featured .ws-photo,.ws-card-compact.ws-wide .ws-photo{width:88px;height:88px}.ws-card-compact.ws-wide{grid-template-columns:88px minmax(0,1fr)}}
+@media(max-width:560px){.ws-grid{display:flex;flex-direction:column;gap:10px;margin:28px auto 26px;max-width:420px}.ws-card,.ws-card-featured,.ws-card-compact,.ws-card-compact.ws-wide{width:100%;display:grid;grid-template-columns:78px minmax(0,1fr);align-items:center;justify-items:start;text-align:left;gap:12px;background:#fff;border:1px solid rgba(205,211,218,.9);border-radius:16px;padding:9px 11px;box-shadow:0 8px 24px rgba(28,50,68,.08);min-height:98px}.ws-card-featured{border-top:0;border-left:4px solid rgba(220,38,38,.86);box-shadow:0 12px 30px rgba(28,50,68,.11)}.ws-card-compact.ws-wide{grid-column:auto}.ws-photo,.ws-card-featured .ws-photo,.ws-card-compact.ws-wide .ws-photo{width:78px;height:78px;border-radius:14px;padding:0;border-color:rgba(220,38,38,.14);box-shadow:none}.ws-photo::after,.ws-photo img,.ws-card-featured .ws-photo::after,.ws-card-featured .ws-photo img,.ws-card-compact.ws-wide .ws-photo::after,.ws-card-compact.ws-wide .ws-photo img{border-radius:14px}.ws-copy{display:flex;flex-direction:column;align-items:flex-start}.ws-card-compact .ws-label{max-width:none;text-align:left;font-size:14px;line-height:1.18;margin-bottom:4px}.ws-card-featured .ws-label{font-size:14.5px;line-height:1.16;margin-bottom:4px}.ws-kicker{font-size:8.5px;margin-bottom:5px;letter-spacing:.08em}.ws-text,.ws-card-compact .ws-text{display:block;font-size:11.5px;line-height:1.38;color:var(--g500);font-weight:500;margin:0}.ws-micro{display:none}.ws-card:hover .ws-photo,.ws-card:focus-visible .ws-photo{transform:none;box-shadow:none}.ws-btn{width:100%;padding:16px 18px}.ws-mini-proof{width:100%;justify-content:center}}
+@media(max-width:390px){.ws-card,.ws-card-featured,.ws-card-compact,.ws-card-compact.ws-wide{grid-template-columns:72px minmax(0,1fr);gap:10px;padding:9px 10px;min-height:92px}.ws-photo,.ws-card-featured .ws-photo,.ws-card-compact.ws-wide .ws-photo{width:72px;height:72px}.ws-card-featured .ws-label,.ws-card-compact .ws-label{font-size:13.5px}.ws-text,.ws-card-compact .ws-text{font-size:11px}}
 .vent-card-note{margin-top:12px;background:#fff;border:1px solid rgba(88,153,227,.16);border-radius:10px;padding:10px;text-align:left}
 .vent-card-note strong{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-d);margin-bottom:4px}
 .vent-card-note span{display:block;font-size:11.5px;color:var(--g600);line-height:1.45}
@@ -1351,6 +1352,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 /* ── Floating Quiz Badge ── */
 .quiz-fab{position:fixed;bottom:96px;right:max(16px,env(safe-area-inset-right));max-width:calc(100vw - 32px);box-sizing:border-box;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;visibility:hidden;pointer-events:none;transform:none;transition:opacity .28s ease,background-color .2s,color .2s,box-shadow .2s;white-space:nowrap;line-height:1.2;text-align:left}
 .quiz-fab.qf-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none;animation:qfPulse 3.5s ease-in-out 1s infinite}
+.quiz-fab.qf-over-risk-section{opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important}
 .quiz-fab.qf-on-dark{background:rgba(255,255,255,.95);color:var(--navy);box-shadow:0 6px 24px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.42)}
 .quiz-fab.qf-visible.qf-on-dark{animation:qfPulseOnDark 3.5s ease-in-out 1s infinite}
 .quiz-fab-ico{font-size:18px;flex-shrink:0}
@@ -2044,15 +2046,24 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       </div>
       <div class="ws-card ws-card-compact">
         <span class="ws-photo"><img src="assets/warning-allergy-triggers-dubai.webp" alt="Allergy trigger warning sign in a Dubai family home" loading="lazy"></span>
-        <span class="ws-label">Allergy triggers</span>
+        <span class="ws-copy">
+          <span class="ws-label">Allergy triggers</span>
+          <span class="ws-text">Sneezing or itchy eyes at home can point to dust circulating through the AC.</span>
+        </span>
       </div>
       <div class="ws-card ws-card-compact">
         <span class="ws-photo"><img src="assets/warning-weak-airflow-poor-cooling-dubai.webp" alt="Dirty AC filter warning sign for weak airflow or poor cooling" loading="lazy"></span>
-        <span class="ws-label">Weak airflow or poor cooling</span>
+        <span class="ws-copy">
+          <span class="ws-label">Weak airflow or poor cooling</span>
+          <span class="ws-text">One room stays warm or the airflow feels weak even while the AC is running.</span>
+        </span>
       </div>
       <div class="ws-card ws-card-compact ws-wide">
         <span class="ws-photo"><img src="assets/warning-high-dewa-bills-ac-dubai.webp" alt="AC inspection warning sign linked to high DEWA bills" loading="lazy"></span>
-        <span class="ws-label">High DEWA bills</span>
+        <span class="ws-copy">
+          <span class="ws-label">High DEWA bills</span>
+          <span class="ws-text">A clogged AC system can work harder and waste electricity month after month.</span>
+        </span>
       </div>
     </div>
     <div class="ws-cta-wrap">
@@ -4073,8 +4084,24 @@ function playVideo(el){
   var BADGE_GRACE_MS=8000; /* Badge muss min. 8 s sichtbar sein, bevor Popup feuert */
 
   /* Floating Badge — ab 200 px sichtbar */
+  function riskZoneVisible(){
+    var zones=document.querySelectorAll('#warning-signs,#quiz');
+    for(var i=0;i<zones.length;i++){
+      var r=zones[i].getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>0)return true;
+    }
+    return false;
+  }
   function showBadge(){
-    if(badgeShown||!fabEl)return;
+    if(!fabEl)return;
+    if(riskZoneVisible()){
+      fabEl.classList.remove('qf-visible');
+      return;
+    }
+    if(badgeShown){
+      fabEl.classList.add('qf-visible');
+      return;
+    }
     if((window.scrollY||window.pageYOffset)>200){
       fabEl.classList.add('qf-visible');
       badgeShown=true;
@@ -4223,6 +4250,7 @@ function playVideo(el){
 /* Floating split: Quiz-FAB nur obere Haelfte, WhatsApp-Float ab Mitte (vermeidet Konkurrenz unten rechts) */
 (function(){
   function splitY(){var f=document.getElementById('franco');return f?(f.offsetTop-140):(document.documentElement.scrollHeight*0.45);}
+  function inView(sel){var el=document.querySelector(sel);if(!el)return false;var r=el.getBoundingClientRect();return r.top<window.innerHeight&&r.bottom>0;}
   function applyTheme(q){
     if(!q)return;
     var r=q.getBoundingClientRect();
@@ -4233,13 +4261,15 @@ function playVideo(el){
     q.style.pointerEvents='none';
     var below=document.elementFromPoint(x,y);
     q.style.pointerEvents=prev;
+    var overRisk=below&&below.closest&&below.closest('#warning-signs,#quiz,.risk-overlay');
     var dark=below&&below.closest&&below.closest('#before-after,.ba-sec,.cta,footer,[data-fab-theme="dark"]');
+    q.classList.toggle('qf-over-risk-section',!!overRisk);
     q.classList.toggle('qf-on-dark',!!dark);
   }
   function apply(){
     var y=window.scrollY||window.pageYOffset,s=splitY(),upper=y<s;
     var q=document.getElementById('quiz-fab'),w=document.querySelector('.wa-fl');
-    if(q){if(upper)q.classList.remove('qf-belowsplit');else q.classList.add('qf-belowsplit');applyTheme(q);}
+    if(q){if(upper)q.classList.remove('qf-belowsplit');else q.classList.add('qf-belowsplit');applyTheme(q);q.classList.toggle('qf-over-risk-section',inView('#warning-signs')||inView('#quiz'));}
     if(w){if(upper)w.classList.add('wa-off');else w.classList.remove('wa-off');}
   }
   function applySoon(){apply();setTimeout(apply,80);setTimeout(apply,300);}

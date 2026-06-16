@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Warning-Signs Mobile-Layout vereinheitlicht
+- **Ziel:** Giampieros Feedback umgesetzt, dass die Mobile-Warning-Signs-Section nicht passt: zu viele unterschiedliche Layoutmuster (Featured-Cards, runde Mini-Bilder, breite DEWA-Karte) und zusätzlich störender Floating-Risk-Badge.
+- **Erledigt:** `index.html` gezielt angepasst: Mobile `#warning-signs` ist jetzt eine konsistente vertikale Checkliste mit 5 gleichmäßigen horizontalen Zeilen. Alle Karten haben Bild links, Label und kurze Pain-/Check-Copy rechts; die ersten zwei Signale bleiben nur über eine dezente rote Seitenkante priorisiert.
+- **Erledigt:** Floating `Check AC Risk`-Badge wird ausgeblendet, sobald `#warning-signs` oder `#quiz` im Viewport ist, damit er nicht mit dem großen Risk-Quiz-CTA konkurriert.
+- **Verifikation:** HTML-Parser-Smoke-Test ohne offene Tags; `git diff --check` sauber. Browser-QA Mobile 390×844: 5/5 Warning-Karten gleich breit (358px), gleich hoch (92px), Text sichtbar, `scrollWidth=390`, Floating-Badge in der Section `hidden`. Desktop 1280×844: bestehende 2 Featured + 3 Compact-Hierarchie bleibt erhalten, kompakte Zusatztexte bleiben dort ausgeblendet, kein Overflow.
+- **Nächster Schritt:** Live erst nach ausdrücklicher Push-Freigabe aktualisieren.
+
 ### 2026-06-16 — Codex — Mobile-Hero weiter entschlackt
 - **Ziel:** Giampieros Feedback umgesetzt, dass der mobile Hero trotz vorheriger Kürzung noch zu textlastig und visuell heavy wirkt.
 - **Erledigt:** `index.html` gezielt angepasst: mobile Eyebrow/Trust-Bullets bleiben ausgeblendet, der zweite Hero-Claim wird auf Mobile entfernt, der Hero-Problemtext wurde auf einen kurzen Satz reduziert und die mobile Stats-Zeile von drei auf zwei Proof-Karten vereinfacht (`10,000+ Happy clients`, `2016 Founded in Dubai`). Die doppelte Google-Statistik ist auf Mobile entfernt, weil das Google-Badge bereits oben sichtbar ist.
