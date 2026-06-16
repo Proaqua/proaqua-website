@@ -31,6 +31,17 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Echte Arabic-RTL-Landingpage unter `/ar/` gebaut
+- **Ziel:** Arabic nicht mehr nur als Akzent/Audience-Chip, sondern als eigene schlanke Conversion-Journey für Emiratis und arabischsprachige Expats abbilden.
+- **Erledigt:** Neue Datei `ar/index.html` erstellt: `lang="ar-AE"`, `dir="rtl"`, arabische Tajawal-Typografie, RTL-Header, Arabic-Hero, Trust-Leiste, Problem-/Symptomsektion, echte Proof-Bilder, Services, Franco-Accountability, Prozess, Google-/WhatsApp-Proof, FAQ und finaler WhatsApp-CTA.
+- **Copy/Positionierung:** Arabic-Seite ist bewusst keine 1:1-Übersetzung der englischen Hauptseite. Fokus: Familie, saubere Luft, Diskretion, fester Preis vor Arbeitsbeginn, Fotos vor/nach jedem Job und Franco als Accountability-Anker (`كل عمل يحمل اسمي. — فرانكو`).
+- **Assets:** Nur vorhandene Pro-Aqua-/Proof-Assets verwendet (`real-*`, `franco.webp`, Service-Bilder, WhatsApp-Screenshot); keine KI-Before/After-Beweise als echte Proofs genutzt.
+- **Integration:** Hauptseite minimal erweitert: `hreflang`/Alternate-Tags, Arabic-Link im Desktop-Header, Mobile-Menü und Footer. `sitemap.xml` um `https://www.proaquadxb.com/ar/` ergänzt und Root-Lastmod auf 2026-06-16 aktualisiert.
+- **WhatsApp/Tracking:** Alle Arabic-WhatsApp-CTAs erzeugen per JS arabische Prefill-Texte und setzen eigene `data-lead-source`-Werte (`arabic_hero_whatsapp`, `arabic_franco_whatsapp`, `arabic_final_whatsapp`, `arabic_floating_whatsapp`). `dataLayer`/später GA4/Meta erhalten `page_language='ar-AE'`.
+- **Verifikation:** Lokal `http://localhost:8742/ar/` liefert 200. Browser-QA: `lang=ar-AE`, `dir=rtl`, Canonical/Alternate korrekt, WhatsApp-Hero-Link Arabic-encoded, 9 Section-IDs vorhanden, Desktop `scrollWidth=1280`, Mobile 390px `scrollWidth=390`, Hero nach Verdichtung 732px hoch und Trust-Leiste bei 773px im First View sichtbar. Proof-/Review-Bilder laden beim Anker-/Scroll-Test, Console 0 Errors/Warnings. `xmllint` fuer `sitemap.xml` ok, `git diff --check` sauber.
+- **Hinweis:** Die Browser-Screenshot-Funktion in der In-App-Browser-Verbindung hing bei `Page.captureScreenshot`; macOS `screencapture` war in dieser App-Session ebenfalls blockiert. Visuelle QA erfolgte deshalb per Browser-DOM/Layout-Messung, Asset-Ladezustand und Console-Check. Langfristig sollte ein arabischer Muttersprachler die Copy vor größeren Ads final freigeben.
+- **Nächster Schritt:** Lokalen Commit sichern. Kein Push ohne ausdrückliche Push-Freigabe.
+
 ### 2026-06-16 — Codex — Social Proof auf 10.000+ zufriedene Kunden aktualisiert
 - **Anlass:** Giampiero hat nach Francos Rückmeldung bestätigt, dass Pro Aqua inzwischen mehr als 10.000 zufriedene Kunden hat.
 - **Erledigt:** `index.html` gezielt von `6,000+` auf `10,000+` aktualisiert: JSON-LD-Beschreibung, Sticky-Trust-Bar, Hero-Count-up (`data-count-to="10000"`), Hero-Stat-Label, Trust-Belt, Franco-H2, Reviews-CTA und Comparison-Proof.
