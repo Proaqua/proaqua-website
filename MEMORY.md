@@ -847,3 +847,9 @@ Basierend auf Codex-Analyse (`native-ad-application-recommendations.md`):
 - **Rationale:** Erst Problemspannung und echte Befunde, dann Selbst-Identifikation, dann Lösung, Person/Trust, Social Proof, rationaler Vergleich, Details, Preislogik, Quote/Quiz und erst danach finaler Booking-Block.
 - **Scroll-Journey angepasst:** `Good to Know` mappt jetzt Hero/Why/Warning/Vent/Solution; `Reviews` steht eigenständig früher; `Services` umfasst Compare/Services/Before-After; `Book` umfasst Pricing/Quiz/Process/Booking/B2B/Arabic/Seasonal/Areas.
 - **QA:** Lokale Vorschau `http://localhost:8742` mit Cache-Buster geprüft. Desktop-Reihenfolge maschinell verifiziert; Hash-Ziele `#why`, `#reviews`, `#compare`, `#pricing`, `#quiz`, `#booking`, `#faq` landen korrekt und setzen die passende aktive Nav. Mobile 390x844 geprüft: Reihenfolge korrekt, kein horizontaler Overflow, Quiz-FAB und WhatsApp-FAB überlappen nicht. Keine Console Errors.
+
+### 2026-06-16 — Codex — Mobile-Hero Trust-Chips nach Audit final verdichtet
+
+- **Problem:** Nach der Umstellung des Google-Badges auf `Real Reviews` wurde der mobile Hero-Chip-Bereich wieder breiter. Das Audit-Ziel war weiterhin: Mobile First View nur mit zwei klaren Trust-Chips (`4.7 Google/Real Reviews` + `Fixed Price`) und ohne visuelle Überladung.
+- **Korrektur in `index.html`:** Mobile CSS für `.hero-chips` verdichtet: kleinerer Gap, kompaktere Google-Rating-Badge-Abstände, feinere Stern-Abstände und kleinere Label-Schrift nur im Hero-Chip-Kontext. `Trusted since 2016` bleibt auf Mobile ausgeblendet.
+- **QA:** Browser-QA bei 390px Breite: exakt zwei sichtbare Hero-Chips, beide in einer Zeile, `scrollWidth` = `innerWidth` 390px, keine Console Errors/Warnings.
