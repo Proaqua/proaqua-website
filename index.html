@@ -302,6 +302,8 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 .hero-trust{display:flex;gap:20px;flex-wrap:wrap;animation:fadeUp .4s .3s ease both}
 .ht-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--g500);font-weight:400}
 .ht-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.hero-guarantee{display:inline-flex;align-items:center;gap:7px;background:rgba(77,168,130,.08);border:1px solid rgba(77,168,130,.22);border-radius:10px;padding:8px 14px;font-size:12.5px;font-weight:600;color:var(--green-d);margin:8px auto 0;width:fit-content}
+.hero-guarantee svg{flex-shrink:0}
 
 /* RIGHT column */
 .hero-right{display:flex;flex-direction:column;gap:14px;animation:fadeIn .6s .15s ease both}
@@ -598,6 +600,7 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .gs-s{color:var(--amber);font-size:16px;letter-spacing:1px;margin-bottom:1px}
 .gs-c{font-size:12px;color:var(--g400);font-weight:300}
 .gs-badge{margin-left:auto;display:flex;align-items:center;gap:6px;background:var(--blue-l);color:var(--blue-d);border:1px solid rgba(88,153,227,.2);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:500;text-decoration:none}
+.gs-note{flex-basis:100%;font-size:11.5px;color:var(--g500);line-height:1.45;margin-top:-6px}
 .google-rating-badge[href],.gs-badge[href],.g-review-link{cursor:pointer}
 .google-rating-badge[href]:hover,.gs-badge[href]:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(28,50,68,.1)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -1484,8 +1487,21 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   .hero-chips .google-rating-badge--inline .grb-stars{letter-spacing:.1px}
   .hero-chips .google-rating-badge--inline .grb-label::after{font-size:9.2px}
   .hero-chips .hero-chip:not(.dot):not(.campaign-hero-chip){font-size:11px;padding:5px 10px}
+  .hero-stats{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:16px 0 18px}
+  .hero-stats .hstat:not(.hstat-rating){background:#fff;border:1px solid rgba(205,211,218,.85);border-radius:13px;min-height:58px;align-items:center;justify-content:center;padding:8px 6px;box-shadow:0 4px 14px rgba(28,50,68,.05)}
+  .hero-stats .hstat-div{display:none}
+  .hero-stats .hstat-n{font-size:22px;letter-spacing:-.4px;text-align:center}
+  .hero-stats .hstat-l{text-align:center;font-size:10.5px;line-height:1.25;margin-top:4px;color:var(--g500)}
+  .hero-btns{margin-bottom:12px}
+  .hero-btns .hbtn-green{order:1}
+  .hero-btns .hbtn-blue{order:2}
   .hero-btns .hbtn-blue{background:#fff;color:var(--blue-d);border:1.5px solid rgba(88,153,227,.28);box-shadow:var(--sh0)}
   .hero-btns .hbtn-blue:hover{background:var(--blue-ll);color:var(--blue-d)}
+  .hero-guarantee{width:100%;justify-content:flex-start;background:#fff;border-color:rgba(205,211,218,.9);color:var(--navy);box-shadow:0 4px 14px rgba(28,50,68,.05);font-size:12px;line-height:1.4;padding:10px 12px;margin-top:4px}
+  .wa-live-row{display:none}
+  .hero-trust{gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(205,211,218,.7)}
+  .hero-trust .ht-item{width:100%;align-items:flex-start;font-size:12.5px;line-height:1.45}
+  .hero-trust .ht-dot{margin-top:6px}
 }
 </style>
 </head>
@@ -1740,11 +1756,11 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       </div>
 
       <div class="hero-stats">
-        <div class="hstat"><div class="hstat-n"><span class="count-up" data-countup data-count-to="6000" data-count-suffix="+">6,000+</span></div><div class="hstat-l">Happy Clients</div></div>
+        <div class="hstat"><div class="hstat-n"><span class="count-up" data-countup data-count-to="6000" data-count-suffix="+">6,000+</span></div><div class="hstat-l">Dubai families</div></div>
         <div class="hstat-div"></div>
         <div class="hstat hstat-rating"><span class="google-rating-badge google-rating-badge--stat" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
         <div class="hstat-div"></div>
-        <div class="hstat"><div class="hstat-n">10+</div><div class="hstat-l">Years in Dubai</div></div>
+        <div class="hstat"><div class="hstat-n">2016</div><div class="hstat-l">Founded in Dubai</div></div>
       </div>
       <div class="hero-btns">
         <a href="#quiz" class="hbtn hbtn-blue">
@@ -1756,9 +1772,9 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
           WhatsApp Franco's Team
         </a>
       </div>
-      <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(77,168,130,.1);border:1px solid rgba(77,168,130,.25);border-radius:8px;padding:8px 14px;font-size:12.5px;font-weight:600;color:var(--green-d);margin:8px auto 0;width:fit-content">
+      <div class="hero-guarantee">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Not happy? We re-clean for free — no questions asked.
+        If an agreed area is missed, we re-clean it free.
       </div>
       <div class="wa-live-row" style="margin-top:10px"><span class="whatsapp-live">WhatsApp active 7 days · replies in minutes</span></div>
       <div class="hero-trust">
@@ -1796,14 +1812,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     <div class="hero-reviews-inner">
       <!-- Left: avatars + big rating -->
       <div class="hr-left">
-        <div class="hr-label">SELECTED CUSTOMER REVIEWS</div>
+        <div class="hr-label">SELECTED CUSTOMER MESSAGES</div>
         <div class="hr-avatars">
           <div class="hr-av" style="background:#7BB8D4">FD</div>
           <div class="hr-av" style="background:#71C49F;margin-left:-8px">SR</div>
           <div class="hr-av" style="background:#5899E3;margin-left:-8px">TF</div>
         </div>
         <span class="google-rating-badge google-rating-badge--review" aria-label="Google rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></span>
-        <div class="hr-subnote">Selected 5-star messages · Google rating linked</div>
+        <div class="hr-subnote">Selected WhatsApp messages · public Google rating linked</div>
       </div>
       <!-- Right: 3 review cards -->
       <div class="hr-cards">
@@ -2418,23 +2434,24 @@ document.addEventListener('keydown',function(e){
 <!-- ===================== REVIEWS ===================== -->
 <section id="reviews" class="rev-bg">
   <div class="sec">
-    <div class="chip-row"><span class="chip cb">Selected Customer Reviews</span><span class="chip chip-wa">Real WhatsApp Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
-    <h2 class="sec-t">Rated <em class="blue-em">4.7 Stars</em> by Dubai Families</h2>
-    <p class="sec-sub">Selected real WhatsApp messages plus a public Google rating — not stock testimonials, not paid reviews.</p>
+    <div class="chip-row"><span class="chip cb">Selected WhatsApp Screenshots</span><span class="chip chip-wa">Real Customer Messages</span><span class="google-rating-badge google-rating-badge--chip" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span></div>
+    <h2 class="sec-t">Real WhatsApp Messages. <em class="blue-em">Public Google Rating.</em></h2>
+    <p class="sec-sub">The cards below are selected WhatsApp screenshots from customers. The 4.7 rating links to public Google results; it is not presented as a live auto-updating feed.</p>
     <div class="g-strip">
       <a class="g-review-link" href="https://www.google.com/search?q=pro+aqua+dubai" target="_blank" rel="noopener noreferrer" aria-label="Open Pro Aqua Dubai Google reviews">
         <svg width="22" height="22" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        <span style="font-size:13px;font-weight:500;color:var(--navy)">Google Reviews</span>
+        <span style="font-size:13px;font-weight:500;color:var(--navy)">Public Google rating</span>
       </a>
       <div class="gs-div"></div>
       <a href="https://www.google.com/search?q=pro+aqua+dubai" target="_blank" rel="noopener noreferrer" class="google-rating-badge google-rating-badge--strip" aria-label="Open Pro Aqua Dubai Google reviews showing rating 4.7 out of 5 from 60 reviews"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span><span class="grb-count">60 reviews</span></a>
       <a class="gs-badge" href="https://www.google.com/search?q=pro+aqua+dubai" target="_blank" rel="noopener noreferrer" aria-label="Check Pro Aqua Dubai rating on Google"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Check on Google</a>
+      <div class="gs-note">Google rating opens a public Google search result. WhatsApp cards are selected message screenshots, not an automatic review widget.</div>
     </div>
     <div class="rev-grid">
       <div class="rev-card"><div class="rev-qt">"</div>
         <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">AC Duct Cleaning</span></div>
         <div class="rev-head"><div class="rev-av">KK</div><div><div class="rev-nm">Kavi Kapila</div><div class="rev-si">Client since 2025</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Real WhatsApp message</div>
+        <div class="stars">★★★★★</div><div class="verified">✓ WhatsApp screenshot</div>
         <p class="rev-text">Happy to confirm my previous experiences have been reinforced again. Prompt responses, punctual and most important, efficient motivated and professional team. No short cuts, final result is great.</p>
                                 <div class="wa-ss">
           <img src="assets/whatsapp-review-ac-duct-cleaning.webp" alt="WhatsApp review screenshot — AC duct cleaning service feedback" loading="lazy">
@@ -2443,7 +2460,7 @@ document.addEventListener('keydown',function(e){
       <div class="rev-card"><div class="rev-qt">"</div>
         <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Villa Deep Cleaning</span></div>
         <div class="rev-head"><div class="rev-av">PV</div><div><div class="rev-nm">P.V.</div><div class="rev-si">Client since 2026</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Real WhatsApp message</div>
+        <div class="stars">★★★★★</div><div class="verified">✓ WhatsApp screenshot</div>
         <p class="rev-text">Excellent service..Franco is very particular and prompt. Takes a lot of interest. Have used them for our villa and office. For mattresses, sofas, carpets and all pur AC ducts. Very happy to give them excellent recommendations.</p>
         <div class="wa-ss">
           <img src="assets/whatsapp-review-villa-deep-cleaning.webp" alt="WhatsApp review screenshot — villa deep cleaning feedback" loading="lazy">
@@ -2452,7 +2469,7 @@ document.addEventListener('keydown',function(e){
       <div class="rev-card"><div class="rev-qt">"</div>
         <div class="rev-chips"><span class="chip cb" style="font-size:10px;padding:2px 10px">Sanitization</span></div>
         <div class="rev-head"><div class="rev-av">CT</div><div><div class="rev-nm">Chantelle Thompson</div><div class="rev-si">Client since 2026</div></div></div>
-        <div class="stars">★★★★★</div><div class="verified">✓ Real WhatsApp message</div>
+        <div class="stars">★★★★★</div><div class="verified">✓ WhatsApp screenshot</div>
         <p class="rev-text">Pro Aqua recently came out to deep clean my cream sofa and did an amazing job. They were available within just a few hours of reaching out to them. Extremely happy with both customer service and quality of service. Will be using again.</p>
         <div class="wa-ss">
           <img src="assets/whatsapp-review-sofa-sanitizing.webp" alt="WhatsApp review screenshot — sofa sanitizing feedback" loading="lazy">

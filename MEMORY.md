@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero Proof-Bereich und Review-Logik entschärft
+- **Problem:** Der Mobile-Hero unterhalb der Hauptcopy wirkte durch Stats, zwei CTAs, Garantiebox, WhatsApp-Status und Trust-Bullets zu gestapelt. Zusätzlich war redaktionell noch nicht klar genug getrennt, was ausgewählte WhatsApp-Nachrichten und was öffentlicher Google-Rating-Nachweis ist.
+- **Korrektur in `index.html`:** Mobile-Hero-Stats zu drei ruhigen Proof-Karten verdichtet (`6,000+ Dubai families`, Google-Badge unverändert, `2016 Founded in Dubai`). Auf Mobile steht WhatsApp visuell vor dem sekundären Inspection-Button; die grüne Garantiebox wurde zu einem neutralen Proof-Hinweis (`If an agreed area is missed, we re-clean it free.`), die zusätzliche WhatsApp-Status-Pille ist mobil ausgeblendet.
+- **Review-Wording:** Hero-Review-Leiste auf `Selected customer messages`/`Selected WhatsApp messages · public Google rating linked` umgestellt. Große Review-Sektion trennt jetzt klar: `Selected WhatsApp Screenshots`, `Real Customer Messages`, `Public Google Rating`; Subcopy und Google-Strip sagen explizit, dass die WhatsApp-Karten ausgewählte Screenshots sind und der Google-Wert ein verlinkter öffentlicher Nachweis ist, kein Live-Widget. Karten-Badges heißen jetzt `WhatsApp screenshot`.
+- **QA:** Browser-QA Mobile 390px: kein horizontaler Overflow, WhatsApp-Button visuell zuerst, Google-Badge bleibt sichtbar, Status-Pille mobil unsichtbar. Desktop Reviews 1280px: 3 Review-Karten, 3 Google-Links, neues Wording sichtbar, keine Console Errors/Warnings.
+
 ### 2026-06-16 — Codex — Desktop-Topbar und Header-CTA-Konkurrenz reduziert
 - **Problem:** Im Desktop-Hero konkurrierten Topbar-CTA, Header-WhatsApp, Header-Quote und Hero-CTAs gleichzeitig. Das erzeugte oben zu viele Einstiegspunkte, obwohl WhatsApp/Inspection der klare Primärpfad bleiben soll.
 - **Korrektur in `index.html`:** Topbar von einem aktiven Buchungsbutton befreit: jetzt nur noch ein Telefonlink plus ruhige Trust-/Inspection-Aussage (`FREE AC MOLD & AIR QUALITY INSPECTION · FIXED PRICE BEFORE WORK STARTS`). Der sekundäre Header-Quote-CTA ist im Desktop-Header ausgeblendet; der Quote-/Inspection-Einstieg bleibt im Hero und den späteren CTA-Sektionen erhalten.
