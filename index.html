@@ -656,6 +656,11 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .business-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;border-radius:var(--rl);padding:15px 22px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.35)}
 .business-cta:hover{background:#20BD5A;transform:translateY(-1px)}
 .business-note{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
+.business-plan{display:grid;gap:8px;margin:4px 0 2px}
+.business-plan-step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;border-top:1px solid rgba(255,255,255,.12);padding:10px 0 2px}
+.business-plan-step b{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(113,196,159,.16);border:1px solid rgba(113,196,159,.34);font-size:11px;color:#A7F3D0}
+.business-plan-step strong{display:block;font-size:13px;color:#fff;margin-bottom:2px}
+.business-plan-step span{display:block;font-size:12px;color:rgba(255,255,255,.62);line-height:1.45}
 @media(max-width:900px){.business-in{grid-template-columns:1fr}.business-grid{grid-template-columns:1fr}.business-panel{padding:24px}}
 
 /* ARABIC & SEASONAL */
@@ -2539,7 +2544,7 @@ document.addEventListener('keydown',function(e){
           <span>Photo proof</span>
         </div>
         <div class="cmp-proof-row" aria-label="Pro Aqua proof">
-          <div class="cmp-proof cmp-proof-rating"><span class="google-rating-badge google-rating-badge--proof" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span><span>verified public rating</span></div>
+          <div class="cmp-proof cmp-proof-rating"><span class="google-rating-badge google-rating-badge--proof" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span><span>public Google rating</span></div>
           <div class="cmp-proof"><strong>6,000+</strong><span>Dubai families served</span></div>
           <div class="cmp-proof"><strong>Since 2016</strong><span>still here — still Franco</span></div>
           <div class="cmp-proof"><strong>Photo proof</strong><span>on every single job</span></div>
@@ -2907,8 +2912,13 @@ document.addEventListener('keydown',function(e){
           <li>Photo documentation for every completed job</li>
           <li>Flexible scheduling for tenant, guest or staff access</li>
         </ul>
+        <div class="business-plan" aria-label="Recurring business cleaning plan">
+          <div class="business-plan-step"><b>1</b><span><strong>Share your portfolio</strong>Units, community, access rules and cleaning frequency.</span></div>
+          <div class="business-plan-step"><b>2</b><span><strong>Inspect first units</strong>Franco's team confirms AC, mattress, sofa and handover scope.</span></div>
+          <div class="business-plan-step"><b>3</b><span><strong>Repeatable schedule</strong>Monthly, quarterly or turnover-based visits with photo proof.</span></div>
+        </div>
         <div>
-          <a class="business-cta" href="https://wa.me/971567943412?text=Hello%2C+I+manage+a+property%2Fholiday+home%2Foffice+in+Dubai+and+would+like+to+discuss+AC+duct+cleaning+and+deep+cleaning+for+multiple+units." target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg> WhatsApp for Business Quote</a>
+          <a class="business-cta" href="https://wa.me/971567943412?text=Hello%2C+I+manage+a+property%2Fholiday+home%2Foffice+portfolio+in+Dubai+and+would+like+to+set+up+a+recurring+cleaning+plan.+Units%3A+__.+Community%3A+__.+Frequency%3A+monthly%2Fquarterly%2Fturnover-based." target="_blank" rel="noopener" data-lead-source="business_recurring_plan" data-wa-topic="b2b_recurring"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg> Set Up Recurring Plan</a>
           <div class="business-note">For apartments, villas, offices and managed short-stay units across Dubai.</div>
         </div>
       </div>
@@ -3654,6 +3664,15 @@ function playVideo(){
       overlay.classList.add('open');
       overlay.removeAttribute('aria-hidden');
       document.body.style.overflow='hidden';
+      if(typeof window.proaquaTrack==='function'){
+        var section=img.closest('section,header,footer');
+        var src=img.currentSrc||img.getAttribute('src')||'';
+        window.proaquaTrack('proof_lightbox_open',{
+          location:section&&section.id?section.id.replace(/-/g,'_'):'global',
+          image_caption:capEl.textContent.slice(0,90),
+          image_src:src.split('/').pop().slice(0,90)
+        });
+      }
       closeBtn.focus({preventScroll:true});
     }
     function closeLightbox(){

@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-Quick-Wins Runde 5: B2B-Funnel und Proof-Event-Tracking ergänzt
+- **Erledigt:** B2B-/Business-Section in `index.html` stärker als wiederkehrenden Service-Funnel aufgebaut: 3 ruhige Timeline-Schritte (`Share your portfolio`, `Inspect first units`, `Repeatable schedule`) für Property Manager, Holiday Homes und Offices. CTA von allgemeinem Business-Quote auf `Set Up Recurring Plan` umgestellt.
+- **Erledigt:** Business-WhatsApp-Prefill konkretisiert: Units, Community und Frequency (`monthly/quarterly/turnover-based`) werden direkt abgefragt. CTA trägt jetzt `data-lead-source="business_recurring_plan"` und `data-wa-topic="b2b_recurring"`.
+- **Erledigt:** Proof-Lightbox instrumentiert: Beim Öffnen eines Content-/Proof-Bildes wird über den bestehenden Hook `proof_lightbox_open` mit Section, Bild-Caption und Bilddatei an `dataLayer`/später GA4/Meta gegeben. Sichtbaren Compare-Text `verified public rating` zu `public Google rating` entschärft.
+- **Verifikation:** `git diff --check` ohne Befund; Browser-QA auf `http://localhost:8742`: Mobile 390px und Desktop 1280px ohne horizontalen Overflow, B2B-Timeline 3 Schritte, CTA-Prefill und `data-lead-source`/`data-wa-topic` korrekt, Lightbox öffnet per echtem Klick, Console 0 Errors/Warnings. Hinweis: Browser-Isolation kann `window.proaquaTrack`/`dataLayer` nicht auslesen; Event-Hook zusätzlich statisch im Code verifiziert.
+- **Nächster Schritt:** Echte externe Daten bleiben die letzten Audit-Blocker: GA4 Measurement ID + Meta Pixel ID, DM-Approval-Nachweis, echte Before/After-Provenienz, neue reale Foto-/Video-Assets und vollwertige arabische Landing-Version.
+
 ### 2026-06-16 — Codex — Audit-Quick-Wins Runde 4: Mobile Campaign-State und Warning-Signs verfeinert
 - **Erledigt:** Den Seasonal-/Campaign-Block in `index.html` verfeinert: Die Saison-Sektion bleibt automatisch dynamisch (`summer-ac` im Juni), aber Hero-Campaign-Chip und Hero-WhatsApp-Text werden nur noch bei echten Kampagnen-Signalen gesetzt (`?campaign=...`, `?season=...`, UTM, Hash oder manuell per API). Dadurch wirkt der normale Mobile-Hero nicht unnötig überladen.
 - **Erledigt:** Mobile Warning-Signs-Grid verbessert: Auf kleinen Screens bleiben die ersten vier Pain-Punkte als 2×2-Raster, die fünfte Karte `High DEWA bills` spannt jetzt als breiter CTA-naher Teaser über die ganze Breite.
