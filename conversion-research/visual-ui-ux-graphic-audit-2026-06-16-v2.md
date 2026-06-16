@@ -61,6 +61,23 @@ I) Finales Paid-Traffic-Urteil mit Blockern und Testbudget-Empfehlung
 - Arabic-Seite Hero-Höhe: ca. 662px Desktop, ca. 771px Mobile; Trust-Zone startet mobil bei ca. 836px.
 - GA4 und Meta Pixel sind vorbereitet, aber leer.
 
+## Umsetzungsstand 2026-06-16 — Codex Fix-Pass
+
+Direkt umgesetzt und geprüft:
+- Haupt-Hero strukturell gekürzt: `hero-reviews` liegt nicht mehr im `#hero`, sondern als separate Proof-Leiste danach.
+- Mobile Hero-Reviews-Bar komprimiert: Review-Karten werden mobil ausgeblendet, Google-/Selected-Reviews-Hinweis bleibt sichtbar.
+- Neuer Messwert Hauptseite Mobile 390x844: `#hero` ca. 901px, `hero-reviews` ca. 115px, `#warning-signs` startet bei ca. 1140px statt vorher ca. 1885px.
+- Floating Risk-Check-Badge sitzt im Viewport: Desktop 1280px rechts bei ca. 1264px, Mobile 390px rechts bei ca. 378px; kein seitliches Herausschieben mehr.
+- Arabic-Seite ergänzt um kompakten `#self-check` mit 4 Self-Check-Punkten und arabischem WhatsApp-Prefill.
+- Arabic Navigation hat jetzt Active-State/Scrollspy für die Hauptsektionen.
+- Browser-QA: Hauptseite und `/ar/` ohne horizontalen Overflow und ohne Console Errors/Warnings.
+
+Weiterhin offen, weil externe Daten/Assets nötig sind:
+- GA4 Measurement ID und Meta Pixel ID eintragen.
+- DM-Approval-Nachweis und Ab-Preise final bestätigen.
+- Arabic Copy durch Muttersprachler final prüfen.
+- Neue reale Foto-/Video-Assets für Ads produzieren.
+
 ## A) Executive Summary
 
 Die Website ist inzwischen strategisch stark: Sie hat eine klare Owner-led-Positionierung, echte Fotos, starke Pain-/Proof-Elemente, Franco als Gesicht, WhatsApp-Fokus und einen sinnvollen Conversion-Flow. Sie wirkt deutlich weniger generisch als typische Dubai-Cleaning-Seiten und hat durch die echten AC-/Mattress-Beweise einen Vorteil, den Wettbewerber schwer kopieren können. Die größte Schwäche liegt nicht mehr im Konzept, sondern in Dichte und Hierarchie: Die Hauptseite ist sehr lang, der Hero ist zu hoch und einige Beweis-/Trust-Elemente konkurrieren miteinander. Mobile ist funktional stabil, aber der Besucher kommt zu spät in die eigentliche Fear-/Pain-Strecke. Die Arabic-Seite ist als eigenes RTL-Angebot ein guter Schritt und wirkt nach der Design-Anpassung markenkonsistenter, ist aber noch schlanker und weniger beweisstark als die Hauptseite. Paid Traffic ist testbar, aber Skalierung ohne GA4/Meta Pixel und ohne final verifizierte Claims/Preise wäre blind.

@@ -61,8 +61,9 @@ img{max-width:100%;display:block}
 .brand-copy strong{display:block;font:800 17px/1 Inter,Tajawal,sans-serif;color:var(--navy);letter-spacing:.02em}
 .brand-copy span{display:block;font-size:10px;color:var(--muted);margin-top:2px;font-weight:800;letter-spacing:.12em}
 .links{display:flex;align-items:center;gap:6px}
-.links a{font-size:14px;font-weight:700;color:#475569;padding:8px 11px;border-radius:10px}
-.links a:hover{background:#eef6ff;color:var(--navy)}
+.links a{font-size:14px;font-weight:700;color:#475569;padding:8px 11px;border-radius:10px;transition:background .18s ease,color .18s ease,box-shadow .18s ease}
+.links a:hover,.links a.act{background:#eef6ff;color:var(--navy)}
+.links a.act{box-shadow:inset 0 0 0 1px rgba(88,153,227,.2)}
 .nav-actions{display:flex;align-items:center;gap:10px}
 .lang{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font:700 12px/1 Inter,Tajawal,sans-serif;color:var(--navy);background:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:11px;padding:13px 18px;font-weight:800;font-size:15px;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
@@ -119,6 +120,16 @@ section{padding:84px 0;border-top:1px solid rgba(216,224,231,.72)}
 .ico{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#eef6ff;color:var(--blue2);font-size:22px}
 .signal.warn{border-color:rgba(239,68,68,.26);background:linear-gradient(180deg,#fff,#fff7f7)}
 .signal.warn .ico{background:#fff1f1;color:var(--red)}
+.self-check{background:linear-gradient(180deg,#fff 0%,#f0faf4 100%)}
+.self-board{background:rgba(255,255,255,.84);border:1px solid rgba(77,168,130,.22);border-radius:22px;padding:20px;box-shadow:0 18px 48px rgba(28,50,68,.1)}
+.self-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.self-item{background:#fff;border:1px solid rgba(216,224,231,.9);border-radius:15px;padding:17px;min-height:150px}
+.self-item b{display:block;color:var(--navy);font-size:18px;line-height:1.25;margin-bottom:6px}
+.self-item span{display:block;color:var(--muted);font-size:14px;line-height:1.45}
+.self-ico{width:36px;height:36px;border-radius:999px;background:var(--green2);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}
+.self-cta{margin-top:16px;border-radius:16px;background:var(--navy);color:#fff;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.self-cta strong{display:block;font-size:18px;line-height:1.25}
+.self-cta span{display:block;color:rgba(255,255,255,.68);font-size:14px;margin-top:3px}
 .proof{background:var(--navy);color:#fff;border-top:none}
 .proof .section-head h2{color:#fff}
 .proof .section-head p{color:rgba(255,255,255,.62)}
@@ -179,7 +190,7 @@ footer{background:#122535;color:rgba(255,255,255,.68);padding:38px 0}
   .links{display:none}
   .hero-inner{grid-template-columns:1fr;grid-template-areas:"copy" "media";gap:28px;padding:54px 0 44px}
   .hero-media{width:min(100%,620px);margin-inline:auto}
-  .trust-grid,.signals,.services,.steps,.review-grid{grid-template-columns:1fr 1fr}
+  .trust-grid,.signals,.services,.steps,.review-grid,.self-grid{grid-template-columns:1fr 1fr}
   .proof-grid{grid-template-columns:1fr}
   .case.big img,.case img{height:260px}
   .franco-grid{grid-template-columns:1fr;gap:28px}
@@ -212,7 +223,10 @@ footer{background:#122535;color:rgba(255,255,255,.68);padding:38px 0}
   .owner-note strong{font-size:12.8px}
   .owner-note span{font-size:11px}
   .trust-band{padding-top:18px}
-  .trust-grid,.signals,.services,.steps,.review-grid{grid-template-columns:1fr}
+  .trust-grid,.signals,.services,.steps,.review-grid,.self-grid{grid-template-columns:1fr}
+  .self-board{padding:14px;border-radius:18px}
+  .self-cta{align-items:stretch}
+  .self-cta .btn{width:100%}
   .trust{border-inline-start:none;border-top:1px solid #edf1f5}
   .trust:first-child{border-top:none}
   section{padding:64px 0}
@@ -249,11 +263,12 @@ footer{background:#122535;color:rgba(255,255,255,.68);padding:38px 0}
       <span class="brand-copy"><strong>PRO-AQUA</strong><span>DISINFECTION & STERILIZATION LLC</span></span>
     </a>
     <nav class="links" aria-label="روابط الصفحة">
-      <a href="#problems">المؤشرات</a>
-      <a href="#proof">الدليل</a>
-      <a href="#services">الخدمات</a>
-      <a href="#franco">فرانكو</a>
-      <a href="#faq">الأسئلة</a>
+      <a href="#problems" class="act" data-nav-key="problems" aria-current="true">المؤشرات</a>
+      <a href="#self-check" data-nav-key="self-check">الفحص السريع</a>
+      <a href="#proof" data-nav-key="proof">الدليل</a>
+      <a href="#services" data-nav-key="services">الخدمات</a>
+      <a href="#franco" data-nav-key="franco">فرانكو</a>
+      <a href="#faq" data-nav-key="faq">الأسئلة</a>
     </nav>
     <div class="nav-actions">
       <a class="lang" href="/">English</a>
@@ -326,6 +341,27 @@ footer{background:#122535;color:rgba(255,255,255,.68);padding:38px 0}
         <article class="signal warn"><div class="ico">•</div><strong>غبار أسود حول الجريل</strong><p>الغبار الظاهر حول فتحات الهواء علامة قوية أن الداخل يحتاج تنظيفاً، وليس السطح فقط.</p></article>
         <article class="signal"><div class="ico">≈</div><strong>حساسية أو عطاس متكرر</strong><p>لا نقدم تشخيصاً طبياً، لكن الغبار والروائح داخل المنزل قد يزعجان العائلة، خصوصاً الأطفال.</p></article>
         <article class="signal"><div class="ico">↯</div><strong>تبريد ضعيف أو فاتورة أعلى</strong><p>عندما يعمل النظام بجهد أكبر، قد تحتاج إلى فحص الملفات، الفلاتر ومجرى الهواء.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="self-check" id="self-check">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>فحص سريع خلال 60 ثانية قبل الحجز</h2>
+        <p>لا تحتاج إلى شرح طويل. افحص هذه النقاط، ثم أرسل صورة أو فيديو قصير لفرانكو على واتساب لنخبرك ما هي الخطوة المناسبة.</p>
+      </div>
+      <div class="self-board">
+        <div class="self-grid">
+          <article class="self-item"><div class="self-ico">1</div><b>شمّ الهواء عند تشغيل المكيف</b><span>هل تظهر رائحة رطوبة أو غبار في أول دقائق التشغيل؟</span></article>
+          <article class="self-item"><div class="self-ico">2</div><b>صوّر فتحة الهواء</b><span>ابحث عن غبار أسود أو بقع حول الجريل أو داخل الفتحة.</span></article>
+          <article class="self-item"><div class="self-ico">3</div><b>قارن قوة التبريد</b><span>هل الغرفة لا تبرد مثل السابق رغم أن المكيف يعمل؟</span></article>
+          <article class="self-item"><div class="self-ico">4</div><b>لاحظ الغبار المتكرر</b><span>هل يعود الغبار بسرعة على الأسطح بعد التنظيف؟</span></article>
+        </div>
+        <div class="self-cta">
+          <div><strong>أرسل صورة أو فيديو قصير لفرانكو</strong><span>سنرد عليك باللغة العربية ونقترح فحصاً مجانياً إذا كان ضرورياً.</span></div>
+          <a class="btn btn-wa" href="https://wa.me/971567943412" data-lead-source="arabic_self_check_whatsapp" data-wa-text="مرحباً برو أكوا، أريد فحصاً سريعاً للمكيف. أستطيع إرسال صورة أو فيديو قصير. المنطقة: __. المشكلة: رائحة / غبار / تبريد ضعيف / حساسية.">أرسل الفحص على واتساب</a>
+        </div>
       </div>
     </div>
   </section>
@@ -461,6 +497,55 @@ footer{background:#122535;color:rgba(255,255,255,.68);padding:38px 0}
     if(typeof window.gtag==='function')window.gtag('event',name,data||{});
     if(typeof window.fbq==='function'&&name==='lead_click')window.fbq('track','Contact',{content_name:(data&&data.lead_source)||'arabic'});
   }
+  function navOffset(){
+    var top=document.querySelector('.top');
+    return (top?top.getBoundingClientRect().height:68)+14;
+  }
+  function setActiveNav(id){
+    document.querySelectorAll('.links a[data-nav-key]').forEach(function(link){
+      var active=link.getAttribute('href')==='#'+id;
+      link.classList.toggle('act',active);
+      if(active)link.setAttribute('aria-current','true');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  function initScrollSpy(){
+    var links=[].slice.call(document.querySelectorAll('.links a[data-nav-key]'));
+    var sections=links.map(function(link){
+      var id=(link.getAttribute('href')||'').replace('#','');
+      var el=document.getElementById(id);
+      return el?{id:id,el:el}:null;
+    }).filter(Boolean);
+    if(!links.length||!sections.length)return;
+
+    function update(){
+      var marker=navOffset()+Math.max(90,window.innerHeight*.2);
+      var best=sections[0],score=-Infinity;
+      sections.forEach(function(item){
+        var rect=item.el.getBoundingClientRect();
+        var visible=Math.max(0,Math.min(rect.bottom,window.innerHeight)-Math.max(rect.top,0));
+        var s=visible-Math.abs(rect.top-marker)*.18;
+        if(rect.top<=marker&&rect.bottom>marker)s+=window.innerHeight;
+        if(s>score){score=s;best=item;}
+      });
+      setActiveNav(best.id);
+    }
+
+    links.forEach(function(link){
+      link.addEventListener('click',function(e){
+        var href=link.getAttribute('href')||'';
+        var target=document.getElementById(href.slice(1));
+        if(!target)return;
+        e.preventDefault();
+        window.scrollTo({top:Math.max(0,target.getBoundingClientRect().top+window.scrollY-navOffset()),behavior:'smooth'});
+        if(window.history&&window.history.pushState)window.history.pushState(null,'',href);
+        setActiveNav(href.slice(1));
+      });
+    });
+    window.addEventListener('scroll',update,{passive:true});
+    window.addEventListener('resize',update);
+    update();
+  }
   document.addEventListener('click',function(e){
     var q=e.target.closest('.fq');
     if(q&&e.target.closest('button'))q.classList.toggle('open');
@@ -469,6 +554,7 @@ footer{background:#122535;color:rgba(255,255,255,.68);padding:38px 0}
     if(link.href.indexOf('wa.me/')>-1)track('lead_click',{channel:'whatsapp',lead_source:link.getAttribute('data-lead-source')||'arabic_page'});
   });
   setWhatsAppLinks();
+  initScrollSpy();
 })();
 </script>
 </body>

@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-v2 Quick-Wins final umgesetzt und geprüft
+- **Ziel:** Giampieros Visual/UI/UX/Conversion-Audit v2 praktisch abschließen und die umsetzbaren Punkte direkt in der Hauptseite und Arabic-RTL-Seite verankern.
+- **Erledigt:** `index.html`: Hero-Reviews-Bar aus `#hero` gelöst und mobil stark komprimiert, damit der erste Pain-Block deutlich früher kommt. Floating Risk-Check-Badge so umgebaut, dass er sichtbar und unsichtbar innerhalb des Viewports bleibt (`visibility` statt seitlichem Herausschieben).
+- **Erledigt:** `ar/index.html`: Neue kompakte Arabic-Section `#self-check` mit 4 schnellen AC-Selbstcheck-Punkten und arabischem WhatsApp-Prefill ergänzt. Arabic-Header-Navigation um Active-State/Scrollspy erweitert.
+- **Dokumentation:** `conversion-research/visual-ui-ux-graphic-audit-2026-06-16-v2.md` um den aktuellen Umsetzungsstand ergänzt.
+- **Verifikation:** HTML-Parser-Smoke-Test für `index.html` und `ar/index.html` ohne offene/unerwartete Tags. `git diff --check` sauber. Browser-QA: Hauptseite Desktop 1280px und Mobile 390px ohne horizontalen Overflow und ohne Console Errors/Warnings. Neuer Mobile-Wert: `#warning-signs` startet bei ca. 1140px statt vorher ca. 1885px; Floating-Badge bleibt im Viewport. Arabic `/ar/`: Self-Check vorhanden (4 Items), WhatsApp-Prefill korrekt, Active Nav funktioniert, Desktop/Mobile ohne Overflow und ohne Console Errors/Warnings.
+- **Nächster Schritt:** Commit und Push auf `proaqua2/main` und `origin/main`, weil Giampiero Push ausdrücklich freigegeben hat. Externe Blocker bleiben GA4/Meta IDs, DM-Approval-Nachweis, bestätigte Ab-Preise und native Arabic-Copy-Review.
+
 ### 2026-06-16 — Codex — Original-Teamfoto als Source-Asset ergänzt und Push vorbereitet
 - **Ziel:** Giampieros Hinweis auf das Originalbild `proaqua_dubai_cleaning_service_team` aufnehmen und den aktuellen Team-/Fleet-Proof vollständig ins Repository bringen.
 - **Erledigt:** Das bessere Originalbild aus `origin/main` integriert und als `assets/proaqua_dubai_cleaning_service_team.jpeg` behalten. Die sichtbare Website-Version `assets/pro-aqua-dubai-team-fleet.webp` daraus neu erzeugt: sauber ohne Screenshot-Balken/Carousel-Pfeil, mit Pro-Aqua-Wasserzeichen unten rechts.

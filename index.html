@@ -1349,8 +1349,8 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .risk-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:2}
 .risk-close:hover{color:var(--navy)}
 /* ── Floating Quiz Badge ── */
-.quiz-fab{position:fixed;bottom:96px;right:20px;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;transform:translateX(90px);transition:opacity .4s .2s,transform .4s .2s,background-color .2s,color .2s,box-shadow .2s;white-space:nowrap;line-height:1.2;text-align:left}
-.quiz-fab.qf-visible{opacity:1;transform:translateX(0);animation:qfPulse 3.5s ease-in-out 1s infinite}
+.quiz-fab{position:fixed;bottom:96px;right:max(16px,env(safe-area-inset-right));max-width:calc(100vw - 32px);box-sizing:border-box;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;visibility:hidden;pointer-events:none;transform:none;transition:opacity .28s ease,background-color .2s,color .2s,box-shadow .2s;white-space:nowrap;line-height:1.2;text-align:left}
+.quiz-fab.qf-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none;animation:qfPulse 3.5s ease-in-out 1s infinite}
 .quiz-fab.qf-on-dark{background:rgba(255,255,255,.95);color:var(--navy);box-shadow:0 6px 24px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.42)}
 .quiz-fab.qf-visible.qf-on-dark{animation:qfPulseOnDark 3.5s ease-in-out 1s infinite}
 .quiz-fab-ico{font-size:18px;flex-shrink:0}
@@ -1362,7 +1362,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .quiz-fab.qf-visible .quiz-fab-dismiss{display:block}
 @keyframes qfPulse{0%,100%{box-shadow:0 4px 20px rgba(28,50,68,.4)}50%{box-shadow:0 4px 28px rgba(28,50,68,.65),0 0 0 6px rgba(28,50,68,.12)}}
 @keyframes qfPulseOnDark{0%,100%{box-shadow:0 6px 24px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.42)}50%{box-shadow:0 6px 30px rgba(0,0,0,.3),0 0 0 6px rgba(255,255,255,.13)}}
-@media(max-width:480px){.quiz-fab{bottom:calc(104px + env(safe-area-inset-bottom));right:14px;padding:8px 11px 8px 10px;box-shadow:0 4px 16px rgba(28,50,68,.32);transform:translateX(90px) scale(.9);transform-origin:bottom right}.quiz-fab.qf-visible{transform:translateX(0) scale(.9)}.quiz-fab-label{font-size:11px}.quiz-fab-sub{font-size:9px}}
+@media(max-width:480px){.quiz-fab{bottom:calc(104px + env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right));max-width:calc(100vw - 24px);padding:8px 11px 8px 10px;box-shadow:0 4px 16px rgba(28,50,68,.32);transform:scale(.9);transform-origin:bottom right}.quiz-fab.qf-visible{transform:scale(.9)}.quiz-fab-label{font-size:11px}.quiz-fab-sub{font-size:9px}}
 .rs-header-badge{display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:20px;padding:5px 14px;font-size:11px;font-weight:800;color:#92400E;letter-spacing:.6px}
 .rs-title{font-size:22px;font-weight:800;color:var(--navy);margin:10px 0 5px;line-height:1.25}
 .rs-title span{color:var(--blue)}
@@ -1536,7 +1536,7 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 </script>
 <style>
 /* Floating split (Conversation-Flow): Quiz-FAB obere Haelfte, WhatsApp-Float ab Mitte */
-.quiz-fab.qf-belowsplit{opacity:0!important;transform:translateX(90px) scale(.94)!important;pointer-events:none!important}
+.quiz-fab.qf-belowsplit{opacity:0!important;visibility:hidden!important;transform:none!important;pointer-events:none!important}
 .wa-fl.wa-off{opacity:0!important;pointer-events:none!important;transform:scale(.4)!important}
 
 /* Proof sections: less template-card density, more editorial evidence. */
@@ -1635,6 +1635,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
   .hero-trust{gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(205,211,218,.7)}
   .hero-trust .ht-item{width:100%;align-items:flex-start;font-size:12.5px;line-height:1.45}
   .hero-trust .ht-dot{margin-top:6px}
+  .hero-reviews{padding:10px 16px;background:var(--bg);border-top:1px solid var(--g300)}
+  .hero-reviews-inner{display:block!important;padding:0!important}
+  .hero-reviews .hr-cards{display:none!important}
+  .hero-reviews .hr-left{display:grid!important;grid-template-columns:auto 1fr;align-items:center;gap:4px 10px;width:100%}
+  .hero-reviews .hr-label{grid-column:1/-1;margin:0;font-size:9px;letter-spacing:.1em;color:var(--blue)}
+  .hero-reviews .hr-avatars{display:none!important}
+  .hero-reviews .google-rating-badge--review{justify-self:start;transform:scale(.86);transform-origin:left center}
+  .hero-reviews .hr-subnote{max-width:none;font-size:10px;line-height:1.35;color:var(--g500)}
 }
 @media(max-width:360px){
   .hero-vid-mobile .hero-vid{width:104px;min-width:104px}
@@ -1950,9 +1958,10 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       </div>
     </div>
   </div>
+</div>
 
-  <!-- CLIENT REVIEWS BAR -->
-  <div class="hero-reviews">
+<!-- CLIENT REVIEWS BAR -->
+<div class="hero-reviews">
     <div class="hero-reviews-inner">
       <!-- Left: avatars + big rating -->
       <div class="hr-left">
@@ -1991,7 +2000,6 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       </div>
     </div>
   </div>
-</div>
 
 <div id="stb-spacer"></div>
 <!-- TRUST BELT -->
