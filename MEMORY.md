@@ -31,6 +31,10 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Franco-Signatur auf merkfähigere Formulierung geändert
+- **Entscheidung:** Giampiero hat die emotional stärkere Signatur freigegeben: `Every job has my name on it. — Franco`.
+- **Korrektur in `index.html`:** Hero-Franco-Karten (Desktop/Mobile) und `#franco .franco-signature` von `I personally oversee every job my team accepts.` auf die neue Signatur umgestellt. Schreibweise bewusst mit `Every` korrigiert.
+
 ### 2026-06-16 — Codex — Booking-Typo geprüft und Franco-Accountability-Signatur vereinheitlicht
 - **Booking-Headline:** `#booking` geprüft: HTML steht korrekt als `Your Home Deserves <em class="blue-em">Better Air</em>.` und rendert als `Your Home Deserves Better Air.` ohne Leerzeichen vor dem Punkt. Es war im aktuellen Stand kein Code-Typo mehr vorhanden.
 - **Franco-Anker:** Hero-Franco-Karten (Desktop/Mobile) von allgemeiner Clean-Air-Quote auf die Accountability-Signatur umgestellt: `I personally oversee every job my team accepts.`
