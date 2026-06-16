@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — CTA-Dichte reduziert, Desktop-Pain früher, Arabic-Proof gestärkt
+- **Ziel:** Die verbleibenden Audit-Punkte gezielt korrigieren: Seite/CTA-Dichte reduzieren, Desktop schneller zur Pain-Strecke bringen, Arabic proof-stärker machen und GEO/AI-Ablage vorbereiten. GA4/Meta Pixel bleiben bewusst bis zum Projektende offen.
+- **Erledigt:** `index.html` gezielt verdichtet: Desktop-Hero von ca. 1070px auf ca. 787px reduziert, `#warning-signs` startet Desktop jetzt bei ca. 1231px statt ca. 1526px. Hero-Reviews-Bar kompakter, Hero-Trust-Dots entfernt, Desktop-Video flacher (`16:9`), späte Booking-Sektion sichtbar auf WhatsApp + Call reduziert; die dritte Quote-Karte ist ausgeblendet.
+- **Erledigt:** Floating Risk-Check-Badge erscheint nicht mehr nach 200px, sondern erst nach Problem-/Proof-Kontakt; in der Warning-Zone bleibt er ausgeblendet. `ar/index.html` um einen frühen Before/After-Proof-Teaser im Hero ergänzt und Arabic-Google-Badge von `Real Reviews` auf `تقييمات حقيقية` korrigiert.
+- **GEO/AI:** Neuer Ordner `fabio-folder/GEO-AI/` mit `README.md` angelegt. Dort sollen Giampieros GEO-/AI-Visibility-Markdowns abgelegt werden; die erste FAQ-MD mit 20 FAQs gehört ebenfalls dort hinein und wird danach in Website + FAQ-Schema übernommen.
+- **Verifikation:** `git diff --check` sauber; HTML-Parser für `index.html` und `ar/index.html` ohne offene/unerwartete Tags. Browser-QA: Hauptseite Desktop 1280px ohne Overflow, Hero ca. 787px, WarningTop ca. 1231px, Booking sichtbar 2 Karten; Mobile 390px ohne Overflow, Slider `value=75`, Booking sichtbar 2 Karten, Floating Badge initial/Warning-Zone aus. Arabic Mobile 390px ohne Overflow, `dir=rtl`, Hero-Proof-Teaser sichtbar bei ca. 426px, Bild lädt, Console 0 Errors/Warnings.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe. Für 9.5/10 bleiben Tracking-IDs, finale Preis-/Scope-Freigabe, DM-Approval-Nachweis, FAQ-/Schema-Integration aus `fabio-folder/GEO-AI`, native Arabic-Copy-Review und neue Proof-Videos/Fotos.
+
 ### 2026-06-16 — Codex — Audit-v3 Quick Wins umgesetzt
 - **Ziel:** Aus dem neuen Audit v3 direkt risikoarme Conversion-Quick-Wins in `index.html` umsetzen, ohne die große Datei neu zu generieren.
 - **Erledigt:** AC Self-Check CTA geschärft: Nutzer sollen Franco jetzt explizit ein `10-second vent video or photo` senden; WhatsApp-Prefill fragt genau danach. Compare-Pro-Aqua-Spalte stärker auf Accountability formuliert: Badge `FRANCO ACCOUNTABLE CHOICE`, neuer Trust-Chip `Every job has Franco's name on it`, Reco-Chip `Franco accountable`.
