@@ -31,6 +31,10 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hero-Reviews-Bar redaktionell final geschärft
+- **Befund:** Mobile-Hero erfüllt die Audit-Empfehlung bereits: zwei kuratierte Trust-Chips (`4.7 Real Reviews` + `Fixed Price`), WhatsApp als primärer CTA, Inspection als sekundärer CTA und kompakte Garantiebox.
+- **Korrektur in `index.html`:** Frühe Hero-Reviews-Bar von `SELECTED CUSTOMER MESSAGES` auf `SELECTED CUSTOMER REVIEWS` geändert und Subnote auf `Selected 5-star customer messages · Google rating linked above` gesetzt. Damit wird klar: ausgewählte Kundenstimmen, kein Live-/Alle-Reviews-Widget; Google-Rating ist separat verlinkt.
+
 ### 2026-06-16 — Codex — Before/After-Provenienz als bestätigt sichtbar gemacht
 - **Entscheidung:** Giampiero hat die vorhandenen Daten als nutzbar bestätigt. Die bisherige Provenienz-Lücke für die Before/After-Galerie ist damit für den aktuellen Stand geschlossen.
 - **Korrektur in `index.html`:** Alten S6-TODO-Kommentar in der Galerie durch `Confirmed provenance` ersetzt. Section-Subcopy geschärft: `Documented Dubai jobs with service, community, property type and month`.
