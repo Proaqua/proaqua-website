@@ -514,6 +514,19 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .fp-dot{width:18px;height:18px;border-radius:50%;background:var(--blue-l);border:1.5px solid var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .fp-dot svg{width:8px;height:8px}
 .franco-btns{display:flex;gap:10px;flex-wrap:wrap}
+.team-proof{margin-top:38px;background:#fff;border:1px solid var(--g300);border-radius:var(--rxl);overflow:hidden;box-shadow:var(--sh0);display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.72fr)}
+.team-proof-photo{position:relative;min-height:360px;background:var(--navy);overflow:hidden}
+.team-proof-photo img{width:100%;height:100%;object-fit:cover;object-position:center 58%;display:block}
+.team-proof-photo::after{content:'';position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(0deg,rgba(28,50,68,.66),rgba(28,50,68,0));pointer-events:none}
+.team-proof-caption{position:absolute;left:18px;bottom:16px;z-index:2;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.team-proof-caption span{display:inline-flex;align-items:center;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.55);box-shadow:0 6px 18px rgba(0,0,0,.12);padding:7px 11px;font-size:11px;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.team-proof-copy{padding:28px 30px;display:flex;flex-direction:column;justify-content:center}
+.team-proof-kicker{font-size:11px;font-weight:800;color:var(--blue-d);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.team-proof-copy h3{font-family:'Inter',sans-serif;font-size:25px;line-height:1.16;color:var(--navy);font-weight:800;letter-spacing:-.2px;margin-bottom:12px}
+.team-proof-copy p{font-size:14px;color:var(--g600);line-height:1.7;margin:0 0 16px}
+.team-proof-list{list-style:none;display:grid;gap:9px;margin:0}
+.team-proof-list li{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.45}
+.team-proof-list li::before{content:'✓';width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--green-l);color:var(--green-d);font-size:11px;font-weight:900;flex-shrink:0;margin-top:1px}
 
 /* ======================================================
    WHAT WE CLEAN — services
@@ -850,6 +863,9 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .hero-vid-mobile{display:block;width:100%;margin-bottom:20px}
   .hero-vid-mobile .hero-vid{aspect-ratio:16/9;width:100%}
   .nav-btns .btn:last-child{display:none}
+  .team-proof{grid-template-columns:1fr}
+  .team-proof-photo{min-height:330px}
+  .team-proof-copy{padding:24px 22px 26px}
 }
 @media(max-width:768px){
   section{padding:52px 18px}
@@ -863,6 +879,11 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .ba-feature-grid{grid-template-columns:1fr}
   .ba-rest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ba-imgs{height:200px}
+  .team-proof{margin-top:28px;border-radius:18px}
+  .team-proof-photo{min-height:255px}
+  .team-proof-caption{left:12px;right:12px;bottom:12px}
+  .team-proof-caption span{font-size:10px;padding:6px 9px}
+  .team-proof-copy h3{font-size:21px}
   .proc-grid{grid-template-columns:1fr 1fr}
   .ft-top{grid-template-columns:1fr}
   .qopts{grid-template-columns:1fr}
@@ -2577,6 +2598,26 @@ document.addEventListener('keydown',function(e){
           <a href="#quiz" class="btn btn-blue btn-lg">Book My Free Inspection</a>
           <a href="https://wa.me/971567943412" class="btn btn-outline btn-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Franco</a>
         </div>
+      </div>
+    </div>
+    <div class="team-proof">
+      <div class="team-proof-photo">
+        <img src="assets/pro-aqua-dubai-team-fleet.webp" alt="Pro Aqua Dubai team with branded service vans outside a Dubai residence" loading="lazy" width="1162" height="798">
+        <div class="team-proof-caption" aria-label="Team proof badges">
+          <span>Real Pro Aqua team</span>
+          <span>Branded service vans</span>
+          <span>Dubai field crew</span>
+        </div>
+      </div>
+      <div class="team-proof-copy">
+        <div class="team-proof-kicker">Real Team · Real Fleet</div>
+        <h3>Not an anonymous app crew.</h3>
+        <p>This is the team behind the work: Pro Aqua uniforms, branded vans and the same standards Franco puts his name on.</p>
+        <ul class="team-proof-list">
+          <li>Owner-led team, not random rotating subcontractors</li>
+          <li>Specialists for AC ducts, mattresses, fabrics and deep cleaning</li>
+          <li>Before-and-after proof sent after every documented job</li>
+        </ul>
       </div>
     </div>
   </div>

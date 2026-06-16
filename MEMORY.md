@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Team-/Fleet-Proof in Franco-Sektion eingebaut
+- **Ziel:** Giampieros neues Teamfoto so einsetzen, dass es die Kernpositionierung stärkt: nicht anonyme App-Crews, sondern ein echtes Pro-Aqua-Team mit gebrandeten Vans und Franco-Accountability.
+- **Erledigt:** Teamfoto zugeschnitten, Screenshot-/Carousel-Ränder entfernt, dezent mit Pro-Aqua-Wasserzeichen versehen und als optimiertes Asset `assets/pro-aqua-dubai-team-fleet.webp` abgelegt. In `#franco` eine neue `Real Team · Real Fleet`-Proof-Sektion ergänzt: großes Team-/Van-Bild links, rechts Copy `Not an anonymous app crew.` plus drei klare Trust-Punkte.
+- **Verifikation:** Asset lädt lokal mit HTTP 200, WebP 1162×798 und ca. 151 KB. Browser-QA Desktop 1280px: zweispaltige Bild-/Copy-Komposition, kein horizontaler Overflow, Console 0 Errors/Warnings. Browser-QA Mobile 390px: einspaltige Komposition, Badges umbrechen sauber, Bild lädt, `scrollWidth=390`, Console 0 Errors/Warnings. `git diff --check` sauber.
+- **Nächster Schritt:** Lokalen Commit sichern. Kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Visual/UI/UX/Conversion-Audit v2 ausgeführt
 - **Ziel:** Giampieros bestehenden Profi-Audit-Prompt auf den aktuellen Website-Stand bringen und anschließend gegen die aktuelle Hauptseite plus neue Arabic-RTL-Seite ausführen.
 - **Erledigt:** Neuer Audit unter `conversion-research/visual-ui-ux-graphic-audit-2026-06-16-v2.md` erstellt. Enthält verbesserten Prompt mit aktuellem Kontext (10,000+ Kunden, Arabic `/ar/`, AC Self-Check, Proof-Hierarchie, Tracking-Bootstrap, offene Blocker) sowie die ausgeführte Bewertung in den Abschnitten A-I.
