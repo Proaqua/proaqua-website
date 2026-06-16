@@ -241,6 +241,8 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 .hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;animation:fadeUp .4s ease both}
 .hero-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:.01em;border:1px solid var(--g300);background:#fff;color:var(--g700);box-shadow:var(--sh0)}
 .hero-chip.dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;animation:blink 2s infinite}
+.campaign-hero-chip{display:none!important;background:#FFF7ED!important;border-color:#FED7AA!important;color:#9A3412!important;font-weight:800}
+.campaign-hero-chip.on{display:inline-flex!important}
 .google-rating-badge{--grb-score:18px;--grb-star:11px;display:inline-grid;grid-template-columns:1fr;justify-items:center;align-items:center;gap:2px;min-width:88px;padding:8px 12px;border-radius:14px;background:#fff;border:1px solid rgba(251,188,4,.34);box-shadow:0 6px 18px rgba(28,50,68,.07);color:var(--navy);line-height:1;text-decoration:none;white-space:nowrap}
 .google-rating-badge .grb-score{font-size:var(--grb-score);font-weight:800;letter-spacing:-.04em;color:var(--navy)}
 .google-rating-badge .grb-stars{font-size:var(--grb-star);letter-spacing:.8px;color:#FBBC04}
@@ -1226,6 +1228,24 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .ws-mini-proof i{width:7px;height:7px;border-radius:50%;background:#25D366;display:inline-block;box-shadow:0 0 0 4px rgba(37,211,102,.12)}
 @media(max-width:900px){.ws-grid{grid-template-columns:repeat(3,1fr);max-width:620px}.ws-photo{width:108px;height:108px}}
 @media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;margin:34px auto}.ws-photo{width:96px;height:96px}.ws-label{font-size:13px}.ws-btn{width:100%;padding:16px 18px}.ws-mini-proof{width:100%;justify-content:center}}
+.vent-card-note{margin-top:12px;background:#fff;border:1px solid rgba(88,153,227,.16);border-radius:10px;padding:10px;text-align:left}
+.vent-card-note strong{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-d);margin-bottom:4px}
+.vent-card-note span{display:block;font-size:11.5px;color:var(--g600);line-height:1.45}
+.vent-card-send{margin-top:9px;display:inline-flex;align-items:center;justify-content:center;border-radius:100px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.24);color:var(--wa-deep);font-size:11px;font-weight:800;padding:5px 10px;line-height:1.2}
+.solution-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:760px;margin:26px auto 0}
+.solution-flow-step{background:linear-gradient(180deg,#fff,var(--blue-ll));border:1px solid rgba(88,153,227,.2);border-radius:14px;padding:14px 16px;box-shadow:var(--sh0);position:relative}
+.solution-flow-step strong{display:block;font-size:13px;color:var(--navy);margin-bottom:4px}
+.solution-flow-step span{display:block;font-size:12px;color:var(--g500);line-height:1.45}
+.price-factors{background:#fff;border:1.5px solid rgba(88,153,227,.22);border-radius:16px;padding:16px 18px;margin:0 0 24px;box-shadow:var(--sh0)}
+.price-factors-title{font-size:12px;font-weight:900;color:var(--navy);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.price-factor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.price-factor-grid span{display:flex;align-items:center;gap:7px;background:var(--bg2);border:1px solid var(--g300);border-radius:100px;padding:7px 10px;font-size:12px;font-weight:700;color:var(--g700);line-height:1.2}
+.price-factor-grid span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.proc-whatsapp-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:900px;margin:26px auto 0}
+.proc-flow-step{background:var(--blue-ll);border:1px solid rgba(88,153,227,.2);border-radius:14px;padding:13px 14px;text-align:left}
+.proc-flow-step strong{display:block;font-size:12px;color:var(--navy);margin-bottom:4px}
+.proc-flow-step span{display:block;font-size:11.5px;color:var(--g500);line-height:1.4}
+@media(max-width:760px){.solution-flow,.proc-whatsapp-flow{grid-template-columns:1fr}.price-factor-grid{grid-template-columns:1fr}}
 /* ── Protected Image Lightbox ───────────────────────────────────── */
 .pa-lightbox-ready{cursor:zoom-in}
 .pa-img-lightbox{position:fixed;inset:0;z-index:10020;background:rgba(10,22,34,.84);display:flex;align-items:center;justify-content:center;padding:28px;opacity:0;pointer-events:none;transition:opacity .22s ease}
@@ -1670,10 +1690,11 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
     <!-- LEFT — exact like screenshot -->
     <div class="hero-left">
       <div class="hero-chips">
-        <span class="hero-chip dot">Trusted since 2016</span>
-        <span class="google-rating-badge google-rating-badge--inline" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span>
-        <span class="hero-chip">💰 Fixed Price · No Surprises</span>
-      </div>
+	        <span class="hero-chip dot">Trusted since 2016</span>
+	        <span class="google-rating-badge google-rating-badge--inline" aria-label="Google rating 4.7 out of 5"><span class="grb-score">4.7</span><span class="grb-stars">★★★★★</span><span class="grb-label">Google</span></span>
+	        <span class="hero-chip">💰 Fixed Price · No Surprises</span>
+	        <span class="hero-chip campaign-hero-chip" data-season-hero-chip></span>
+	      </div>
       <div class="hero-eyebrow">Professional Cleaning Dubai · نظافة متكاملة</div>
       <h1 class="hero-h1 hero-kinetic">
               <span class="kin" style="--kin-delay:.08s">Your Dubai home</span><br>
@@ -1934,13 +1955,14 @@ function rsShowResult(){
   p.className='rs-risk-pill '+pillCls;
   document.getElementById('rs-msg').textContent=msg;
   var rsWa=document.getElementById('rs-wa');
-  if(rsWa){
-    rsWa.href='https://wa.me/971567943412?text='+waText;
-    rsWa.setAttribute('data-lead-source','risk_quiz_'+pill.toLowerCase().replace(/\s+/g,'_'));
-    rsWa.setAttribute('data-wa-topic','risk_quiz');
-    rsWa.setAttribute('aria-label','Send your AC Risk Check result to Pro Aqua on WhatsApp');
-  }
-}
+	  if(rsWa){
+	    rsWa.href='https://wa.me/971567943412?text='+waText;
+	    rsWa.setAttribute('data-lead-source','risk_quiz_'+pill.toLowerCase().replace(/\s+/g,'_'));
+	    rsWa.setAttribute('data-wa-topic','risk_quiz');
+	    rsWa.setAttribute('aria-label','Send your AC Risk Check result to Pro Aqua on WhatsApp');
+	  }
+	  if(typeof window.proaquaTrack==='function')window.proaquaTrack('risk_quiz_complete',{risk_level:pill,total_score:total});
+	}
 function restartRisk(){
   rsScores=[];
   rsCurrentQ=0;
@@ -1968,10 +1990,12 @@ document.addEventListener('keydown',function(e){
           <img src="assets/real-ac-grid-clean.webp" alt="Dirty AC grill with dust buildup — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center">
           <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 1</div>
         </div>
-        <div style="padding:16px 14px 18px">
-          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Dark ring around the AC vent</div>
-          <div style="font-size:12px;color:var(--g500);line-height:1.5">A dusty or dark outline on the vent cover — visible buildup on and inside the grille.</div>
-        </div>
+	        <div style="padding:16px 14px 18px">
+	          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Dark ring around the AC vent</div>
+	          <div style="font-size:12px;color:var(--g500);line-height:1.5">A dusty or dark outline on the vent cover — visible buildup on and inside the grille.</div>
+	          <div class="vent-card-note"><strong>What it means</strong><span>Dust may be collecting around the return path, not only on visible surfaces.</span></div>
+	          <div class="vent-card-send">Send: close-up vent photo</div>
+	        </div>
       </div>
 
       <div style="background:var(--bg1);border:1.5px solid var(--bg3);border-radius:16px;overflow:hidden;text-align:center">
@@ -1979,10 +2003,12 @@ document.addEventListener('keydown',function(e){
           <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center">
           <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 2</div>
         </div>
-        <div style="padding:16px 14px 18px">
-          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Musty smell when AC starts</div>
-          <div style="font-size:12px;color:var(--g500);line-height:1.5">An earthy or stale odour in the first few minutes — buildup inside the ducts can blow directly into the room.</div>
-        </div>
+	        <div style="padding:16px 14px 18px">
+	          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Musty smell when AC starts</div>
+	          <div style="font-size:12px;color:var(--g500);line-height:1.5">An earthy or stale odour in the first few minutes — buildup inside the ducts can blow directly into the room.</div>
+	          <div class="vent-card-note"><strong>What it means</strong><span>Moisture-related buildup may be hiding deeper than the grille or filter.</span></div>
+	          <div class="vent-card-send">Send: smell + room name</div>
+	        </div>
       </div>
 
       <div style="background:var(--bg1);border:1.5px solid var(--bg3);border-radius:16px;overflow:hidden;text-align:center">
@@ -1990,10 +2016,12 @@ document.addEventListener('keydown',function(e){
           <img src="assets/real-ac-duct-grid-work-1.webp" alt="Pro Aqua technicians cleaning AC ducts and grilles — Dubai high-rise" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top">
           <div style="position:absolute;top:10px;left:10px;background:rgba(239,68,68,.9);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px">SIGN 3</div>
         </div>
-        <div style="padding:16px 14px 18px">
-          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Dust returns quickly after cleaning</div>
-          <div style="font-size:12px;color:var(--g500);line-height:1.5">Surfaces need wiping again within days — the AC is redistributing what's inside the ducts.</div>
-        </div>
+	        <div style="padding:16px 14px 18px">
+	          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3">Dust returns quickly after cleaning</div>
+	          <div style="font-size:12px;color:var(--g500);line-height:1.5">Surfaces need wiping again within days — the AC is redistributing what's inside the ducts.</div>
+	          <div class="vent-card-note"><strong>What it means</strong><span>The room may be clean, while the AC keeps reintroducing fine dust.</span></div>
+	          <div class="vent-card-send">Send: dust pattern photo</div>
+	        </div>
       </div>
 
     </div>
@@ -2200,9 +2228,14 @@ document.addEventListener('keydown',function(e){
       <svg width="18" height="18" fill="none" stroke="var(--blue)" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       <span style="font-size:14px;font-weight:600;color:var(--g500);letter-spacing:.08em;text-transform:uppercase">The Pro Aqua Solution</span>
     </div>
-    <h2 class="sec-t">How We <em class="blue-em">Fix</em> It — For Good</h2>
-    <p class="sec-sub">That musty smell when the AC starts? It comes from inside the ductwork. Here’s exactly how we remove it — for good.</p>
-    <div class="sol-tile-grid">
+	    <h2 class="sec-t">How We <em class="blue-em">Fix</em> It — For Good</h2>
+	    <p class="sec-sub">That musty smell when the AC starts? It comes from inside the ductwork. Here’s exactly how we remove it — for good.</p>
+	    <div class="solution-flow" aria-label="Pro Aqua cleaning process">
+	      <div class="solution-flow-step"><strong>1. Inspect</strong><span>We check vents, visible buildup and the service scope before quoting.</span></div>
+	      <div class="solution-flow-step"><strong>2. Extract</strong><span>Franco's trained team uses specialist equipment for ducts, mattresses and fabrics.</span></div>
+	      <div class="solution-flow-step"><strong>3. Show Proof</strong><span>You receive before &amp; after photos so the hidden work is visible.</span></div>
+	    </div>
+	    <div class="sol-tile-grid">
 
       <div class="sol-tile">
         <div class="sol-tile-top">
@@ -2569,10 +2602,19 @@ document.addEventListener('keydown',function(e){
 
       <!-- LEFT: How pricing works -->
       <div>
-        <div class="chip-row"><span class="chip cb">How Pricing Works</span></div>
-        <h2 style="font-size:clamp(24px,3.2vw,34px);font-weight:700;color:var(--navy);line-height:1.25;margin:16px 0 14px">Fixed Price.<br><em style="font-style:normal;color:var(--blue-d)">No Surprises.</em></h2>
-        <p style="font-size:15px;color:var(--g500);line-height:1.7;margin-bottom:28px">Free inspection first. We confirm the full scope and fixed price before we start — so there are no surprise extras after arrival.</p>
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px">
+	        <div class="chip-row"><span class="chip cb">How Pricing Works</span></div>
+	        <h2 style="font-size:clamp(24px,3.2vw,34px);font-weight:700;color:var(--navy);line-height:1.25;margin:16px 0 14px">Fixed Price.<br><em style="font-style:normal;color:var(--blue-d)">No Surprises.</em></h2>
+	        <p style="font-size:15px;color:var(--g500);line-height:1.7;margin-bottom:28px">Free inspection first. We confirm the full scope and fixed price before we start — so there are no surprise extras after arrival.</p>
+	        <div class="price-factors" aria-label="What affects the fixed price">
+	          <div class="price-factors-title">What affects price?</div>
+	          <div class="price-factor-grid">
+	            <span>Property size</span>
+	            <span>Number of AC units</span>
+	            <span>Mattress / sofa count</span>
+	            <span>Access and service scope</span>
+	          </div>
+	        </div>
+	        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px">
           <div style="display:flex;align-items:flex-start;gap:14px">
             <div style="width:30px;height:30px;border-radius:50%;background:var(--green-l);border:1.5px solid var(--green-d);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px"><svg width="13" height="13" fill="none" stroke="var(--green-d)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div><strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:3px">Free on-site inspection</strong><span style="font-size:13px;color:var(--g500);line-height:1.6">We assess the actual condition before quoting — not a rough estimate over the phone.</span></div>
@@ -2644,10 +2686,16 @@ document.addEventListener('keydown',function(e){
 
 <section class="proc-bg" id="process">
   <div class="sec">
-    <div class="chip-row" style="justify-content:center"><span class="chip cb">How It Works</span></div>
-    <h2 class="sec-t" style="text-align:center">Simple, <em class="blue-em">Transparent</em> Process</h2>
-    <p style="text-align:center;font-size:15px;color:var(--g500);max-width:500px;margin:0 auto 0;line-height:1.65">No surprises. Fixed price confirmed before we start. Before &amp; after proof on every job.</p>
-    <div class="proc-grid">
+	    <div class="chip-row" style="justify-content:center"><span class="chip cb">How It Works</span></div>
+	    <h2 class="sec-t" style="text-align:center">Simple, <em class="blue-em">Transparent</em> Process</h2>
+	    <p style="text-align:center;font-size:15px;color:var(--g500);max-width:500px;margin:0 auto 0;line-height:1.65">No surprises. Fixed price confirmed before we start. Before &amp; after proof on every job.</p>
+	    <div class="proc-whatsapp-flow" aria-label="WhatsApp booking flow">
+	      <div class="proc-flow-step"><strong>WhatsApp Message</strong><span>Send your area, property type and photos if available.</span></div>
+	      <div class="proc-flow-step"><strong>Free Check</strong><span>We confirm what actually needs attention before quoting.</span></div>
+	      <div class="proc-flow-step"><strong>Fixed Quote</strong><span>You approve the price before the team starts work.</span></div>
+	      <div class="proc-flow-step"><strong>Photo Proof</strong><span>You receive documented before &amp; after results.</span></div>
+	    </div>
+	    <div class="proc-grid">
       <div class="proc-step"><div class="proc-num">1</div><h3>Share Your Needs</h3><p>Answer 4 quick questions — or WhatsApp us photos of your space for a faster quote.</p></div>
       <div class="proc-step"><div class="proc-num">2</div><h3>Free Inspection</h3><p>We visit at zero cost, zero pressure, and confirm the full scope on-site.</p></div>
       <div class="proc-step"><div class="proc-num">3</div><h3>Fixed Quote</h3><p>You approve the exact price before any work starts. No hidden extras, ever.</p></div>
@@ -3003,10 +3051,44 @@ var L={ac:'AC Duct Cleaning',fabric:'Fabric Sanitizing & Washing',mattress:'Matt
 
 /* QUIZ 1 */
 var Q1={service:'',type:'',size:'',timing:''};
-function pick1(btn,k,v,n){btn.closest('.qopts').querySelectorAll('.qopt').forEach(function(o){o.classList.remove('sel')});btn.classList.add('sel');Q1[k]=v;setTimeout(function(){n===0?showResult1():gos1(n)},320);}
+var Q1Started=false;
+function pick1(btn,k,v,n){if(!Q1Started){Q1Started=true;if(typeof window.proaquaTrack==='function')window.proaquaTrack('quote_quiz_start',{location:'quote_quiz'})}btn.closest('.qopts').querySelectorAll('.qopt').forEach(function(o){o.classList.remove('sel')});btn.classList.add('sel');Q1[k]=v;setTimeout(function(){n===0?showResult1():gos1(n)},320);}
 function gos1(n){document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1s'+n).classList.add('on');var p=Math.round((n/4)*100);document.getElementById('qf1').style.width=p+'%';document.getElementById('ql1').textContent='Step '+n+' of 4';document.getElementById('qp1').textContent=p+'%';}
-function showResult1(){var s=Q1.service||'ac',t=Q1.type||'apt',z=Q1.size||'1';var price=P[s]&&P[s][t]&&P[s][t][z]?P[s][t][z]:500;document.getElementById('rp1').textContent='AED '+price.toLocaleString();var risk='Medium-priority inspection';if(s==='ac'||s==='bundle'||Q1.timing==='today')risk='High-priority AC inspection';else if(s==='mattress')risk='Mattress allergen inspection';else if(s==='fabric')risk='Fabric hygiene inspection';var riskEl=document.getElementById('riskLevel1');if(riskEl)riskEl.textContent='Result: '+risk;var sum='🔹 '+( L[s]||s)+'\n🔹 '+(L[t]||t)+'\n🔹 '+(L[z]||z)+'\n🔹 '+(L[Q1.timing]||'—');var el=document.getElementById('rs1');el.style.whiteSpace='pre-line';el.textContent=sum;document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1sr').classList.add('on');var urgencyEl=document.getElementById('quiz-urgency');if(urgencyEl)urgencyEl.style.display='block';document.getElementById('qf1').style.width='100%';document.getElementById('ql1').textContent='Done!';document.getElementById('qp1').textContent='100%';}
-function restart1(){Q1={service:'',type:'',size:'',timing:''};document.querySelectorAll('#qcard1 .qopt').forEach(function(o){o.classList.remove('sel')});document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1s1').classList.add('on');document.getElementById('qf1').style.width='25%';document.getElementById('ql1').textContent='Step 1 of 4';document.getElementById('qp1').textContent='25%';}
+function showResult1(){
+  var s=Q1.service||'ac',t=Q1.type||'apt',z=Q1.size||'1';
+  var price=P[s]&&P[s][t]&&P[s][t][z]?P[s][t][z]:500;
+  document.getElementById('rp1').textContent='AED '+price.toLocaleString();
+  var risk='Medium-priority inspection';
+  if(s==='ac'||s==='bundle'||Q1.timing==='today')risk='High-priority AC inspection';
+  else if(s==='mattress')risk='Mattress allergen inspection';
+  else if(s==='fabric')risk='Fabric hygiene inspection';
+  var riskEl=document.getElementById('riskLevel1');
+  if(riskEl)riskEl.textContent='Result: '+risk;
+  var service=L[s]||s,type=L[t]||t,size=L[z]||z,timing=L[Q1.timing]||'—';
+  var sum='🔹 '+service+'\n🔹 '+type+'\n🔹 '+size+'\n🔹 '+timing;
+  var wa=document.querySelector('#q1sr .qr-btns a[href^="https://wa.me/971567943412"]');
+  if(wa){
+    var waMsg='Hello Pro Aqua, I completed the Cleaning Risk & Starting Estimate. Result: '+risk+'. Service: '+service+'. Property: '+type+'. Size: '+size+'. Timing: '+timing+'. Estimated starting from AED '+price.toLocaleString()+'. Please book my free inspection.';
+    wa.href='https://wa.me/971567943412?text='+encodeURIComponent(waMsg);
+    wa.setAttribute('data-lead-source','quote_quiz_result');
+    wa.setAttribute('data-wa-topic','quote_quiz');
+    wa.setAttribute('aria-label','Send your cleaning risk result to Pro Aqua on WhatsApp');
+    var qTextDone=false;
+    Array.prototype.forEach.call(wa.childNodes,function(n){if(n.nodeType===3){if(!qTextDone){n.nodeValue=' Send My Result on WhatsApp →';qTextDone=true}else n.nodeValue=''}});
+  }
+  var el=document.getElementById('rs1');
+  el.style.whiteSpace='pre-line';
+  el.textContent=sum;
+  if(typeof window.proaquaTrack==='function')window.proaquaTrack('quote_quiz_complete',{service:service,property_type:type,size:size,timing:timing,risk:risk,estimated_price:price});
+  document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});
+  document.getElementById('q1sr').classList.add('on');
+  var urgencyEl=document.getElementById('quiz-urgency');
+  if(urgencyEl)urgencyEl.style.display='block';
+  document.getElementById('qf1').style.width='100%';
+  document.getElementById('ql1').textContent='Done!';
+  document.getElementById('qp1').textContent='100%';
+}
+function restart1(){Q1={service:'',type:'',size:'',timing:''};Q1Started=false;document.querySelectorAll('#qcard1 .qopt').forEach(function(o){o.classList.remove('sel')});document.querySelectorAll('#qcard1 .quiz-step').forEach(function(s){s.classList.remove('on')});document.getElementById('q1s1').classList.add('on');document.getElementById('qf1').style.width='25%';document.getElementById('ql1').textContent='Step 1 of 4';document.getElementById('qp1').textContent='25%';}
 
 /* FAQ */
 function fq(el){var a=el.querySelector('.fq-a'),i=el.querySelector('.fq-i');var op=a.classList.contains('op');document.querySelectorAll('.fq-a').forEach(function(x){x.classList.remove('op')});document.querySelectorAll('.fq-i').forEach(function(x){x.classList.remove('op')});if(!op){a.classList.add('op');i.classList.add('op')}}
@@ -3108,11 +3190,21 @@ function playVideo(){
     var section=document.querySelector('[data-seasonal-campaign]');
     if(!section)return;
     section.setAttribute('data-active-season',key);
-    var title=section.querySelector('[data-season-title]');
-    var copy=section.querySelector('[data-season-copy]');
-    var note=section.querySelector('[data-season-note]');
-    var cta=section.querySelector('[data-season-cta]');
-    if(title)title.textContent=c.title;
+	    var title=section.querySelector('[data-season-title]');
+	    var copy=section.querySelector('[data-season-copy]');
+	    var note=section.querySelector('[data-season-note]');
+	    var cta=section.querySelector('[data-season-cta]');
+	    var heroChip=document.querySelector('[data-season-hero-chip]');
+	    var heroWa=document.querySelector('.hero-btns a[href^="https://wa.me/971567943412"]');
+	    if(heroChip){heroChip.textContent='Campaign: '+c.cta;heroChip.classList.add('on')}
+	    if(heroWa){
+	      heroWa.href=waUrl(c.message+' Campaign: '+c.event+'.');
+	      heroWa.setAttribute('data-lead-source','hero_'+c.event);
+	      heroWa.setAttribute('data-wa-topic',key);
+	      var heroTextDone=false;
+	      Array.prototype.forEach.call(heroWa.childNodes,function(n){if(n.nodeType===3){if(!heroTextDone){n.nodeValue=' WhatsApp: '+c.cta;heroTextDone=true}else n.nodeValue=''}});
+	    }
+	    if(title)title.textContent=c.title;
     if(copy)copy.textContent=c.copy;
     if(note){note.textContent=c.note;note.classList.add('on')}
     if(cta){

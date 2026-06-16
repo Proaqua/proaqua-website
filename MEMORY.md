@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Audit-Quick-Wins Runde 3 umgesetzt
+- **Erledigt:** Weitere umsetzbare Punkte aus `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` in `index.html` umgesetzt: Vent-Check-Karten mit `What it means` + konkretem `Send Franco`-Prompt erweitert, Solution-Section mit `Inspect → Extract → Show Proof`-Flow ergänzt, Process-Section mit WhatsApp-naher Ablaufleiste ergänzt.
+- **Erledigt:** Pricing-Section um `What affects price?`-Box erweitert (Property size, AC units, mattress/sofa count, access/scope), damit Fixed-Price-/Ab-Preis-Erwartungen sauberer sind.
+- **Erledigt:** Quote-Quiz-Ende verbessert: WhatsApp-CTA sendet jetzt Service, Property Type, Size, Timing, Risk Result und Estimate im Prefill; interne Hooks `quote_quiz_start`, `quote_quiz_complete` und `risk_quiz_complete` ergänzt. Seasonal Deep Links setzen zusätzlich einen Hero-Campaign-Chip und passen den Hero-WhatsApp-CTA an den Kampagnenwinkel an.
+- **Verifikation:** `git diff --check` ohne Befund; Browser-QA auf `http://localhost:8742`: Console 0 Errors/Warnings; `?campaign=sandstorm` aktiviert Hero-Chip `Campaign: Book Sandstorm Reset`, Hero-WhatsApp-Prefill und aktive Sandstorm-Karte; Quote-Quiz bis Ergebnis getestet (`Result: High-priority AC inspection`, `AED 660`, `Send My Result on WhatsApp`); Mobile 390px ohne horizontalen Overflow (`scrollWidth=390`), neue Flows stapeln einspaltig.
+- **Nächster Schritt:** Audit-Restpunkte, die echte externe Daten brauchen: GA4 Measurement ID + Meta Pixel ID, echte Before/After-Provenienz final bestätigen, neue Foto-/Video-Assets/Franco-Shooting, echte arabische Landing-Version und DM-Approval-Nachweis.
+
 ### 2026-06-16 — Codex — Audit-Quick-Wins Runde 2 umgesetzt
 - **Erledigt:** Weitere umsetzbare Punkte aus `conversion-research/visual-ui-ux-graphic-audit-2026-06-16.md` in `index.html` umgesetzt: Hidden-Danger/Inspection-Note als stärkeres Beweis-Panel mit größeren echten Fotos aufgebaut, ohne Bilder neu zu generieren oder die Datei großflächig umzuschreiben.
 - **Erledigt:** Compare-Pro-Aqua-Karte klarer als empfohlene, owner-led Specialist-Option markiert (`OWNER-LED SPECIALIST CHOICE`) und mit kompakten Entscheidungschips (`Same team`, `Fixed price`, `Photo proof`) ergänzt.
