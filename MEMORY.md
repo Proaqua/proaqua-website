@@ -31,6 +31,10 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hero-Garantiezeile wieder stärker formuliert
+- **Entscheidung:** Giampiero bevorzugt die frühere Risk-Reversal-Zeile, weil sie direkter und verkäuferisch klarer ist als die zwischenzeitliche `Satisfaction guaranteed`-Variante.
+- **Korrektur in `index.html`:** Mobile-/Hero-Garantie wieder auf `Not happy? We re-clean for free — no questions asked.` gesetzt. Bewertung: psychologisch stärker, weil es den Einwand konkret auflöst und weniger generisch klingt.
+
 ### 2026-06-16 — Codex — Proof-Sektionen bildlastiger und weniger card-lastig gemacht
 - **Problem:** Mehrere Proof-Bereiche wirkten durch ähnliche weiße Cards, Chips und Badges zu templated. Dadurch verloren echte Beweise wie Vent-Fotos, Duct-Fotos und Mattress-Extraction-Fotos an Wucht.
 - **Korrektur in `index.html`:** `#vent-check` von drei einzelnen hellen Inline-Cards in einen zusammenhängenden dunklen, bildlastigen Proof-Strip umgebaut (`.vent-proof-grid`, `.vent-proof-item`, `.vent-proof-photo`, `.vent-proof-copy`). Bilder sind größer, die drei Signs wirken jetzt wie eine echte Inspektionsstrecke statt wie generische Cards.
