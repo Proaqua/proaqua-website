@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile Sticky-CTA-Footer für WhatsApp + Free Inspection
+- **Ziel:** Giampieros Wunsch umgesetzt, die zwei wichtigsten Hero-CTAs (`WhatsApp Franco's Team` und `Get Free Inspection`) auf Mobile dauerhaft als Sticky-Footer beim Scrollen sichtbar zu halten.
+- **Erledigt:** `index.html` gezielt erweitert: neue `.sticky-cta-footer`-Bar nur für Viewports bis 700px. Sie enthält WhatsApp als grünen Primary-Button und `Get Free Inspection` als sekundären weißen Button. Mobile Inline-`.hero-btns` werden ausgeblendet, damit der First View nicht doppelte CTAs zeigt.
+- **Kollisionen gelöst:** Der alte runde WhatsApp-Float wird auf Mobile ausgeblendet, weil die Sticky-Bar denselben Primärpfad übernimmt. Der Quiz-FAB bleibt oberhalb der Sticky-Bar und überlappt nicht.
+- **Verifikation:** `git diff --check` sauber; HTML-Parser ohne offene/unerwartete Tags. Browser-QA Mobile 390×844: `scrollWidth=390`, Sticky-Bar sichtbar (`grid`), Höhe ca. 73px, beide Buttons sichtbar, Hero-Buttons `display:none`, WhatsApp-Float `display:none`, Body-Padding ca. 82px. Desktop 1280×844: Sticky-Bar `display:none`, Hero-Buttons und alter WhatsApp-Float bleiben sichtbar. Screenshot: `output/playwright/sticky-cta-mobile.png`.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe. Optional als nächstes die Button-Beschriftung noch auf extrem kleine Geräte weiter kürzen, falls Giampiero auf echten iPhones Textquetschung sieht.
+
 ### 2026-06-16 — Codex — CTA-Dichte reduziert, Desktop-Pain früher, Arabic-Proof gestärkt
 - **Ziel:** Die verbleibenden Audit-Punkte gezielt korrigieren: Seite/CTA-Dichte reduzieren, Desktop schneller zur Pain-Strecke bringen, Arabic proof-stärker machen und GEO/AI-Ablage vorbereiten. GA4/Meta Pixel bleiben bewusst bis zum Projektende offen.
 - **Erledigt:** `index.html` gezielt verdichtet: Desktop-Hero von ca. 1070px auf ca. 787px reduziert, `#warning-signs` startet Desktop jetzt bei ca. 1231px statt ca. 1526px. Hero-Reviews-Bar kompakter, Hero-Trust-Dots entfernt, Desktop-Video flacher (`16:9`), späte Booking-Sektion sichtbar auf WhatsApp + Call reduziert; die dritte Quote-Karte ist ausgeblendet.
