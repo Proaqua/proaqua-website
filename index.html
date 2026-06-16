@@ -547,12 +547,30 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .ba-sec h2.sec-t{color:#fff}
 .ba-sec h2.sec-t em:not(.red-em){color:rgba(113,196,159,.9)}
 .ba-sec .sec-sub{color:rgba(255,255,255,.45)}
-/* Split layout: left = 3 BA cards, right = booking box */
+/* Split layout: left = proof cases + gallery, right = booking box */
 .ba-inner{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:44px;align-items:start}
 .ba-cards{display:flex;flex-direction:column;gap:16px}
 .ba-card{border-radius:var(--rl);overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:border-color .25s}
 .ba-card:hover{border-color:rgba(88,153,227,.4)}
 .ba-card-full img{width:100%;display:block;object-fit:cover}
+.ba-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ba-rest-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.ba-rest-head{display:flex;align-items:center;gap:10px;margin:6px 0 -2px;color:rgba(255,255,255,.7);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.ba-rest-head::before{content:'';width:34px;height:2px;background:rgba(113,196,159,.65);border-radius:999px}
+.ba-case{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border-color:rgba(113,196,159,.22);box-shadow:0 18px 50px rgba(0,0,0,.2)}
+.ba-case:hover{border-color:rgba(113,196,159,.46)}
+.ba-case-tag{position:absolute;top:10px;left:10px;z-index:2;background:rgba(18,43,60,.86);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 9px;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.ba-case.ba-card-full img{aspect-ratio:4/3}
+.ba-case .ba-cap{padding:16px}
+.ba-case .ba-cap-t{font-size:15px;font-weight:800;line-height:1.25}
+.ba-case .ba-cap-s{font-size:12px;color:rgba(255,255,255,.55);line-height:1.45}
+.ba-rest-grid .ba-card{border-radius:14px;background:rgba(255,255,255,.035)}
+.ba-rest-grid .ba-card-full img{aspect-ratio:16/10}
+.ba-rest-grid .ba-cap{padding:10px 11px 12px}
+.ba-rest-grid .ba-cap-t{font-size:11px;font-weight:750;line-height:1.25}
+.ba-rest-grid .ba-cap-s{display:none}
+.ba-rest-grid .ba-meta{font-size:9px;line-height:1.25;gap:4px}
+.ba-rest-grid .ba-proof{font-size:8px;padding:3px 7px;letter-spacing:.03em}
 .ba-imgs{display:grid;grid-template-columns:1fr 1fr;position:relative;height:180px}
 .ba-side{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -809,6 +827,7 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .rev-grid{grid-template-columns:1fr}
   .ba-inner{grid-template-columns:1fr}
   .ba-book{position:static}
+  .ba-rest-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .franco-in{grid-template-columns:1fr}
   .franco-photo-col{max-width:400px;margin:0 auto}
   .proc-grid{grid-template-columns:1fr 1fr}
@@ -837,6 +856,8 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .danger-grid{grid-template-columns:1fr}
   .srv-grid{grid-template-columns:1fr}
   .ba-cards{gap:12px}
+  .ba-feature-grid{grid-template-columns:1fr}
+  .ba-rest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ba-imgs{height:200px}
   .proc-grid{grid-template-columns:1fr 1fr}
   .ft-top{grid-template-columns:1fr}
@@ -1227,23 +1248,34 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 #warning-signs{background:linear-gradient(180deg,#fff 0%,var(--bg2) 100%)}
 .ws-head{text-align:center;max-width:760px;margin:0 auto}
 .ws-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.22);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:800;color:#DC2626;letter-spacing:.04em;margin-bottom:18px}
-.ws-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;max-width:900px;margin:42px auto 38px;align-items:start}
+.ws-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;max-width:980px;margin:42px auto 38px;align-items:stretch}
 .ws-card{appearance:none;background:transparent;border:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:default;color:inherit;min-width:0}
+.ws-card-compact{grid-column:span 2}
+.ws-card-featured{grid-column:span 3;display:grid;grid-template-columns:164px minmax(0,1fr);align-items:center;text-align:left;gap:18px;background:#fff;border:1px solid rgba(220,38,38,.16);border-top:4px solid rgba(220,38,38,.82);border-radius:22px;padding:16px;box-shadow:0 16px 44px rgba(28,50,68,.12)}
 .ws-photo{width:116px;height:116px;border-radius:50%;padding:4px;background:#fff;box-shadow:0 10px 28px rgba(28,50,68,.12);border:1px solid rgba(220,38,38,.16);position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .ws-photo::after{content:'';position:absolute;inset:4px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75);pointer-events:none}
 .ws-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;user-select:none;-webkit-user-drag:none}
 .ws-card:hover .ws-photo,.ws-card:focus-visible .ws-photo{transform:translateY(-4px);box-shadow:0 16px 36px rgba(28,50,68,.18);border-color:rgba(220,38,38,.3)}
 .ws-card:focus-visible{outline:3px solid rgba(88,153,227,.42);outline-offset:8px;border-radius:16px}
 .ws-label{font-size:14px;font-weight:800;color:var(--navy);line-height:1.25;max-width:138px}
+.ws-copy{min-width:0}
+.ws-kicker{display:inline-flex;margin-bottom:7px;color:#DC2626;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.ws-card-featured .ws-photo{width:164px;height:132px;border-radius:18px;padding:0;border-color:rgba(220,38,38,.2);box-shadow:0 14px 34px rgba(28,50,68,.16)}
+.ws-card-featured .ws-photo::after{inset:0;border-radius:18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.78)}
+.ws-card-featured .ws-photo img{border-radius:18px}
+.ws-card-featured .ws-label{display:block;max-width:none;text-align:left;font-size:18px;line-height:1.16;margin-bottom:7px}
+.ws-text{font-size:13px;color:var(--g600);line-height:1.5;font-weight:400;margin:0}
+.ws-micro{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:rgba(220,38,38,.07);color:#9F1239;border:1px solid rgba(220,38,38,.16);border-radius:999px;padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.ws-micro::before{content:'';width:6px;height:6px;border-radius:50%;background:#DC2626;box-shadow:0 0 0 4px rgba(220,38,38,.1)}
 .ws-cta-wrap{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
 .ws-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:17px 34px;font-size:16px;font-weight:800;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(88,153,227,.28);min-height:54px}
 .ws-btn:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 12px 30px rgba(88,153,227,.34)}
 .ws-btn-note{font-size:12px;color:#7b8794;font-style:italic}
 .ws-mini-proof{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--bg3);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--navy);box-shadow:var(--sh0)}
 .ws-mini-proof i{width:7px;height:7px;border-radius:50%;background:#25D366;display:inline-block;box-shadow:0 0 0 4px rgba(37,211,102,.12)}
-@media(max-width:900px){.ws-grid{grid-template-columns:repeat(3,1fr);max-width:620px}.ws-photo{width:108px;height:108px}}
-@media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;margin:34px auto}.ws-photo{width:96px;height:96px}.ws-label{font-size:13px}.ws-card:nth-child(5){grid-column:1/-1;display:grid;grid-template-columns:96px minmax(0,1fr);align-items:center;justify-items:start;text-align:left;gap:12px;background:#fff;border:1px solid rgba(220,38,38,.16);border-radius:16px;padding:10px 12px;box-shadow:var(--sh0)}.ws-card:nth-child(5) .ws-label{max-width:none;text-align:left}.ws-btn{width:100%;padding:16px 18px}.ws-mini-proof{width:100%;justify-content:center}}
-@media(max-width:390px){.ws-card:nth-child(5){grid-template-columns:88px minmax(0,1fr)}.ws-card:nth-child(5) .ws-photo{width:88px;height:88px}}
+@media(max-width:900px){.ws-grid{grid-template-columns:repeat(2,1fr);max-width:720px}.ws-card-featured{grid-column:span 2}.ws-card-compact{grid-column:span 1}.ws-photo{width:108px;height:108px}}
+@media(max-width:560px){.ws-grid{grid-template-columns:repeat(2,1fr);gap:14px 12px;margin:34px auto}.ws-card-featured{grid-column:1/-1;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:10px 12px;border-radius:16px}.ws-card-featured .ws-photo{width:104px;height:104px;border-radius:14px}.ws-card-featured .ws-photo::after,.ws-card-featured .ws-photo img{border-radius:14px}.ws-card-featured .ws-label{font-size:14px;margin-bottom:5px}.ws-kicker{font-size:9px;margin-bottom:5px}.ws-text{font-size:12px;line-height:1.4}.ws-micro{display:none}.ws-photo{width:92px;height:92px}.ws-label{font-size:13px}.ws-card-compact.ws-wide{grid-column:1/-1;display:grid;grid-template-columns:92px minmax(0,1fr);align-items:center;justify-items:start;text-align:left;gap:12px;background:#fff;border:1px solid rgba(220,38,38,.16);border-radius:16px;padding:10px 12px;box-shadow:var(--sh0)}.ws-card-compact.ws-wide .ws-label{max-width:none;text-align:left}.ws-btn{width:100%;padding:16px 18px}.ws-mini-proof{width:100%;justify-content:center}}
+@media(max-width:390px){.ws-card-featured{grid-template-columns:92px minmax(0,1fr)}.ws-card-featured .ws-photo,.ws-card-compact.ws-wide .ws-photo{width:88px;height:88px}.ws-card-compact.ws-wide{grid-template-columns:88px minmax(0,1fr)}}
 .vent-card-note{margin-top:12px;background:#fff;border:1px solid rgba(88,153,227,.16);border-radius:10px;padding:10px;text-align:left}
 .vent-card-note strong{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-d);margin-bottom:4px}
 .vent-card-note span{display:block;font-size:11.5px;color:var(--g600);line-height:1.45}
@@ -1933,23 +1965,33 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
       <p class="sec-sub" style="max-width:640px;margin:0 auto">If you recognise any of these, your AC ducts or home may need professional attention. Take the free Risk Check Quiz before you book anything.</p>
     </div>
     <div class="ws-grid" aria-label="AC risk warning signs">
-      <div class="ws-card">
+      <div class="ws-card ws-card-featured">
+        <span class="ws-photo"><img src="assets/warning-black-dust-mould-ac-grills-dubai.webp" alt="Black dust and mould warning signs around AC grills" loading="lazy"></span>
+        <span class="ws-copy">
+          <span class="ws-kicker">Strongest AC signal</span>
+          <span class="ws-label">Black dust or mould around AC grills</span>
+          <span class="ws-text">If dark marks return around vents, the issue is often deeper than surface dust.</span>
+          <span class="ws-micro">Send Franco a close-up photo</span>
+        </span>
+      </div>
+      <div class="ws-card ws-card-featured">
+        <span class="ws-photo"><img src="assets/warning-bad-smell-ac-vents-dubai.webp" alt="AC duct contamination that can cause bad smell from vents" loading="lazy"></span>
+        <span class="ws-copy">
+          <span class="ws-kicker">Most common complaint</span>
+          <span class="ws-label">Bad smell from vents</span>
+          <span class="ws-text">A musty smell after the AC starts is a clear reason to inspect the duct path.</span>
+          <span class="ws-micro">Tell us which room smells first</span>
+        </span>
+      </div>
+      <div class="ws-card ws-card-compact">
         <span class="ws-photo"><img src="assets/warning-allergy-triggers-dubai.webp" alt="Allergy trigger warning sign in a Dubai family home" loading="lazy"></span>
         <span class="ws-label">Allergy triggers</span>
       </div>
-      <div class="ws-card">
-        <span class="ws-photo"><img src="assets/warning-bad-smell-ac-vents-dubai.webp" alt="AC duct contamination that can cause bad smell from vents" loading="lazy"></span>
-        <span class="ws-label">Bad smell from vents</span>
-      </div>
-      <div class="ws-card">
-        <span class="ws-photo"><img src="assets/warning-black-dust-mould-ac-grills-dubai.webp" alt="Black dust and mould warning signs around AC grills" loading="lazy"></span>
-        <span class="ws-label">Black dust or mould around AC grills</span>
-      </div>
-      <div class="ws-card">
+      <div class="ws-card ws-card-compact">
         <span class="ws-photo"><img src="assets/warning-weak-airflow-poor-cooling-dubai.webp" alt="Dirty AC filter warning sign for weak airflow or poor cooling" loading="lazy"></span>
         <span class="ws-label">Weak airflow or poor cooling</span>
       </div>
-      <div class="ws-card">
+      <div class="ws-card ws-card-compact ws-wide">
         <span class="ws-photo"><img src="assets/warning-high-dewa-bills-ac-dubai.webp" alt="AC inspection warning sign linked to high DEWA bills" loading="lazy"></span>
         <span class="ws-label">High DEWA bills</span>
       </div>
@@ -2218,82 +2260,91 @@ document.addEventListener('keydown',function(e){
   <div class="sec">
     <div class="chip-row"><span class="chip cw">Before &amp; After Dubai</span><span class="chip" style="background:rgba(113,196,159,.15);color:rgba(113,196,159,.9);border:1px solid rgba(113,196,159,.25);font-size:11px">Real Dubai Cleaning Results</span></div>
     <h2 class="sec-t">Pictures Say <em class="blue-em">More</em><br>Than 1,000 Words</h2>
-    <p class="sec-sub" style="color:rgba(255,255,255,.45)">Documented Dubai jobs with service, community, property type and month — real proof before you book.</p>
+    <p class="sec-sub" style="color:rgba(255,255,255,.45)">Real Dubai inspection photos labelled by service, community, property type and month — proof before you book.</p>
 
     <div class="ba-inner">
-      <!-- LEFT: before/after cards stacked -->
+      <!-- LEFT: proof cases + compact gallery -->
       <div class="ba-cards">
         <!-- Confirmed provenance: service title + community · property type · month/year + photo proof. -->
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job 2025" loading="lazy">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Coil — Before Deep Cleaning</div>
-            <div class="ba-cap-s">Years of dust and grime — actual job photo</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Meadows &middot; Villa &middot; Jan 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
+        <div class="ba-feature-grid" aria-label="Top Pro Aqua proof cases">
+          <div class="ba-card ba-card-full ba-case">
+            <div class="ba-case-tag">Top proof</div>
+            <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from mattress during deep cleaning — Pro Aqua Dubai 2025" loading="lazy" style="object-position:center 40%">
+            <div class="ba-cap">
+              <div class="ba-cap-t">Mattress Deep Cleaning — Extracted Water</div>
+              <div class="ba-cap-s">What came out of a "clean" mattress — real proof photo</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Springs &middot; Townhouse &middot; Feb 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
+          </div>
+          <div class="ba-card ba-card-full ba-case">
+            <div class="ba-case-tag">AC proof</div>
+            <img src="assets/real-ac-coil-before.webp" alt="Heavily soiled AC coil before deep cleaning — real Dubai job 2025" loading="lazy">
+            <div class="ba-cap">
+              <div class="ba-cap-t">AC Coil — Before Deep Cleaning</div>
+              <div class="ba-cap-s">Years of dust and grime — actual job photo</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Meadows &middot; Villa &middot; Jan 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
+          </div>
+          <div class="ba-card ba-card-full ba-case">
+            <div class="ba-case-tag">Team proof</div>
+            <img src="assets/real-ac-duct-grid-work-1.webp" alt="Two Pro Aqua technicians cleaning AC ducts in Dubai high-rise apartment" loading="lazy" style="object-position:center top">
+            <div class="ba-cap">
+              <div class="ba-cap-t">AC Duct &amp; Grill Cleaning — Team Job</div>
+              <div class="ba-cap-s">Full duct vacuum &amp; grill sanitizing — 2-man crew</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jumeirah Park &middot; Villa &middot; Apr 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
           </div>
         </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-mattress-water-held.webp" alt="Dirty water extracted from mattress during deep cleaning — Pro Aqua Dubai 2025" loading="lazy" style="object-position:center 40%">
-          <div class="ba-cap">
-            <div class="ba-cap-t">Mattress Deep Cleaning — Extracted Water</div>
-            <div class="ba-cap-s">What came out of a "clean" mattress — real proof photo</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Springs &middot; Townhouse &middot; Feb 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
+
+        <div class="ba-rest-head">More documented job photos</div>
+        <div class="ba-rest-grid" aria-label="More Pro Aqua documented job photos">
+          <div class="ba-card ba-card-full">
+            <img src="assets/real-ac-coil-after.webp" alt="AC coil being cleaned by Pro Aqua technician — Dubai 2025" loading="lazy" style="object-position:left top">
+            <div class="ba-cap">
+              <div class="ba-cap-t">AC Coil — During Professional Cleaning</div>
+              <div class="ba-cap-s">Full decontamination &amp; efficiency restoration</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Arabian Ranches &middot; Villa &middot; Feb 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
           </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-coil-after.webp" alt="AC coil being cleaned by Pro Aqua technician — Dubai 2025" loading="lazy" style="object-position:left top">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Coil — During Professional Cleaning</div>
-            <div class="ba-cap-s">Full decontamination &amp; efficiency restoration</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Arabian Ranches &middot; Villa &middot; Feb 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
+          <div class="ba-card ba-card-full">
+            <img src="assets/real-mattress-result-1.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized and fresh Dubai 2025" loading="lazy">
+            <div class="ba-cap">
+              <div class="ba-cap-t">Mattress After Deep Cleaning — Clean Result</div>
+              <div class="ba-cap-s">Deep-cleaned, hygienic &amp; fresh — documented result</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>JVC &middot; Apartment &middot; Mar 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
           </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-mattress-result-1.webp" alt="Mattress after Pro Aqua deep cleaning — sanitized and fresh Dubai 2025" loading="lazy">
-          <div class="ba-cap">
-            <div class="ba-cap-t">Mattress After Deep Cleaning — Clean Result</div>
-            <div class="ba-cap-s">Deep-cleaned, hygienic &amp; fresh — documented result</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>JVC &middot; Apartment &middot; Mar 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
+          <div class="ba-card ba-card-full">
+            <img src="assets/real-carpet-clean.webp" alt="Pro Aqua carpet deep cleaning in progress — Dubai 2025" loading="lazy" style="object-position:center 60%">
+            <div class="ba-cap">
+              <div class="ba-cap-t">Carpet Deep Cleaning — In Progress</div>
+              <div class="ba-cap-s">Hot water extraction &amp; deep sanitizing</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>The Lakes &middot; Villa &middot; Mar 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
           </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-carpet-clean.webp" alt="Pro Aqua carpet deep cleaning in progress — Dubai 2025" loading="lazy" style="object-position:center 60%">
-          <div class="ba-cap">
-            <div class="ba-cap-t">Carpet Deep Cleaning — In Progress</div>
-            <div class="ba-cap-s">Hot water extraction &amp; deep sanitizing</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>The Lakes &middot; Villa &middot; Mar 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
+          <div class="ba-card ba-card-full">
+            <img src="assets/real-ac-duct-grid-work-2.webp" alt="Pro Aqua crew working on AC duct grills — full-service cleaning Dubai 2025" loading="lazy" style="object-position:center top">
+            <div class="ba-cap">
+              <div class="ba-cap-t">AC Grill &amp; Duct Work — Full Service</div>
+              <div class="ba-cap-s">Every vent, every grill — no shortcuts</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Mudon &middot; Villa &middot; May 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
           </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-duct-grid-work-1.webp" alt="Two Pro Aqua technicians cleaning AC ducts in Dubai high-rise apartment" loading="lazy" style="object-position:center top">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Duct &amp; Grill Cleaning — Team Job</div>
-            <div class="ba-cap-s">Full duct vacuum &amp; grill sanitizing — 2-man crew</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jumeirah Park &middot; Villa &middot; Apr 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-duct-grid-work-2.webp" alt="Pro Aqua crew working on AC duct grills — full-service cleaning Dubai 2025" loading="lazy" style="object-position:center top">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Grill &amp; Duct Work — Full Service</div>
-            <div class="ba-cap-s">Every vent, every grill — no shortcuts</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Mudon &middot; Villa &middot; May 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
-          </div>
-        </div>
-        <div class="ba-card ba-card-full">
-          <img src="assets/real-ac-motorhousing.webp" alt="AC motor housing deep cleaning — internal decontamination Dubai 2025" loading="lazy">
-          <div class="ba-cap">
-            <div class="ba-cap-t">AC Motor Housing — Internal Decontamination</div>
-            <div class="ba-cap-s">Components most companies never touch — we do</div>
-            <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Al Furjan &middot; Villa &middot; May 2026</div>
-            <div class="ba-proof">Real job · photo sent after job</div>
+          <div class="ba-card ba-card-full">
+            <img src="assets/real-ac-motorhousing.webp" alt="AC motor housing deep cleaning — internal decontamination Dubai 2025" loading="lazy">
+            <div class="ba-cap">
+              <div class="ba-cap-t">AC Motor Housing — Internal Decontamination</div>
+              <div class="ba-cap-s">Components most companies never touch — we do</div>
+              <div class="ba-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Al Furjan &middot; Villa &middot; May 2026</div>
+              <div class="ba-proof">Real job · photo sent after job</div>
+            </div>
           </div>
         </div>
       </div>

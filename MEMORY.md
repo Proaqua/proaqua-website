@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Proof-Hierarchie in Warning Signs und Before/After umgesetzt
+- **Erledigt:** `#warning-signs` visuell priorisiert: `Black dust or mould around AC grills` und `Bad smell from vents` stehen jetzt als größere Featured-Pain-Cards oben mit klarerer Pain-Copy und konkretem Foto-/Raum-Hinweis für Franco. Die restlichen drei Warning Signs bleiben kompakter; Mobile nutzt Featured-Cards zuerst und darunter kompakte Signals ohne horizontalen Overflow.
+- **Erledigt:** `#before-after` von gleichförmiger 8er-Liste auf Proof-Story umgebaut: Top-3-Case-Cards sind jetzt `Mattress Deep Cleaning — Extracted Water`, `AC Coil — Before Deep Cleaning` und `AC Duct & Grill Cleaning — Team Job`; die übrigen fünf Fotos laufen als kleinere dokumentierte Galerie darunter.
+- **Erhalten:** Bestehende Bilddateien, Wasserzeichen, Captions/Provenienz (`Service · Community · Property Type · Month`) und Lightbox-Mechanik wurden nicht neu gebaut, sondern weiterverwendet.
+- **Verifikation:** `git diff --check` ohne Befund; HTML-Parser-Smoke-Test ohne offene Tags; Browser-QA Desktop 1280px: 2 Featured-Warning-Cards, 3 Case-Cards, 5 Restbilder, `scrollWidth=1280`, keine Console Errors/Warnings. Browser-QA Mobile 390px: `scrollWidth=390`, 8/8 Before/After-Bilder Lightbox-ready; Mattress-Proof öffnet geschützte Lightbox mit Caption `Mattress Deep Cleaning — Extracted Water`.
+- **Nächster Schritt:** Lokalen Commit sichern; kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Hero-Reviews-Bar redaktionell final geschärft
 - **Befund:** Mobile-Hero erfüllt die Audit-Empfehlung bereits: zwei kuratierte Trust-Chips (`4.7 Real Reviews` + `Fixed Price`), WhatsApp als primärer CTA, Inspection als sekundärer CTA und kompakte Garantiebox.
 - **Korrektur in `index.html`:** Frühe Hero-Reviews-Bar von `SELECTED CUSTOMER MESSAGES` auf `SELECTED CUSTOMER REVIEWS` geändert und Subnote auf `Selected 5-star customer messages · Google rating linked above` gesetzt. Damit wird klar: ausgewählte Kundenstimmen, kein Live-/Alle-Reviews-Widget; Google-Rating ist separat verlinkt.
