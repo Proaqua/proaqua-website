@@ -31,6 +31,14 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Arabic-Page optisch an Hauptseite angepasst
+- **Ziel:** Giampieros Feedback umgesetzt, dass die Arabic-Version nicht wie ein separater Sonderentwurf wirken soll, sondern Design, Navigation, Grafik-/Hero-System und Badges der Hauptseite aufnehmen muss.
+- **Erledigt:** `ar/index.html` gezielt überarbeitet: helle Pro-Aqua-Hero-Fläche statt dunklem Sonder-Hero, Topbar nach Hauptseiten-Logik, schärferer Header mit `logo-icon.webp`, gleiche Badge-/Button-Sprache, rechter Arabic-Copy-Block und linker Video-/Franco-Beweisblock.
+- **Mobile:** Große Video-Kachel durch eine kompakte Miniatur-Preview wie auf der Hauptseite ersetzt. Video läuft stumm (`autoplay muted loop playsinline`), Franco-Owner-Note bleibt direkt daneben sichtbar.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742/ar/` geprüft. Desktop 1280×844: Copy rechts, Video links, Trust-Zone im First View sichtbar (`trustTop≈770`), kein horizontaler Overflow, Video läuft (`paused=false`), Console 0 Errors/Warnings. Mobile 390×844: Mini-Video sichtbar und laufend (`116×72px`, `muted=true`, `paused=false`), Hero endet bei ca. 836px mit Trust-Zone am Viewport-Rand, `scrollWidth=390`, Console 0 Errors/Warnings. `git diff --check` sauber, HTML-Parser-Smoke-Test ohne offene Tags.
+- **Hinweis:** In-App-Browser-Screenshot hing erneut bei `Page.captureScreenshot`; visuelle QA erfolgte per Browser-DOM/Layout-Messung und Console-Check.
+- **Nächster Schritt:** Lokalen Commit sichern. Kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Echte Arabic-RTL-Landingpage unter `/ar/` gebaut
 - **Ziel:** Arabic nicht mehr nur als Akzent/Audience-Chip, sondern als eigene schlanke Conversion-Journey für Emiratis und arabischsprachige Expats abbilden.
 - **Erledigt:** Neue Datei `ar/index.html` erstellt: `lang="ar-AE"`, `dir="rtl"`, arabische Tajawal-Typografie, RTL-Header, Arabic-Hero, Trust-Leiste, Problem-/Symptomsektion, echte Proof-Bilder, Services, Franco-Accountability, Prozess, Google-/WhatsApp-Proof, FAQ und finaler WhatsApp-CTA.
