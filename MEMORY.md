@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Original-Teamfoto als Source-Asset ergänzt und Push vorbereitet
+- **Ziel:** Giampieros Hinweis auf das Originalbild `proaqua_dubai_cleaning_service_team` aufnehmen und den aktuellen Team-/Fleet-Proof vollständig ins Repository bringen.
+- **Erledigt:** Das Original-JPG aus dem Projektroot in den Asset-Ordner verschoben und als `assets/proaqua_dubai_cleaning_service_team.jpg` abgelegt. Die Website verwendet weiterhin das daraus bereinigte/optimierte `assets/pro-aqua-dubai-team-fleet.webp`, weil dort Screenshot-Balken und Carousel-Pfeil entfernt sind.
+- **Verifikation:** Source-JPG 1280×856, optimiertes WebP 1162×798 / ca. 151 KB. Keine Änderung an der sichtbaren Einbindung nötig; `index.html` bleibt beim sauberen WebP.
+- **Nächster Schritt:** Commit erstellen und nach ausdrücklicher Freigabe von Giampiero auf `origin/main` und `proaqua2/main` pushen.
+
 ### 2026-06-16 — Codex — Team-/Fleet-Proof in Franco-Sektion eingebaut
 - **Ziel:** Giampieros neues Teamfoto so einsetzen, dass es die Kernpositionierung stärkt: nicht anonyme App-Crews, sondern ein echtes Pro-Aqua-Team mit gebrandeten Vans und Franco-Accountability.
 - **Erledigt:** Teamfoto zugeschnitten, Screenshot-/Carousel-Ränder entfernt, dezent mit Pro-Aqua-Wasserzeichen versehen und als optimiertes Asset `assets/pro-aqua-dubai-team-fleet.webp` abgelegt. In `#franco` eine neue `Real Team · Real Fleet`-Proof-Sektion ergänzt: großes Team-/Van-Bild links, rechts Copy `Not an anonymous app crew.` plus drei klare Trust-Punkte.
