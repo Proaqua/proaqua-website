@@ -8,6 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pro Aqua Dubai | AC Duct Cleaning Dubai | Deep Cleaning & Sanitizing Services</title>
 <meta name="description" content="Dubai's trusted cleaning experts since 2016. AC duct cleaning, fabric sanitizing & mattress treatment. Free inspection. Book via WhatsApp. From AED 400.">
+<!-- Tracking config: fill only with real IDs, e.g. G-XXXXXXXXXX and numeric Meta Pixel ID. Blank values load nothing. -->
+<meta name="proaqua-ga4-id" content="">
+<meta name="proaqua-meta-pixel-id" content="">
 <meta name="keywords" content="AC duct cleaning Dubai, deep cleaning Dubai, mattress sanitizing Dubai, sofa cleaning Dubai, villa cleaning Dubai, fabric sanitizing Dubai, AC mold inspection Dubai, air quality Dubai, Pro Aqua Dubai, Franco Dubai cleaning">
 <meta property="og:title" content="Pro Aqua Dubai | AC Duct Cleaning &amp; Deep Cleaning Dubai">
 <meta property="og:description" content="Dubai's trusted AC duct cleaning, mattress sanitizing &amp; fabric deep cleaning experts since 2016. Free inspection. From AED 400.">
@@ -3122,8 +3125,45 @@ function playVideo(){
 }</script>
 <script>
 /* SEASONAL CAMPAIGN LAYER + LEAD TRACKING
-   Add GA4/Meta Pixel snippets later; this hook already dispatches to gtag/fbq when present. */
+   Add real IDs in the proaqua-ga4-id / proaqua-meta-pixel-id meta tags. Blank values load nothing. */
 (function(){
+  function readMeta(name){
+    var el=document.querySelector('meta[name="'+name+'"]');
+    return el&&el.content?el.content.trim():'';
+  }
+  function validGa4Id(id){
+    return/^G-[A-Z0-9-]+$/i.test(id||'');
+  }
+  function validMetaPixelId(id){
+    return/^[0-9]{6,}$/.test(id||'');
+  }
+  function installGa4(id){
+    if(!validGa4Id(id)||window.__proaquaGa4Loaded)return false;
+    window.__proaquaGa4Loaded=id;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+    window.gtag('js',new Date());
+    window.gtag('config',id,{send_page_view:true});
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(id);
+    document.head.appendChild(s);
+    return true;
+  }
+  function installMetaPixel(id){
+    if(!validMetaPixelId(id)||window.__proaquaMetaPixelLoaded)return false;
+    window.__proaquaMetaPixelLoaded=id;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init',id);
+    window.fbq('track','PageView');
+    return true;
+  }
+  var trackingState={
+    ga4Configured:installGa4(readMeta('proaqua-ga4-id')),
+    metaPixelConfigured:installMetaPixel(readMeta('proaqua-meta-pixel-id')),
+    events:['lead_click','quote_quiz_start','quote_quiz_complete','risk_quiz_complete','proof_lightbox_open']
+  };
+  window.proaquaTracking=trackingState;
   var currentSeason='';
   var manualSeason='';
   var campaigns={
@@ -3334,6 +3374,7 @@ function playVideo(){
     if(typeof window.fbq==='function'){
       window.fbq('trackCustom',eventName,data);
       if(eventName==='lead_click')window.fbq('track','Contact',{content_name:data.link_text||data.channel,content_category:data.channel});
+      if(eventName==='quote_quiz_complete'||eventName==='risk_quiz_complete')window.fbq('track','Lead',{content_name:eventName});
     }
   }
   function bindLeadTracking(){

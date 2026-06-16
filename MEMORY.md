@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Tracking-Bootstrap für GA4/Meta vorbereitet
+- **Erledigt:** `index.html` um sichere Tracking-Config im Head erweitert: `<meta name="proaqua-ga4-id" content="">` und `<meta name="proaqua-meta-pixel-id" content="">`. Solange die Werte leer sind, wird nichts extern geladen.
+- **Erledigt:** Bestehenden Seasonal-/Lead-Tracking-Block um Bootstrap-Funktionen ergänzt: echte GA4 Measurement IDs (`G-...`) laden automatisch `gtag.js`; numerische Meta Pixel IDs laden automatisch `fbevents.js`, initialisieren PageView und nutzen den vorhandenen Event-Hook.
+- **Erledigt:** Meta-Event-Mapping erweitert: `lead_click` sendet weiterhin `Contact`, `quote_quiz_complete` und `risk_quiz_complete` senden zusätzlich `Lead`; alle Custom Events bleiben über `trackCustom` verfügbar (`lead_click`, `quote_quiz_start`, `quote_quiz_complete`, `risk_quiz_complete`, `proof_lightbox_open`).
+- **Verifikation:** `git diff --check` ohne Befund; ausgelieferte HTML-Antwort via `curl` enthält Meta-Config und Bootstrap; Browser-QA auf `http://localhost:8742` Mobile 390px: keine externen Tracking-Scripts bei leeren IDs, `scrollWidth=390`, Console 0 Errors/Warnings.
+- **Nächster Schritt:** Sobald Giampiero echte IDs liefert, nur die zwei `content=""` Werte füllen; danach GA4/Meta im Live-Debugger prüfen. Externe Blocker bleiben DM-Approval-Nachweis, echte Before/After-Provenienz, neue reale Assets und vollwertige Arabic-Version.
+
 ### 2026-06-16 — Codex — Audit-Quick-Wins Runde 5: B2B-Funnel und Proof-Event-Tracking ergänzt
 - **Erledigt:** B2B-/Business-Section in `index.html` stärker als wiederkehrenden Service-Funnel aufgebaut: 3 ruhige Timeline-Schritte (`Share your portfolio`, `Inspect first units`, `Repeatable schedule`) für Property Manager, Holiday Homes und Offices. CTA von allgemeinem Business-Quote auf `Set Up Recurring Plan` umgestellt.
 - **Erledigt:** Business-WhatsApp-Prefill konkretisiert: Units, Community und Frequency (`monthly/quarterly/turnover-based`) werden direkt abgefragt. CTA trägt jetzt `data-lead-source="business_recurring_plan"` und `data-wa-topic="b2b_recurring"`.
