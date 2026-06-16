@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Floating Risk-Check-Badge auf dunklen Sektionen kontrastfähig gemacht
+- **Problem:** Der fixe `Check AC Risk`-Badge lag beim Scrollen über der dunklen `#before-after`-Sektion weiterhin im dunklen Navy-Style und hatte dort zu wenig visuellen Kontrast.
+- **Erledigt:** `index.html` gezielt erweitert: neue `.qf-on-dark`-Variante mit hellem Badge, Navy-Text und passendem Pulse-Shadow; das bestehende Floating-Split-Script prüft nun per Viewport-Position, welches Element direkt unter dem Badge liegt, und schaltet die Klasse automatisch auf `#before-after`, `.ba-sec`, `.cta`, `footer` oder `[data-fab-theme="dark"]`.
+- **Robustheit:** Hash-/Anker-Landungen werden mit `applySoon()` nach Load/Hashchange erneut geprüft, damit der Badge auch bei direktem Einstieg in `#before-after` korrekt umschaltet.
+- **Verifikation:** Lokale Vorschau `http://localhost:8742` geprüft. Direktlandung auf `#before-after`: `qf-on-dark` aktiv, Hintergrund `rgba(255,255,255,.95)`, Navy-Text. Direktlandung auf `#vent-check`: Klasse entfernt, Badge wieder Navy. Keine Browser-Console Errors/Warnings; `git diff --check` sauber.
+- **Nächster Schritt:** Lokalen Commit sichern; kein Push ohne ausdrückliche Freigabe.
+
 ### 2026-06-16 — Codex — Vent Check zu echtem AC-Home-Self-Check umgebaut
 - **Befund:** Die bisherige `#vent-check`-Sektion war als `SIGN 1/2/3`-Inspektionsstrecke formuliert. Giampiero hat korrekt angemerkt, dass dieser Block aus Kundensicht ein schneller Selbstcheck sein sollte, nicht Pro-Aquas Arbeitsschritt-Logik.
 - **Quelle/Briefing:** Francos Gamma-Dokument/Screenshot `AC Health Maintenance Notice E` mit Symptomen wie Bad Odours, Water Leakage, Poor Cooling, High Humidity, Dust Buildup, Allergy Symptoms, Mould Smell/Signs und Unusual Noises wurde als inhaltliche Vorlage genutzt.

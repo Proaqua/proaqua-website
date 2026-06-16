@@ -1325,14 +1325,19 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
 .risk-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;z-index:2}
 .risk-close:hover{color:var(--navy)}
 /* ── Floating Quiz Badge ── */
-.quiz-fab{position:fixed;bottom:96px;right:20px;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;transform:translateX(90px);transition:opacity .4s .2s,transform .4s .2s;white-space:nowrap;line-height:1.2;text-align:left}
+.quiz-fab{position:fixed;bottom:96px;right:20px;z-index:9990;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;display:flex;align-items:center;gap:8px;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(28,50,68,.4);opacity:0;transform:translateX(90px);transition:opacity .4s .2s,transform .4s .2s,background-color .2s,color .2s,box-shadow .2s;white-space:nowrap;line-height:1.2;text-align:left}
 .quiz-fab.qf-visible{opacity:1;transform:translateX(0);animation:qfPulse 3.5s ease-in-out 1s infinite}
+.quiz-fab.qf-on-dark{background:rgba(255,255,255,.95);color:var(--navy);box-shadow:0 6px 24px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.42)}
+.quiz-fab.qf-visible.qf-on-dark{animation:qfPulseOnDark 3.5s ease-in-out 1s infinite}
 .quiz-fab-ico{font-size:18px;flex-shrink:0}
 .quiz-fab-label{display:block;font-size:12px;font-weight:800;letter-spacing:.2px}
 .quiz-fab-sub{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.7);margin-top:1px}
+.quiz-fab.qf-on-dark .quiz-fab-sub{color:rgba(28,50,68,.62)}
 .quiz-fab-dismiss{position:absolute;top:-6px;right:-6px;background:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;color:#9ca3af;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);padding:0;display:none}
+.quiz-fab.qf-on-dark .quiz-fab-dismiss{background:var(--navy);color:#fff}
 .quiz-fab.qf-visible .quiz-fab-dismiss{display:block}
 @keyframes qfPulse{0%,100%{box-shadow:0 4px 20px rgba(28,50,68,.4)}50%{box-shadow:0 4px 28px rgba(28,50,68,.65),0 0 0 6px rgba(28,50,68,.12)}}
+@keyframes qfPulseOnDark{0%,100%{box-shadow:0 6px 24px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.42)}50%{box-shadow:0 6px 30px rgba(0,0,0,.3),0 0 0 6px rgba(255,255,255,.13)}}
 @media(max-width:480px){.quiz-fab{bottom:calc(104px + env(safe-area-inset-bottom));right:14px;padding:8px 11px 8px 10px;box-shadow:0 4px 16px rgba(28,50,68,.32);transform:translateX(90px) scale(.9);transform-origin:bottom right}.quiz-fab.qf-visible{transform:translateX(0) scale(.9)}.quiz-fab-label{font-size:11px}.quiz-fab-sub{font-size:9px}}
 .rs-header-badge{display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:20px;padding:5px 14px;font-size:11px;font-weight:800;color:#92400E;letter-spacing:.6px}
 .rs-title{font-size:22px;font-weight:800;color:var(--navy);margin:10px 0 5px;line-height:1.25}
@@ -4162,16 +4167,31 @@ function playVideo(el){
 /* Floating split: Quiz-FAB nur obere Haelfte, WhatsApp-Float ab Mitte (vermeidet Konkurrenz unten rechts) */
 (function(){
   function splitY(){var f=document.getElementById('franco');return f?(f.offsetTop-140):(document.documentElement.scrollHeight*0.45);}
+  function applyTheme(q){
+    if(!q)return;
+    var r=q.getBoundingClientRect();
+    if(!r.width||!r.height)return;
+    var x=Math.min(window.innerWidth-1,Math.max(0,r.left+(r.width/2)));
+    var y=Math.min(window.innerHeight-1,Math.max(0,r.top+(r.height/2)));
+    var prev=q.style.pointerEvents;
+    q.style.pointerEvents='none';
+    var below=document.elementFromPoint(x,y);
+    q.style.pointerEvents=prev;
+    var dark=below&&below.closest&&below.closest('#before-after,.ba-sec,.cta,footer,[data-fab-theme="dark"]');
+    q.classList.toggle('qf-on-dark',!!dark);
+  }
   function apply(){
     var y=window.scrollY||window.pageYOffset,s=splitY(),upper=y<s;
     var q=document.getElementById('quiz-fab'),w=document.querySelector('.wa-fl');
-    if(q){if(upper)q.classList.remove('qf-belowsplit');else q.classList.add('qf-belowsplit');}
+    if(q){if(upper)q.classList.remove('qf-belowsplit');else q.classList.add('qf-belowsplit');applyTheme(q);}
     if(w){if(upper)w.classList.add('wa-off');else w.classList.remove('wa-off');}
   }
+  function applySoon(){apply();setTimeout(apply,80);setTimeout(apply,300);}
   window.addEventListener('scroll',apply,{passive:true});
-  window.addEventListener('resize',apply,{passive:true});
-  window.addEventListener('load',apply);
-  if(document.readyState!=='loading')apply();else document.addEventListener('DOMContentLoaded',apply);
+  window.addEventListener('resize',applySoon,{passive:true});
+  window.addEventListener('hashchange',applySoon,{passive:true});
+  window.addEventListener('load',applySoon);
+  if(document.readyState!=='loading')applySoon();else document.addEventListener('DOMContentLoaded',applySoon);
 })();
 </script>
 </body>
