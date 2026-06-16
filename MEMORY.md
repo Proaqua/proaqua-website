@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hero-Subline stärker formuliert
+- **Ziel:** Giampieros Feedback umgesetzt, dass die mobile/hero Subline `Dubai AC runs all day...` zu sachlich war und das Hero-Statement nicht stark genug unterfüttert.
+- **Erledigt:** `index.html` Hero-Subline ersetzt durch: `Your AC is the lungs of your Dubai home. Dirty ducts can push dust and odours into every room.` Die Formulierung ist bildhafter, Dubai-spezifisch und bleibt claim-sicher durch `can`.
+- **Verifikation:** `git diff --check` sauber; HTML-Parser-Smoke-Test ohne offene Tags.
+- **Nächster Schritt:** Bei Gefallen nach ausdrücklicher Freigabe pushen.
+
 ### 2026-06-16 — Codex — Warning-Signs Mobile-Layout vereinheitlicht
 - **Ziel:** Giampieros Feedback umgesetzt, dass die Mobile-Warning-Signs-Section nicht passt: zu viele unterschiedliche Layoutmuster (Featured-Cards, runde Mini-Bilder, breite DEWA-Karte) und zusätzlich störender Floating-Risk-Badge.
 - **Erledigt:** `index.html` gezielt angepasst: Mobile `#warning-signs` ist jetzt eine konsistente vertikale Checkliste mit 5 gleichmäßigen horizontalen Zeilen. Alle Karten haben Bild links, Label und kurze Pain-/Check-Copy rechts; die ersten zwei Signale bleiben nur über eine dezente rote Seitenkante priorisiert.
