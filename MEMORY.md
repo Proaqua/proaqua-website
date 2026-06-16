@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hero Before/After-Swipe auf robuste Touch-Logik umgestellt
+- **Ziel:** Giampieros Hinweis umgesetzt, dass der Swipe/Schieber im Mobile-Hero hängt beziehungsweise sich hakelig verschieben lässt.
+- **Erledigt:** `index.html` gezielt angepasst: Der Hero-Before/After-Schieber hängt nicht mehr an einem unsichtbaren nativen `range`-Input als primärer Touch-Fläche. Stattdessen reagiert jetzt die Bildfläche selbst per Pointer-/Touch-Events (`pointerdown`, `pointermove`, `pointerup`) und setzt `--pos` direkt. Der Range bleibt nur als Fallback/Accessibility-Wert synchronisiert.
+- **CSS-Fix:** `.hero-proof-compare-frame` nutzt jetzt `touch-action:none`, `cursor:ew-resize` und `user-select:none`; `.hero-proof-range` hat `pointer-events:none`, damit das versteckte native Input nicht mehr die Touch-Bedienung blockiert.
+- **Verifikation:** `git diff --check` sauber; HTML-Parser ohne offene/unerwartete Tags. Browser-QA Mobile 390×844: Schieber sichtbar, `touchAction=none`, initial `--pos=75%`. Drag-Test per Browser: nach links auf `17.1%`, nach rechts auf `91.9%`, Range-Wert synchron (`17`/`92`), kein horizontaler Overflow (`scrollWidth=390`).
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe.
+
 ### 2026-06-16 — Codex — Mobile Sticky-CTA-Footer für WhatsApp + Free Inspection
 - **Ziel:** Giampieros Wunsch umgesetzt, die zwei wichtigsten Hero-CTAs (`WhatsApp Franco's Team` und `Get Free Inspection`) auf Mobile dauerhaft als Sticky-Footer beim Scrollen sichtbar zu halten.
 - **Erledigt:** `index.html` gezielt erweitert: neue `.sticky-cta-footer`-Bar nur für Viewports bis 700px. Sie enthält WhatsApp als grünen Primary-Button und `Get Free Inspection` als sekundären weißen Button. Mobile Inline-`.hero-btns` werden ausgeblendet, damit der First View nicht doppelte CTAs zeigt.
