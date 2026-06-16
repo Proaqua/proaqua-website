@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Before/After-Provenienz als bestätigt sichtbar gemacht
+- **Entscheidung:** Giampiero hat die vorhandenen Daten als nutzbar bestätigt. Die bisherige Provenienz-Lücke für die Before/After-Galerie ist damit für den aktuellen Stand geschlossen.
+- **Korrektur in `index.html`:** Alten S6-TODO-Kommentar in der Galerie durch `Confirmed provenance` ersetzt. Section-Subcopy geschärft: `Documented Dubai jobs with service, community, property type and month`.
+- **Sichtbarer Proof pro Karte:** Service bleibt im Kartentitel; Community, Property Type und Monat/Jahr stehen in `.ba-meta`; alle 8 Proof-Chips lauten jetzt `Real job · photo sent after job`.
+- **Bestätigte 8 Captions:** Meadows · Villa · Jan 2026; Springs · Townhouse · Feb 2026; Arabian Ranches · Villa · Feb 2026; JVC · Apartment · Mar 2026; The Lakes · Villa · Mar 2026; Jumeirah Park · Villa · Apr 2026; Mudon · Villa · May 2026; Al Furjan · Villa · May 2026.
+- **QA:** Browser-QA Desktop 1280px und Mobile 390px: 8/8 Karten mit Service-Titel, Meta-Zeile und Proof-Chip; alte `Real job · photo documented`-Texte und alter Provenienz-TODO entfernt; `scrollWidth=390` auf Mobile; keine Console Errors/Warnings.
+
 ### 2026-06-16 — Codex — Franco-Signatur auf merkfähigere Formulierung geändert
 - **Entscheidung:** Giampiero hat die emotional stärkere Signatur freigegeben: `Every job has my name on it. — Franco`.
 - **Korrektur in `index.html`:** Hero-Franco-Karten (Desktop/Mobile) und `#franco .franco-signature` von `I personally oversee every job my team accepts.` auf die neue Signatur umgestellt. Schreibweise bewusst mit `Every` korrigiert.
