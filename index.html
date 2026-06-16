@@ -284,17 +284,17 @@ a[href^="https://wa.me/"].cta-btn-wa:hover::after{transform:translateX(360%) ske
 
 /* Sub — light weight, readable */
 .hero-sub{font-size:16px;font-weight:400;color:var(--g600);line-height:1.7;max-width:450px;margin-bottom:28px;animation:fadeUp .4s .15s ease both;letter-spacing:0}
-.hero-proof-shot{--pos:75%;--proof-image:url("assets/before-after-ac-coil-cleaning.webp");display:none;max-width:460px;margin:-12px 0 26px;background:#fff;border:1px solid rgba(205,211,218,.86);border-radius:18px;overflow:hidden;box-shadow:0 16px 44px rgba(28,50,68,.12);animation:fadeUp .4s .18s ease both}
+.hero-proof-shot{--pos:64%;--proof-before:url("assets/hero-ac-coil-before-clean.webp");--proof-after:url("assets/hero-ac-coil-after-clean.webp");display:none;max-width:460px;margin:-12px 0 26px;background:#fff;border:1px solid rgba(205,211,218,.86);border-radius:18px;overflow:hidden;box-shadow:0 16px 44px rgba(28,50,68,.12);animation:fadeUp .4s .18s ease both}
 .hero-proof-compare-frame{position:relative;aspect-ratio:16/7.2;overflow:hidden;background:#101f2d;isolation:isolate;touch-action:none;cursor:ew-resize;user-select:none}
-.hero-proof-layer{position:absolute;inset:0;background-image:var(--proof-image);background-repeat:no-repeat;background-size:200% auto}
-.hero-proof-before{background-position:left 58%}
-.hero-proof-after{background-position:right 58%;clip-path:inset(0 0 0 var(--pos))}
-.hero-proof-label{position:absolute;top:8px;z-index:3;border-radius:999px;padding:4px 8px;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.9);color:var(--navy);box-shadow:0 4px 12px rgba(10,22,34,.16)}
-.hero-proof-label.before{left:8px;color:#991B1B}
-.hero-proof-label.after{right:8px;color:#166534}
-.hero-proof-divider{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#fff;z-index:4;transform:translateX(-1px);box-shadow:0 0 0 1px rgba(10,22,34,.18),0 0 22px rgba(255,255,255,.5);pointer-events:none}
-.hero-proof-divider span{position:absolute;left:50%;top:50%;width:34px;height:34px;border-radius:999px;background:#fff;transform:translate(-50%,-50%);box-shadow:0 8px 24px rgba(10,22,34,.26);display:flex;align-items:center;justify-content:center}
-.hero-proof-divider span::before{content:'↔';font-size:16px;font-weight:900;color:var(--navy)}
+.hero-proof-layer{position:absolute;inset:0;background-repeat:no-repeat;background-size:cover;background-position:center}
+.hero-proof-before{background-image:var(--proof-before)}
+.hero-proof-after{background-image:var(--proof-after);clip-path:inset(0 0 0 var(--pos))}
+.hero-proof-label{position:absolute;top:8px;z-index:3;border-radius:999px;padding:4px 8px;font-size:8.5px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.92);color:var(--navy);box-shadow:0 4px 12px rgba(10,22,34,.16)}
+.hero-proof-label.before{left:8px;color:#991B1B;border:1px solid rgba(239,68,68,.24)}
+.hero-proof-label.after{right:8px;color:#166534;border:1px solid rgba(22,101,52,.2)}
+.hero-proof-divider{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:rgba(255,255,255,.92);z-index:4;transform:translateX(-1px);box-shadow:0 0 0 1px rgba(10,22,34,.22),0 0 18px rgba(10,22,34,.28);pointer-events:none}
+.hero-proof-divider span{position:absolute;left:50%;top:50%;width:31px;height:31px;border-radius:999px;background:rgba(18,43,60,.94);border:2px solid rgba(255,255,255,.92);transform:translate(-50%,-50%);box-shadow:0 8px 24px rgba(10,22,34,.32);display:flex;align-items:center;justify-content:center}
+.hero-proof-divider span::before{content:'↔';font-size:14px;font-weight:900;color:#fff}
 .hero-proof-range{position:absolute;inset:0;z-index:5;width:100%;height:100%;opacity:0;pointer-events:none;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent}
 .hero-proof-range::-webkit-slider-runnable-track{height:100%;background:transparent;border:0}
 .hero-proof-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:1px;height:1px;background:transparent;border:0;box-shadow:none}
@@ -1939,14 +1939,14 @@ section[id]:not(#hero):not(#before-after){border-top:2px solid var(--bg3)}
         <div class="hero-proof-compare-frame" role="group" aria-label="Before and after AC coil cleaning comparison">
           <div class="hero-proof-layer hero-proof-before" aria-hidden="true"></div>
           <div class="hero-proof-layer hero-proof-after" aria-hidden="true"></div>
-          <span class="hero-proof-label before">Before</span>
-          <span class="hero-proof-label after">After</span>
+          <span class="hero-proof-label before">Dirty Before</span>
+          <span class="hero-proof-label after">Clean After</span>
           <div class="hero-proof-divider" aria-hidden="true"><span></span></div>
-          <input class="hero-proof-range" type="range" min="8" max="92" value="75" aria-label="Slide to compare before and after AC coil cleaning" oninput="this.closest('.hero-proof-shot').style.setProperty('--pos', this.value + '%')">
+          <input class="hero-proof-range" type="range" min="8" max="92" value="64" aria-label="Slide to compare before and after AC coil cleaning" oninput="this.closest('.hero-proof-shot').style.setProperty('--pos', this.value + '%')">
         </div>
         <div class="hero-proof-shot-bar">
-          <span class="hero-proof-shot-kicker">Real Dubai AC result</span>
-          <span class="hero-proof-shot-copy">This is why we inspect before we quote</span>
+          <span class="hero-proof-shot-kicker">Swipe the real AC proof</span>
+          <span class="hero-proof-shot-copy">Dirty coil → cleaned coil. This is why we inspect before we quote.</span>
         </div>
       </div>
       <a href="#warning-signs" class="hero-scroll-bridge">

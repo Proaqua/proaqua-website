@@ -31,6 +31,13 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Hero Before/After grafisch bereinigt und weißes Flecken-Problem entfernt
+- **Ziel:** Giampieros Feedback umgesetzt: Der Hero-Swipe hatte beim Bewegen noch weiße Flecken/Textflächen im Bild, und der Before/After-Effekt sollte klarer erkennbar werden.
+- **Erledigt:** Aus dem vorhandenen echten AC-Coil-Proof zwei neue saubere Hero-Crops ohne eingebettete `BEFORE`/`AFTER`/`AC COIL CLEANING`-Grafikflächen erstellt: `assets/hero-ac-coil-before-clean.webp` und `assets/hero-ac-coil-after-clean.webp`. `index.html` nutzt im Hero-Slider jetzt zwei echte Layer statt ein fertiges Layout-Bild.
+- **Grafik-Feinschliff:** Slider-Start von `75%` auf `64%` gesetzt, damit direkt mehr `Clean After` sichtbar ist. Labels auf `Dirty Before` und `Clean After` geändert. Der große weiße Griff wurde durch einen dunkleren, kleineren Griff ersetzt. Copy geschärft auf `Dirty coil → cleaned coil. This is why we inspect before we quote.`
+- **Verifikation:** `git diff --check` sauber; HTML-Parser ohne offene/unerwartete Tags. Browser-QA Mobile 390×844: neue Layer aktiv, `scrollWidth=390`, Start `--pos=64%`, Labels korrekt, Swipe weiterhin funktional (`18.8%` bis `91.9%`). Screenshot: `output/playwright/hero-clean-before-after-default-mobile.png`.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe.
+
 ### 2026-06-16 — Codex — Hero Before/After-Swipe auf robuste Touch-Logik umgestellt
 - **Ziel:** Giampieros Hinweis umgesetzt, dass der Swipe/Schieber im Mobile-Hero hängt beziehungsweise sich hakelig verschieben lässt.
 - **Erledigt:** `index.html` gezielt angepasst: Der Hero-Before/After-Schieber hängt nicht mehr an einem unsichtbaren nativen `range`-Input als primärer Touch-Fläche. Stattdessen reagiert jetzt die Bildfläche selbst per Pointer-/Touch-Events (`pointerdown`, `pointermove`, `pointerup`) und setzt `--pos` direkt. Der Range bleibt nur als Fallback/Accessibility-Wert synchronisiert.
