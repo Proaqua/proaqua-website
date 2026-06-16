@@ -31,6 +31,12 @@
 
 ## Arbeitslog
 
+### 2026-06-16 — Codex — Mobile-Hero Slider-Fix, stärkere Proof-Copy und Badge-Tausch
+- **Ziel:** Giampieros Screenshot-Feedback umgesetzt: weißer nativer Slider-Thumb im Bild entfernen, Proof-Satz deutlicher machen und mobile Trust-Badges tauschen.
+- **Erledigt:** `index.html` gezielt angepasst: Range-Input im Hero-Schieber mit `appearance:none` plus transparenten WebKit/Mozilla-Thumbs browserfest unsichtbar gemacht. Proof-Copy unter dem Bild visuell stärker (`13px`, `font-weight:950` auf Mobile). Mobile Top-Chips jetzt `2016 Founded` + `Fixed Price · No Surprises`; Google-Rating sitzt stattdessen in der unteren Stats-Zeile neben `10,000+ Happy clients`.
+- **Verifikation:** `git diff --check` und HTML-Parser sauber. Browser-QA Mobile 390×844: beide Top-Chips gleiche Zeile, Stats zeigen `10,000+` und `4.7` Google, Range `appearance:none`, `value=75`, Copy sichtbar stärker, `scrollWidth=390`, keine Console Errors. Preview: `output/playwright/hero-slider-fix-mobile-preview.png`.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe.
+
 ### 2026-06-16 — Codex — Mobile-Hero-Schieber auf 25% Clean-Start und stärkere Microcopy gestellt
 - **Ziel:** Giampieros Feinschliff umgesetzt: Der mobile Before/After-Schieber soll initial nur ca. 25% der sauberen AC-Seite zeigen, damit der erste Eindruck stärker auf dem Problem liegt und der Nutzer aktiv zum Reveal gezogen wird.
 - **Erledigt:** `index.html` gezielt angepasst: `.hero-proof-shot` startet jetzt mit `--pos:75%`, Range-Input mit `value="75"` (entspricht 25% sichtbarer sauberer rechter Seite). Copy unter dem Bild geändert auf `This is why we inspect before we quote`. Micro-CTA exakt gesetzt auf `Next: 5 warning signs to check at home ↓`.
