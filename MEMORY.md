@@ -11,7 +11,7 @@
 - **Firma:** Pro Aqua Disinfection & Sterilization LLC, Dubai, seit 2016. Inhaber: Franco (als Person auf der Website sichtbar).
 - **Leistungen:** AC Duct Cleaning, Deep Cleaning, Mattress/Fabric Sanitizing.
 - **Website:** Statische One-Page-Site, `index.html` (~3,2 MB, alles inline). Netlify-Deployment via `netlify.toml`. Repo: github.com/Proaqua/proaqua-website (nur lokal arbeiten!).
-- **Social Proof:** 4,7★ Google, 10.000+ zufriedene Kunden, 10+ Jahre Dubai.
+- **Social Proof:** 4,7★ Google, 10.000+ Cleaning Jobs seit 2016 (Giampiero/Franco bestaetigt; externer Nachweis bleibt TODO), 10+ Jahre Dubai.
 - **Ziel:** Klare Marktpositionierung, mehr Anfragen/Conversions.
 
 ## Werkzeuge & Konventionen
@@ -30,6 +30,13 @@
 - [x] **Positionierungs-These FINAL (13.06.2026, mit Giampiero abgestimmt; Copy am 15.06.2026 claim-sicher entschärft):** Persönlicher Spezialist (Franco als Gesicht) + professionelle Ausrüstung + fairer Festpreis + Proof auf jedem Job. B2B/Property als eigene Sektion, NICHT in der Hauptbotschaft. Frühere Kurzform mit "Hospital-grade" ist wegen Claim-Hygiene überholt.
 
 ## Arbeitslog
+
+### 2026-06-18 — Codex — Funnel: 10.000+-Trust-Wording an Clean-Home v8 angeglichen
+- **Ziel:** Die von Claude markierte Trust-Luecke seitenuebergreifend schliessen: `10,000+` soll nicht mehr als unbelegte `Happy clients`-Behauptung neben `60 Google reviews` erscheinen.
+- **Erledigt:** `index.html` gezielt angepasst: JSON-LD, Sticky-Trust-Bar, Hero-Stat, Trust-Belt, Franco-Headline/CTA und Compare-Proof verwenden jetzt `10,000+ Jobs`, `Cleaning jobs` bzw. `cleaning jobs since 2016`. Die Franco-Headline behauptet nicht mehr `Why 10,000+ Happy Clients Trust Franco`, sondern neutraler `Why Dubai homes trust Franco`.
+- **Konsistenz:** Dieselbe Text-/Claim-Korrektur wurde im Clean-Home-Worktree `/Users/giampierolapeschi/Desktop/Proaqua-website-clean-home` umgesetzt, damit `8742` und `8743` konsistent bleiben.
+- **Verifikation:** `git diff --check` sauber; HTML-Parser fuer beide `index.html` ok. Chrome-Screenshots via Playwright-CLI mit `--channel=chrome`: Funnel 390×844 bleibt sichtbar der Sales-Funnel; Clean-Home 390×844/950×844 bleibt ohne sichtbare Overlaps. HTTP-Gate: `8742` enthaelt kein `clean-home-mode`; `8743` enthaelt `clean-home-mode`. Alte Stat-Wording-Muster (`Happy clients`, `Clients Served`, `happy clients served`) sind in den relevanten Statistik-/CTA-Claims entfernt.
+- **Nächster Schritt:** Clean-Home-Review-Datei `conversion-research/claude-clean-home-review-05.md` von Claude pruefen lassen. Kein Push ohne ausdrueckliche Freigabe.
 
 ### 2026-06-16 — Codex — Mobile-Hero Proof-Karten optisch vereinheitlicht und Push vorbereitet
 - **Ziel:** Giampieros Screenshot-Feedback umgesetzt: Die beiden mobilen Hero-Proof-Karten (`10,000+ Happy clients` und `4.7 Real Reviews`) wirkten nicht gleich, weil die Google-Badge-Innenstruktur die rechte Karte höher machte.
