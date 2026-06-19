@@ -31,6 +31,19 @@
 
 ## Arbeitslog
 
+### 2026-06-19 — Codex — Gebrandete Proof-Shorts für Glaubwürdigkeit/Professionalität eingebaut
+- **Ziel:** Giampieros neue Deep-Clean-/Mattress-/Sanitizing-Shorts als glaubwürdigen Professionalitätsbeweis nutzbar machen: Videos mit Pro-Aqua-Wasserzeichen/Logo versehen und auf der Hauptseite kompakt integrieren.
+- **Erledigt:** Alle 18 gelieferten MP4-Clips als gebrandete, stumme Web-Clips in `assets/pictures_videos/proof_shorts/` erzeugt (max. 12s, eingebranntes Pro-Aqua-Logo, dezentes Wasserzeichen, kurzer Caption-Badge). In `#franco` nach dem Team-/Fleet-Proof eine neue kompakte `Real work in motion`-Video-Leiste mit 6 ausgewählten Proof-Clips ergänzt: Mattress extraction, Bedroom team, Bathroom sanitizing, Villa windows, Clean result und Villa deep clean.
+- **Copy/Design:** Team-Proof-Text erneut professioneller gefasst: weg von defensivem App-/Subcontractor-Framing, hin zu `Franco's trained team`, branded vans, professional equipment, fixed quote und documented proof. Mobile Video-Leiste ist horizontal scrollbar, damit die Seite nicht wieder zu voll wird.
+- **Verifikation:** `git diff --check` sauber; `index.html` HTML-Parser OK; alle 6 sichtbaren Video-Sources vorhanden. Browser-QA via Playwright: Desktop 1280px ohne Overflow, Mobile 390px ohne Page-Overflow (`scrollWidth=390`), 6 Videos in `.work-proof-shorts`; Screenshots: `output/playwright/proof-shorts-desktop-v3.png` und `output/playwright/proof-shorts-mobile-v3.png`.
+- **Nächster Schritt:** Bei Gefallen lokal committen. Kein Push ohne ausdrückliche Push-Freigabe.
+
+### 2026-06-19 — Claude — Team-Sektion: neue Headline + Copy eingebaut
+- **Ziel:** Giampieros finalisiertes Team-Copy-Set in `#franco .team-proof` eintragen und live verifizieren.
+- **Erledigt:** `index.html` gezielt angepasst (Zeilen 2702–2709): Kicker `Real Team · Real Fleet` → `Franco's Pro Aqua Team`; Headline `Not an anonymous app crew.` → `Your home. Your standard. Cleaner air.`; Untertitel auf `Franco's own trained team — the same trusted faces you let into your home, treating it with the care they'd give their own.` geändert; drei Bullets auf `Franco-led specialists for AC ducts, mattresses, fabrics and deep cleaning` / `The same uniformed faces on every visit — never anonymous subcontractors` / `Before-and-after photos after every job — you always see the result` gesetzt.
+- **Verifikation:** `grep`-Check bestätigt neues Copy in index.html; altes Copy (`Real Team · Real Fleet`, `Not an anonymous app crew`, `branded vans and the same standards`, `Owner-led team, not random`) vollständig entfernt.
+- **Nächster Schritt:** Kein Push ohne ausdrückliche Push-Freigabe.
+
 ### 2026-06-18 — Codex — Funnel: 10.000+-Trust-Wording an Clean-Home v8 angeglichen
 - **Ziel:** Die von Claude markierte Trust-Luecke seitenuebergreifend schliessen: `10,000+` soll nicht mehr als unbelegte `Happy clients`-Behauptung neben `60 Google reviews` erscheinen.
 - **Erledigt:** `index.html` gezielt angepasst: JSON-LD, Sticky-Trust-Bar, Hero-Stat, Trust-Belt, Franco-Headline/CTA und Compare-Proof verwenden jetzt `10,000+ Jobs`, `Cleaning jobs` bzw. `cleaning jobs since 2016`. Die Franco-Headline behauptet nicht mehr `Why 10,000+ Happy Clients Trust Franco`, sondern neutraler `Why Dubai homes trust Franco`.

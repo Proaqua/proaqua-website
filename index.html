@@ -549,6 +549,19 @@ h2.sec-t em:not(.red-em){font-style:italic;color:var(--blue);font-weight:700}
 .team-proof-list{list-style:none;display:grid;gap:9px;margin:0}
 .team-proof-list li{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--g600);line-height:1.45}
 .team-proof-list li::before{content:'✓';width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--green-l);color:var(--green-d);font-size:11px;font-weight:900;flex-shrink:0;margin-top:1px}
+.work-proof-shorts{margin-top:24px;background:linear-gradient(180deg,#fff 0%,#F7FBFF 100%);border:1px solid var(--g300);border-radius:var(--rxl);padding:24px;box-shadow:var(--sh0)}
+.work-proof-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:end;margin-bottom:18px}
+.work-proof-kicker{font-size:11px;font-weight:900;color:var(--blue-d);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.work-proof-head h3{font-family:'Inter',sans-serif;font-size:28px;line-height:1.12;color:var(--navy);font-weight:850;letter-spacing:-.25px;margin:0 0 8px}
+.work-proof-head p{font-size:14px;color:var(--g600);line-height:1.6;margin:0;max-width:650px}
+.work-proof-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(113,196,159,.28);background:rgba(113,196,159,.12);color:#0F6F58;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:850;white-space:nowrap}
+.work-proof-badge i{width:7px;height:7px;border-radius:50%;background:#25D366;box-shadow:0 0 0 5px rgba(37,211,102,.12)}
+.work-proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.work-proof-card{background:#fff;border:1px solid rgba(205,211,218,.86);border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(28,50,68,.08)}
+.work-proof-card video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#102336}
+.work-proof-copy{padding:12px 13px 14px}
+.work-proof-copy strong{display:block;font-size:13px;color:var(--navy);font-weight:850;line-height:1.25;margin-bottom:4px}
+.work-proof-copy span{display:block;font-size:11.5px;color:var(--g500);line-height:1.42}
 
 /* ======================================================
    WHAT WE CLEAN — services
@@ -904,6 +917,8 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .team-proof{grid-template-columns:1fr}
   .team-proof-photo{min-height:330px}
   .team-proof-copy{padding:24px 22px 26px}
+  .work-proof-head{grid-template-columns:1fr;align-items:start}
+  .work-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:768px){
   section{padding:52px 18px}
@@ -922,6 +937,11 @@ footer{background:var(--navy);padding:48px 32px 22px}
   .team-proof-caption{left:12px;right:12px;bottom:12px}
   .team-proof-caption span{font-size:10px;padding:6px 9px}
   .team-proof-copy h3{font-size:21px}
+  .work-proof-shorts{padding:18px 16px;border-radius:18px}
+  .work-proof-head h3{font-size:22px}
+  .work-proof-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 4px 8px;margin:0 -4px;-webkit-overflow-scrolling:touch}
+  .work-proof-card{min-width:78%;scroll-snap-align:start}
+  .work-proof-card video{aspect-ratio:16/9}
   .proc-grid{grid-template-columns:1fr 1fr}
   .ft-top{grid-template-columns:1fr}
   .qopts{grid-template-columns:1fr}
@@ -2693,20 +2713,68 @@ document.addEventListener('keydown',function(e){
       <div class="team-proof-photo">
         <img src="assets/pro-aqua-dubai-team-fleet.webp?v=20260616" alt="Pro Aqua Dubai team with branded service vans outside a Dubai residence" loading="lazy" width="1581" height="995">
         <div class="team-proof-caption" aria-label="Team proof badges">
-          <span>Real Pro Aqua team</span>
+          <span>Franco's Pro Aqua team</span>
+          <span>Trained specialists</span>
           <span>Branded service vans</span>
-          <span>Dubai field crew</span>
         </div>
       </div>
       <div class="team-proof-copy">
-        <div class="team-proof-kicker">Real Team · Real Fleet</div>
-        <h3>Not an anonymous app crew.</h3>
-        <p>This is the team behind the work: Pro Aqua uniforms, branded vans and the same standards Franco puts his name on.</p>
+        <div class="team-proof-kicker">Your Space · Your Health · Cleaner Air</div>
+        <h3>Franco's trained team, arriving with one documented standard.</h3>
+        <p>A uniformed Pro Aqua crew arrives with branded vans, professional equipment and a careful process for Dubai homes.</p>
         <ul class="team-proof-list">
-          <li>Owner-led team, not random rotating subcontractors</li>
-          <li>Specialists for AC ducts, mattresses, fabrics and deep cleaning</li>
-          <li>Before-and-after proof sent after every documented job</li>
+          <li>Same service standards across AC ducts, mattresses, fabrics and deep cleaning</li>
+          <li>Clear scope, fixed quote and service confirmation before work starts</li>
+          <li>Before-and-after proof sent after documented jobs</li>
         </ul>
+      </div>
+    </div>
+    <div class="work-proof-shorts" aria-labelledby="work-proof-title">
+      <div class="work-proof-head">
+        <div>
+          <div class="work-proof-kicker">Real work in motion</div>
+          <h3 id="work-proof-title">Professional cleaning proof from Dubai homes.</h3>
+          <p>Short Pro Aqua job clips with burned-in branding: mattress extraction, deep cleaning, bathroom sanitizing and villa maintenance.</p>
+        </div>
+        <div class="work-proof-badge"><i></i> Branded proof clips</div>
+      </div>
+      <div class="work-proof-grid" aria-label="Pro Aqua Dubai professional cleaning video proof">
+        <article class="work-proof-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/pictures_videos/proof_shorts/mattress-deep-extraction-proof.jpg" aria-label="Mattress deep extraction by Pro Aqua Dubai">
+            <source src="assets/pictures_videos/proof_shorts/mattress-deep-extraction-proof.mp4" type="video/mp4">
+          </video>
+          <div class="work-proof-copy"><strong>Mattress deep extraction</strong><span>Visible equipment-led cleaning inside a Dubai bedroom.</span></div>
+        </article>
+        <article class="work-proof-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/pictures_videos/proof_shorts/bedroom-deep-clean-team-proof.jpg" aria-label="Bedroom deep cleaning team by Pro Aqua Dubai">
+            <source src="assets/pictures_videos/proof_shorts/bedroom-deep-clean-team-proof.mp4" type="video/mp4">
+          </video>
+          <div class="work-proof-copy"><strong>Bedroom deep cleaning team</strong><span>Trained specialists working with professional machines.</span></div>
+        </article>
+        <article class="work-proof-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/pictures_videos/proof_shorts/bathroom-sanitizing-proof.jpg" aria-label="Bathroom sanitizing by Pro Aqua Dubai">
+            <source src="assets/pictures_videos/proof_shorts/bathroom-sanitizing-proof.mp4" type="video/mp4">
+          </video>
+          <div class="work-proof-copy"><strong>Bathroom sanitizing</strong><span>Detail work for wet areas, fixtures and high-touch surfaces.</span></div>
+        </article>
+        <article class="work-proof-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/pictures_videos/proof_shorts/villa-window-maintenance-proof.jpg" aria-label="Villa window maintenance by Pro Aqua Dubai">
+            <source src="assets/pictures_videos/proof_shorts/villa-window-maintenance-proof.mp4" type="video/mp4">
+          </video>
+          <div class="work-proof-copy"><strong>Villa maintenance</strong><span>Exterior glass and premium-home care with a branded team.</span></div>
+        </article>
+        <article class="work-proof-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/pictures_videos/proof_shorts/finished-deep-clean-result-proof.jpg" aria-label="Finished deep clean result by Pro Aqua Dubai">
+            <source src="assets/pictures_videos/proof_shorts/finished-deep-clean-result-proof.mp4" type="video/mp4">
+          </video>
+          <div class="work-proof-copy"><strong>Finished deep clean result</strong><span>A clean, documented room reset after the service.</span></div>
+        </article>
+        <article class="work-proof-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/pictures_videos/proof_shorts/villa-deep-clean-at-work-proof.jpg" aria-label="Villa deep clean at work by Pro Aqua Dubai">
+            <source src="assets/pictures_videos/proof_shorts/villa-deep-clean-at-work-proof.mp4" type="video/mp4">
+          </video>
+          <div class="work-proof-copy"><strong>Villa deep clean at work</strong><span>On-site work from a real Pro Aqua Dubai cleaning job.</span></div>
+        </article>
       </div>
     </div>
   </div>
