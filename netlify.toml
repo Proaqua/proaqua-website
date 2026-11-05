@@ -12,3 +12,24 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/thanks/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Alte Seiten-Adressen -> neue Villa-Seiten
+[[redirects]]
+  from = "/villa-cleaning-jumeirah/*"
+  to = "/villa-deep-cleaning-jumeirah/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/villa-cleaning-springs/*"
+  to = "/villa-deep-cleaning-springs/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/deep-cleaning-mirdif/*"
+  to = "/villa-deep-cleaning-mirdif/"
+  status = 301
+  force = true
